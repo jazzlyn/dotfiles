@@ -3,15 +3,6 @@
     "fonts.fontFamily": "Monospace",
     "themes.theme": "dark-theme",
     "closeBrackets": true,
-    "codehint.AttrHints": true,
-    "codehint.CssPropHints": true,
-    "codehint.JSHints": true,
-    "codehint.PrefHints": true,
-    "codehint.SVGHints": true,
-    "codehint.SpecialCharHints": true,
-    "codehint.TagHints": true,
-    "codehint.UrlCodeHints": true,
-    "debug.showErrorsInStatusBar": false,
     "spaceUnits": 4,
     "brackets-git.gitPath": "git",
     "brackets-git.stripWhitespaceFromCommits": true,
@@ -44,6 +35,18 @@
     "brackets-git.terminalCommand": null,
     "brackets-git.terminalCommandArgs": null,
     "brackets-git.debugMode": false,
-    "linting.collapsed": true,
-    "useTabChar": false
+    "useTabChar": false,
+    "smartIndent": true,
+    "debug.showErrorsInStatusBar": false,
+    "highlightMatches": true,
+    "linting.enabled": true,
+    "linting.collapsed": false,
+    "linting.prefer": [
+        "JSHint",
+        "HTMLHint",
+        "CSSLint"
+    ],
+    "linting.usePreferredOnly": true,
+    "styleActiveLine": true,
+    "brackets-indent-guides.enabled": true
 }
