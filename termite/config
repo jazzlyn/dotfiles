@@ -1,0 +1,6 @@
+# termite config file
+
+browser = google-chrome-stable
+clickable_url = true
+dynamic_title = true
+font = Droid Sans Mono 10

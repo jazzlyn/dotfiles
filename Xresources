@@ -1,0 +1,10 @@
+! XTerm Config
+XTerm*locale: true
+XTerm*foreground: #b2b2b2
+XTerm*background: #1c1c1c
+XTerm*faceName: DejaVu Sans Mono Book
+XTerm*faceSize: 10
+XTerm*scaleHeight: 1.01
+XTerm*selectToClipboard: true
+XTerm*ScrollBar: true
+XTerm*rightScrollBar: true

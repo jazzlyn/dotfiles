@@ -1,0 +1,23 @@
+#!/bin/bash
+
+mkdir -p ~/.config
+ln -rs i3 ~/.config/
+mkdir -p ~/.config/Brackets
+ln -rs brackets/brackets.json ~/.config/Brackets/
+ln -rs brackets/extensions ~/.config/Brackets/
+ln -rs termite ~/.config/
+mkdir -p ~/.config/ranger
+ln -rs ranger/rc.conf ~/.config/ranger/
+ln -rs vim ~/.vim
+
+ln -rs bash_profile ~/.bash_profile
+ln -rs bashrc ~/.bashrc
+ln -rs vimrc ~/.vimrc
+ln -rs xinitrc ~/.xinitrc
+ln -rs Xresources ~/.Xresources
+
+mkdir -p ~/.local/bin
+ln -rs bin/pacman-autoremove ~/.local/bin/
+ln -rs bin/pacman-local ~/.local/bin
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
