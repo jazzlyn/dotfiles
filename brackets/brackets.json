@@ -39,14 +39,10 @@
     "smartIndent": true,
     "debug.showErrorsInStatusBar": false,
     "highlightMatches": true,
-    "linting.enabled": true,
-    "linting.collapsed": false,
-    "linting.prefer": [
-        "JSHint",
-        "HTMLHint",
-        "CSSLint"
-    ],
-    "linting.usePreferredOnly": true,
     "styleActiveLine": true,
-    "brackets-indent-guides.enabled": true
+    "brackets-indent-guides.enabled": true,
+    "interactive-linter.javascript": [ "jshint"],
+    "interactive-linter.html": [ "htmlhint"],
+    "interactive-linter.css": [ "csslint"],
+    "interactive-linter.json": [ "jsonlint"]
 }
