@@ -36,3 +36,7 @@ ompiled source #
 ehthumbs.db
 Thumbs.db
 *.swp
+
+# Directories #
+###########
+vim/
