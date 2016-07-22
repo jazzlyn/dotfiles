@@ -20,4 +20,6 @@ mkdir -p ~/.local/bin
 ln -rs bin/pacman-autoremove ~/.local/bin/
 ln -rs bin/pacman-local ~/.local/bin
 
+
+git config --global core.excludesfile ~/.dotfiles/gitignore
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
