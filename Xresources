@@ -9,34 +9,3 @@ XTerm*selectToClipboard: true
 XTerm*ScrollBar: true
 XTerm*rightScrollBar: true
 
-
-! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
-! ! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
-! ! vim: ft=xdefaults
-!
-*background: #161617
-*foreground: #ddd
-! black
-*color0: #666
-*color8: #666
-! red
-*color1: #cc6666
-*color9: #cc6666
-! green
-*color2: #b5c45f
-*color10: #b5c45f
-! yellow
-*color3: #f0c86a
-*color11: #f0c86a
-! blue
-*color4: #779ec5
-*color12: #779ec5
-! magenta
-*color5: #b488bf
-*color13: #b488bf
-! cyan
-*color6: #e0943e
-*color14: #e0943e
-! white
-*color7: #fff
-*color15: #fff

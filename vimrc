@@ -46,9 +46,9 @@ set omnifunc=syntaxcomplete#Complete " set default syntax completion on
 let g:vimjs#smartcomplete = 1 " if enabled, typing ocument will suggest document too
 
 " hybrid theme config
-colorscheme hybrid
-"let g:hybrid_custom_term_colors = 1 " uses colors from .Xresources
+" let g:hybrid_custom_term_colors = 1 " uses colors from .Xresources
 set background=dark
+colorscheme hybrid
 
 """"""""""""""""""""""
 " User Interface
