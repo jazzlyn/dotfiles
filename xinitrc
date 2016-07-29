@@ -23,4 +23,5 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+setxkbmap de
 exec i3
