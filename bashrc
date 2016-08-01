@@ -2,9 +2,9 @@
 # ~/.bashrc
 #
 # bash color variables ######################
-export COLOR_NC='\[\e[0m\]' # No Color
+# \\033[38;5;COLORCODEm' scheme
 export COLOR_BLACK='\[\e[0;30m\]'
-export COLOR_WHITE='\[\e[1m\]'
+export COLOR_WHITE='\[\033[01;15m\]'
 export COLOR_RED='\[\e[0;31m\]'
 export COLOR_LIGHT_RED='\[\e[1;31m\]'
 export COLOR_GREEN='\[\e[0;32m\]'
@@ -18,7 +18,7 @@ export COLOR_LIGHT_PURPLE='\[\e[1;35m\]'
 export COLOR_CYAN='\[\e[0;36m\]'
 export COLOR_LIGHT_CYAN='\[\e[1;36m\]'
 export COLOR_DARK_GREY='\[\e[1;37m\]'
-export COLOR_LIGHT_GREY='\[\e[0;37m\]'
+export COLOR_LIGHT_GREY='\[\033[0;37m\]'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -39,9 +39,9 @@ alias la='ls -lah --color'
 # default
 # PS1='[\u@\h \W]\$ '
 # purple
-# PS1=$COLOR_LIGHT_PURPLE'\u'$COLOR_LIGHT_GREY'@'$COLOR_PURPLE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
+PS1=$COLOR_LIGHT_PURPLE'\u'$COLOR_LIGHT_GREY'@'$COLOR_PURPLE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
 # blue
-PS1=$COLOR_LIGHT_BLUE'\u'$COLOR_LIGHT_GREY'@'$COLOR_BLUE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
+# PS1=$COLOR_LIGHT_BLUE'\u'$COLOR_LIGHT_GREY'@'$COLOR_BLUE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
 # red
 # PS1=$COLOR_LIGHT_RED'\u'$COLOR_LIGHT_GREY'@'$COLOR_RED'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
 # green

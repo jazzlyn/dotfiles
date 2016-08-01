@@ -22,4 +22,5 @@ ln -rs bin/pacman-local ~/.local/bin
 
 
 git config --global core.excludesfile ~/.dotfiles/gitignore
+mkdir -p ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
