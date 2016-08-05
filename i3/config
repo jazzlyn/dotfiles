@@ -157,9 +157,13 @@ bindsym $mod+r mode "resize"
 # floating mode for windows
 for_window [title="Hangouts"] floating enable
 for_window [title="Nils Biesalski"] floating enable
+#hide_edge_borders both
 
 # autostart applications on i3 startup
 # exec <command>
+
+# desktop wallpaper
+# exec -no-startup-id feh --bg-scale ~/.dotfiles/sample.jpg
 
 # default colors
 # class                     border      backgr.     text        indicator
@@ -175,16 +179,19 @@ client.background           #000000
 focus_follows_mouse no
 mouse_warping none
 
+# remove pane title bar
+#new_window none
+
 # i3 bar configuration
 
 bar {
-    status_command i3status
-#    tray_output primary
+    status_command py3status
+    tray_output primary
     font pango:DejaVu Sans Mono 10
     
     colors {
-        background #000000
-        statusline #ffffff
+        background #222222
+        statusline #dddddd
         separator #666666
     }
 

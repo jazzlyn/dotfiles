@@ -32,6 +32,7 @@ export LS_COLORS
 alias cd..='cd ..'
 alias ls='ls -lh --color'
 alias la='ls -lah --color'
+alias vim='nvim'
 
 #
 # colorizing the prompt #################
@@ -39,9 +40,9 @@ alias la='ls -lah --color'
 # default
 # PS1='[\u@\h \W]\$ '
 # purple
-PS1=$COLOR_LIGHT_PURPLE'\u'$COLOR_LIGHT_GREY'@'$COLOR_PURPLE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
+# PS1=$COLOR_LIGHT_PURPLE'\u'$COLOR_LIGHT_GREY'@'$COLOR_PURPLE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
 # blue
-# PS1=$COLOR_LIGHT_BLUE'\u'$COLOR_LIGHT_GREY'@'$COLOR_BLUE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
+PS1=$COLOR_LIGHT_BLUE'\u'$COLOR_LIGHT_GREY'@'$COLOR_DARK_GREY'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
 # red
 # PS1=$COLOR_LIGHT_RED'\u'$COLOR_LIGHT_GREY'@'$COLOR_RED'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
 # green
@@ -51,7 +52,7 @@ PS1=$COLOR_LIGHT_PURPLE'\u'$COLOR_LIGHT_GREY'@'$COLOR_PURPLE'\h'$COLOR_LIGHT_GRE
 #
 # set vim as default editor
 #
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 #
@@ -65,3 +66,28 @@ alias grep='grep --color=always'
 # custom bins
 #
 export PATH=$PATH":$HOME/.local/bin"
+
+# The next block was inserted by the `cli' module of
+# The SCORE Framework (http://score-framework.org)
+
+  # The following line makes sure that you can access the `score'
+  # application in your shell:
+  case "$PATH" in
+    */home/***REMOVED***/.local/bin*)
+      true
+      ;;
+    *)
+      PATH=/home/***REMOVED***/.local/bin:$PATH
+      ;;
+  esac
+
+# The next block was inserted by the `projects' module of
+# The SCORE Framework (http://score-framework.org)
+
+  # This next line updates your shell prompt to include the name of
+  # the current project.
+  if [ -n "$VIRTUAL_ENV_NAME" ]; then
+      export PS1="\[[0;33m\](${VIRTUAL_ENV_NAME})\[[0m\]$PS1"
+  elif [ -n "$VIRTUAL_ENV" ]; then
+      export PS1="\[[0;33m\](${VIRTUAL_ENV##*/})\[[0m\]$PS1"
+  fi
