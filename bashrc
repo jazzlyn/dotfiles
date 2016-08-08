@@ -33,6 +33,7 @@ alias cd..='cd ..'
 alias ls='ls -lh --color'
 alias la='ls -lah --color'
 alias vim='nvim'
+alias serve='python -m http.server'
 
 #
 # colorizing the prompt #################
