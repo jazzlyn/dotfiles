@@ -246,5 +246,8 @@
             "scope": "javascript",
             "mTime": 1468743795081
         }
-    ]
+    ],
+    "language.fileExtensions": {
+        "jinja2": "jinja2"
+    }
 }
