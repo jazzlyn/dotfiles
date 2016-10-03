@@ -2,23 +2,21 @@
 # ~/.bashrc
 #
 # bash color variables ######################
-# \\033[38;5;COLORCODEm' scheme
-export COLOR_BLACK='\[\e[0;30m\]'
-export COLOR_WHITE='\[\033[01;15m\]'
-export COLOR_RED='\[\e[0;31m\]'
-export COLOR_LIGHT_RED='\[\e[1;31m\]'
-export COLOR_GREEN='\[\e[0;32m\]'
-export COLOR_LIGHT_GREEN='\[\e[1;32m\]'
-export COLOR_BROWN='\[\e[0;33m\]'
-export COLOR_YELLOW='\[\e[1;33m\]'
-export COLOR_BLUE='\[\e[0;34m\]'
-export COLOR_LIGHT_BLUE='\[\e[1;34m\]'
-export COLOR_PURPLE='\[\e[0;35m\]'
-export COLOR_LIGHT_PURPLE='\[\e[1;35m\]'
-export COLOR_CYAN='\[\e[0;36m\]'
-export COLOR_LIGHT_CYAN='\[\e[1;36m\]'
-export COLOR_DARK_GREY='\[\e[1;37m\]'
-export COLOR_LIGHT_GREY='\[\033[0;37m\]'
+# \[\e[COLORCODEm\]' scheme
+export COLOR_RED='\[\e[0;31;40m\]'
+export COLOR_RED_BOLD='\[\e[1;31;40m\]'
+export COLOR_GREEN='\[\e[0;32;40m\]'
+export COLOR_GREEN_BOLD='\[\e[1;30;40m\]'
+export COLOR_BROWN='\[\e[0;33;40m\]'
+export COLOR_BROWN_BOLD='\[\e[1;33;40m\]'
+export COLOR_BLUE='\[\e[0;34;40m\]'
+export COLOR_BLUE_BOLD='\[\e[1;34;40m\]'
+export COLOR_PURPLE='\[\e[0;35;40m\]'
+export COLOR_PURPLE_BOLD='\[\e[1;35;40m\]'
+export COLOR_CYAN='\[\e[0;36;40m\]'
+export COLOR_CYAN_BOLD='\[\e[1;36;40m\]'
+export COLOR_WHITE='\[\e[0;37;40m\]'
+export COLOR_WHITE_BOLD='\[\e[1;37;40m\]'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -34,22 +32,38 @@ alias ls='ls -lh --color'
 alias la='ls -lah --color'
 alias vim='nvim'
 alias serve='python -m http.server'
+alias tmux='tmux -2'
 
 #
 # colorizing the prompt #################
 #
+# get user
+thisUser=$(id -un)
+root=root
+# get hostname
+thisHost=$(hostname)
+# set compared hostnames
+purple=purple
+white=white
+blue=blue
 # default
-# PS1='[\u@\h \W]\$ '
-# purple
-# PS1=$COLOR_LIGHT_PURPLE'\u'$COLOR_LIGHT_GREY'@'$COLOR_PURPLE'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
-# blue
-PS1=$COLOR_LIGHT_BLUE'\u'$COLOR_LIGHT_GREY'@'$COLOR_DARK_GREY'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
-# red
-# PS1=$COLOR_LIGHT_RED'\u'$COLOR_LIGHT_GREY'@'$COLOR_RED'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
-# green
-# PS1=$COLOR_LIGHT_GREEN'\u'$COLOR_LIGHT_GREY'@'$COLOR_GREEN'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
-# brown
-# PS1=$COLOR_YELLOW'\u'$COLOR_LIGHT_GREY'@'$COLOR_BROWN'\h'$COLOR_LIGHT_GREY': '$COLOR_CYAN'\W '$COLOR_LIGHT_GREY'\$ '
+#PS1='[\u@\h \W]\$ '
+
+
+if [[ $thisUser == $root ]]; then
+    PS1=$COLOR_RED'\u'$COLOR_WHITE'@'$COLOR_RED_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ ' 
+
+elif [[ $thisUser != $root ]] && [[ $thisHost = $purple ]]; then
+    PS1=$COLOR_PURPLE'\u'$COLOR_WHITE'@'$COLOR_PURPLE_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
+
+elif [[ $thisUser != $root ]] && [[ $thisHost = $white ]]; then
+    PS1=$COLOR_WHITE'\u'$COLOR_BLUE'@'$COLOR_WHITE_BOLD'\h'$COLOR_BLUE': '$COLOR_CYAN'\W '$COLOR_BLUE'\$ '
+
+elif [[ $thisUser != $root ]] && [[ $thisHost = $blue ]]; then
+    PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
+
+fi
+
 #
 # set vim as default editor
 #

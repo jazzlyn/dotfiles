@@ -17,8 +17,7 @@ module.exports = function (grunt) {
                         "$": true,
                         "document": true,
                         "brackets": true,
-                        "define": true,
-                        "Mustache": true
+                        "define": true
                     }
                 }
             }
@@ -50,6 +49,7 @@ module.exports = function (grunt) {
                 dest: "brackets-git.zip",
                 src: [
                     "nls/**",
+                    "node_modules/**",
                     "shell/**",
                     "src/**",
                     "styles/**",
