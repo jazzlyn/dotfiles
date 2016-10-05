@@ -154,10 +154,8 @@ bindsym $mod+r mode "resize"
 
 # custom config
 
-# floating mode for windows
-for_window [title="Hangouts"] floating enable
-for_window [title="Nils Biesalski"] floating enable
-#hide_edge_borders both
+# move workspace to the next output
+bindsym $mod+m move workspace to output right
 
 # autostart applications on i3 startup
 # exec <command>

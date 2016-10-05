@@ -1,5 +1,5 @@
 {
-    "fonts.fontSize": "14px",
+    "fonts.fontSize": "13px",
     "fonts.fontFamily": "Monospace",
     "themes.theme": "quick-dark",
     "closeBrackets": true,
@@ -246,5 +246,9 @@
             "scope": "javascript",
             "mTime": 1468743795081
         }
-    ]
+    ],
+    "language.fileExtensions": {
+        "jinja2": "jinja2"
+    },
+    "linting.collapsed": true
 }

@@ -3,7 +3,8 @@ define(function (require) {
     // Brackets modules
     var _ = brackets.getModule("thirdparty/lodash"),
         DocumentManager = brackets.getModule("document/DocumentManager"),
-        FileUtils = brackets.getModule("file/FileUtils");
+        FileUtils = brackets.getModule("file/FileUtils"),
+        Mustache = brackets.getModule("thirdparty/mustache/mustache");
 
     // Local modules
     var moment = require("moment"),
@@ -124,6 +125,10 @@ define(function (require) {
                 $historyList = $tableContainer.find("#git-history-list")
                     .data("file", file ? file.absolute : null)
                     .data("file-relative", file ? file.relative : null);
+
+                $historyList
+                    .find("tr.history-commit:last-child")
+                    .attr("x-initial-commit", "true");
             });
         }).catch(function (err) {
             ErrorHandler.showError(err, "Failed to get history");
