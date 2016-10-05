@@ -57,7 +57,7 @@ elif [[ $thisUser != $root ]] && [[ $thisHost = $purple ]]; then
     PS1=$COLOR_PURPLE'\u'$COLOR_WHITE'@'$COLOR_PURPLE_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 
 elif [[ $thisUser != $root ]] && [[ $thisHost = $white ]]; then
-    PS1=$COLOR_WHITE'\u'$COLOR_BLUE'@'$COLOR_WHITE_BOLD'\h'$COLOR_BLUE': '$COLOR_CYAN'\W '$COLOR_BLUE'\$ '
+    PS1=$COLOR_WHITE'\u'$COLOR_BLUE'@'$COLOR_WHITE_BOLD'\h'$COLOR_BLUE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 
 elif [[ $thisUser != $root ]] && [[ $thisHost = $blue ]]; then
     PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
