@@ -91,6 +91,13 @@ autocmd BufReadPost *
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
+" Indent Lines
+"""""""""""""""""""""""""""
+let g:indentLine_color_term = 13
+let g:indentLine_char = '┆'
+
+"""""""""""""""""""""""""""
+
 """""""""""""""""""""""""""
 " Emmet
 """""""""""""""""""""""""""
@@ -108,12 +115,19 @@ highlight SyntasticWarningSign guifg=yellow
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = 'EE'
-let g:syntastic_warning_symbol = 'WW'
-" let g:syntastic_js_checkers = ["jshint"]
+let g:syntastic_error_symbol = '>>'
+let g:syntastic_warning_symbol = '>>'
+let g:syntastic_html_checkers = ['tidy']
+" let g:syntastic_jinja2_checkers = ['']
+let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_scss_checkers = ['sass-lint']
+let g:syntastic_sass_checkers = ['sass-lint']
+let g:syntastic_js_checkers = ['jshint']
+let g:syntastic_json_checkers = ['jsonlint']
+" let g:syntastic_py_checkers = ['']
 
 """""""""""""""""""""""""""
 " NERDTree
@@ -142,7 +156,10 @@ let g:nerdtree_tabs_smart_startup_focus=1
 let g:NERDTreeFileExtensionHighlightFullName = 1 " highlight full filename
 let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid errors, '' in array sets color to none
 let g:NERDTreeExtensionHighlightColor['html'] = '00FFFF'
+let g:NERDTreeExtensionHighlightColor['jinja2'] = '00FFFF'
 let g:NERDTreeExtensionHighlightColor['css'] = 'FFFF00'
+let g:NERDTreeExtensionHighlightColor['scss'] = 'FFFF00'
 let g:NERDTreeExtensionHighlightColor['js'] = 'FF00FF'
+let g:NERDTreeExtensionHighlightColor['jar'] = 'FF00FF'
 let g:NERDTreeExtensionHighlightColor['py'] = 'FF0000'
 let g:NERDTreeExtensionHighlightColor['json'] = '80800'

@@ -33,6 +33,9 @@ alias la='ls -lah --color'
 alias vim='nvim'
 alias serve='python -m http.server'
 alias tmux='tmux -2'
+alias hdmi='xrandr --fb 1920x1080 --output eDP-1 --mode 1366x768 --scale 1x1 --output HDMI-1 --mode 1920x1080 --scale-from 1366x768 --same-as eDP-1'
+alias hdmiOff='xrandr --output HDMI-1 --off'
+
 
 #
 # colorizing the prompt #################
