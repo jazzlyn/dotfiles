@@ -30,15 +30,30 @@ export LS_COLORS
 alias cd..='cd ..'
 alias ls='ls -lh --color'
 alias la='ls -lah --color'
-alias vim='nvim'
-alias serve='python -m http.server'
-alias tmux='tmux -2'
 alias hdmi='xrandr --fb 1920x1080 --output eDP-1 --mode 1366x768 --scale 1x1 --output HDMI-1 --mode 1920x1080 --scale-from 1366x768 --same-as eDP-1'
 alias hdmiOff='xrandr --output HDMI-1 --off'
 
+# check if programs exists
+if command -v python > /dev/null 2>&1; then
+    alias serve='python -m http.server'
+fi
+if command -v tmux > /dev/null 2>&1; then
+    alias tmux='tmux -2'
+fi
 
 #
-# colorizing the prompt #################
+# check and set default editor
+#
+if command -v nvim > /dev/null 2>&1; then
+    export VISUAL='mvim'
+    alias vim='nvim'
+else
+    export VISUAL='vim'
+fi
+export EDITOR=$VISUAL
+
+#
+# colorizing the prompt
 #
 # get user
 thisUser=$(id -un)
@@ -49,6 +64,7 @@ thisHost=$(hostname)
 purple=purple
 white=white
 blue=blue
+
 # default
 #PS1='[\u@\h \W]\$ '
 
@@ -65,13 +81,10 @@ elif [[ $thisUser != $root ]] && [[ $thisHost = $white ]]; then
 elif [[ $thisUser != $root ]] && [[ $thisHost = $blue ]]; then
     PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 
+else
+    #PS1=$COLOR_GREEN'\u'$COLOR_GREEN_BOLD'@'$COLOR_GREEN'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
+    PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 fi
-
-#
-# set vim as default editor
-#
-export VISUAL=nvim
-export EDITOR=$VISUAL
 
 #
 # colorizing the bash
@@ -105,7 +118,7 @@ export PATH=$PATH":$HOME/.local/bin"
   # This next line updates your shell prompt to include the name of
   # the current project.
   if [ -n "$VIRTUAL_ENV_NAME" ]; then
-      export PS1="\[[0;33m\](${VIRTUAL_ENV_NAME})\[[0m\]$PS1"
+      export PS1="\[?[0;33m\](${VIRTUAL_ENV_NAME})\[?[0m\]$PS1"
   elif [ -n "$VIRTUAL_ENV" ]; then
-      export PS1="\[[0;33m\](${VIRTUAL_ENV##*/})\[[0m\]$PS1"
+      export PS1="\[?[0;33m\](${VIRTUAL_ENV##*/})\[?[0m\]$PS1"
   fi
