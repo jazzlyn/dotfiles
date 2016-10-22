@@ -24,6 +24,7 @@ ln -rs Xresources ~/.Xresources
 mkdir -p ~/.local/bin
 ln -rs bin/pacman-autoremove ~/.local/bin/
 ln -rs bin/pacman-local ~/.local/bin
+ln -rs bin/pacman-clearcache ~/.local/bin
 
 #set gitignore global
 git config --global core.excludesfile ~/.dotfiles/gitignore
