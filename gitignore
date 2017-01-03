@@ -43,3 +43,4 @@ nvim/autoload
 nvim/plugged
 nvim/.init.vim-rplugin~
 certs/
+.idea/

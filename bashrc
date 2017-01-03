@@ -32,6 +32,7 @@ alias ls='ls -lh --color'
 alias la='ls -lah --color'
 alias hdmi='xrandr --fb 1920x1080 --output eDP-1 --mode 1366x768 --scale 1x1 --output HDMI-1 --mode 1920x1080 --scale-from 1366x768 --same-as eDP-1'
 alias hdmiOff='xrandr --output HDMI-1 --off'
+alias bluetooth='systemctl start bluetooth; bluetoothctl'
 
 # check if programs exists
 if command -v python > /dev/null 2>&1; then
@@ -45,7 +46,7 @@ fi
 # check and set default editor
 #
 if command -v nvim > /dev/null 2>&1; then
-    export VISUAL='mvim'
+    export VISUAL='nvim'
     alias vim='nvim'
 else
     export VISUAL='vim'
