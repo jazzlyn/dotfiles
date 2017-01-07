@@ -3,20 +3,29 @@
 #
 # bash color variables ######################
 # \[\e[COLORCODEm\]' scheme
-export COLOR_RED='\[\e[0;31;40m\]'
-export COLOR_RED_BOLD='\[\e[1;31;40m\]'
-export COLOR_GREEN='\[\e[0;32;40m\]'
-export COLOR_GREEN_BOLD='\[\e[1;30;40m\]'
-export COLOR_BROWN='\[\e[0;33;40m\]'
-export COLOR_BROWN_BOLD='\[\e[1;33;40m\]'
-export COLOR_BLUE='\[\e[0;34;40m\]'
-export COLOR_BLUE_BOLD='\[\e[1;34;40m\]'
-export COLOR_PURPLE='\[\e[0;35;40m\]'
-export COLOR_PURPLE_BOLD='\[\e[1;35;40m\]'
-export COLOR_CYAN='\[\e[0;36;40m\]'
-export COLOR_CYAN_BOLD='\[\e[1;36;40m\]'
-export COLOR_WHITE='\[\e[0;37;40m\]'
-export COLOR_WHITE_BOLD='\[\e[1;37;40m\]'
+
+export COLOR_RED_DARK='\[\e[0;40;31m\]'
+export COLOR_GREEN_DARK='\[\e[0;40;32m\]'
+export COLOR_BROWN_DARK='\[\e[0;40;33m\]'
+export COLOR_BLUE_DARK='\[\e[0;40;34m\]'
+export COLOR_GREY='\[\e[0;40;39m\]'
+
+export COLOR_GREEN='\[\e[0;40;90m\]'
+export COLOR_GREEN_BOLD='\[\e[1;40;90m\]'
+export COLOR_RED='\[\e[0;40;91m\]'
+export COLOR_RED_BOLD='\[\e[1;40;91m\]'
+export COLOR_OLIVE='\[\e[0;40;92m\]'
+export COLOR_OLIVE_BOLD='\[\e[1;40;92m\]'
+export COLOR_YELLOW='\[\e[0;40;93m\]'
+export COLOR_YELLOW_BOLD='\[\e[1;40;93m\]'
+export COLOR_BLUE='\[\e[0;40;94m\]'
+export COLOR_BLUE_BOLD='\[\e[1;40;94m\]'
+export COLOR_PURPLE='\[\e[0;40;95m\]'
+export COLOR_PURPLE_BOLD='\[\e[1;40;95m\]'
+export COLOR_CYAN='\[\e[0;40;96m\]'
+export COLOR_CYAN_BOLD='\[\e[1;40;96m\]'
+export COLOR_WHITE='\[\e[0;40;97m\]'
+export COLOR_WHITE_BOLD='\[\e[1;40;97m\]'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -83,7 +92,6 @@ elif [[ $thisUser != $root ]] && [[ $thisHost = $blue ]]; then
     PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 
 else
-    #PS1=$COLOR_GREEN'\u'$COLOR_GREEN_BOLD'@'$COLOR_GREEN'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
     PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 fi
 
