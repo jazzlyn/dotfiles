@@ -15,7 +15,7 @@ Plug 'scrooloose/syntastic' 					    " linting all programming languages, if ava
 Plug 'Shutnik/jshint2.vim' 					        " javascript jshint for syntastic
 Plug 'jelera/vim-javascript-syntax' 			    " better syntax highlighting
 Plug '1995eaton/vim-better-javascript-completion' 	" replaces default vim syntax completion with newer version
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote')}	" autocomplete for nvim
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}	" autocomplete for nvim 
 Plug 'jiangmiao/auto-pairs' 					    " auto-close brackets
 Plug 'othree/jspc.vim'                              " function param completer
 Plug 'mattn/emmet-vim'                              " emmet html/css plugin

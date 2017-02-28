@@ -184,6 +184,7 @@ mouse_warping none
 
 bar {
     status_command py3status
+    #status_command i3status
     tray_output primary
     font pango:DejaVu Sans Mono 10
     

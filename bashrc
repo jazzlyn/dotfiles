@@ -32,6 +32,7 @@ export COLOR_WHITE_BOLD='\[\e[1;40;97m\]'
 
 # configuring and colorizing ls
 alias ls='ls --color'
+# specific dir and file colors
 LS_COLORS='di=01;34:fi=00;:ln=00;93:or=00;41:mi=00;41:ex=01;31:*.png=00;37:*.jpg=00;37:*.zip=00;32:*.tar.gz=00;32:*.tar=00;32:*.rar=00;32:*.jar=00;33'
 export LS_COLORS
 
@@ -43,7 +44,7 @@ alias hdmi='xrandr --fb 1920x1080 --output eDP-1 --mode 1366x768 --scale 1x1 --o
 alias hdmiOff='xrandr --output HDMI-1 --off'
 alias bluetooth='systemctl start bluetooth; bluetoothctl'
 
-# check if programs exists
+# check if program exists
 if command -v python > /dev/null 2>&1; then
     alias serve='python -m http.server'
 fi
@@ -127,7 +128,7 @@ export PATH=$PATH":$HOME/.local/bin"
   # This next line updates your shell prompt to include the name of
   # the current project.
   if [ -n "$VIRTUAL_ENV_NAME" ]; then
-      export PS1="\[?[0;33m\](${VIRTUAL_ENV_NAME})\[?[0m\]$PS1"
+      export PS1="${VIRTUAL_ENV_NAME} $PS1"
   elif [ -n "$VIRTUAL_ENV" ]; then
-      export PS1="\[?[0;33m\](${VIRTUAL_ENV##*/})\[?[0m\]$PS1"
+      export PS1="${VIRTUAL_ENV##*/} $PS1"
   fi
