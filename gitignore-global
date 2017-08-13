@@ -39,15 +39,4 @@ Thumbs.db
 
 # Directories #
 ###############
-nvim/autoload
-nvim/plugged
-nvim/.init.vim-rplugin~
-certs/
 .idea/
-
-# Files #
-#########
-
-ranger/bookmarks
-ranger/history
-ranger/tagged

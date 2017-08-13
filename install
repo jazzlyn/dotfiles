@@ -27,7 +27,7 @@ ln -rs Xresources ~/.Xresources
 #ln -rs bin/pacman-clearcache ~/.local/bin
 
 #set gitignore global
-#git config --global core.excludesfile ~/.dotfiles/gitignore
+ln -rs gitignore-global ~/.gitignore
 
 # install plug.vim and create dirs
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \

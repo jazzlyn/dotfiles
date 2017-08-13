@@ -1,0 +1,13 @@
+# Directories #
+###############
+
+nvim/autoload
+nvim/plugged
+nvim/.init.vim-rplugin~
+
+# Files #
+#########
+
+ranger/bookmarks
+ranger/history
+ranger/tagged
