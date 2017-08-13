@@ -4,32 +4,33 @@ mkdir -p ~/.config
 ln -rs i3 ~/.config/
 ln -rs i3status ~/.config/
 
-mkdir -p ~/.config/Brackets
-ln -rs brackets/brackets.json ~/.config/Brackets/
-ln -rs brackets/extensions ~/.config/Brackets/
 ln -rs termite ~/.config/
+
+ln -rs ranger ~/.config/
 
 ln -rs nvim ~/.config/
 ln -rs nvim ~/.vim
 ln -rs nvim/init.vim ~/.vimrc
 
-mkdir -p ~/.config/ranger
-ln -rs ranger/rc.conf ~/.config/ranger/
+
+rm ~/.bash_profile
+rm ~/.bashrc
 
 ln -rs bash_profile ~/.bash_profile
 ln -rs bashrc ~/.bashrc
 ln -rs xinitrc ~/.xinitrc
 ln -rs Xresources ~/.Xresources
 
-mkdir -p ~/.local/bin
-ln -rs bin/pacman-autoremove ~/.local/bin/
-ln -rs bin/pacman-local ~/.local/bin
-ln -rs bin/pacman-clearcache ~/.local/bin
+#mkdir -p ~/.local/bin
+#ln -rs bin/pacman-autoremove ~/.local/bin/
+#ln -rs bin/pacman-local ~/.local/bin
+#ln -rs bin/pacman-clearcache ~/.local/bin
 
 #set gitignore global
-git config --global core.excludesfile ~/.dotfiles/gitignore
-# install linter for brackets
-npm -g install tidy csslint sass-lint jshint jsonlint
+#git config --global core.excludesfile ~/.dotfiles/gitignore
+
 # install plug.vim and create dirs
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+yaourt -S py3status termite ttf-droid ttf-dejavu ttf-inconsolata
