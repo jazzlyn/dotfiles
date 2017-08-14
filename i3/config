@@ -137,7 +137,7 @@ bindsym $mod+m move workspace to output right
 # exec <command>
 
 # desktop wallpaper
-# exec -no-startup-id feh --bg-scale ~/.dotfiles/sample.jpg
+exec -no-startup-id feh --bg-scale ~/.dotfiles/wallpaper/archlinux.davinci.anime.png
 
 # default colors
 # class                     border      backgr.     text        indicator
