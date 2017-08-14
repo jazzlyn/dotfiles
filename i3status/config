@@ -27,12 +27,12 @@ order += "battery 0"
 order += "uname"
 
 disk "/" {
-    color = '#009688'
+    color = '#80CBC4'
     format = "%avail"
 }
 
 arch_updates {
-    color = '#FFC107'
+    color = '#FFE57F'
     format = "Updates: {pacman}"
 }
 
@@ -41,13 +41,13 @@ path_exists VPN {
 }
 
 ethernet _first_ {
-    format_up = "E: %ip (%speed)"
+    format_up = "%ip (%speed)"
     format_down = ""
 }
 
 wireless _first_ {
-    format_up = "W: (%quality@%essid) %ip"
-    format_down = "W: down"
+    format_up = "%ip (%quality %essid)"
+    format_down = ""
 }
 
 load {
@@ -55,7 +55,7 @@ load {
 }
 
 tztime local {
-    color = '#E91E63'
+    color = '#FF80AB'
     format = "%d.%m.%Y %H:%M:%S"
 }
 
@@ -68,7 +68,7 @@ sysdata {
 
 battery 0 {
     # %remaining for time left
-    color = '#9C27B0'
+    color = '#EA80FC'
     format = "%status %percentage"
 }
 
