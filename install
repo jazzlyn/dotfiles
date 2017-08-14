@@ -33,4 +33,4 @@ ln -rs gitignore-global ~/.gitignore
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-yaourt -S py3status termite ttf-droid ttf-dejavu ttf-inconsolata
+yaourt -S py3status termite ttf-droid
