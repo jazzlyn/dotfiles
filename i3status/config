@@ -60,8 +60,7 @@ tztime local {
 }
 
 sysdata {
-    color = '#9E9E9E'
-    format = "RAM: {mem_used_percent}% | CPU Usage: {cpu_usage} | CPU Temp: {cpu_temp}"
+    format = "[?color=mem] RAM: {mem_used_percent}% \|\ [?color=cpu] CPU Usage: {cpu_usage}% \|\ [?color=temp] CPU Temp: {cpu_temp}{temp_unit}"
     high_threshold = 85
     med_threshold = 50
 }
