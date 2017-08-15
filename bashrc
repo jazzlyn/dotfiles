@@ -44,6 +44,11 @@ alias hdmi='xrandr --fb 1920x1080 --output eDP-1 --mode 1366x768 --scale 1x1 --o
 alias hdmiOff='xrandr --output HDMI-1 --off'
 alias bluetooth='systemctl start bluetooth; bluetoothctl'
 
+# pacman alias
+alias pacman-local='sudo pacman -Qm'
+alias pacman-autoremove='sudo pacman -R $(pacman -Qdtq)'
+alias pacman-clearcache='sudo pacman -Scc'
+
 # check if program exists
 if command -v python > /dev/null 2>&1; then
     alias serve='python -m http.server'
@@ -107,28 +112,3 @@ alias grep='grep --color=always'
 # custom bins
 #
 export PATH=$PATH":$HOME/.local/bin"
-
-# The next block was inserted by the `cli' module of
-# The SCORE Framework (http://score-framework.org)
-
-  # The following line makes sure that you can access the `score'
-  # application in your shell:
-  case "$PATH" in
-    */home/***REMOVED***/.local/bin*)
-      true
-      ;;
-    *)
-      PATH=/home/***REMOVED***/.local/bin:$PATH
-      ;;
-  esac
-
-# The next block was inserted by the `projects' module of
-# The SCORE Framework (http://score-framework.org)
-
-  # This next line updates your shell prompt to include the name of
-  # the current project.
-  if [ -n "$VIRTUAL_ENV_NAME" ]; then
-      export PS1="${VIRTUAL_ENV_NAME} $PS1"
-  elif [ -n "$VIRTUAL_ENV" ]; then
-      export PS1="${VIRTUAL_ENV##*/} $PS1"
-  fi
