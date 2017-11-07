@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir -p ~/.config
+ln -rs pacman ~/.config/
+
 ln -rs i3 ~/.config/
 ln -rs i3status ~/.config/
 
@@ -8,10 +10,11 @@ ln -rs termite ~/.config/
 
 ln -rs ranger ~/.config/
 
+ln -rs chrome-flags.conf ~/.config/
+
 ln -rs nvim ~/.config/
 ln -rs nvim ~/.vim
 ln -rs nvim/init.vim ~/.vimrc
-
 
 rm ~/.bash_profile
 rm ~/.bashrc
@@ -20,11 +23,6 @@ ln -rs bash_profile ~/.bash_profile
 ln -rs bashrc ~/.bashrc
 ln -rs xinitrc ~/.xinitrc
 ln -rs Xresources ~/.Xresources
-
-#mkdir -p ~/.local/bin
-#ln -rs bin/pacman-autoremove ~/.local/bin/
-#ln -rs bin/pacman-local ~/.local/bin
-#ln -rs bin/pacman-clearcache ~/.local/bin
 
 #set gitignore global
 ln -rs gitignore-global ~/.gitignore
