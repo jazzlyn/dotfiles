@@ -131,13 +131,13 @@ bindsym $mod+r mode "resize"
 # custom config
 
 # move workspace to the next output
-bindsym $mod+m move workspace to output right
+bindsym $mod+m move workspace to output up
 
 # autostart applications on i3 startup
 # exec <command>
 
 # binds for applications running in i3
-bindsym $mod+BackSpace exec --no-startup-id "i3lock -f -i ~/.dotfiles/wallpaper/archlinux.davinci.anime.png"
+bindsym $mod+BackSpace exec --no-startup-id ~/.dotfiles/scripts/i3lock-wallpaper.sh
 
 # desktop wallpaper
 #exec -no-startup-id feh --bg-scale ~/.dotfiles/wallpaper/archlinux.davinci.anime.png
@@ -163,6 +163,7 @@ mouse_warping none
 
 bar {
     status_command py3status
+    #status_command i3blocks
     #status_command i3status
     tray_output primary
     

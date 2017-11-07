@@ -40,9 +40,10 @@ export LS_COLORS
 alias cd..='cd ..'
 alias ls='ls -lh --color'
 alias la='ls -lah --color'
-alias hdmi='xrandr --fb 1920x1080 --output eDP-1 --mode 1366x768 --scale 1x1 --output HDMI-1 --mode 1920x1080 --scale-from 1366x768 --same-as eDP-1'
+alias hdmiOn='xrandr --output eDP-1 --auto --output HDMI-1 --auto --above eDP-1'
+alias hdmiMirror='xrandr --fb 1920x1080 --output eDP-1 --mode 1440x900 --scale 1x1 --output HDMI-1 --mode 1920x1080 --scale-from 1440x900 --same-as eDP-1'
 alias hdmiOff='xrandr --output HDMI-1 --off'
-alias bluetooth='systemctl start bluetooth; bluetoothctl'
+alias vpn='sudo openvpn --config /etc/openvpn/vpn.conf'
 
 # pacman alias
 alias pacman-local='sudo pacman -Qm'

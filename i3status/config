@@ -60,9 +60,15 @@ tztime local {
 }
 
 sysdata {
-    format = "[?color=mem] RAM: {mem_used_percent}% \|\ [?color=cpu] CPU Usage: {cpu_usage}% \|\ [?color=temp] CPU Temp: {cpu_temp}{temp_unit}"
-    high_threshold = 85
-    med_threshold = 50
+    color = '#A1887F'
+    format = "RAM: [\?color=mem {mem_used_percent}%] \|\ CPU: [\?color=cpu {cpu_usage}%] at [\?color=temp {cpu_temp}{temp_unit}]"
+    thresholds = [
+        (0, "good"),
+        (50, "degraded"),
+        (85, "bad"),
+    ]
+    #high_threshold = 85
+    #med_threshold = 50
 }
 
 battery 0 {
