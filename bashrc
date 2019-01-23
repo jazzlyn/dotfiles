@@ -90,7 +90,7 @@ thisHost=$(hostname) # get host
 
 # set hosts to be compared, TODO: find smarter way
 root=root
-purple=purple
+purple=PURPLE
 white=white
 
 #PS1='[\u@\h \W]\$ ' default scheme

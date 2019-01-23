@@ -1,16 +1,14 @@
 #!/bin/bash
 
 mkdir -p ~/.config
-ln -rs pacman ~/.config/
+#ln -rs pacman ~/.config/
 
-ln -rs i3 ~/.config/
-ln -rs i3status ~/.config/
+#ln -rs i3 ~/.config/
+#ln -rs i3status ~/.config/
 
-ln -rs termite ~/.config/
+#ln -rs termite ~/.config/
 
 ln -rs ranger ~/.config/
-
-ln -rs chrome-flags.conf ~/.config/
 
 ln -rs nvim ~/.config/
 ln -rs nvim ~/.vim
@@ -31,4 +29,4 @@ ln -rs gitignore-global ~/.gitignore
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-yaourt -S py3status termite feh ttf-droid ttf-dejavu
+#yaourt -S py3status termite feh ttf-droid ttf-dejavu

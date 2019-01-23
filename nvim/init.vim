@@ -1,24 +1,13 @@
 filetype plugin indent on
 syntax on
 
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'scrooloose/nerdTree' 					        " left navigation tree
 Plug 'jistr/vim-nerdtree-tabs' 					    " nerdtree behaves like one true panel, and closes with last file
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 	    " nerdtree highlighting
 Plug 'Xuyuanp/nerdtree-git-plugin' 				    " git marks on nerdtree
-Plug 'scrooloose/syntastic' 					    " linting all programming languages, if available
-Plug 'Shutnik/jshint2.vim' 					        " javascript jshint for syntastic
-Plug 'jelera/vim-javascript-syntax' 			    " better syntax highlighting
-Plug '1995eaton/vim-better-javascript-completion' 	" replaces default vim syntax completion with newer version
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}	" autocomplete for nvim 
 Plug 'jiangmiao/auto-pairs' 					    " auto-close brackets
-Plug 'othree/jspc.vim'                              " function param completer
-Plug 'mattn/emmet-vim'                              " emmet html/css plugin
 Plug 'w0ng/vim-hybrid'                              " hybrid theme
 
 call plug#end()
@@ -36,9 +25,6 @@ call plug#end()
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
-
-" autocomplete plugin
-let g:deoplete#enable_at_startup = 1
 
 " hybrid theme config
 " let g:hybrid_custom_term_colors = 1 " uses colors from .Xresources
@@ -97,37 +83,6 @@ let g:indentLine_color_term = 13
 let g:indentLine_char = '┆'
 
 """""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""
-" Emmet
-"""""""""""""""""""""""""""
-"let g:user_emmet_expandabbr_key='<Tab>'
-"imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-"""""""""""""""""""""""""""
-" Syntastic
-"""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-highlight SyntasticErrorSign guifg=red
-highlight SyntasticWarningSign guifg=yellow
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = '>>'
-let g:syntastic_warning_symbol = '>>'
-let g:syntastic_html_checkers = ['tidy']
-" let g:syntastic_jinja2_checkers = ['']
-let g:syntastic_css_checkers = ['csslint']
-let g:syntastic_scss_checkers = ['sass-lint']
-let g:syntastic_sass_checkers = ['sass-lint']
-let g:syntastic_js_checkers = ['jshint']
-let g:syntastic_json_checkers = ['jsonlint']
-" let g:syntastic_py_checkers = ['']
 
 """""""""""""""""""""""""""
 " NERDTree
