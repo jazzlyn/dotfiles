@@ -1,12 +1,12 @@
 #!/bin/bash
 
 mkdir -p ~/.config
-#ln -rs pacman ~/.config/
+ln -rs pacman ~/.config/
 
-#ln -rs i3 ~/.config/
-#ln -rs i3status ~/.config/
+ln -rs i3 ~/.config/
+ln -rs i3blocks ~/.config/
 
-#ln -rs termite ~/.config/
+ln -rs termite ~/.config/
 
 ln -rs ranger ~/.config/
 
@@ -22,8 +22,13 @@ ln -rs bashrc ~/.bashrc
 ln -rs xinitrc ~/.xinitrc
 ln -rs Xresources ~/.Xresources
 
+# include custom fonts
+#mkdir -p ~/.local/share
+#ln -rs fonts ~/.local/share/
+#fc-cache -fv
+
 #set gitignore global
-ln -rs gitignore-global ~/.gitignore
+#ln -rs gitignore-global ~/.gitignore
 
 # install plug.vim and create dirs
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \

@@ -55,14 +55,15 @@ alias ls='ls -lh --color'
 alias la='ls -lah --color'
 alias grep='grep --color=always'
 
-alias hdmiOn='xrandr --output eDP-1 --auto --output HDMI-1 --auto --above eDP-1'
-alias hdmiMirror='xrandr --fb 1920x1080 --output eDP-1 --mode 1440x900 --scale 1x1 --output HDMI-1 --mode 1920x1080 --scale-from 1440x900 --same-as eDP-1'
-alias hdmiOff='xrandr --output HDMI-1 --off'
+alias hdmiOn='xrandr --output eDP-1 --auto --output DP-1 --auto --above eDP-1'
+alias hdmiMirror='xrandr --fb 1920x1080 --output eDP-1 --mode 1920x1080 --scale 1x1 --output DP-1 --mode 1920x1080 --scale-from 1920x1080 --same-as eDP-1'
+alias hdmiOff='xrandr --output DP-1 --off'
 alias vpn='sudo openvpn --config /etc/openvpn/vpn.conf'
 
-alias pacman-local='sudo pacman -Qm'
+alias pacman-local='comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)'
+alias pacman-aur='pacman -Qm'
 alias pacman-autoremove='sudo pacman -R $(pacman -Qdtq)'
-alias pacman-clearcache='sudo pacman -Scc'
+alias pacman-clearcache='pacman -Scc'
 
 if command -v python > /dev/null 2>&1; then
     alias serve='python -m http.server'
@@ -91,7 +92,7 @@ thisHost=$(hostname) # get host
 # set hosts to be compared, TODO: find smarter way
 root=root
 purple=PURPLE
-white=white
+carbon=CARBON
 
 #PS1='[\u@\h \W]\$ ' default scheme
 
@@ -101,8 +102,8 @@ if [[ $thisUser == $root ]]; then
 elif [[ $thisUser != $root ]] && [[ $thisHost = $purple ]]; then
     PS1=$COLOR_PURPLE'\u'$COLOR_WHITE'@'$COLOR_PURPLE_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 
-elif [[ $thisUser != $root ]] && [[ $thisHost = $white ]]; then
-    PS1=$COLOR_WHITE'\u'$COLOR_BLUE'@'$COLOR_WHITE_BOLD'\h'$COLOR_BLUE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
+elif [[ $thisUser != $root ]] && [[ $thisHost = $carbon ]]; then
+    PS1=$COLOR_PURPLE'\u'$COLOR_WHITE'@'$COLOR_PURPLE_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 
 else
     PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '

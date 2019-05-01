@@ -3,10 +3,6 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'scrooloose/nerdTree' 					        " left navigation tree
-Plug 'jistr/vim-nerdtree-tabs' 					    " nerdtree behaves like one true panel, and closes with last file
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 	    " nerdtree highlighting
-Plug 'Xuyuanp/nerdtree-git-plugin' 				    " git marks on nerdtree
 Plug 'jiangmiao/auto-pairs' 					    " auto-close brackets
 Plug 'w0ng/vim-hybrid'                              " hybrid theme
 
@@ -83,38 +79,3 @@ let g:indentLine_color_term = 13
 let g:indentLine_char = '┆'
 
 """""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""
-" NERDTree
-"""""""""""""""""""""""""""
-" map key to F5
-map <F5> :NERDTreeToggle<CR>
-
-" NERDTree GitStatus Symbols
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
-
-" NERDTree Tabs
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_smart_startup_focus=1
-
-" NERDTree Highlighting
-let g:NERDTreeFileExtensionHighlightFullName = 1 " highlight full filename
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid errors, '' in array sets color to none
-let g:NERDTreeExtensionHighlightColor['html'] = '00FFFF'
-let g:NERDTreeExtensionHighlightColor['jinja2'] = '00FFFF'
-let g:NERDTreeExtensionHighlightColor['css'] = 'FFFF00'
-let g:NERDTreeExtensionHighlightColor['scss'] = 'FFFF00'
-let g:NERDTreeExtensionHighlightColor['js'] = 'FF00FF'
-let g:NERDTreeExtensionHighlightColor['jar'] = 'FF00FF'
-let g:NERDTreeExtensionHighlightColor['py'] = 'FF0000'
-let g:NERDTreeExtensionHighlightColor['json'] = '80800'
