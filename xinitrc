@@ -26,7 +26,7 @@ fi
 setxkbmap de
 xmodmap .Xmodmap
 
-xrandr --output eDP-1 --auto --output DP-1 --auto --above eDP-1
+#~/.dotfiles/scripts/hdmi-detect.sh
 
 exec i3
 

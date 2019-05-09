@@ -33,6 +33,12 @@ label=
 color=#00FF00
 interval=10
 
+#[iface]
+#instance=enp56s0u2u4
+#color=#00FF00
+#interval=10
+#separator=false
+
 [iface]
 instance=wlp1s0
 color=#00FF00
