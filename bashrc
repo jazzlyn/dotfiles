@@ -57,6 +57,7 @@ alias grep='grep --color=always'
 
 #alias hdmiMirror='xrandr --fb 1920x1080 --output eDP-1 --mode 1920x1080 --scale 1x1 --output DP-1 --mode 1920x1080 --scale-from 1920x1080 --same-as eDP-1'
 alias hdmiMirror='xrandr --output DP-1 --auto --same-as eDP-1'
+alias hdmiUp='xrandr --output eDP-1 --auto --output -DP-1 --auto --above eDP-1'
 alias vpn='sudo openvpn --config /etc/openvpn/vpn.conf'
 
 alias pacman-local='comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)'
@@ -90,8 +91,8 @@ thisHost=$(hostname) # get host
 
 # set hosts to be compared, TODO: find smarter way
 root=root
-purple=PURPLE
-carbon=CARBON
+purple=purple
+carbon=carbon
 
 #PS1='[\u@\h \W]\$ ' default scheme
 

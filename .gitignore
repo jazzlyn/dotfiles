@@ -4,6 +4,7 @@
 nvim/autoload
 nvim/plugged
 nvim/.init.vim-rplugin~
+nvim/.netrwhist
 
 # Files #
 #########

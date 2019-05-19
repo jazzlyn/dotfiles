@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# SYMLINKS
 mkdir -p ~/.config
 ln -rs pacman ~/.config/
 
@@ -29,13 +30,18 @@ ln -rs Xresources ~/.Xresources
 #ln -rs fonts ~/.local/share/
 #fc-cache -fv
 
-#set gitignore global
-#ln -rs gitignore-global ~/.gitignore
+# GIT
+# set gitignore global
+ln -rs gitignore-global ~/.gitignore
+# set username und email
+git config --global user.email "***REMOVED******REMOVED***"
+git config --global user.name "***REMOVED***"
 
+# INSTALLATION
 # install plug.vim and create dirs
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-
-sudo pacman -S alsa-utils autorandr i3 mplayer nextcloud-client otf-font-awesome ranger sysstat termite ttf-dejavu ttf-droid xorg-xserver xorg-xbacklight xorg-xinit xorg-xrandr
+# install more initial needed packages
+sudo pacman -S acpi acpid alsa-utils autorandr i3 mplayer nextcloud-client otf-font-awesome ranger sysstat termite ttf-dejavu ttf-droid wireless_tools xorg-server xorg-xinit xorg-xrandr
 yay -S google-chrome dmenu2 #feh
