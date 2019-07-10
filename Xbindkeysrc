@@ -1,0 +1,37 @@
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Increase volume
+"amixer set Master 5%+"
+   m:0x0 + c:69
+   0xffc0, F3
+
+# Decrease volume
+"amixer set Master 5%-"
+   m:0x0 + c:68
+   0xffbf, F2
+
+# Mute volume
+"amixer set Master toggle"
+   m:0x0 + c:67
+   0xffbe, F1

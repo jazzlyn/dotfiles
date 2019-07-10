@@ -22,7 +22,8 @@ rm ~/.bashrc
 
 ln -rs bash_profile ~/.bash_profile
 ln -rs bashrc ~/.bashrc
-ln -rs xinitrc ~/.xinitrc
+ln -rs Xbindkeysrc ~/.Xbindkeysrc
+ln -rs Xinitrc ~/.Xinitrc
 ln -rs Xresources ~/.Xresources
 
 # include custom fonts
