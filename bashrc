@@ -55,7 +55,6 @@ alias ls='ls -lh --color'
 alias la='ls -lah --color'
 alias grep='grep --color=always'
 
-#alias hdmiMirror='xrandr --fb 1920x1080 --output eDP-1 --mode 1920x1080 --scale 1x1 --output DP-1 --mode 1920x1080 --scale-from 1920x1080 --same-as eDP-1'
 alias hdmiMirror='xrandr --output DP-1 --auto --same-as eDP-1'
 alias hdmiUp='xrandr --output eDP-1 --auto --output -DP-1 --auto --above eDP-1'
 alias vpn='sudo openvpn --config /etc/openvpn/vpn.conf'
@@ -71,6 +70,9 @@ fi
 if command -v tmux > /dev/null 2>&1; then
     alias tmux='tmux -2'
 fi
+
+# LIBVIRT
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 # VIM/NVIM as default editor
 

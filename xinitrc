@@ -27,6 +27,6 @@ setxkbmap de
 xmodmap .Xmodmap
 
 #~/.dotfiles/scripts/hdmi-detect.sh
-
+xbindkeys
 exec i3
 

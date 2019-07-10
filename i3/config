@@ -137,10 +137,10 @@ bindsym $mod+m move workspace to output up
 # exec <command>
 
 # binds for applications running in i3
-#bindsym $mod+BackSpace exec --no-startup-id ~/.dotfiles/scripts/i3lock-wallpaper.sh
+bindsym $mod+BackSpace exec --no-startup-id i3lock -f -c 000000 -i ~/.dotfiles/wallpaper/archlinux.davinci.anime-1920.png
 
 # desktop wallpaper
-#exec -no-startup-id feh --bg-scale ~/.dotfiles/wallpaper/archlinux.davinci.anime.png
+#iexec -no-startup-id feh --bg-scale ~/.dotfiles/wallpaper/archlinux.davinci.anime.png
 
 # default colors
 # class                     border      backgr.     text        indicator
