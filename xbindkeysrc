@@ -22,16 +22,22 @@
 #keystate_scrolllock= enable
 
 # Increase volume
-"amixer set Master 5%+"
+#"amixer set Master 5%+"
+"pactl set-sink-volume 0 +5%"
    m:0x0 + c:69
    0xffc0, F3
 
 # Decrease volume
-"amixer set Master 5%-"
+#"amixer set Master 5%-"
+"pactl set-sink-volume 0 -5%"
    m:0x0 + c:68
    0xffbf, F2
 
 # Mute volume
-"amixer set Master toggle"
+#"amixer set Master toggle"
+"pactl set-sink-mute 0 toggle"
    m:0x0 + c:67
    0xffbe, F1
+
+# Mute microphone
+#"pactl set-source-mute 1 toggle"
