@@ -33,11 +33,11 @@ label=
 color=#00FF00
 interval=10
 
-#[iface]
-#instance=enp56s0u2u4
-#color=#00FF00
-#interval=10
-#separator=false
+[iface]
+instance=enp0s20f0u1u3
+color=#00FF00
+interval=10
+separator=false
 
 [iface]
 instance=wlp1s0
@@ -53,7 +53,6 @@ separator=false
 [essid]
 command=/sbin/iwconfig wlp1s0 | perl -n -e'/ESSID:"(.*?)"/ && print $1'
 interval=60
-
 
 [battery]
 #default instance 0
