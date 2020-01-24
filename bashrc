@@ -56,8 +56,10 @@ alias la='ls -lah --color'
 alias grep='grep --color=always'
 
 alias hdmiMirror='xrandr --output DP-1 --auto --same-as eDP-1'
-alias hdmiUp='xrandr --output eDP-1 --auto --output -DP-1 --auto --above eDP-1'
-alias vpn='sudo openvpn --config /etc/openvpn/vpn.conf'
+alias hdmiUp='xrandr --output eDP-1 --auto --output DP-1 --auto --above eDP-1'
+alias hdmiRight='xrandr --output eDP-1 --auto --output DP-1 --auto --right-of eDP-1'
+alias hdmiLeft='xrandr --output eDP-1 --auto --output DP-1 --auto --left-of eDP-1'
+alias hdmi4k='xrandr --output eDP-1 --auto --output DP-1 --mode 1920x1080i --left-of eDP-1'
 
 alias pacman-local='comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)'
 alias pacman-aur='pacman -Qm'

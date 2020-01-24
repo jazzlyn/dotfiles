@@ -23,9 +23,15 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+#xset -dpms
+xset s off
+
 setxkbmap de
 xmodmap .Xmodmap
 
 xbindkeys
+
+$HOME/.dotfiles/scripts/graphics
+
 exec i3
 

@@ -132,6 +132,7 @@ bindsym $mod+r mode "resize"
 
 # move workspace to the next output
 bindsym $mod+m move workspace to output up
+bindsym $mod+n move workspace to output right
 
 # autostart applications on i3 startup
 # exec <command>
@@ -139,8 +140,9 @@ bindsym $mod+m move workspace to output up
 # binds for applications running in i3
 bindsym $mod+BackSpace exec --no-startup-id i3lock -f -c 000000 -i ~/.dotfiles/wallpaper/archlinux.davinci.anime-1920.png
 
-# desktop wallpaper
+# autostart
 #iexec -no-startup-id feh --bg-scale ~/.dotfiles/wallpaper/archlinux.davinci.anime.png
+exec --no-startup-id nm-applet
 
 # default colors
 # class                     border      backgr.     text        indicator
@@ -164,6 +166,7 @@ mouse_warping none
 bar {
     #status_command i3status
     status_command i3blocks
+    #status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.dotfiles/i3blocks/config | tee /tmp/i3blocks.out
     tray_output primary
 
     colors {

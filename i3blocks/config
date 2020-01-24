@@ -6,66 +6,87 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=14
 markup=none
 
-[openvpn]
-interval=20
+[nm-vpn]
+command=~/.dotfiles/i3blocks/blocklets/nm-vpn
+label=VPN: 
+interval=5
 
 [memory]
-label=Mem
-color=#A1887F
+command=/usr/lib/i3blocks/memory/memory
+label=Memory 
+color=#00FF00
 interval=30
 
 [cpu_usage]
 # needs sysstat
-command=~/.dotfiles/i3blocks/blocklets/cpu_usage
-label=CPU
+command=/usr/lib/i3blocks/cpu_usage/cpu_usage
+label=CPU 
+color=#00FF00
+T_WARN=50
+T_CRIT=80
 interval=10
 separator=false
-#min_width=CPU: 100.00%
 
 [temperature]
-command=~/.dotfiles/i3blocks/blocklets/temperature
-label=
+command=/usr/lib/i3blocks/temperature/temperature
+label= 
+color=#00FF00
+T_WARN=70
+T_CRIT=90
 interval=10
 separator=false
 
 [load_average]
-label=
+command=/usr/lib/i3blocks/load_average/load_average
+label= 
 color=#00FF00
 interval=10
 
 [iface]
-instance=enp0s20f0u1u3
+command=/usr/lib/i3blocks/iface/iface
+label= 
+instance=ens12u1u4
 color=#00FF00
 interval=10
-separator=false
+separator=true
 
 [iface]
+command=/usr/lib/i3blocks/iface/iface
+label= 
+instance=enp0s20f0u1u4
+color=#00FF00
+interval=10
+separator=true
+
+[iface]
+command=/usr/lib/i3blocks/iface/iface
+label= 
 instance=wlp1s0
-color=#00FF00
+color=#00CCFF
 interval=10
 separator=false
 
 [wifi]
+command=/usr/lib/i3blocks/wifi/wifi
 instance=wlp1s0
 interval=10
 separator=false
 
 [essid]
-command=/sbin/iwconfig wlp1s0 | perl -n -e'/ESSID:"(.*?)"/ && print $1'
-interval=60
+command=~/.dotfiles/i3blocks/blocklets/essid
+interval=10
+color=#00CCFF
+separator=true
 
-[battery]
+[battery2]
+command=/usr/lib/i3blocks/battery2/battery2
 #default instance 0
-label=BAT
+markup=pango
 interval=30
+separator=true
 
 [time]
-command=date '+%d.%m.%Y %H:%M:%S'
+command=date +%d.%m.%Y\ %T
 interval=1
-color=#FF80AB
-
-#[mediaplayer]
-# needs playerctl
-#interval=5
-#signal=10
-
+color=#CC66CC
+separator=true

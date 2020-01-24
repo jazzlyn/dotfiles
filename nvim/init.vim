@@ -3,6 +3,11 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
+Plug 'SirVer/ultisnips'
+"Plug 'Shougo/neosnippet.vim'
 Plug 'jiangmiao/auto-pairs' 					    " auto-close brackets
 Plug 'w0ng/vim-hybrid'                              " hybrid theme
 
@@ -79,3 +84,10 @@ let g:indentLine_color_term = 13
 let g:indentLine_char = '┆'
 
 """""""""""""""""""""""""""
+
+" Ultisnips
+""""""""""""""""""""""""""
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/nvim/custom-snippets']
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
