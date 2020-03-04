@@ -84,7 +84,6 @@ fi
 if [ ${gpu_connected} = 1 ] ; then
 		ln -sf ${flags_egpu} ${flags}
         autorandr --load home
-        setxkbmap de
 	else
 	    ln -sf ${flags_internal} ${flags}
 fi

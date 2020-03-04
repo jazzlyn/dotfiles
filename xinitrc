@@ -26,7 +26,6 @@ fi
 #xset -dpms
 xset s off
 
-setxkbmap de
 xmodmap .Xmodmap
 
 xbindkeys
