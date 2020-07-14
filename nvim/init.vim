@@ -3,11 +3,6 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-
-Plug 'SirVer/ultisnips'
-"Plug 'Shougo/neosnippet.vim'
 Plug 'jiangmiao/auto-pairs' 					    " auto-close brackets
 Plug 'w0ng/vim-hybrid'                              " hybrid theme
 

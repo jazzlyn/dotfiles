@@ -55,23 +55,10 @@ alias ls='ls -lh --color'
 alias la='ls -lah --color'
 alias grep='grep --color=always'
 
-alias hdmiMirror='xrandr --output DP-1 --auto --same-as eDP-1'
-alias hdmiUp='xrandr --output eDP-1 --auto --output DP-1 --auto --above eDP-1'
-alias hdmiRight='xrandr --output eDP-1 --auto --output DP-1 --auto --right-of eDP-1'
-alias hdmiLeft='xrandr --output eDP-1 --auto --output DP-1 --auto --left-of eDP-1'
-alias hdmi4k='xrandr --output eDP-1 --auto --output DP-1 --mode 1920x1080i --left-of eDP-1'
-
 alias pacman-local='comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)'
 alias pacman-aur='pacman -Qm'
 alias pacman-autoremove='sudo pacman -R $(pacman -Qdtq)'
 alias pacman-clearcache='pacman -Scc'
-
-if command -v python > /dev/null 2>&1; then
-    alias serve='python -m http.server'
-fi
-if command -v tmux > /dev/null 2>&1; then
-    alias tmux='tmux -2'
-fi
 
 # LIBVIRT
 export LIBVIRT_DEFAULT_URI="qemu:///system"
@@ -90,25 +77,7 @@ export EDITOR=$VISUAL
 # PROMPT Colorizing
 ###
 
-thisUser=$(id -un) # get user
-thisHost=$(hostname) # get host
-
-# set hosts to be compared, TODO: find smarter way
-root=root
-purple=purple
-carbon=carbon
-
 #PS1='[\u@\h \W]\$ ' default scheme
 
-if [[ $thisUser == $root ]]; then
-    PS1=$COLOR_RED'\u'$COLOR_WHITE'@'$COLOR_RED_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ ' 
+PS1=$COLOR_PURPLE'\u'$COLOR_WHITE'@'$COLOR_PURPLE_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
 
-elif [[ $thisUser != $root ]] && [[ $thisHost = $purple ]]; then
-    PS1=$COLOR_PURPLE'\u'$COLOR_WHITE'@'$COLOR_PURPLE_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
-
-elif [[ $thisUser != $root ]] && [[ $thisHost = $carbon ]]; then
-    PS1=$COLOR_PURPLE'\u'$COLOR_WHITE'@'$COLOR_PURPLE_BOLD'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
-
-else
-    PS1=$COLOR_BLUE'\u'$COLOR_BLUE_BOLD'@'$COLOR_BLUE'\h'$COLOR_WHITE': '$COLOR_CYAN'\W '$COLOR_WHITE'\$ '
-fi

@@ -23,14 +23,11 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-#xset -dpms
 xset s off
 
-xmodmap .Xmodmap
-
-xbindkeys
-
 $HOME/.dotfiles/scripts/graphics
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 
 exec i3
 

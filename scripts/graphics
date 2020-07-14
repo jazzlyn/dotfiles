@@ -2,10 +2,7 @@
 declare xfile_egpu=/etc/X11/xorg.conf.egpu
 
 # constant variables for chrome config files
-declare flags=$HOME/.config/chrome-flags.conf
 declare configdir=$HOME/.dotfiles
-declare flags_egpu=$configdir/chrome/chrome-flags.egpu
-declare flags_internal=$configdir/chrome/chrome-flags.internal
 
 # initialize empty variables
 declare -A gpus=()
@@ -77,13 +74,10 @@ read_gpus
 is_egpu_connected
 
 
-if [ -L ${flags} ]; then
-    rm -f ${flags}
-fi
-
 if [ ${gpu_connected} = 1 ] ; then
-		ln -sf ${flags_egpu} ${flags}
+		echo '--force-device-scale-factor=1.5' > $HOME/.config/chrome-flags.conf
+		xrandr --dpi 144
         autorandr --load home
 	else
-	    ln -sf ${flags_internal} ${flags}
+		echo '--force-device-scale-factor=1' > $HOME/.config/chrome-flags.conf
 fi
