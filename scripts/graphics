@@ -75,9 +75,9 @@ is_egpu_connected
 
 
 if [ ${gpu_connected} = 1 ] ; then
-		echo '--force-device-scale-factor=1.5' > $HOME/.config/chrome-flags.conf
-		xrandr --dpi 144
-        autorandr --load home
+		#echo '--force-device-scale-factor=0.8' > $HOME/.config/chrome-flags.conf
+		#xrandr --dpi 100
+        #autorandr --load home
 	else
-		echo '--force-device-scale-factor=1' > $HOME/.config/chrome-flags.conf
+		#echo '--force-device-scale-factor=1' > $HOME/.config/chrome-flags.conf
 fi
