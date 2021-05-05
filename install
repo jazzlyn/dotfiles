@@ -44,4 +44,4 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install more initial needed packages
-yay -S acpi atool autorandr cups dmenu2 galculator git gnome-keyring google-chrome highlight hplip htop i3 i3blocks-contrib mediainfo mplayer neovim net-tools python-pynvim nfs-utils otf-font-awesome pavucontrol-qt pulseaudio pulseaudio-alsa ranger scrot sysstat termite ttf-dejavu ttf-droid ttf-roboto unrar unzip visual-studio-code-bin w3m wireless_tools xbindkeys xorg-server xorg-dpyinfo xorg-xinit xorg-xrandr #feh
+yay -S acpi atool autorandr bluez-bluez-utils cups dmenu2 galculator gimp git gnome-keyring google-chrome highlight hplip htop i3 i3blocks-contrib mediainfo neovim net-tools network-manager-applet networkmanager-openvpn nodejs python-pynvim otf-font-awesome pavucontrol-qt postman-bin pulseaudio pulseaudio-alsa pulseaudio-bluetooth ranger scrot sysstat termite terraform ttf-dejavu ttf-droid ttf-roboto unrar unzip visual-studio-code-bin w3m wireless_tools xbindkeys xorg-server xorg-xinit xorg-xrandr #feh
