@@ -40,3 +40,10 @@ Thumbs.db
 # Directories #
 ###############
 .idea/
+.vscode/
+
+
+# pre-commit
+.pre-commit-config.yaml
+.terraform-docs.yml
+.yamllint.config.yaml

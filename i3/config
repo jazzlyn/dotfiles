@@ -163,6 +163,9 @@ bar {
 # Custom config
 ###
 
+# autostart programs
+exec --no-startup-id discord
+
 # move workspace to the next output
 bindsym $mod+m move workspace to output up
 bindsym $mod+n move workspace to output right

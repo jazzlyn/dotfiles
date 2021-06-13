@@ -60,6 +60,8 @@ alias pacman-aur='pacman -Qm'
 alias pacman-autoremove='sudo pacman -R $(pacman -Qdtq)'
 alias pacman-clearcache='pacman -Scc'
 
+alias terraform-fmt='terraform fmt -recursive -write=true -diff=true'
+
 # LIBVIRT
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
@@ -72,6 +74,10 @@ else
     export VISUAL='vim'
 fi
 export EDITOR=$VISUAL
+
+# Google Cloud completion
+[[ -f /usr/bin/gcloud ]] && source /opt/google-cloud-sdk/completion.bash.inc
+[[ -f /usr/bin/gcloud ]] && source /opt/google-cloud-sdk/path.bash.inc
 
 #
 # PROMPT Colorizing

@@ -25,7 +25,7 @@ fi
 
 xset s off
 
-$HOME/.dotfiles/scripts/graphics
+#$HOME/.dotfiles/scripts/graphics
 
 # keyring config
 dbus-update-activation-environment --systemd DISPLAY

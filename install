@@ -11,7 +11,10 @@ ln -rs autorandr ~/.config/
 
 ln -rs termite ~/.config/
 
-ln -rs ranger ~/.config/
+ranger --copy-config=all
+rm ~/.config/ranger/rc.conf
+ln -rs ranger/rc.conf ~/.config/ranger/rc.conf
+ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
 
 ln -rs nvim ~/.config/
 ln -rs nvim ~/.vim
@@ -26,11 +29,6 @@ ln -rs xbindkeysrc ~/.xbindkeysrc
 ln -rs xinitrc ~/.xinitrc
 ln -rs Xresources ~/.Xresources
 
-# include custom fonts
-#mkdir -p ~/.local/share
-#ln -rs fonts ~/.local/share/
-#fc-cache -fv
-
 # GIT
 # set gitignore global
 ln -rs gitignore-global ~/.gitignore
@@ -44,4 +42,78 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install more initial needed packages
-yay -S acpi atool autorandr bluez-bluez-utils cups dmenu2 galculator gimp git gnome-keyring google-chrome highlight hplip htop i3 i3blocks-contrib mediainfo neovim net-tools network-manager-applet networkmanager-openvpn nodejs python-pynvim otf-font-awesome pavucontrol-qt postman-bin pulseaudio pulseaudio-alsa pulseaudio-bluetooth ranger scrot sysstat termite terraform ttf-dejavu ttf-droid ttf-roboto unrar unzip visual-studio-code-bin w3m wireless_tools xbindkeys xorg-server xorg-xinit xorg-xrandr #feh
+yay -Sy --needed \
+# system needed
+acpi \
+atool \
+autorandr \
+bash-completion \
+bluez \
+bluez-utils \
+cups \
+dmenu2 \
+efibootmgr \
+exiv2 \
+galculator \
+gimp \
+gnome-keyring \
+google-chrome \
+highlight \
+hplip \
+htop \
+i3blocks \
+i3blocks-contrib \
+mediainfo \
+neovim \
+net-tools \
+networkmanager \
+network-manager-applet \
+networkmanager-openvpn \
+nfs-utils \
+openssh \
+openvpn \
+pavucontrol-qt \
+perl-image-exiftool \
+pulseaudio-alsa \
+pulseaudio-bluetooth \
+python-pdftotext \
+ranger \
+scrot \
+sysstat \
+termite \
+tree \
+unrar \
+unzip \
+w3m \
+wget \
+wireless_tools \
+x11-ssh-askpass \
+xbindkeys \
+xorg-server \
+xorg-xinit \
+xorg-xrandr \
+# fonts
+otf-font-awesome \
+ttf-dejavu \
+ttf-droid \
+ttf-roboto \
+# devops
+colordiff \
+docker \
+docker-compose \
+git \
+helm \
+google-cloud-sdk \
+nodejs \
+npm \
+postman-bin \
+python-pre-commit \
+terraform \
+terraform-docs-bin \
+tflint-bin \
+tfsec-bin \
+visual-studio-code-bin \
+yamllint \
+# entertainment
+discord \
+mplayer
