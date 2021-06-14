@@ -7,7 +7,7 @@ separator_block_width=14
 markup=none
 
 [nm-vpn]
-command=~/.dotfiles/i3blocks/blocklets/nm-vpn
+command=/usr/lib/i3blocks/nm-vpn/nm-vpn
 label=VPN: 
 interval=5
 
@@ -66,21 +66,8 @@ color=#00CCFF
 interval=10
 separator=false
 
-[wifi]
-command=/usr/lib/i3blocks/wifi/wifi
-instance=wlp1s0
-interval=10
-separator=false
-
-[essid]
-command=~/.dotfiles/i3blocks/blocklets/essid
-interval=10
-color=#00CCFF
-separator=true
-
 [battery2]
 command=/usr/lib/i3blocks/battery2/battery2
-#default instance 0
 markup=pango
 interval=30
 separator=true
