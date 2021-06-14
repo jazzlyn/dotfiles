@@ -62,7 +62,7 @@ highlight \
 hplip \
 htop \
 i3blocks \
-i3blocks-contrib \
+i3blocks-contrib-git \
 mediainfo \
 neovim \
 net-tools \
