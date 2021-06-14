@@ -43,7 +43,6 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 
 # install more initial needed packages
 yay -Sy --needed \
-# system needed
 acpi \
 atool \
 autorandr \
@@ -61,6 +60,7 @@ google-chrome \
 highlight \
 hplip \
 htop \
+i3
 i3blocks \
 i3blocks-contrib \
 mediainfo \
@@ -92,12 +92,10 @@ xbindkeys \
 xorg-server \
 xorg-xinit \
 xorg-xrandr \
-# fonts
 otf-font-awesome \
 ttf-dejavu \
 ttf-droid \
 ttf-roboto \
-# devops
 colordiff \
 docker \
 docker-compose \
@@ -114,6 +112,5 @@ tflint-bin \
 tfsec-bin \
 visual-studio-code-bin \
 yamllint \
-# entertainment
 discord \
 mplayer
