@@ -61,10 +61,18 @@ separator=true
 [iface]
 command=/usr/lib/i3blocks/iface/iface
 label= 
+instance=enp4s0
+color=#00CCFF
+interval=10
+separator=true
+
+[iface]
+command=/usr/lib/i3blocks/iface/iface
+label= 
 instance=wlp1s0
 color=#00CCFF
 interval=10
-separator=false
+separator=true
 
 [battery2]
 command=/usr/lib/i3blocks/battery2/battery2
