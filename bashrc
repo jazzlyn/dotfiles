@@ -56,12 +56,21 @@ export EDITOR=$VISUAL
 # PROMPT Colorizing
 ###
 
-#PS1="[\u@\h \W]\$ " default scheme
+RED="\[\e[1;31m\]"
+GREEN="\[\e[1;32m\]"
+YELLOW="\[\e[1;33m\]"
+BLUE="\[\e[1;34m\]"
+PURPLE="\[\e[1;35m\]"
+CYAN="\[\e[1;36m\]"
+ORANGE="\[\e[38;5;208m\]"
+ENDCOLOR="\[\e[0m\]"
+
+#PS1="[\u@\h \W]\$ "
 
 if [ $HOSTNAME == purple ]; then # magenta
-    PS1="\e[95m\u\e[0m@\e[1;95m\h\e[0m \e[1;94m\W\e[0m \$ "
+    PS1="${PURPLE}\u${ENDCOLOR}@${PURPLE}\h${ENDCOLOR} ${BLUE}\W${ENDCOLOR} \$ "
 elif [ $HOSTNAME ==  carbon ]; then # orange
-    PS1="\e[38;5;208m\u\e[0m@\e[1;38;5;208m\h\e[0m \e[1;94m\W\e[0m \$ "
+    PS1="${ORANGE}\u${ENDCOLOR}@${ORANGE}\h${ENDCOLOR} ${BLUE}\W${ENDCOLOR} \$ "
 else
     PS1="\u@\e[1m\h\e[0m \W \$ "
 fi
