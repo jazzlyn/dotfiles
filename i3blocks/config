@@ -7,19 +7,19 @@ separator_block_width=14
 markup=none
 
 [nm-vpn]
-command=/usr/lib/i3blocks/nm-vpn/nm-vpn
+command=/usr/lib/i3blocks/nm-vpn
 label=VPN: 
 interval=5
 
 [memory]
-command=/usr/lib/i3blocks/memory/memory
+command=/usr/lib/i3blocks/memory
 label=Memory 
 color=#00FF00
 interval=30
 
 [cpu_usage]
 # needs sysstat
-command=/usr/lib/i3blocks/cpu_usage/cpu_usage
+command=/usr/lib/i3blocks/cpu_usage
 label=CPU 
 color=#00FF00
 T_WARN=50
@@ -28,7 +28,7 @@ interval=10
 separator=false
 
 [temperature]
-command=/usr/lib/i3blocks/temperature/temperature
+command=/usr/lib/i3blocks/temperature
 label= 
 color=#00FF00
 T_WARN=70
@@ -37,13 +37,13 @@ interval=10
 separator=false
 
 [load_average]
-command=/usr/lib/i3blocks/load_average/load_average
+command=/usr/lib/i3blocks/load_average
 label= 
 color=#00FF00
 interval=10
 
 [iface]
-command=/usr/lib/i3blocks/iface/iface
+command=/usr/lib/i3blocks/iface
 label= 
 instance=ens12u1u4
 color=#00FF00
@@ -51,7 +51,7 @@ interval=10
 separator=true
 
 [iface]
-command=/usr/lib/i3blocks/iface/iface
+command=/usr/lib/i3blocks/iface
 label= 
 instance=enp0s20f0u1u4
 color=#00FF00
@@ -59,7 +59,7 @@ interval=10
 separator=true
 
 [iface]
-command=/usr/lib/i3blocks/iface/iface
+command=/usr/lib/i3blocks/iface
 label= 
 instance=enp4s0
 color=#00CCFF
@@ -67,7 +67,7 @@ interval=10
 separator=true
 
 [iface]
-command=/usr/lib/i3blocks/iface/iface
+command=/usr/lib/i3blocks/iface
 label= 
 instance=wlp1s0
 color=#00CCFF
@@ -75,7 +75,7 @@ interval=10
 separator=true
 
 [battery2]
-command=/usr/lib/i3blocks/battery2/battery2
+command=/usr/lib/i3blocks/battery2
 markup=pango
 interval=30
 separator=true
