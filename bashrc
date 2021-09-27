@@ -48,6 +48,10 @@ else
 fi
 export EDITOR=$VISUAL
 
+# NPM
+export NPM_PACKAGES="${HOME}/.npm_packages"
+export NODE_PATH="${NPM_PACKAGES}/libs/node_modules:$NODE_PATH"
+
 # Google Cloud completion
 [[ -f /usr/bin/gcloud ]] && source /opt/google-cloud-sdk/completion.bash.inc
 [[ -f /usr/bin/gcloud ]] && source /opt/google-cloud-sdk/path.bash.inc

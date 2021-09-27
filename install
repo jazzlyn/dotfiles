@@ -25,6 +25,7 @@ rm ~/.bashrc
 
 ln -rs bash_profile ~/.bash_profile
 ln -rs bashrc ~/.bashrc
+ln -rs npmrc ~/.npmrc
 ln -rs xbindkeysrc ~/.xbindkeysrc
 ln -rs xinitrc ~/.xinitrc
 ln -rs Xresources ~/.Xresources
