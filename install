@@ -13,6 +13,7 @@ ln -rs termite ~/.config/
 
 ranger --copy-config=all
 rm ~/.config/ranger/rc.conf
+rm ~/.config/ranger/scope.sh
 ln -rs ranger/rc.conf ~/.config/ranger/rc.conf
 ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
 
