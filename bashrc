@@ -80,4 +80,4 @@ else
 fi
 
 source $HOME/.profile
-source $HOME/.nvm/nvm.sh
+source /usr/share/nvm/init-nvm.sh
