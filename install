@@ -9,13 +9,13 @@ ln -rs i3blocks ~/.config/
 
 ln -rs autorandr ~/.config/
 
-ln -rs termite ~/.config/
-
 ranger --copy-config=all
 rm ~/.config/ranger/rc.conf
 rm ~/.config/ranger/scope.sh
+rm ~/.config/ranger/commands.py
 ln -rs ranger/rc.conf ~/.config/ranger/rc.conf
 ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
+ln -rs ranger/commands.py ~/.config/ranger/commands.py
 
 ln -rs nvim ~/.config/
 ln -rs nvim ~/.vim
@@ -46,6 +46,7 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 # install more initial needed packages
 yay -Sy --needed \
 acpi \
+alacritty \
 atool \
 autorandr \
 bash-completion \
@@ -82,7 +83,6 @@ python-pdftotext \
 ranger \
 scrot \
 sysstat \
-termite \
 tree \
 unrar \
 unzip \
