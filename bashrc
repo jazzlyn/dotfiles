@@ -78,3 +78,5 @@ elif [ $HOSTNAME ==  carbon ]; then # orange
 else
     PS1="\u@\e[1m\h\e[0m \W \$ "
 fi
+
+source $HOME/.profile
