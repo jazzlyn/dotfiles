@@ -9,6 +9,8 @@ ln -rs i3blocks ~/.config/
 
 ln -rs autorandr ~/.config/
 
+ln -rs alacritty ~/.config/
+
 ranger --copy-config=all
 rm ~/.config/ranger/rc.conf
 rm ~/.config/ranger/scope.sh
