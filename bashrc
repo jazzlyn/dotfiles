@@ -80,3 +80,4 @@ else
 fi
 
 source $HOME/.profile
+source $HOME/.nvm/nvm.sh
