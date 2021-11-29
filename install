@@ -21,10 +21,8 @@ ln -rs nvim ~/.config/
 ln -rs nvim ~/.vim
 ln -rs nvim/init.vim ~/.vimrc
 
-rm ~/.bash_profile
 rm ~/.bashrc
 
-ln -rs bash_profile ~/.bash_profile
 ln -rs bashrc ~/.bashrc
 ln -rs npmrc ~/.npmrc
 ln -rs xbindkeysrc ~/.xbindkeysrc
@@ -44,7 +42,7 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install more initial needed packages
-yay -Sy --needed \
+yay -Syu --needed --noconfirm \
 acpi \
 alacritty \
 atool \
@@ -63,9 +61,12 @@ google-chrome \
 highlight \
 hplip \
 htop \
-i3
 i3blocks \
 i3blocks-contrib-git \
+i3-gaps \
+i3lock \
+i3status \
+inetutils \
 mediainfo \
 neovim \
 net-tools \
@@ -82,6 +83,7 @@ pulseaudio-bluetooth \
 python-pdftotext \
 ranger \
 scrot \
+seahorse \
 sysstat \
 tree \
 unrar \
@@ -97,15 +99,16 @@ xorg-xrandr \
 otf-font-awesome \
 ttf-dejavu \
 ttf-droid \
-ttf-roboto \
 colordiff \
 docker \
 docker-compose \
 git \
+tig \
 helm \
 google-cloud-sdk \
 nodejs \
 npm \
+nvm \
 postman-bin \
 python-pre-commit \
 terraform \
