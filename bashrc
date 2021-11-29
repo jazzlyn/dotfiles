@@ -35,6 +35,12 @@ alias pacman-clearcache="pacman -Scc"
 
 alias terraform-fmt="terraform fmt -recursive -write=true -diff=true"
 
+#
+# EXPORT Configuration
+###
+
+export PATH="${HOME}/.npm_packages/bin:$PATH"
+
 # LIBVIRT
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
