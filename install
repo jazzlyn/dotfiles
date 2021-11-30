@@ -10,6 +10,7 @@ ln -rs i3blocks ~/.config/
 ln -rs autorandr ~/.config/
 
 ln -rs alacritty ~/.config/
+ln -rs zsh/.zshenv ~/
 
 ranger --copy-config=all
 rm ~/.config/ranger/rc.conf
@@ -98,9 +99,9 @@ xbindkeys \
 xorg-server \
 xorg-xinit \
 xorg-xrandr \
+otf-inconsolata-dz-powerline \
 otf-font-awesome \
 ttf-dejavu \
-ttf-droid \
 colordiff \
 docker \
 docker-compose \
