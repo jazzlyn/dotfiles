@@ -5,20 +5,24 @@ prompt spaceship
 
 # ORDER
 SPACESHIP_PROMPT_ORDER=(
-  time     #
-  # vi_mode  # these sections will be
-  user     # before prompt char
-  host     #
+  time
+  user
+  host
   dir
   git
+  # hg
+  # package
   node
-  # ruby
-  # xcode
-  # swift
   # golang
-  # docker
+  docker
+  aws
+  gcloud
   # venv
-  # pyenv
+  kubectl
+  terraform
+  # vi_mode
+  # jobs
+  # exit_code
   char
 )
 
@@ -70,7 +74,7 @@ SPACESHIP_DIR_PREFIX=""
 SPACESHIP_DIR_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
 SPACESHIP_DIR_TRUNC=3
 SPACESHIP_DIR_TRUNC_PREFIX=""
-SPACESHIP_DIR_TRUNC_REPO=false
+SPACESHIP_DIR_TRUNC_REPO=true
 SPACESHIP_DIR_COLOR="cyan"
 SPACESHIP_DIR_LOCK_SYMBOL=""
 SPACESHIP_DIR_LOCK_COLOR="red"
