@@ -35,6 +35,9 @@ ln -rs Xresources ~/.Xresources
 # GIT
 # set gitignore global
 ln -rs gitignore-global ~/.gitignore
+# add git template dir
+ln -rs git ~/.git_templates
+git config --global init.templatedir '~/.git_templates'
 # add git alias
 git config --global alias.recommit '!f() { git commit -e --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG; }; f'
 # set username und email
