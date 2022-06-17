@@ -58,3 +58,6 @@ source $ZDOTDIR/prompt.zsh
 
 # Load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
+
+# Load direnv to have per folder .env configuration
+eval "$(direnv hook zsh)"
