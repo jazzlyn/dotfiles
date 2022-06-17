@@ -4,6 +4,9 @@
 mkdir -p ~/.config
 ln -rs pacman ~/.config/
 
+mkdir -p ~/.config/pulse
+ln -rs pulse/default.pa ~/.config/pulse/default.pa
+
 ln -rs i3 ~/.config/
 ln -rs i3blocks ~/.config/
 
@@ -26,7 +29,6 @@ ln -rs nvim/init.vim ~/.vimrc
 
 rm ~/.bashrc
 
-ln -rs bashrc ~/.bashrc
 ln -rs npmrc ~/.npmrc
 ln -rs xbindkeysrc ~/.xbindkeysrc
 ln -rs xinitrc ~/.xinitrc
