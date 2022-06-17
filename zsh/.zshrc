@@ -43,14 +43,15 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 
+source $ZDOTDIR/history.zsh
 source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/exports.zsh
+source $ZDOTDIR/keybindings.zsh
 source $ZDOTDIR/completions.zsh
 source $ZDOTDIR/editor.zsh
-source $ZDOTDIR/exports.zsh
-source $ZDOTDIR/history.zsh
-source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/npm.zsh
 source $ZDOTDIR/gcloud.zsh
+source $ZDOTDIR/prompt.zsh
 
 #[[ -f /usr/bin/vault ]] && source $ZDOTDIR/vault.zsh
 #[[ -f /usr/bin/kubectl ]] && source $ZDOTDIR/kubernetes.zsh
