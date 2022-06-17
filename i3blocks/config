@@ -44,22 +44,6 @@ interval=10
 
 [iface]
 command=/usr/lib/i3blocks/iface
-label= 
-instance=ens12u1u4
-color=#00FF00
-interval=10
-separator=true
-
-[iface]
-command=/usr/lib/i3blocks/iface
-label= 
-instance=enp0s20f0u1u4
-color=#00FF00
-interval=10
-separator=true
-
-[iface]
-command=/usr/lib/i3blocks/iface
 label= 
 instance=enp4s0
 color=#00CCFF
@@ -70,6 +54,14 @@ separator=true
 command=/usr/lib/i3blocks/iface
 label= 
 instance=wlp1s0
+color=#00CCFF
+interval=10
+separator=true
+
+[iface]
+command=/usr/lib/i3blocks/iface
+label= 
+instance=wlo1
 color=#00CCFF
 interval=10
 separator=true
