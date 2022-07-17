@@ -15,4 +15,4 @@ alias pacman-clearcache="pacman -Scc"
 alias terraform-fmt="terraform fmt -recursive -write=true -diff=true"
 
 # set compatible TERM before ssh
-alias ssh='TERM=xterm-256color ssh'
+alias ssh="TERM=xterm-256color ssh"
