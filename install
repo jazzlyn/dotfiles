@@ -114,6 +114,11 @@ ln -rs xbindkeysrc ~/.xbindkeysrc
 ln -rs xinitrc ~/.xinitrc
 ln -rs Xresources ~/.Xresources
 
+# Include Bash
+#ln -rs .bash_profile ~/.bash_profile
+#ln -rs .profile ~/.profile
+#ln -rs .bashrc ~/.bashrc
+
 sudo ln -s /usr/bin/go-task /usr/bin/task
 
 # GIT
