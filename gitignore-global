@@ -67,6 +67,11 @@ $RECYCLE.BIN/
 
 .idea/
 
+# Env
+
+.env
+.direnv
+
 # Personal
 
 notes/
