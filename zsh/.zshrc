@@ -54,7 +54,7 @@ source $ZDOTDIR/gcloud.zsh
 source $ZDOTDIR/prompt.zsh
 
 #[[ -f /usr/bin/vault ]] && source $ZDOTDIR/vault.zsh
-#[[ -f /usr/bin/kubectl ]] && source $ZDOTDIR/kubernetes.zsh
+[[ -f /usr/bin/kubectl ]] && source $ZDOTDIR/kubernetes.zsh
 
 # Load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
