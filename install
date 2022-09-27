@@ -28,6 +28,7 @@ github-cli \
 gnome-keyring \
 google-chrome \
 google-cloud-sdk \
+google-cloud-sdk-gke-gcloud-auth-plugin \
 go-task-bin \
 helm \
 highlight \
@@ -43,7 +44,7 @@ intel-ucode \
 jq \
 k9s \
 kind-bin \
-kubectl-gke-stable-bin \
+kubectl \
 lens-bin \
 linux \
 linux-firmware \
