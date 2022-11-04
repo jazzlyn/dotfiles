@@ -3,7 +3,7 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'jiangmiao/auto-pairs' 					    " auto-close brackets
+Plug 'jiangmiao/auto-pairs'                         " auto-close brackets
 Plug 'w0ng/vim-hybrid'                              " hybrid theme
 
 call plug#end()
@@ -15,7 +15,6 @@ call plug#end()
 " " :PlugStatus     - checks status of plugins
 " " :PlugDiff       - diff changes from last update
 
-""""""""""""""""""""""
 " General
 """"""""""""""""""""""
 " encoding
@@ -23,11 +22,10 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " hybrid theme config
-" let g:hybrid_custom_term_colors = 1 " uses colors from .Xresources
 set background=dark
 colorscheme hybrid
 
-""""""""""""""""""""""
+
 " User Interface
 """"""""""""""""""""""
 
@@ -65,7 +63,7 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-""""""""""""""""""""""""""""
+
 " Visual Mode Related
 """"""""""""""""""""""""""""
 
@@ -73,16 +71,8 @@ autocmd BufReadPost *
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
+
 " Indent Lines
 """""""""""""""""""""""""""
 let g:indentLine_color_term = 13
 let g:indentLine_char = '┆'
-
-"""""""""""""""""""""""""""
-
-" Ultisnips
-""""""""""""""""""""""""""
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/nvim/custom-snippets']
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"

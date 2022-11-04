@@ -128,18 +128,16 @@ ln -rs ranger/rc.conf ~/.config/ranger/rc.conf
 ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
 ln -rs ranger/commands.py ~/.config/ranger/commands.py
 
-ln -rs nvim ~/.config/
-ln -rs nvim ~/.vim
+mkdir -p ~/.config/nvim
+ln -rs nvim/init.vim ~/.config/nvim
 ln -rs nvim/init.vim ~/.vimrc
-
-rm ~/.bashrc
 
 ln -rs npmrc ~/.npmrc
 ln -rs xbindkeysrc ~/.xbindkeysrc
 ln -rs xinitrc ~/.xinitrc
-ln -rs Xresources ~/.Xresources
 
 # Include Bash
+#rm ~/.bashrc
 #ln -rs .bash_profile ~/.bash_profile
 #ln -rs .profile ~/.profile
 #ln -rs .bashrc ~/.bashrc
