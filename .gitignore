@@ -1,14 +1,27 @@
-# Directories #
-###############
+# Editors
+.vscode/
 
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# vscode-sops
+.decrypted~*.yaml
+
+# Crash log files
+crash.log
+
+# Env files
+*.envrc
+*.env
+
+# .dotfiles Directories
 nvim/autoload
 nvim/plugged
 nvim/.init.vim-rplugin~
 nvim/.netrwhist
 
-# Files #
-#########
-
+# .dotfiles Files
 ranger/bookmarks
 ranger/history
 ranger/tagged
