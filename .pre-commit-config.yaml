@@ -33,7 +33,7 @@ repos:
       - id: yamllint
         args:
           - -c
-          - .config/.yamllint.config.yaml
+          - .yamllint.config.yaml
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.3.1
@@ -52,7 +52,7 @@ repos:
       - id: markdownlint-fix
         args:
           - --config
-          - .config/.markdownlint.yaml
+          - .markdownlint.yaml
 
   - repo: https://github.com/k8s-at-home/sops-pre-commit
     rev: v2.1.1
@@ -65,6 +65,6 @@ repos:
       - id: prettier
         args:
           - --ignore-path
-          - .config/.prettierignore
+          - .prettierignore
           - --config
-          - .config/.prettierrc.yaml
+          - .prettierrc.yaml
