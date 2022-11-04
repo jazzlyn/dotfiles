@@ -61,7 +61,7 @@ class my_edit(Command):
         # content of the current directory.
         return self._tab_directory_content()
 
-    
+
 # Compress files
 class compress(Command):
     def execute(self):
