@@ -51,6 +51,7 @@ linux-firmware \
 mediainfo \
 mplayer \
 neovim \
+nerd-fonts-inconsolata-go \
 net-tools \
 networkmanager \
 network-manager-applet \
@@ -63,14 +64,12 @@ obs-studio \
 openssh \
 openvpn \
 otf-font-awesome \
-otf-inconsolata-dz-powerline \
 pavucontrol-qt \
 perl-image-exiftool \
 postman-bin \
 prettier \
 pulseaudio-alsa \
 pulseaudio-bluetooth \
-python2 \
 python-pdftotext \
 python-pre-commit \
 ranger \
@@ -87,7 +86,6 @@ tflint-bin \
 tfsec-bin \
 tig \
 tree \
-ttf-dejavu \
 unrar \
 unzip \
 vim \
