@@ -118,7 +118,6 @@ ln -rs i3blocks ~/.config/
 ln -rs autorandr ~/.config/
 
 ln -rs alacritty ~/.config/
-ln -rs zsh/.zshenv ~/
 
 ranger --copy-config=all
 rm ~/.config/ranger/rc.conf
@@ -141,6 +140,10 @@ ln -rs xinitrc ~/.xinitrc
 #ln -rs .bash_profile ~/.bash_profile
 #ln -rs .profile ~/.profile
 #ln -rs .bashrc ~/.bashrc
+
+# Include ZSH
+ln -rs zsh/.zshenv ~/
+ln -rs zsh/.zshrc ~/
 
 sudo ln -s /usr/bin/go-task /usr/bin/task
 
