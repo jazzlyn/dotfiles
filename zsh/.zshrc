@@ -50,6 +50,7 @@ source $ZDOTDIR/keybindings.zsh
 source $ZDOTDIR/completions.zsh
 source $ZDOTDIR/editor.zsh
 source $ZDOTDIR/npm.zsh
+source $ZDOTDIR/go.zsh
 source $ZDOTDIR/gcloud.zsh
 source $ZDOTDIR/prompt.zsh
 
