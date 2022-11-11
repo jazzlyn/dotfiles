@@ -106,6 +106,16 @@ zsh \
 zsh-completions
 
 # SYMLINKS
+
+# map secrets
+ln -rs ../.secrets/aws ~/.aws
+ln -rs ../.secrets/gcloud ~/.config/gcloud
+ln -rs ../.secrets/kube ~/.kube
+ln -rs ../.secrets/sops ~/.config/sops
+ln -rs ../.secrets/ssh ~/.ssh
+
+# map config
+
 mkdir -p ~/.config
 ln -rs pacman ~/.config/
 
