@@ -129,6 +129,8 @@ ln -rs autorandr ~/.config/
 
 ln -rs alacritty ~/.config/
 
+ln -rs docker ~/.docker
+
 ranger --copy-config=all
 rm ~/.config/ranger/rc.conf
 rm ~/.config/ranger/scope.sh
