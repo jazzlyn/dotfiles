@@ -14,5 +14,7 @@ alias pacman-clearcache="pacman -Scc"
 
 alias terraform-fmt="terraform fmt -recursive -write=true -diff=true"
 
+alias myscrot='scrot -s ~/Downloads/scrot_%Y%m%d_%H%M%S.png'
+
 # set compatible TERM before ssh
 alias ssh="TERM=xterm-256color ssh"
