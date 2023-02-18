@@ -28,3 +28,5 @@ ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:~/.local/bin
+
+export VAULT_ADDR=$(sed -n 's/^VAULT_ADDR=//p' ~/.secrets/vault/config)
