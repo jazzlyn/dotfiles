@@ -46,6 +46,7 @@ zle -N down-line-or-beginning-search
 source $ZDOTDIR/history.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/exports.zsh
+source $ZDOTDIR/vscodefix.zsh
 source $ZDOTDIR/keybindings.zsh
 source $ZDOTDIR/completions.zsh
 source $ZDOTDIR/editor.zsh
