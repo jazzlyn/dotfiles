@@ -1,6 +1,6 @@
-export PATH="$HOME/.npm_packages/bin:$PATH"
-export NPM_PACKAGES="$HOME/.npm_packages"
-export NODE_PATH="$NPM_PACKAGES/libs/node_modules:$NODE_PATH"
+export PATH=$HOME/.npm-global/bin/:$PATH
+export NPM_PACKAGES=$HOME/.npm
+export NODE_PATH=$NPM_PACKAGES/libs/node_modules:$NODE_PATH
 
 
 # init nvm
