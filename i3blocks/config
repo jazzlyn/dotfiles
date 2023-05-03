@@ -13,7 +13,7 @@ interval=5
 
 [memory]
 command=/usr/lib/i3blocks/memory
-label=Memory 
+label=MEM 
 color=#00FF00
 interval=30
 
@@ -24,23 +24,28 @@ label=CPU
 color=#00FF00
 T_WARN=50
 T_CRIT=80
-interval=10
-separator=false
-
-[temperature]
-command=/usr/lib/i3blocks/temperature
-label= 
-color=#00FF00
-T_WARN=70
-T_CRIT=90
+DECIMALS=2
+COLOR_NORMAL=#EBDBB2
+COLOR_WARN=#FFFC00
+COLOR_CRIT=#FF0000
 interval=10
 separator=false
 
 [load_average]
 command=/usr/lib/i3blocks/load_average
-label= 
+label=LOAD 
 color=#00FF00
 interval=10
+separator=false
+
+[temperature]
+command=/usr/lib/i3blocks/temperature
+label=TEMP 
+color=#00FF00
+T_WARN=70
+T_CRIT=90
+interval=10
+separator=true
 
 [iface]
 command=/usr/lib/i3blocks/iface
@@ -53,7 +58,7 @@ separator=true
 [iface]
 command=/usr/lib/i3blocks/iface
 label= 
-instance=wlp1s0
+instance=wlo1
 color=#00CCFF
 interval=10
 separator=true
@@ -61,15 +66,15 @@ separator=true
 [iface]
 command=/usr/lib/i3blocks/iface
 label= 
-instance=wlo1
+instance=wlp2s0
 color=#00CCFF
 interval=10
 separator=true
 
-[battery2]
-command=/usr/lib/i3blocks/battery2
-markup=pango
-interval=30
+[battery-poly]
+command=/usr/lib/i3blocks/battery-poly
+label=BAT 
+interval=5
 separator=true
 
 [time]

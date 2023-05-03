@@ -164,7 +164,7 @@ bar {
 ###
 
 # autostart
-exec --no-startup-id xrandr --output HDMI-1-0 --auto --primary --output HDMI2 --auto --right-of HDMI-1-0
+exec --no-startup-id xrandr --output DP1 --auto --primary --output HDMI2 --auto --right-of DP1
 exec --no-startup-id discord --start-minimized
 
 # move workspace to the next output

@@ -26,6 +26,7 @@ repos:
       - id: trailing-whitespace
         args:
           - --markdown-linebreak-ext=md
+        exclude: i3blocks/config
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.28.0

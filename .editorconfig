@@ -14,3 +14,6 @@ trim_trailing_whitespace = false
 
 [Makefile]
 indent_style = tab
+
+[i3blocks/config]
+trim_trailing_whitespace = false
