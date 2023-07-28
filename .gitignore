@@ -1,5 +1,6 @@
 # Editors
 .vscode/
+.idea/
 
 # OS artifacts
 .DS_Store
@@ -8,12 +9,9 @@ Thumbs.db
 # vscode-sops
 .decrypted~*.yaml
 
-# Crash log files
-crash.log
-
 # Env files
-*.envrc
-*.env
+.envrc
+.env
 
 # .dotfiles Directories
 nvim/autoload
