@@ -120,8 +120,8 @@ ln -rs ../.secrets/ssh ~/.ssh
 
 # map config
 
-mkdir -p ~/.config
-ln -rs pacman ~/.config/
+mkdir -p ~/.config/pacman
+ln -rs makepkg.conf ~/.config/pacman/makepkg.conf
 
 mkdir -p ~/.config/pulse
 ln -rs pulse/default.pa ~/.config/pulse/default.pa
@@ -136,14 +136,6 @@ ln -rs alacritty ~/.config/
 mkdir -p ~/.docker
 ln -rs docker/config.json ~/.docker/config.json
 
-ranger --copy-config=all
-rm ~/.config/ranger/rc.conf
-rm ~/.config/ranger/scope.sh
-rm ~/.config/ranger/commands.py
-ln -rs ranger/rc.conf ~/.config/ranger/rc.conf
-ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
-ln -rs ranger/commands.py ~/.config/ranger/commands.py
-
 mkdir -p ~/.config/nvim
 ln -rs nvim/init.vim ~/.config/nvim
 ln -rs nvim/init.vim ~/.vimrc
@@ -151,27 +143,11 @@ ln -rs nvim/init.vim ~/.vimrc
 ln -rs npmrc ~/.npmrc
 ln -rs xbindkeysrc ~/.xbindkeysrc
 ln -rs xinitrc ~/.xinitrc
-
-# Include Bash
-#rm ~/.bashrc
-#ln -rs .bash_profile ~/.bash_profile
-#ln -rs .profile ~/.profile
-#ln -rs .bashrc ~/.bashrc
-
-# Include ZSH
 ln -rs zsh/.zshenv ~/
 ln -rs zsh/.zshrc ~/
 
-sudo ln -s /usr/bin/go-task /usr/bin/task
-
-# GIT
-ln -rs gitconfig/gitignore-global ~/.gitignore
-ln -rs gitconfig/git_templates ~/.git_templates
-ln -rs gitconfig/gitconfig_base ~/.gitconfig
+ln -rs gitconfig/.git_templates ~/
+ln -rs gitconfig/.gitignore ~/.gitignore
+ln -rs gitconfig/base.conf ~/.gitconfig
 mkdir -p ~/projects/strg
-ln -rs gitconfig/gitconfig_strg ~/projects/strg/.gitconfig
-
-# INSTALLATION
-# install plug.vim and create dirs
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ln -rs gitconfig/strg.conf ~/projects/strg/.gitconfig
