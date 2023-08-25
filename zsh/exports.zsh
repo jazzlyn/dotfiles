@@ -5,7 +5,6 @@
 # -R - was on by default on my system, something related to colors<Paste>
 export LESS=-iXFR
 
-
 # XDG https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
 export XDG_CACHE_HOME=$HOME/.cache
@@ -28,5 +27,3 @@ ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:~/.local/bin
-
-export VAULT_ADDR=$(sed -n 's/^VAULT_ADDR=//p' ~/.secrets/vault/config)

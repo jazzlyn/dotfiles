@@ -31,7 +31,7 @@ key[ShiftTab]="${terminfo[kcbt]}"
 # bindkey  "^[[4~"   end-of-line
 # bindkey  "^[[3~"  delete-char
 
-# overwrite keybindings for red
+# overwrite keybindings for purple
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char

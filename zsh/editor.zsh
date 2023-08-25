@@ -1,7 +1,6 @@
 if command -v nvim > /dev/null 2>&1; then
-    export VISUAL="nvim"
+    export EDITOR="nvim"
     alias vim="nvim"
-else
-    export VISUAL="vim"
+elif command -v vim > /dev/null 2>&1; then
+    export EDITOR="vim"
 fi
-export EDITOR=$VISUAL
