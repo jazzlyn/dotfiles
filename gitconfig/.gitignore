@@ -1,5 +1,3 @@
-shell.nix
-
 # Compiled source
 
 *.com
@@ -19,6 +17,12 @@ shell.nix
 *.rar
 *.tar
 *.zip
+
+# Logs and databases
+
+*.log
+*.sql
+*.sqlite
 
 # Linux
 
