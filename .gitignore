@@ -13,14 +13,5 @@ Thumbs.db
 .envrc
 .env
 
-# .dotfiles Directories
-nvim/autoload
-nvim/plugged
-nvim/.init.vim-rplugin~
-nvim/.netrwhist
-
 # .dotfiles Files
-ranger/bookmarks
-ranger/history
-ranger/tagged
 .zcompdump

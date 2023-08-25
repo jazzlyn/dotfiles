@@ -1,29 +1,14 @@
 filetype plugin indent on
 syntax on
 
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'jiangmiao/auto-pairs'                         " auto-close brackets
-Plug 'w0ng/vim-hybrid'                              " hybrid theme
-
-call plug#end()
-
-" " :PlugInstall    - installs plugins
-" " :PlugUpdate     - install or update plugins
-" " :PlugClean      - confirms removal of unused plugins
-" " :PlugUpgrade    - upgrades vim-plug itself
-" " :PlugStatus     - checks status of plugins
-" " :PlugDiff       - diff changes from last update
-
 " General
 """"""""""""""""""""""
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
 
-" hybrid theme config
+" theme config
 set background=dark
-colorscheme hybrid
 
 
 " User Interface
