@@ -129,7 +129,6 @@ ln -rs gitconfig/base.conf ~/.gitconfig
 mkdir -p ~/projects/strg
 ln -rs gitconfig/strg.conf ~/projects/strg/.gitconfig
 
-#ln -rs xbindkeysrc ~/.xbindkeysrc
 ln -rs xinitrc ~/.xinitrc
 
 # map apps
