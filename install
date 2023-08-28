@@ -113,7 +113,7 @@
 
 # map secrets
 [[ -d /.secrets/aws ]] && ln -rs ../.secrets/aws ~/.
-[[ -d /.secrets/gcloud ]] && ln -rs ../.secrets/gcloud ~/.config
+[[ -d /.secrets/gcloud ]] && ln -rs ../.secrets/gcloud/configurations ~/.config/gcloud
 [[ -d /.secrets/kube ]] && ln -rs ../.secrets/kube/config ~/.kube/config
 [[ -d /.secrets/sops ]] && ln -rs ../.secrets/sops ~/.config
 [[ -d /.secrets/ssh ]] && ln -rs ../.secrets/ssh ~/.
