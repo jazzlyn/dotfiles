@@ -166,3 +166,9 @@ if command -v pulseaudio > /dev/null 2>&1; then
   mkdir -p ~/.config/pulse
   ln -rs pulse/default.pa ~/.config/pulse/default.pa
 fi
+
+if command -v ranger > /dev/null 2>&1; then
+  ln -rs ranger/commands.py ~/.config/ranger/commands.py
+  ln -rs ranger/rc.conf ~/.config/ranger/rc.conf
+  ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
+fi
