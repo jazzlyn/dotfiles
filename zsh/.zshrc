@@ -42,24 +42,58 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+# load machine-specific configuration if present
+[[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
+
+# load zsh support for nix-shell
+[[ -f /usr/share/zsh/plugins/zsh-nix-shell/nix-shell.plugin.zsh ]] && source /usr/share/zsh/plugins/zsh-nix-shell/nix-shell.plugin.zsh
 
 source $ZDOTDIR/history.zsh
-source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/terminal.zsh
 source $ZDOTDIR/exports.zsh
 source $ZDOTDIR/keybindings.zsh
 source $ZDOTDIR/completions.zsh
 source $ZDOTDIR/editor.zsh
-source $ZDOTDIR/nix.zsh
+
+
+if command -v direnv > /dev/null 2>&1; then
+  source $ZDOTDIR/direnv.zsh
+fi
+
+if command -v gcloud > /dev/null 2>&1; then
+  source $ZDOTDIR/gcloud.zsh
+fi
+
+if command -v gnome-keyring > /dev/null 2>&1; then
+  source $ZDOTDIR/gnome-keyring.zsh
+fi
+
+if command -v go > /dev/null 2>&1; then
+  source $ZDOTDIR/go.zsh
+fi
+
+source $ZDOTDIR/kubernetes.zsh
+
+if command -v nix > /dev/null 2>&1; then
+  source $ZDOTDIR/nix.zsh
+fi
+
 source $ZDOTDIR/npm.zsh
-source $ZDOTDIR/go.zsh
-source $ZDOTDIR/gcloud.zsh
-source $ZDOTDIR/prompt.zsh
 
-#[[ -f /usr/bin/vault ]] && source $ZDOTDIR/vault.zsh
-[[ -f /usr/bin/kubectl ]] && source $ZDOTDIR/kubernetes.zsh
+# if command -v nvm > /dev/null 2>&1; then
+#   source $ZDOTDIR/nvm.zsh
+# fi
 
-# Load machine-specific configuration if present
-[[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
+if command -v pacman > /dev/null 2>&1; then
+  source $ZDOTDIR/pacman.zsh
+fi
 
-# Load direnv to have per folder .env configuration
-eval "$(direnv hook zsh)"
+if [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
+  source $ZDOTDIR/prompt.zsh
+elif [[ -f $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh ]]; then
+  source $(/bin/ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh)
+else
+  echo "spaceship-prompt not found"
+fi
+
+[[ -d /.secrets/vault ]] && source $ZDOTDIR/vault.zsh

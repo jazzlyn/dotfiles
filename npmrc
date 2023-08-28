@@ -1,6 +1,0 @@
-prefix=${HOME}/.npm_packages
-
-# npm version
-message="release: v%s"
-commit-hooks=true
-sign-git-tag=true

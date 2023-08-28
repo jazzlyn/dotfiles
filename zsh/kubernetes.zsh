@@ -1,6 +1,16 @@
-export KUBE_CONFIG_PATH=$HOME/.kube/config
+if command -v flux > /dev/null 2>&1; then
+  source <(flux completion zsh)
+fi
 
-[[ -f /usr/bin/kubectl ]] && source <(kubectl completion zsh)
-[[ -f /usr/bin/talosctl ]] && source <(talosctl completion zsh)
-[[ -f /usr/bin/helm ]] && source <(helm completion zsh)
-[[ -f /usr/bin/flux ]] && source <(flux completion zsh)
+if command -v helm > /dev/null 2>&1; then
+  source <(helm completion zsh)
+fi
+
+if command -v kubectl > /dev/null 2>&1; then
+  source <(kubectl completion zsh)
+  export KUBE_CONFIG_PATH=$HOME/.kube/config
+fi
+
+if command -v talosctl > /dev/null 2>&1; then
+  source <(talosctl completion zsh)
+fi

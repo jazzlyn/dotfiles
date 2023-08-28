@@ -1,148 +1,125 @@
 #!/bin/bash
 
-# install more initial needed packages
-yay -Syu --needed --noconfirm \
-acpi \
-age \
-alacritty \
-atool \
-autorandr \
-barrier \
-bash-completion \
-bluez \
-bluez-utils \
-btrfs-progs \
-colordiff \
-cups \
-direnv \
-discord \
-dmenu2 \
-docker \
-docker-buildx \
-docker-compose \
-efibootmgr \
-exiv2 \
-flux-bin \
-galculator \
-gimp \
-git \
-github-cli \
-gnome-keyring \
-go \
-google-chrome \
-google-cloud-cli \
-google-cloud-cli-gke-gcloud-auth-plugin \
-go-task-bin \
-helm \
-highlight \
-hplip \
-htop \
-i3blocks \
-i3blocks-contrib-git \
-i3-gaps \
-i3lock \
-i3status \
-inetutils \
-intel-ucode \
-jq \
-k9s \
-kind-bin \
-kubectl \
-lens-bin \
-linux \
-linux-firmware \
-mediainfo \
-neovim \
-net-tools \
-networkmanager \
-network-manager-applet \
-networkmanager-openvpn \
-nfs-utils \
-nodejs \
-npm \
-nvm \
-obs-studio \
-openssh \
-openvpn \
-otf-font-awesome \
-otf-inconsolata-dz-powerline \
-pavucontrol-qt \
-perl-image-exiftool \
-postman-bin \
-prettier \
-pulseaudio-alsa \
-pulseaudio-bluetooth \
-python-pdftotext \
-python-pre-commit \
-ranger \
-scrot \
-seahorse \
-sops \
-spaceship-prompt \
-sysstat \
-talhelper-bin \
-talosctl \
-terraform \
-terraform-docs-bin \
-tflint-bin \
-tfsec-bin \
-tig \
-tree \
-ttf-dejavu \
-ttf-inconsolata-go-nerd \
-unrar \
-unzip \
-vim \
-visual-studio-code-bin \
-w3m \
-wget \
-wireless_tools \
-x11-ssh-askpass \
-xbindkeys \
-xf86-video-intel \
-xorg-server \
-xorg-xev \
-xorg-xinit \
-xorg-xrandr \
-yamllint \
-yq \
-zsh \
-zsh-completions
+# # install more initial needed packages
+# yay -Syu --needed --noconfirm \
+# acpi \
+# age \
+# alacritty \
+# atool \
+# autorandr \
+# barrier \
+# bash-completion \
+# bluez \
+# bluez-utils \
+# btrfs-progs \
+# colordiff \
+# cups \
+# direnv \
+# discord \
+# dmenu2 \
+# docker \
+# docker-buildx \
+# docker-compose \
+# efibootmgr \
+# exiv2 \
+# flux-bin \
+# galculator \
+# gimp \
+# git \
+# github-cli \
+# gnome-keyring \
+# go \
+# google-chrome \
+# google-cloud-cli \
+# google-cloud-cli-gke-gcloud-auth-plugin \
+# go-task-bin \
+# helm \
+# highlight \
+# hplip \
+# htop \
+# i3blocks \
+# i3blocks-contrib-git \
+# i3-gaps \
+# i3lock \
+# i3status \
+# inetutils \
+# intel-ucode \
+# jq \
+# k9s \
+# kind-bin \
+# kubectl \
+# lens-bin \
+# linux \
+# linux-firmware \
+# mediainfo \
+# neovim \
+# net-tools \
+# networkmanager \
+# network-manager-applet \
+# networkmanager-openvpn \
+# nfs-utils \
+# nodejs \
+# npm \
+# nvm \
+# obs-studio \
+# openssh \
+# openvpn \
+# otf-font-awesome \
+# otf-inconsolata-dz-powerline \
+# pavucontrol-qt \
+# perl-image-exiftool \
+# postman-bin \
+# prettier \
+# pulseaudio-alsa \
+# pulseaudio-bluetooth \
+# python-pdftotext \
+# python-pre-commit \
+# ranger \
+# scrot \
+# seahorse \
+# sops \
+# spaceship-prompt \
+# sysstat \
+# talhelper-bin \
+# talosctl \
+# terraform \
+# terraform-docs-bin \
+# tflint-bin \
+# tfsec-bin \
+# tig \
+# tree \
+# ttf-dejavu \
+# ttf-inconsolata-go-nerd \
+# unrar \
+# unzip \
+# vim \
+# visual-studio-code-bin \
+# w3m \
+# wget \
+# wireless_tools \
+# x11-ssh-askpass \
+# xbindkeys \
+# xf86-video-intel \
+# xorg-server \
+# xorg-xev \
+# xorg-xinit \
+# xorg-xrandr \
+# yamllint \
+# yq \
+# zsh \
+# zsh-completions
 
 # SYMLINKS
 
 # map secrets
-ln -rs ../.secrets/aws ~/.aws
-ln -rs ../.secrets/gcloud ~/.config/gcloud
-ln -rs ../.secrets/kube ~/.kube
-ln -rs ../.secrets/sops ~/.config/sops
-ln -rs ../.secrets/ssh ~/.ssh
+[[ -d /.secrets/aws ]] && ln -rs ../.secrets/aws ~/.
+[[ -d /.secrets/gcloud ]] && ln -rs ../.secrets/gcloud ~/.config
+[[ -d /.secrets/kube ]] && ln -rs ../.secrets/kube ~/.
+[[ -d /.secrets/sops ]] && ln -rs ../.secrets/sops ~/.config
+[[ -d /.secrets/ssh ]] && ln -rs ../.secrets/ssh ~/.
 
-# map config
+# map base config
 
-mkdir -p ~/.config/pacman
-ln -rs makepkg.conf ~/.config/pacman/makepkg.conf
-
-mkdir -p ~/.config/pulse
-ln -rs pulse/default.pa ~/.config/pulse/default.pa
-
-ln -rs i3 ~/.config/
-ln -rs i3blocks ~/.config/
-
-ln -rs autorandr ~/.config/
-
-ln -rs alacritty ~/.config/
-
-mkdir -p ~/.docker
-ln -rs docker/config.json ~/.docker/config.json
-
-mkdir -p ~/.config/nvim
-ln -rs nvim/init.vim ~/.config/nvim
-ln -rs nvim/init.vim ~/.vimrc
-
-ln -rs npmrc ~/.npmrc
-ln -rs xbindkeysrc ~/.xbindkeysrc
-ln -rs xinitrc ~/.xinitrc
 ln -rs zsh/.zshenv ~/
 ln -rs zsh/.zshrc ~/
 
@@ -151,3 +128,42 @@ ln -rs gitconfig/.gitignore ~/.gitignore
 ln -rs gitconfig/base.conf ~/.gitconfig
 mkdir -p ~/projects/strg
 ln -rs gitconfig/strg.conf ~/projects/strg/.gitconfig
+
+#ln -rs xbindkeysrc ~/.xbindkeysrc
+ln -rs xinitrc ~/.xinitrc
+
+# map apps
+
+if command -v alacritty > /dev/null 2>&1; then
+  ln -rs alacritty ~/.config/
+fi
+
+if command -v autorandr > /dev/null 2>&1; then
+  ln -rs autorandr ~/.config/
+fi
+
+if command -v docker > /dev/null 2>&1; then
+  mkdir -p ~/.docker
+  ln -rs docker/config.json ~/.docker/config.json
+fi
+
+if command -v i3 > /dev/null 2>&1; then
+  ln -rs i3 ~/.config/
+  ln -rs i3blocks ~/.config/
+fi
+
+if command -v nvim > /dev/null 2>&1; then
+  mkdir -p ~/.config/nvim
+  ln -rs nvim/init.vim ~/.config/nvim
+  ln -rs nvim/init.vim ~/.vimrc
+fi
+
+if command -v pacman > /dev/null 2>&1; then
+  mkdir -p ~/.config/pacman
+  ln -rs makepkg.conf ~/.config/pacman/makepkg.conf
+fi
+
+if command -v pulseaudio > /dev/null 2>&1; then
+  mkdir -p ~/.config/pulse
+  ln -rs pulse/default.pa ~/.config/pulse/default.pa
+fi
