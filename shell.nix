@@ -11,5 +11,6 @@ in
       pkgs.google-cloud-sdk
       pkgs.kubectl
       pkgs.talosctl
+      pkgs.nodejs_20
     ];
   }

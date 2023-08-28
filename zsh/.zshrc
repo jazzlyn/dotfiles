@@ -78,7 +78,9 @@ if command -v nix > /dev/null 2>&1; then
   source $ZDOTDIR/nix.zsh
 fi
 
-source $ZDOTDIR/npm.zsh
+if command -v npm > /dev/null 2>&1; then
+  source $ZDOTDIR/npm.zsh
+fi
 
 # if command -v nvm > /dev/null 2>&1; then
 #   source $ZDOTDIR/nvm.zsh
