@@ -1,12 +1,14 @@
 # i3blocks config file
-#
+# https://github.com/vivien/i3blocks-contrib/tree/master
+
 # Global configuration
-#
+
 command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=14
 markup=none
 
 [nm-vpn]
+# needs nmcli, sh, awk
 command=/usr/lib/i3blocks/nm-vpn
 label=VPN: 
 interval=5
