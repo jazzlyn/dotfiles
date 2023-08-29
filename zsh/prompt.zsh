@@ -1,5 +1,3 @@
-source /usr/lib/spaceship-prompt/spaceship.zsh
-
 SPACESHIP_PROMPT_ORDER=(
   time
   user

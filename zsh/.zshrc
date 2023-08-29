@@ -90,10 +90,12 @@ if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
 
-if [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
-  source $ZDOTDIR/prompt.zsh
-elif [[ -f $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh ]]; then
+if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh) ]]; then
   source $(/bin/ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh)
+  source $ZDOTDIR/prompt.zsh
+elif [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
+  source /usr/lib/spaceship-prompt/spaceship.zsh
+  source $ZDOTDIR/prompt.zsh
 else
   echo "spaceship-prompt not found"
 fi
