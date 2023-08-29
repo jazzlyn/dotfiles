@@ -2,6 +2,8 @@
 
 # install more initial needed packages
 yay -Syu --needed --noconfirm \
+  base \
+  base-devel \
   age \
   alacritty \
   atool \
@@ -42,10 +44,7 @@ yay -Syu --needed --noconfirm \
   sops \
   spaceship-prompt \
   sysstat \
-  talhelper-bin \
-  ttf-font-awesome \
   ttf-inconsolata-go-nerd \
-  ttf-roboto-mono-nerd \
   unzip \
   vim \
   visual-studio-code-bin \
