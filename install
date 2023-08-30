@@ -125,3 +125,7 @@ if command -v ranger > /dev/null 2>&1; then
   ln -rs ranger/rc.conf ~/.config/ranger/rc.conf
   ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
 fi
+
+if command -v yay > /dev/null 2>&1; then
+  ln -rs yay/config.json ~/.config/yay/config.json
+fi
