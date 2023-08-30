@@ -100,6 +100,10 @@ if command -v i3 > /dev/null 2>&1; then
   ln -rs i3blocks ~/.config/
 fi
 
+if command -v k9s > /dev/null 2>&1; then
+  ln -rs k9s/plugin.yml ~/.config/k9s/plugin.yml
+fi
+
 if command -v nvim > /dev/null 2>&1; then
   mkdir -p ~/.config/nvim
   ln -rs nvim/init.vim ~/.config/nvim
