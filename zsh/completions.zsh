@@ -25,18 +25,18 @@ zstyle ':completion:*' menu select
 # enable privileged autocompletion (sudo)
 zstyle ':completion::complete:*' gain-privileges 1
 
-# if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+# if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*zsh-autosuggestions*/share/zsh-autosuggestions/zsh-autosuggestions.zsh) ]]; then
+#   source $(ls $NIX_STORE/*zsh-autosuggestions*/share/zsh-autosuggestions/zsh-autosuggestions.zsh)
+# elif [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
 #   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# elif [[ -f $NIX_STORE/*zsh-autosuggestions*/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-#   source $(/bin/ls $NIX_STORE/*zsh-autosuggestions*/share/zsh-autosuggestions/zsh-autosuggestions.zsh)
 # else
 #   echo "zsh-autosuggestions not found"
 # fi
 
-if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh) ]]; then
+  source $(ls $NIX_STORE/*zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh)
+elif [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-elif [[ -f $NIX_STORE/*zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  source $(/bin/ls $NIX_STORE/*zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh)
 else
   echo "zsh-syntax-highlighting not found"
 fi
