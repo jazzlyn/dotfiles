@@ -100,4 +100,4 @@ else
   echo "spaceship-prompt not found"
 fi
 
-[[ -d /.secrets/vault ]] && source $ZDOTDIR/vault.zsh
+[[ -d $HOME/.secrets/vault ]] && source $ZDOTDIR/vault.zsh
