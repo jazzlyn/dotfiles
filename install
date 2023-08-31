@@ -41,6 +41,7 @@ yay -Syu --needed --noconfirm \
   pavucontrol-qt \
   postman-bin \
   ranger \
+  scrot \
   sops \
   spaceship-prompt \
   sysstat \
