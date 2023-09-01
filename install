@@ -2,14 +2,15 @@
 
 # install more initial needed packages
 yay -Syu --needed --noconfirm \
-  base \
-  base-devel \
   age \
   alacritty \
   atool \
   autorandr \
   barrier \
+  base \
+  base-devel \
   cups \
+  direnv \
   discord \
   dmenu2 \
   docker \
@@ -29,6 +30,7 @@ yay -Syu --needed --noconfirm \
   i3-wm \
   intel-ucode \
   k9s \
+  kubectl \
   linux \
   linux-firmware \
   neovim \
@@ -42,9 +44,11 @@ yay -Syu --needed --noconfirm \
   postman-bin \
   ranger \
   scrot \
+  seahorse \
   sops \
   spaceship-prompt \
   sysstat \
+  ttf-dejavu-nerd \
   ttf-inconsolata-go-nerd \
   unzip \
   vim \
