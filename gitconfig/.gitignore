@@ -21,7 +21,6 @@
 # Logs and databases
 
 *.log
-*.sql
 *.sqlite
 
 # Linux
@@ -72,6 +71,9 @@ $RECYCLE.BIN/
 .env
 .direnv
 .envrc
+
+# Nix
+*.nix
 
 # Personal
 
