@@ -32,4 +32,10 @@ export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 # fix for barrier
 setxkbmap -device `xinput list --id-only "Virtual core XTEST keyboard"` de
 
+if [ $HOME == "carbon" ]; then
+  autorandr --load mobile
+elif [ $HOME == "purple" ]; then
+  autorandr --load home
+fi
+
 exec i3
