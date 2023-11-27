@@ -6,15 +6,18 @@ yay -Syu --needed --noconfirm \
   alacritty \
   atool \
   autorandr \
+  azure-cli-bin \
   barrier \
   base \
   base-devel \
+  bluez-utils \
   cups \
   direnv \
   discord \
   dmenu2 \
   docker \
   docker-buildx \
+  flux-bin \
   galculator \
   git \
   gnome-keyring \
@@ -30,6 +33,7 @@ yay -Syu --needed --noconfirm \
   i3-wm \
   intel-ucode \
   k9s \
+  kind-bin \
   kubectl \
   linux \
   linux-firmware \
@@ -38,6 +42,7 @@ yay -Syu --needed --noconfirm \
   network-manager-applet \
   networkmanager-openvpn \
   nix \
+  nvm \
   openssh \
   openvpn \
   pavucontrol-qt \
@@ -48,12 +53,15 @@ yay -Syu --needed --noconfirm \
   sops \
   spaceship-prompt \
   sysstat \
+  tig \
   ttf-dejavu-nerd \
   ttf-inconsolata-go-nerd \
   unzip \
   vim \
   visual-studio-code-bin \
   w3m \
+  wget \
+  tree \
   xorg-server \
   xorg-xinit \
   xorg-xrandr \
