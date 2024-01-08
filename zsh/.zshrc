@@ -77,6 +77,8 @@ fi
 
 source $ZDOTDIR/kubernetes.zsh
 
+[[ -f $HOME/.secrets/aws/minio-config ]] && source $ZDOTDIR/minio.zsh
+
 if command -v nix > /dev/null 2>&1; then
   source $ZDOTDIR/nix.zsh
 fi
