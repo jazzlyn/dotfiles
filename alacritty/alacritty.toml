@@ -1,0 +1,10 @@
+[cursor.style]
+blinking = "Never"
+shape = "Beam"
+
+[font]
+size = 15.0
+
+[font.normal]
+family = "InconsolataGo Nerd Font Mono"
+style = "Regular"
