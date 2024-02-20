@@ -9,7 +9,6 @@ font pango:InconsolataGo Nerd Font Mono 15
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec --no-startup-id barrier
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -165,6 +164,11 @@ bar {
 
 # autostart
 exec --no-startup-id discord --start-minimized
+exec --no-startup-id barrier
+exec --no-startup-id obsidian
+
+for_window [class="obsidian"] move to workspace $ws4
+for_window [class="galculator"] floating enable
 
 # move workspace to the next output
 bindsym $mod+m move workspace to output up
