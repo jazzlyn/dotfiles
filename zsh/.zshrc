@@ -95,6 +95,11 @@ if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
 
+
+if command -v pyenv > /dev/null 2>&1; then
+  source $ZDOTDIR/python.zsh
+fi
+
 if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh) ]]; then
   source $(/bin/ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh)
   source $ZDOTDIR/prompt.zsh
