@@ -33,9 +33,9 @@ export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 setxkbmap -device `xinput list --id-only "Virtual core XTEST keyboard"` de
 
 if [ $HOME == "carbon" ]; then
-  autorandr --load mobile
+  autorandr --load mobile --skip-options crtc
 elif [ $HOME == "purple" ]; then
-  autorandr --load home
+  autorandr --load home --skip-options crtc
 fi
 
 exec i3
