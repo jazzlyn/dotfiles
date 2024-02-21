@@ -67,10 +67,6 @@ if command -v gcloud > /dev/null 2>&1; then
   source $ZDOTDIR/gcloud.zsh
 fi
 
-# if command -v gnome-keyring > /dev/null 2>&1; then
-#   source $ZDOTDIR/gnome-keyring.zsh
-# fi
-
 if command -v go > /dev/null 2>&1; then
   source $ZDOTDIR/go.zsh
 fi
@@ -94,7 +90,6 @@ fi
 if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
-
 
 if command -v pyenv > /dev/null 2>&1; then
   source $ZDOTDIR/python.zsh

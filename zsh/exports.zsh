@@ -27,3 +27,5 @@ ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:~/.local/bin
+
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
