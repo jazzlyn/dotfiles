@@ -164,7 +164,7 @@ bar {
 
 # autostart
 exec --no-startup-id discord --start-minimized
-exec --no-startup-id barrier
+exec --no-startup-id barrier --start-minimized
 exec --no-startup-id obsidian
 
 for_window [class="obsidian"] move to workspace $ws4
