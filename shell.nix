@@ -3,14 +3,8 @@ let
 in
   pkgs.mkShell {
     packages = [
-      # base packages
+      pkgs.direnv
       pkgs.pre-commit
       pkgs.tig
-      # for install
-      pkgs.direnv
-      pkgs.google-cloud-sdk
-      pkgs.kubectl
-      pkgs.talosctl
-      pkgs.nodejs_20
     ];
   }

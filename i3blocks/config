@@ -67,15 +67,15 @@ separator=true
 
 [iface]
 command=/usr/lib/i3blocks/iface
-label= 
+label=󰖩
 instance=wlp2s0
 color=#00CCFF
 interval=10
 separator=true
 
-[battery-poly]
-command=/usr/lib/i3blocks/battery-poly
-label=BAT 
+[battery]
+command=/usr/lib/i3blocks/battery
+LABEL=󱐋 
 interval=5
 separator=true
 
