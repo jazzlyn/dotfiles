@@ -84,6 +84,7 @@ yay -Syu --needed --noconfirm \
 
 ln -rs zsh/.zshenv ~/
 ln -rs zsh/.zshrc ~/
+ln -rs k9s ~/.config/
 
 ln -rs gitconfig/.git_templates ~/
 ln -rs gitconfig/.gitignore ~/.gitignore
