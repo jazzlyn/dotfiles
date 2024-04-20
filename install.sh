@@ -46,6 +46,7 @@ yay -Syu --needed --noconfirm \
   openssh \
   openvpn \
   pavucontrol-qt \
+  playerctl \
   postman-bin \
   ranger \
   scrot \
