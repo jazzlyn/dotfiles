@@ -43,23 +43,27 @@ yay -Syu --needed --noconfirm \
   linux \
   linux-firmware \
   neovim \
+  net-tools \
   networkmanager \
   network-manager-applet \
   networkmanager-openvpn \
   nix \
+  noto-fonts-emoji \
   nvm \
+  obsidian-bin \
   openssh \
   openvpn \
   pavucontrol-qt \
   playerctl \
   postman-bin \
   ranger \
-  scrot \
   seahorse \
   sops \
   spaceship-prompt \
+  syncthing \
   sysstat \
   tig \
+  tree \
   ttf-dejavu-nerd \
   ttf-inconsolata-go-nerd \
   unzip \
@@ -67,7 +71,6 @@ yay -Syu --needed --noconfirm \
   visual-studio-code-bin \
   w3m \
   wget \
-  tree \
   xorg-server \
   xorg-xinit \
   xorg-xrandr \
