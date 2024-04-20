@@ -17,6 +17,7 @@ yay -Syu --needed --noconfirm \
   dmenu2 \
   docker \
   docker-buildx \
+  flameshot \
   flux-bin \
   galculator \
   git \
