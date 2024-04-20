@@ -74,11 +74,12 @@ yay -Syu --needed --noconfirm \
 # SYMLINKS
 
 # map secrets
-[[ -d /.secrets/aws ]] && ln -rs ../.secrets/aws ~/.
-[[ -d /.secrets/gcloud ]] && ln -rs ../.secrets/gcloud/configurations ~/.config/gcloud
-[[ -d /.secrets/kube ]] && ln -rs ../.secrets/kube/config ~/.kube/config
-[[ -d /.secrets/sops ]] && ln -rs ../.secrets/sops ~/.config
-[[ -d /.secrets/ssh ]] && ln -rs ../.secrets/ssh ~/.
+[[ -d ~/.secrets/aws ]] && ln -rs ../.secrets/aws ~/.
+[[ -f ~/.secrets/github/base.conf ]] && ln -rs ../.secrets/github/base.conf ~/.gitconfig
+[[ -f ~/.secrets/github/strg.conf ]] && mkdir -p ~/projects/strg && ln -rs ../.secrets/github/strg.conf ~/projects/strg/.gitconfig
+[[ -d ~/.secrets/kube ]] && ln -rs ../.secrets/kube/config ~/.kube/config
+[[ -d ~/.secrets/sops ]] && ln -rs ../.secrets/sops ~/.config
+[[ -d ~/.secrets/ssh ]] && ln -rs ../.secrets/ssh ~/.
 
 # map base config
 
@@ -88,9 +89,6 @@ ln -rs k9s ~/.config/
 
 ln -rs gitconfig/.git_templates ~/
 ln -rs gitconfig/.gitignore ~/.gitignore
-ln -rs gitconfig/base.conf ~/.gitconfig
-mkdir -p ~/projects/strg
-ln -rs gitconfig/strg.conf ~/projects/strg/.gitconfig
 
 ln -rs xinitrc ~/.xinitrc
 
