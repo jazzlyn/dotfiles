@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# install yay
+
+git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si
+
 # install more initial needed packages
 yay -Syu --needed --noconfirm \
   age \
@@ -67,11 +71,20 @@ yay -Syu --needed --noconfirm \
   xorg-server \
   xorg-xinit \
   xorg-xrandr \
-  yay \
   zsh \
   zsh-completions \
   zsh-nix-shell \
   zsh-syntax-highlighting
+
+# Reconfiguration
+
+## use zsh
+
+chsh -s /usr/bin/zsh
+
+## fix gotask
+
+cp /usr/share/zsh/site-functions/_go-task _task
 
 # SYMLINKS
 
