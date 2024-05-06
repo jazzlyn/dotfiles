@@ -1,0 +1,13 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/taskfile.json
+version: "3"
+
+vars:
+  PROJECT_DIR:
+    sh: "git rev-parse --show-toplevel"
+
+tasks:
+  k9s-logs:
+    desc: show k9s logs
+    cmds:
+      - tail -f $HOME/.local/state/k9s/k9s.log
