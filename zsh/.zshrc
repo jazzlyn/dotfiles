@@ -108,5 +108,5 @@ fi
 [[ -d $HOME/.secrets/vault ]] && source $ZDOTDIR/vault.zsh
 
 if command -v keychain > /dev/null 2>&1; then
-  keychain -q --nogui id_ed25519
+  eval $(keychain -q --nogui --eval id_ed25519)
 fi
