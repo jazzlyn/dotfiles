@@ -42,6 +42,7 @@ yay -Syu --needed --noconfirm \
   kubectl \
   linux \
   linux-firmware \
+  mise-bin \
   neovim \
   net-tools \
   networkmanager \
@@ -132,6 +133,10 @@ fi
 
 if command -v k9s > /dev/null 2>&1; then
   ln -rs k9s/plugin.yml ~/.config/k9s/plugin.yml
+fi
+
+if command -v mise > /dev/null 2>&1; then
+  ln -rs mise ~/.config/
 fi
 
 if command -v nix > /dev/null 2>&1; then
