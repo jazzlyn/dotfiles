@@ -55,9 +55,9 @@ source $ZDOTDIR/keybindings.zsh
 source $ZDOTDIR/completions.zsh
 source $ZDOTDIR/editor.zsh
 
-if command -v az > /dev/null 2>&1; then
-  source $ZDOTDIR/azure.zsh
-fi
+# if command -v az > /dev/null 2>&1; then
+#   source $ZDOTDIR/azure.zsh
+# fi
 
 if command -v direnv > /dev/null 2>&1; then
   source $ZDOTDIR/direnv.zsh
