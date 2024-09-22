@@ -9,8 +9,8 @@ SPACESHIP_PROMPT_ORDER=(
   docker
   docker_compose
   venv
-  aws
-  azure
+  # aws
+  # azure
   gcloud
   kubectl
   terraform
@@ -39,7 +39,7 @@ SPACESHIP_TIME_SHOW=true
 # SPACESHIP_TIME_COLOR="yellow"
 
 ## USER
-SPACESHIP_USER_SHOW="always"
+SPACESHIP_USER_SHOW="never"
 SPACESHIP_USER_SUFFIX="@"
 SPACESHIP_USER_COLOR="magenta"
 SPACESHIP_USER_COLOR_ROOT="red"
