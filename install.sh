@@ -44,7 +44,6 @@ yay -Syu --needed --noconfirm \
   linux-firmware \
   mise-bin \
   neovim \
-  net-tools \
   networkmanager \
   network-manager-applet \
   networkmanager-openvpn \
@@ -71,7 +70,6 @@ yay -Syu --needed --noconfirm \
   vim \
   visual-studio-code-bin \
   w3m \
-  wget \
   xorg-server \
   xorg-xinit \
   xorg-xrandr \
