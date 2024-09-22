@@ -17,7 +17,6 @@ yay -Syu --needed --noconfirm \
   bluez-utils \
   cups \
   direnv \
-  discord \
   dmenu2 \
   docker \
   docker-buildx \
