@@ -56,6 +56,8 @@ yay -Syu --needed --noconfirm \
   pavucontrol-qt \
   playerctl \
   postman-bin \
+  pyenv \
+  pyenv-virtualenv \
   ranger \
   seahorse \
   sops \
@@ -67,6 +69,7 @@ yay -Syu --needed --noconfirm \
   ttf-dejavu-nerd \
   ttf-inconsolata-go-nerd \
   unzip \
+  vesktop-bin \
   vim \
   visual-studio-code-bin \
   w3m \
