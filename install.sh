@@ -86,10 +86,6 @@ yay -Syu --needed --noconfirm \
 
 chsh -s /usr/bin/zsh
 
-## fix gotask
-
-cp /usr/share/zsh/site-functions/_go-task _task
-
 # SYMLINKS
 
 # map secrets
