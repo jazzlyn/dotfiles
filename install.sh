@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # install yay
-
 git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si
 
 # install more initial needed packages
@@ -47,6 +46,7 @@ yay -Syu --needed --noconfirm \
   network-manager-applet \
   networkmanager-openvpn \
   nix \
+  noto-fonts \
   noto-fonts-emoji \
   nvm \
   obsidian-bin \
@@ -82,14 +82,14 @@ yay -Syu --needed --noconfirm \
 
 # Reconfiguration
 
-## use zsh
-
+## use zsh as default shell
 chsh -s /usr/bin/zsh
 
 # SYMLINKS
 
 # map secrets
 [[ -d ~/.secrets/aws ]] && ln -rs ../.secrets/aws ~/.
+[[ -d ~/.secrets/docker ]] && ln -rs ../.secrets/docker ~/.
 [[ -f ~/.secrets/github/base.conf ]] && ln -rs ../.secrets/github/base.conf ~/.gitconfig
 [[ -f ~/.secrets/github/strg.conf ]] && mkdir -p ~/projects/strg && ln -rs ../.secrets/github/strg.conf ~/projects/strg/.gitconfig
 [[ -d ~/.secrets/kube ]] && ln -rs ../.secrets/kube/config ~/.kube/config
@@ -115,11 +115,6 @@ fi
 
 if command -v autorandr > /dev/null 2>&1; then
   ln -rs autorandr ~/.config/
-fi
-
-if command -v docker > /dev/null 2>&1; then
-  mkdir -p ~/.docker
-  ln -rs docker/config.json ~/.docker/config.json
 fi
 
 if command -v i3 > /dev/null 2>&1; then
