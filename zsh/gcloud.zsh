@@ -1,4 +1,5 @@
 export BOTO_PATH="$HOME/.secrets/gcloud/boto"
+export CLOUDSDK_PYTHON="/usr/bin/python3"
 export USE_GKE_GCLOUD_AUTH_PLUGIN="True"
 
 if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*google-cloud*/google-cloud*/path.zsh.inc) ]]; then
