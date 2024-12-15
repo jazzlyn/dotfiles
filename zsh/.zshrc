@@ -49,8 +49,6 @@ fi
 
 source $ZDOTDIR/kubernetes.zsh
 
-[[ -f $HOME/.secrets/aws/minio-config ]] && source $ZDOTDIR/minio.zsh
-
 if command -v mise > /dev/null 2>&1; then
   source $ZDOTDIR/mise.zsh
 fi
@@ -84,8 +82,6 @@ elif [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
 else
   echo "spaceship-prompt not found"
 fi
-
-[[ -d $HOME/.secrets/vault ]] && source $ZDOTDIR/vault.zsh
 
 if command -v keychain > /dev/null 2>&1; then
   eval $(keychain -q --nogui --eval id_ed25519)
