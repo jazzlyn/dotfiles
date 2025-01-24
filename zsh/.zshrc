@@ -61,10 +61,6 @@ if command -v npm > /dev/null 2>&1; then
   source $ZDOTDIR/npm.zsh
 fi
 
-if [[ -f /usr/share/nvm/init-nvm.sh ]]; then
-  source $ZDOTDIR/nvm.zsh
-fi
-
 if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
