@@ -6,8 +6,27 @@ vars:
   PROJECT_DIR:
     sh: "git rev-parse --show-toplevel"
 
+includes:
+  install: .taskfiles/install.yaml
+  symlinks: .taskfiles/symlinks.yaml
+
 tasks:
   k9s-logs:
     desc: show k9s logs
     cmds:
       - tail -f $HOME/.local/state/k9s/k9s.log
+
+  setup-purple:
+    desc: setup purple
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:desktop
+      - task: install:dev-tools
+
+  setup-wsl:
+    desc: setup wsl
+    cmds:
+      - task: install:base
+      # - task: install:dev-tools
+      - task: install:wsl

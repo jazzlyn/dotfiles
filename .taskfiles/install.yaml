@@ -1,0 +1,92 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/taskfile.json
+version: "3"
+
+tasks:
+  base:
+    desc: install base packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        atool
+        base
+        base-devel
+        git
+        gnome-keyring
+        neovim
+        openssh
+        ranger
+        spaceship-prompt
+        tig
+        tree
+        unzip
+        vim
+        w3m
+        zsh
+        zsh-completions
+        zsh-nix-shell
+        zsh-syntax-highlighting
+
+  system:
+    desc: install system packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        bluez-utils
+        cups
+        docker
+        hpuld
+        htop
+        linux
+        linux-firmware
+        networkmanager
+        network-manager-openvpn
+        nix
+        noto-fonts
+        noto-fonts-emoji
+        openvpn
+        ttf-dejavu-nerd
+        ttf-inconsolata-go-nerd
+
+  dev-tools:
+    desc: install development tools
+    cmds:
+      - yay -Syu --needed --noconfirm
+        azure-cli-bin
+        docker-buildx
+        google-cloud-cli
+        google-cloud-cli-gke-gcloud-auth-plugin
+
+  desktop:
+    desc: install display packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        alacritty
+        autorandr
+        barrier
+        dmenu2
+        flameshot
+        galculator
+        google-chrome
+        i3blocks
+        i3blocks-contrib-git
+        i3lock
+        i3status
+        i3-wm
+        intel-ucode
+        network-manager-applet
+        obsidian-bin
+        pavucontrol-qt
+        playerctl
+        seahorse
+        sysstat
+        syncthing
+        vesktop-bin
+        visual-studio-code-bin
+        xorg-server
+        xorg-xinit
+        xorg-xrandr
+
+  wsl:
+    desc: install wsl packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        keychain

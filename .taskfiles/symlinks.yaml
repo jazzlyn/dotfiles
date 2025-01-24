@@ -1,0 +1,41 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/taskfile.json
+version: "3"
+
+tasks:
+  base:
+    desc: create base symlinks
+    cmds:
+      - chsh -s /usr/bin/zsh
+      - ln -rs zsh/.zshenv ~/
+      - ln -rs zsh/.zshrc ~/
+      - ln -rs k9s ~/.config/
+      - ln -rs gitconfig/.git_templates ~/
+      - ln -rs gitconfig/.gitignore ~/.gitignore
+      - ln -rs xinitrc ~/.xinitrc
+
+  apps:
+    desc: create app symlinks
+    cmds:
+      - test -x "$(which alacritty 2>/dev/null)" && ln -rs alacritty ~/.config/
+      - test -x "$(which autorandr 2>/dev/null)" && ln -rs autorandr ~/.config/
+      - test -x "$(which i3 2>/dev/null)" && ln -rs i3 ~/.config/ && ln -rs i3blocks ~/.config/
+      - test -x "$(which mise 2>/dev/null)" && ln -rs mise ~/.config/
+      - test -x "$(which nix 2>/dev/null)" && ln -rs nix ~/.config/
+      - test -x "$(which nvim 2>/dev/null)" && mkdir -p ~/.config/nvim && ln -rs nvim/init.vim ~/.config/nvim && ln -rs nvim/init.vim ~/.vimrc
+      - test -x "$(which pacman 2>/dev/null)" && mkdir -p ~/.config/pacman && ln -rs makepkg.conf ~/.config/pacman/makepkg.conf
+      - test -x "$(which pulseaudio 2>/dev/null)" && mkdir -p ~/.config/pulse && ln -rs pulse/default.pa ~/.config/pulse/default.pa
+      - test -x "$(which ranger 2>/dev/null)" && ln -rs ranger/commands.py ~/.config/ranger/commands.py && ln -rs ranger/rc.conf ~/.config/ranger/rc.conf && ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
+      - test -x "$(which yay 2>/dev/null)" && ln -rs yay/config.json ~/.config/yay/config.json
+    ignore_error: true
+
+  secrets:
+    desc: create secrets symlinks
+    cmds:
+      #     - test -d ~/.secrets/aws && ln -rs ../.secrets/aws ~/.
+      - test -f ~/.secrets/github/base.conf && ln -rs ../.secrets/github/base.conf ~/.gitconfig
+      - test -f ~/.secrets/github/strg.conf && mkdir -p ~/projects/strg && ln -rs ../.secrets/github/strg.conf ~/projects/strg/.gitconfig
+    #     - test -d ~/.secrets/kube && ln -rs ../.secrets/kube/config ~/.kube/config
+    #     - test -d ~/.secrets/sops && ln -rs ../.secrets/sops ~/.config
+    #     - test -d ~/.secrets/ssh && ln -rs ../.secrets/ssh ~/.
+    ignore_error: true
