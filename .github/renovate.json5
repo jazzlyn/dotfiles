@@ -5,4 +5,10 @@
     "github>techtales-io/renovate-config//mise/silent-automerge.json5",
     "github>techtales-io/renovate-config//pre-commit/silent-automerge.json5",
   ],
+  packageRules: [
+    {
+      matchManagers: ["mise"],
+      addLabels: ["renovate/mise"],
+    },
+  ],
 }
