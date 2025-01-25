@@ -74,6 +74,7 @@ $RECYCLE.BIN/
 
 # Nix
 *.nix
+.mise.toml
 
 # Personal
 
