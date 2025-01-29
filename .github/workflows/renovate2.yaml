@@ -69,7 +69,7 @@ jobs:
 
       # https://github.com/marketplace/actions/renovate-bot-github-action
       - name: renovate bot
-        uses: renovatebot/github-action@76d49712364696a06b60e8647df46b288fff0ddc # v40.2.4
+        uses: renovatebot/github-action@0984fb80fc633b17e57f3e8b6c007fe0dc3e0d62 # v40.3.6
         env:
           LOG_LEVEL: ${{ inputs.log-level || 'debug' }}
           RENOVATE_CONFIG_FILE: .github/renovate-bot.json5
