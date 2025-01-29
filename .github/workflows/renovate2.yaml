@@ -76,4 +76,4 @@ jobs:
           RENOVATE_DRY_RUN: ${{ inputs.dry-run || 'null' }}
           RENOVATE_TOKEN: ${{ steps.generate-token.outputs.token }}
         with:
-          renovate-version: 39.141.0
+          renovate-version: 39.133.4
