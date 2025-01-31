@@ -61,6 +61,7 @@ $RECYCLE.BIN/
 .vscode/*
 .history/
 *.vsix
+.decrypted~*.yaml
 
 # JetBrains
 
@@ -75,6 +76,17 @@ $RECYCLE.BIN/
 # Nix
 *.nix
 .mise.toml
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*import*.tf
+*.tfvars
+*.tfplan
+.terraformrc
+terraform.rc
+**/.terraform.lock.hcl
 
 # Personal
 
