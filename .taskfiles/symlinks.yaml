@@ -17,9 +17,9 @@ tasks:
   apps:
     desc: create app symlinks
     cmds:
-      - test -x "$(which alacritty 2>/dev/null)" && ln -rs alacritty ~/.config/
       - test -x "$(which autorandr 2>/dev/null)" && ln -rs autorandr ~/.config/
       - test -x "$(which i3 2>/dev/null)" && ln -rs i3 ~/.config/ && ln -rs i3blocks ~/.config/
+      - test -x "$(which kitty 2>/dev/null)" && ln -rs kitty ~/.config/
       - test -x "$(which mise 2>/dev/null)" && ln -rs mise ~/.config/
       - test -x "$(which nix 2>/dev/null)" && ln -rs nix ~/.config/
       - test -x "$(which nvim 2>/dev/null)" && mkdir -p ~/.config/nvim && ln -rs nvim/init.vim ~/.config/nvim && ln -rs nvim/init.vim ~/.vimrc

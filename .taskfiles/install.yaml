@@ -59,7 +59,6 @@ tasks:
     desc: install display packages
     cmds:
       - yay -Syu --needed --noconfirm
-        alacritty
         autorandr
         barrier
         flameshot
@@ -71,6 +70,7 @@ tasks:
         i3status
         i3-wm
         intel-ucode
+        kitty
         network-manager-applet
         obsidian
         pavucontrol-qt
