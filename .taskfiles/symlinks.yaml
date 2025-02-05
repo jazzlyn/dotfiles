@@ -26,6 +26,7 @@ tasks:
       - test -x "$(which pacman 2>/dev/null)" && mkdir -p ~/.config/pacman && ln -rs makepkg.conf ~/.config/pacman/makepkg.conf
       - test -x "$(which pulseaudio 2>/dev/null)" && mkdir -p ~/.config/pulse && ln -rs pulse/default.pa ~/.config/pulse/default.pa
       - test -x "$(which ranger 2>/dev/null)" && ln -rs ranger/commands.py ~/.config/ranger/commands.py && ln -rs ranger/rc.conf ~/.config/ranger/rc.conf && ln -rs ranger/scope.sh ~/.config/ranger/scope.sh
+      - test -x "$(which rofi 2>/dev/null)" && ln -rs rofi ~/.config/
       - test -x "$(which yay 2>/dev/null)" && ln -rs yay/config.json ~/.config/yay/config.json
     ignore_error: true
 

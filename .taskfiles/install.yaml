@@ -62,7 +62,6 @@ tasks:
         alacritty
         autorandr
         barrier
-        dmenu2
         flameshot
         galculator
         google-chrome
@@ -76,6 +75,7 @@ tasks:
         obsidian-bin
         pavucontrol-qt
         playerctl
+        rofi
         seahorse
         sysstat
         syncthing
