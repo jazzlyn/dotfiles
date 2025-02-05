@@ -50,7 +50,7 @@ tasks:
     desc: install development tools
     cmds:
       - yay -Syu --needed --noconfirm
-        azure-cli-bin
+        azure-cli
         docker-buildx
         google-cloud-cli
         google-cloud-cli-gke-gcloud-auth-plugin
@@ -72,7 +72,7 @@ tasks:
         i3-wm
         intel-ucode
         network-manager-applet
-        obsidian-bin
+        obsidian
         pavucontrol-qt
         playerctl
         rofi
