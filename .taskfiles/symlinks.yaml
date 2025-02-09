@@ -33,10 +33,7 @@ tasks:
   secrets:
     desc: create secrets symlinks
     cmds:
-      #     - test -d ~/.secrets/aws && ln -rs ../.secrets/aws ~/.
       - test -f ~/.secrets/github/base.conf && ln -rs ../.secrets/github/base.conf ~/.gitconfig
       - test -f ~/.secrets/github/strg.conf && mkdir -p ~/projects/strg && ln -rs ../.secrets/github/strg.conf ~/projects/strg/.gitconfig
-    #     - test -d ~/.secrets/kube && ln -rs ../.secrets/kube/config ~/.kube/config
-    #     - test -d ~/.secrets/sops && ln -rs ../.secrets/sops ~/.config
-    #     - test -d ~/.secrets/ssh && ln -rs ../.secrets/ssh ~/.
+      - test -d ~/.secrets/ssh && ln -rs ../.secrets/ssh ~/.
     ignore_error: true
