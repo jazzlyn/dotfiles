@@ -75,12 +75,16 @@ if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-pr
 elif [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
   source /usr/lib/spaceship-prompt/spaceship.zsh
   source $ZDOTDIR/prompt.zsh
+elif [[ -f $HOME/.zsh/spaceship/spaceship.zsh ]]; then
+  source $HOME/.zsh/spaceship/spaceship.zsh
+  source $ZDOTDIR/prompt.zsh
 else
   echo "spaceship-prompt not found"
 fi
 
 if command -v keychain > /dev/null 2>&1; then
-  eval $(keychain -q --nogui --eval id_ed25519)
+  eval $(ssh-agent -s) > /dev/null
+  eval $(keychain --quiet --eval --agents ssh ~/.ssh/id_ed25519)
 fi
 
 [[ -d $HOME/.secrets/vault ]] && source $ZDOTDIR/vault.zsh

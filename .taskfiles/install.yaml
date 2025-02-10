@@ -83,6 +83,18 @@ tasks:
         xorg-xinit
         xorg-xrandr
 
+  workstation:
+    desc: install workstation packages
+    cmds:
+      - sudo apt update && sudo apt install -y --no-install-recommends
+        atool
+        mise
+        neovim
+        ranger
+        tig
+        tree
+      - git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship"
+
   wsl:
     desc: install wsl packages
     cmds:
