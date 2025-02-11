@@ -24,9 +24,19 @@ tasks:
       - task: install:desktop
       - task: install:dev-tools
 
+  setup-workstation:
+    desc: setup workstation
+    cmds:
+      - task: install:workstation
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets
+
   setup-wsl:
     desc: setup wsl
     cmds:
       - task: install:base
       # - task: install:dev-tools
-      - task: install:wsl
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets

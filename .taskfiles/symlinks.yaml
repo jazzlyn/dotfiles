@@ -6,12 +6,17 @@ tasks:
   base:
     desc: create base symlinks
     cmds:
+      - rm -rf ~/.zshenv ~/.zshrc ~/.config/k9s ~/.git_templates ~/.gitignore
       - chsh -s /usr/bin/zsh
       - ln -rs zsh/.zshenv ~/
       - ln -rs zsh/.zshrc ~/
       - ln -rs k9s ~/.config/
       - ln -rs gitconfig/.git_templates ~/
       - ln -rs gitconfig/.gitignore ~/.gitignore
+
+  desktop:
+    desc: create desktop symlinks
+    cmds:
       - ln -rs xinitrc ~/.xinitrc
 
   apps:
@@ -35,5 +40,4 @@ tasks:
     cmds:
       - test -f ~/.secrets/github/base.conf && ln -rs ../.secrets/github/base.conf ~/.gitconfig
       - test -f ~/.secrets/github/strg.conf && mkdir -p ~/projects/strg && ln -rs ../.secrets/github/strg.conf ~/projects/strg/.gitconfig
-      - test -d ~/.secrets/ssh && ln -rs ../.secrets/ssh ~/.
     ignore_error: true

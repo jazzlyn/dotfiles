@@ -18,8 +18,6 @@ tasks:
         spaceship-prompt
         tig
         tree
-        unzip
-        vim
         w3m
         zsh
         zsh-completions
@@ -76,7 +74,6 @@ tasks:
         pavucontrol-qt
         playerctl
         rofi
-        seahorse
         sysstat
         syncthing
         vesktop-bin
@@ -85,8 +82,12 @@ tasks:
         xorg-xinit
         xorg-xrandr
 
-  wsl:
-    desc: install wsl packages
+  workstation:
+    desc: install workstation packages
     cmds:
-      - yay -Syu --needed --noconfirm
-        keychain
+      - sudo apt update && sudo apt install --no-install-recommends
+        atool
+        neovim
+        ranger
+      - git clone --depth=1 git@github.com:spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship-prompt"
+      - curl https://mise.run | sh
