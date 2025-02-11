@@ -6,8 +6,6 @@ if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*google-cloud*/google-cloud*/path.z
   source $(ls $NIX_STORE/*google-cloud*/google-cloud*/path.zsh.inc)
 elif [[ -f /opt/google-cloud-cli/path.zsh.inc ]]; then
   source /opt/google-cloud-cli/path.zsh.inc
-else
-  echo "google-cloud zsh path config not found"
 fi
 
 if [[ -f /opt/google-cloud-cli/completion.zsh.inc ]]; then
