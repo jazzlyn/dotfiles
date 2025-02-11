@@ -21,6 +21,10 @@ zle -N down-line-or-beginning-search
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
 
+# set ssh
+if [[ -z $SSH_CONNECTION ]]; then
+  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+fi
 
 source $ZDOTDIR/history.zsh
 source $ZDOTDIR/terminal.zsh
@@ -77,8 +81,12 @@ else
   echo "spaceship-prompt not found"
 fi
 
-if command -v keychain > /dev/null 2>&1; then
-  eval $(keychain -q --nogui --eval id_ed25519)
-fi
+# if command -v keychain > /dev/null 2>&1; then
+#   if [[ -f ~/.ssh/id_ed25519 ]]; then
+#     eval $(keychain --eval --agents ssh ~/.ssh/id_ed25519)
+#   else
+#     eval $(keychain --eval --inherit any)
+#   fi
+# fi
 
 [[ -d $HOME/.secrets/vault ]] && source $ZDOTDIR/vault.zsh
