@@ -21,8 +21,6 @@ zle -N down-line-or-beginning-search
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
 
-# load zsh support for nix-shell
-[[ -f /usr/share/zsh/plugins/zsh-nix-shell/nix-shell.plugin.zsh ]] && source /usr/share/zsh/plugins/zsh-nix-shell/nix-shell.plugin.zsh
 
 source $ZDOTDIR/history.zsh
 source $ZDOTDIR/terminal.zsh
