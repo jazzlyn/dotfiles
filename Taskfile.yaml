@@ -37,7 +37,6 @@ tasks:
     cmds:
       - task: install:base
       # - task: install:dev-tools
-      - task: install:wsl
       - task: symlinks:base
       - task: symlinks:apps
       - task: symlinks:secrets
