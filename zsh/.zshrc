@@ -26,6 +26,10 @@ if [[ -z $SSH_CONNECTION ]]; then
   export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 fi
 
+if command -v mise > /dev/null 2>&1; then
+  source $ZDOTDIR/mise.zsh
+fi
+
 source $ZDOTDIR/history.zsh
 source $ZDOTDIR/terminal.zsh
 source $ZDOTDIR/xdg.zsh
@@ -50,10 +54,6 @@ if command -v go > /dev/null 2>&1; then
 fi
 
 source $ZDOTDIR/kubernetes.zsh
-
-if command -v mise > /dev/null 2>&1; then
-  source $ZDOTDIR/mise.zsh
-fi
 
 if command -v nix > /dev/null 2>&1; then
   source $ZDOTDIR/nix.zsh
@@ -84,4 +84,10 @@ else
   echo "spaceship-prompt not found"
 fi
 
-[[ -d $HOME/.secrets/vault ]] && source $ZDOTDIR/vault.zsh
+if command -v task > /dev/null 2>&1; then
+  source $ZDOTDIR/task.zsh
+fi
+
+if [[ -f $HOME/.secrets/vault/config ]]; then
+  source $ZDOTDIR/vault.zsh
+fi
