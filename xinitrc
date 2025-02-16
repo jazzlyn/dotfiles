@@ -14,13 +14,15 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 xset s off
 
-# keyring config
-dbus-update-activation-environment --all
-export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# launch gnome-keyring-daemon on startup (i3 only)
+if command -v gnome-keyring-daemon &> /dev/null; then
+  dbus-update-activation-environment --all
+  gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+fi
 
-# fix for barrier
-setxkbmap -device `xinput list --id-only "Virtual core XTEST keyboard"` de
-
-autorandr --load $(cat /etc/hostname) --skip-options crtc
+if command -v autorandr &> /dev/null; then
+  autorandr --load $(cat /etc/hostname) --skip-options crtc
+fi
 
 exec i3

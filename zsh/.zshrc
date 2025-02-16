@@ -21,11 +21,6 @@ zle -N down-line-or-beginning-search
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
 
-# set ssh
-if [[ -z $SSH_CONNECTION ]]; then
-  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
-fi
-
 if command -v mise > /dev/null 2>&1; then
   source $ZDOTDIR/mise.zsh
 fi
