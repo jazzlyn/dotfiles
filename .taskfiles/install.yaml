@@ -30,36 +30,35 @@ tasks:
       - yay -Syu --needed --noconfirm
         bluez-utils
         cups
-        docker
         hpuld
         htop
         linux
         linux-firmware
         networkmanager
         network-manager-openvpn
-        nix
         noto-fonts
         noto-fonts-emoji
         openvpn
         ttf-dejavu-nerd
         ttf-inconsolata-go-nerd
 
-  dev-tools:
+  devtools:
     desc: install development tools
     cmds:
       - yay -Syu --needed --noconfirm
         azure-cli
+        docker
         docker-buildx
         google-cloud-cli
         google-cloud-cli-gke-gcloud-auth-plugin
+        nix
 
   desktop:
-    desc: install display packages
+    desc: install desktop packages
     cmds:
       - yay -Syu --needed --noconfirm
         alacritty
         autorandr
-        barrier
         flameshot
         galculator
         google-chrome
