@@ -68,7 +68,15 @@ separator=true
 [iface]
 command=/usr/lib/i3blocks/iface
 label=󰖩
-instance=wlp2s0
+instance=enp0s13f0u3u2
+color=#00CCFF
+interval=10
+separator=true
+
+[iface]
+command=/usr/lib/i3blocks/iface
+label=󰖩
+instance=wlp0s20f3
 color=#00CCFF
 interval=10
 separator=true
