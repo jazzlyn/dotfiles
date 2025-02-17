@@ -179,7 +179,7 @@ bindsym $mod+m move workspace to output up
 bindsym $mod+n move workspace to output right
 
 # i3lock with wallpaper
-bindsym $mod+BackSpace exec --no-startup-id i3lock -f -c 000000 -i ~/.dotfiles/wallpaper/archlinux.davinci.anime-1920.png
+bindsym $mod+BackSpace exec --no-startup-id i3lock -f -c 190019
 
 # mouse behaviour
 focus_follows_mouse no
