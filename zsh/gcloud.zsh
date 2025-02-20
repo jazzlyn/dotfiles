@@ -8,8 +8,6 @@ elif [[ -f /opt/google-cloud-cli/path.zsh.inc ]]; then
   source /opt/google-cloud-cli/path.zsh.inc
 elif [[ -f /usr/share/google-cloud-sdk/path.zsh.inc ]]; then
   source /usr/share/google-cloud-sdk/path.zsh.inc
-else
-  echo "google-cloud zsh path not found"
 fi
 
 if [[ $MISE_SHELL && -f $HOME/.local/share/mise/installs/gcloud/latest/completion.zsh.inc ]]; then
