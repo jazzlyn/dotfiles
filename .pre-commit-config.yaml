@@ -42,6 +42,8 @@ repos:
         args:
           - --markdown-linebreak-ext=md
         exclude: i3blocks/config
+      # - id: no-commit-to-branch
+      #   args: ["--branch", "main"]
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.35.1
@@ -87,7 +89,7 @@ repos:
     hooks:
       - id: forbid-secrets
 
-  - repo: https://github.com/zricethezav/gitleaks
+  - repo: https://github.com/gitleaks/gitleaks
     rev: v8.24.0
     hooks:
       - id: gitleaks

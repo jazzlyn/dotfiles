@@ -88,5 +88,8 @@ tasks:
         atool
         neovim
         ranger
-      - git clone --depth=1 git@github.com:spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship-prompt"
+      - cmd: |
+          if [ ! -d "$HOME/.zsh/spaceship-prompt" ]; then
+            git clone --depth=1 git@github.com:spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship-prompt"
+          fi
       - curl https://mise.run | sh
