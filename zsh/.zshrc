@@ -62,7 +62,7 @@ if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
 
-if command -v pyenv > /dev/null 2>&1; then
+if command -v uv > /dev/null 2>&1; then
   source $ZDOTDIR/python.zsh
 fi
 
