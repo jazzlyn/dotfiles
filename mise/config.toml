@@ -3,7 +3,7 @@ experimental = true
 
 [tools]
 "python" = "3.13.2"
-"poetry" = "2.1.1"
+"poetry" = "2.1.2"
 
 "aqua:FiloSottile/age" = "1.2.1"
 "aqua:direnv/direnv" = "2.35.0"
