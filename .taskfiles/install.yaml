@@ -51,8 +51,9 @@ tasks:
       - yay -Syu --needed --noconfirm
         azure-cli
         github-cli
-        docker
-        docker-buildx
+        podman
+        podman-compose
+        podman-docker
         google-cloud-cli
         google-cloud-cli-gke-gcloud-auth-plugin
         nix
