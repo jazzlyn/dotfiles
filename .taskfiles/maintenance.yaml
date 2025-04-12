@@ -1,0 +1,24 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/taskfile.json
+version: "3"
+
+tasks:
+  docker-reset:
+    desc: reset docker configs
+    cmds:
+      - docker stop $(docker ps -q)
+      - docker rm $(docker ps -a -q)
+      - docker rmi $(docker images -q)
+      - docker volume rm $(docker volume ls -q)
+      - docker network rm $(docker network ls -q)
+      - docker system prune --all --volumes -f
+
+  journalctl:
+    desc: check for failed journalctl services
+    cmds:
+      - sudo journalctl --no-pager -p 3 -b
+
+  systemd:
+    desc: check for failed systemd services
+    cmds:
+      - sudo systemctl --failed

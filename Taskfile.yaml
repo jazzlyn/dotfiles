@@ -8,6 +8,7 @@ vars:
 
 includes:
   install: .taskfiles/install.yaml
+  maintenance: .taskfiles/maintenance.yaml
   symlinks: .taskfiles/symlinks.yaml
 
 tasks:
