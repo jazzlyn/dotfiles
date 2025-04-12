@@ -7,6 +7,7 @@ tasks:
     desc: install base packages
     cmds:
       - yay -Syu --needed --noconfirm
+        age
         atool
         base
         base-devel
@@ -15,6 +16,7 @@ tasks:
         neovim
         openssh
         ranger
+        sops
         spaceship-prompt
         tig
         tree
@@ -29,6 +31,7 @@ tasks:
     cmds:
       - yay -Syu --needed --noconfirm
         bluez-utils
+        btrfs-progs
         cups
         hpuld
         htop
@@ -47,6 +50,7 @@ tasks:
     cmds:
       - yay -Syu --needed --noconfirm
         azure-cli
+        github-cli
         docker
         docker-buildx
         google-cloud-cli
