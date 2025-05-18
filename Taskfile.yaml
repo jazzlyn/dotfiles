@@ -32,6 +32,7 @@ tasks:
       - task: symlinks:base
       - task: symlinks:apps
       - task: symlinks:secrets
+      - mkdir -p ~/scripts && ln -rsf init.sh ~/scripts
 
   setup-wsl:
     desc: setup wsl
