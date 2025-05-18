@@ -88,12 +88,15 @@ tasks:
   workstation:
     desc: install workstation packages
     cmds:
-      - sudo apt update && sudo apt install --no-install-recommends
+      - sudo apt update && sudo apt upgrade -y && sudo apt install --no-install-recommends -y
         atool
+        dnsutils
         neovim
+        net-tools
         ranger
+        strace
+        traceroute
       - cmd: |
           if [ ! -d "$HOME/.zsh/spaceship-prompt" ]; then
             git clone --depth=1 git@github.com:spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship-prompt"
           fi
-      - curl https://mise.run | sh

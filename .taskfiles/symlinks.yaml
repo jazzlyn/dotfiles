@@ -10,7 +10,7 @@ tasks:
       - chsh -s /usr/bin/zsh
       - ln -rsf zsh/.zshenv ~/
       - ln -rsf zsh/.zshrc ~/
-      - ln -rsf k9s ~/.config/
+      - ln -rsf k9s ~/.config
       - ln -rsf gitconfig/.git_templates ~/
       - ln -rsf gitconfig/.gitignore ~/.gitignore
 
