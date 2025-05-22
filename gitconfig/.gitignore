@@ -73,10 +73,6 @@ $RECYCLE.BIN/
 .direnv
 .envrc
 
-# Nix
-*.nix
-.mise.toml
-
 # Terraform
 **/.terraform/*
 *.tfstate
