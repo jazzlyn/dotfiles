@@ -3,7 +3,7 @@ experimental = true
 idiomatic_version_file_enable_tools = ["python"]
 
 [tools]
-"python" = "3.13.3"
+"python" = "3.13.4"
 
 "aqua:FiloSottile/age" = "1.2.1"
 "aqua:direnv/direnv" = "2.36.0"
