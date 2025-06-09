@@ -13,6 +13,8 @@ tasks:
         base-devel
         git
         gnome-keyring
+        less
+        mise
         neovim
         openssh
         ranger
@@ -20,7 +22,6 @@ tasks:
         spaceship-prompt
         tig
         tree
-        w3m
         zsh
         zsh-completions
         zsh-nix-shell
@@ -45,6 +46,12 @@ tasks:
         ttf-dejavu-nerd
         ttf-inconsolata-go-nerd
 
+  nvidia:
+    desc: install nvidia packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        nvidia-open
+
   devtools:
     desc: install development tools
     cmds:
@@ -57,7 +64,7 @@ tasks:
         google-cloud-cli-gke-gcloud-auth-plugin
         nix
 
-  desktop:
+  i3:
     desc: install desktop packages
     cmds:
       - yay -Syu --needed --noconfirm
@@ -71,7 +78,6 @@ tasks:
         i3lock
         i3status
         i3-wm
-        intel-ucode
         network-manager-applet
         obsidian
         pavucontrol-qt
@@ -81,9 +87,41 @@ tasks:
         syncthing
         vesktop-bin
         visual-studio-code-bin
+        w3m
         xorg-server
         xorg-xinit
         xorg-xrandr
+
+  sway:
+    desc: install sway packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        dunst
+        flameshot
+        google-chrome
+        grim
+        kanshi
+        kitty
+        network-manager-applet
+        obsidian
+        pavucontrol-qt
+        pipewire
+        pipewire-alsa
+        pipewire-pulse
+        pipewire-jack
+        python-pillow
+        slurp
+        sway
+        swaybg
+        swaylock
+        syncthing
+        vesktop-bin
+        visual-studio-code-bin
+        waybar
+        wmenu
+        xdg-desktop-portal
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
 
   workstation:
     desc: install workstation packages

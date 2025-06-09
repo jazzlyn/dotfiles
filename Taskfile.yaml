@@ -22,8 +22,12 @@ tasks:
     cmds:
       - task: install:base
       - task: install:system
-      - task: install:desktop
+      - task: install:nvidia
+      - task: install:sway
       - task: install:devtools
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets
 
   setup-workstation:
     desc: setup workstation
