@@ -35,6 +35,7 @@ tasks:
       - test -x "$(which ranger 2>/dev/null)" && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
       - test -x "$(which rofi 2>/dev/null)" && ln -rsf rofi ~/.config/
       - test -x "$(which sway 2>/dev/null)" && ln -rsf sway ~/.config/
+      - test -x "$(which waybar 2>/dev/null)" && ln -rsf waybar ~/.config/
       - test -x "$(which yay 2>/dev/null)" && ln -rsf yay/config.json ~/.config/yay/config.json
     ignore_error: true
 
