@@ -26,6 +26,7 @@ tasks:
       - test -x "$(which autorandr 2>/dev/null)" && ln -rsf autorandr ~/.config/
       - test -x "$(which hyprland 2>/dev/null)" && ln -rsf hypr ~/.config/
       - test -x "$(which i3 2>/dev/null)" && ln -rsf i3 ~/.config/ && ln -rsf i3blocks ~/.config/
+      - test -x "$(which kitty 2>/dev/null)" && ln -rsf kitty ~/.config/
       - test -x "$(which mise 2>/dev/null)" && ln -rsf mise ~/.config/
       - test -x "$(which nix 2>/dev/null)" && ln -rsf nix ~/.config/
       - test -x "$(which nvim 2>/dev/null)" && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
