@@ -1,6 +1,10 @@
-# startX
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && command -v sway >/dev/null 2>&1; then
+  export SDL_VIDEODRIVER=wayland
+  export _JAVA_AWT_WM_NONREPARENTING=1
+  export QT_QPA_PLATFORM=wayland
+  export XDG_CURRENT_DESKTOP=sway
+  export XDG_SESSION_DESKTOP=sway
+  sway --unsupported-gpu
 fi
 
 setopt pushd_to_home
