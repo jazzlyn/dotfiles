@@ -84,6 +84,9 @@ $RECYCLE.BIN/
 terraform.rc
 **/.terraform.lock.hcl
 
+# Pre-commit
+megalinter-reports/
+
 # Personal
 
 notes/
