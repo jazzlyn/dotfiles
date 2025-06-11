@@ -1,9 +1,11 @@
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && command -v sway >/dev/null 2>&1; then
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && command -v sway >/dev/null 2>&1; then
   export SDL_VIDEODRIVER=wayland
   export _JAVA_AWT_WM_NONREPARENTING=1
   export QT_QPA_PLATFORM=wayland
   export XDG_CURRENT_DESKTOP=sway
   export XDG_SESSION_DESKTOP=sway
+  dbus-update-activation-environment --all
+  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
   sway --unsupported-gpu
 fi
 
