@@ -34,15 +34,16 @@ include /etc/sway/config.d/*
 
   # My apps
   set $terminal kitty
-  set $menu wmenu-run
+  set $menu wmenu-run -f "InconsolataGo Nerd Font Mono:style=Regular 12"
 
   # Autostart
   exec --no-startup-id flameshot
   exec --no-startup-id nm-applet
-  exec --no-startup-id obsidian
+  exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
   exec --no-startup-id vesktop --start-minimized
 
-  # App Positions
+  # App configurations
+  for_window [shell="xwayland"] title_format "[XWayland] %title"
   for_window [app_id="flameshot"] floating enable, fullscreen disable, border pixel 0, move absolute position 0 0
   for_window [app_id="galculator"] floating enable, border normal
   for_window [app_id="obsidian"] move to workspace 4
