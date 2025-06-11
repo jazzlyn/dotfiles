@@ -22,6 +22,7 @@ tasks:
         spaceship-prompt
         tig
         tree
+        vim
         zsh
         zsh-completions
         zsh-nix-shell
@@ -118,6 +119,7 @@ tasks:
         vesktop-bin
         visual-studio-code-bin
         waybar
+        qt6-wayland
         wmenu
         xdg-desktop-portal
         xdg-desktop-portal-gtk
