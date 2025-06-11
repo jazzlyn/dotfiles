@@ -13,6 +13,8 @@ tasks:
       - ln -rsf k9s ~/.config
       - ln -rsf gitconfig/.git_templates ~/
       - ln -rsf gitconfig/.gitignore ~/.gitignore
+      - ln -rsf wayland/chrome-flags.conf ~/.config/
+      - ln -rsf wayland/code-flags.conf ~/.config/
 
   desktop:
     desc: create desktop symlinks
