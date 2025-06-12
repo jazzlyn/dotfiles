@@ -24,6 +24,8 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+autoload -U add-zsh-hook
+
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
 

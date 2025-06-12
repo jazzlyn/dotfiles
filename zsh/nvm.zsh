@@ -2,7 +2,6 @@
 source /usr/share/nvm/init-nvm.sh
 
 # if nvmrc is present in project then load nvm version automatically
-autoload -U add-zsh-hook
 load-nvmrc() {
   local nvmrc_path
   nvmrc_path="$(nvm_find_nvmrc)"
