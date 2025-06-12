@@ -12,7 +12,6 @@ tasks:
         base
         base-devel
         git
-        gnome-keyring
         less
         mise
         neovim
@@ -99,6 +98,8 @@ tasks:
       - yay -Syu --needed --noconfirm
         dunst
         flameshot
+        galculator
+        gnome-keyring
         google-chrome
         grim
         kanshi
