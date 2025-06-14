@@ -17,6 +17,17 @@ tasks:
     cmds:
       - tail -f $HOME/.local/state/k9s/k9s.log
 
+  setup-coal:
+    desc: setup coal
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:sway
+      - task: install:devtools
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets
+
   setup-purple:
     desc: setup purple
     cmds:
