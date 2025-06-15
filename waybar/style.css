@@ -1,0 +1,231 @@
+* {
+  font-family: "Noto Sans", "Font Awesome", monospace;
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: #212121;
+  color: #ccc;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+  background-color: #212121;
+  opacity: 0.8;
+}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
+#workspaces {
+  margin: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin: 0 2px;
+  color: #fff;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+#workspaces button:hover {
+  background: rgba(2, 119, 189, 0.18);
+  color: #fff;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  background: #0277bd;
+  color: #fff;
+  box-shadow:
+    0 2px 8px 0 rgba(136, 14, 79, 0.18),
+    0 0 0 2px #fff2;
+}
+
+#workspaces button.urgent {
+  background: #d32f2f;
+  color: #fff;
+  box-shadow:
+    0 2px 8px 0 rgba(211, 47, 47, 0.18),
+    0 0 0 2px #fff2;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+  padding: 0 10px 0 10px;
+  color: #ffc107;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+#pulseaudio:hover {
+  background: rgba(255, 193, 7, 0.12);
+}
+
+#pulseaudio.muted {
+  background: none;
+  color: #bdbdbd;
+  text-decoration: line-through;
+}
+
+/* -----------------------------------------------------
+ * Idle Inhibitor
+ * ----------------------------------------------------- */
+
+#idle_inhibitor {
+  padding: 0 18px 0 10px;
+}
+
+#idle_inhibitor.activated {
+  color: #f44336;
+}
+
+/* -----------------------------------------------------
+ * Custom VPN
+ * ----------------------------------------------------- */
+
+#custom-vpn {
+  color: #fff176;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+#disk,
+#memory,
+#cpu,
+#load,
+#temperature {
+  margin: 0px;
+  padding: 0;
+}
+
+#disk {
+  color: #4dd0e1;
+}
+
+#memory {
+  color: #ff8a65;
+}
+
+#cpu {
+  color: #81c784;
+}
+
+#load {
+  color: #81c784;
+}
+
+#temperature {
+  color: #81c784;
+}
+
+#temperature.critical {
+  color: #f44336;
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+  color: #64b5f6;
+}
+
+#network.disconnected {
+  color: #d32f2f;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+  background-color: #fffde7;
+  color: #212121;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: #43a047;
+  color: #fff;
+}
+
+@keyframes blink {
+  to {
+    background-color: #fffde7;
+    color: #212121;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #d32f2f;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+  color: #ba68c8;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+  margin: 0;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+/* "custom/vpn",
+        "disk",
+        "cpu",
+        "load",
+        "temperature",
+        "memory",
+
+        "network",
+        "clock",
+        "tray",
+        "backlight" */
