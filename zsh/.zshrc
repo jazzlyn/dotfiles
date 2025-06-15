@@ -22,8 +22,6 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-autoload -U add-zsh-hook
-
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
 
@@ -31,12 +29,15 @@ if command -v mise > /dev/null 2>&1; then
   source $ZDOTDIR/mise.zsh
 fi
 
+autoload -U add-zsh-hook
+
 source $ZDOTDIR/history.zsh
 source $ZDOTDIR/terminal.zsh
 source $ZDOTDIR/xdg.zsh
 source $ZDOTDIR/keybindings.zsh
 source $ZDOTDIR/completions.zsh
 source $ZDOTDIR/editor.zsh
+source $ZDOTDIR/python.zsh
 
 # if command -v az > /dev/null 2>&1; then
 #   source $ZDOTDIR/azure.zsh
@@ -66,10 +67,6 @@ fi
 
 if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
-fi
-
-if command -v uv > /dev/null 2>&1; then
-  source $ZDOTDIR/python.zsh
 fi
 
 if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh) ]]; then
