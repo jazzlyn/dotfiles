@@ -120,7 +120,7 @@
   "clock": {
     "interval": 1,
     "timezone": "Europe/Vienna",
-    "format": "{:%H:%M:%S (%Z)}",
+    "format": "{:%d.%m.%Y | %H:%M:%S (%Z)}",
     "tooltip": false
   },
   "backlight": {
