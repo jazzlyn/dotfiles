@@ -1,10 +1,9 @@
 [settings]
 experimental = true
 idiomatic_version_file_enable_tools = ["python"]
+python.uv_venv_auto = true
 
 [tools]
-"python" = "3.13.5"
-
 "aqua:FiloSottile/age" = "1.2.1"
 "aqua:direnv/direnv" = "2.36.0"
 "aqua:docker/compose" = "2.37.1"
