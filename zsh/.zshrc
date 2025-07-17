@@ -5,6 +5,7 @@ if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && c
   export XDG_CURRENT_DESKTOP=sway
   export XDG_SESSION_DESKTOP=sway
   sway --unsupported-gpu
+  # sway --unsupported-gpu |& tee sway.log
 fi
 
 setopt pushd_to_home

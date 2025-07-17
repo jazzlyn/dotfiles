@@ -40,7 +40,7 @@ include /etc/sway/config.d/*
   exec --no-startup-id flameshot
   exec --no-startup-id nm-applet
   exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
-  exec --no-startup-id vesktop --start-minimized
+  exec --no-startup-id vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland
 
   # App configurations
   for_window [shell="xwayland"] title_format "[XWayland] %title"
@@ -48,6 +48,7 @@ include /etc/sway/config.d/*
   for_window [app_id="galculator"] floating enable, border normal
   for_window [app_id="obsidian"] move to workspace 4
   for_window [app_id="pavucontrol-qt"] floating enable, border normal
+  for_window [app_id="vesktop"] move to workspace 4
 
 #
 # Look and Feel

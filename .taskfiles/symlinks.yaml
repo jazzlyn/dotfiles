@@ -15,6 +15,7 @@ tasks:
       - ln -rsf gitconfig/.gitignore ~/.gitignore
       - ln -rsf wayland/chrome-flags.conf ~/.config/
       - ln -rsf wayland/code-flags.conf ~/.config/
+      - ln -rsf wayland/electron-flags.conf ~/.config/
 
   desktop:
     desc: create desktop symlinks
