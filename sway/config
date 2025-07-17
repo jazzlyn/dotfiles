@@ -1,0 +1,182 @@
+# Config for sway
+
+include /etc/sway/config.d/*
+
+#
+# Inputs
+#
+  # swaymsg -t get_inputs
+  input "type:keyboard" {
+    xkb_layout "de"
+  }
+
+  # https://github.com/swaywm/sway/wiki#libinput-config-options
+  # input "1133:49278:Logitech_Gaming_Mouse_G402" {
+  #   left_handed disabled
+  #   tap enabled
+  #   natural_scroll disabled
+  #   dwt enabled
+  #   accel_profile adaptive
+  #   pointer_accel 1
+  # }
+
+
+#
+# Outputs
+#
+  # swaymsg -t get_outputs
+  output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+  # output HDMI-A-1 resolution 1920x1080 position 1920,0
+
+#
+# Apps configuration
+#
+
+  # My apps
+  set $terminal kitty
+  set $menu wmenu-run -f "InconsolataGo Nerd Font Mono:style=Regular 12"
+
+  # Autostart
+  exec --no-startup-id sleep 2 && flameshot
+  exec --no-startup-id nm-applet
+  exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
+  exec --no-startup-id vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+  # App configurations
+  for_window [shell="xwayland"] title_format "[XWayland] %title"
+  for_window [app_id="flameshot"] floating enable, fullscreen disable, border pixel 0, move absolute position 0 0
+  for_window [app_id="galculator"] floating enable, border normal
+  for_window [app_id="obsidian"] move to workspace 4
+  for_window [app_id="pavucontrol-qt"] floating enable, border normal
+  for_window [app_id="vesktop"] move to workspace 4
+
+#
+# Look and Feel
+#
+  # Font
+  font pango:InconsolataGo Nerd Font Mono 15
+
+  # Windows
+  titlebar_padding 2
+  titlebar_border_thickness 1
+
+  # Mouse behaviour
+  focus_follows_mouse no
+  mouse_warping none
+
+#
+# Key bindings
+#
+  # Modifier key Win
+  set $mod Mod4
+
+  # swaylock with wallpaper
+  bindsym $mod+BackSpace exec --no-startup-id swaylock -f -c 190019
+
+  # Start a terminal
+  bindsym $mod+Return exec $terminal
+
+  # Start your launcher
+  bindsym $mod+d exec $menu
+
+  # Kill focused window
+  bindsym $mod+Shift+q kill
+
+  # Reload the configuration file
+  bindsym $mod+Shift+c reload
+
+  # Exit sway (logs you out of your Wayland session)
+  bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+  # Drag floating windows by holding down $mod and left mouse button.
+  # Resize them with right mouse button + $mod.
+  # Despite the name, also works for non-floating windows.
+  # Change normal to inverse to use left mouse button for resizing and right
+  # mouse button for dragging.
+  floating_modifier $mod normal
+
+#
+# Workspaces:
+#
+  # Switch to workspace
+  bindsym $mod+1 workspace number 1
+  bindsym $mod+2 workspace number 2
+  bindsym $mod+3 workspace number 3
+  bindsym $mod+4 workspace number 4
+  bindsym $mod+5 workspace number 5
+  bindsym $mod+6 workspace number 6
+  bindsym $mod+7 workspace number 7
+  bindsym $mod+8 workspace number 8
+  bindsym $mod+9 workspace number 9
+  bindsym $mod+0 workspace number 10
+  # Move focused container to workspace
+  bindsym $mod+Shift+1 move container to workspace number 1
+  bindsym $mod+Shift+2 move container to workspace number 2
+  bindsym $mod+Shift+3 move container to workspace number 3
+  bindsym $mod+Shift+4 move container to workspace number 4
+  bindsym $mod+Shift+5 move container to workspace number 5
+  bindsym $mod+Shift+6 move container to workspace number 6
+  bindsym $mod+Shift+7 move container to workspace number 7
+  bindsym $mod+Shift+8 move container to workspace number 8
+  bindsym $mod+Shift+9 move container to workspace number 9
+  bindsym $mod+Shift+0 move container to workspace number 10
+  # Move workspace to the next output
+  bindsym $mod+m move workspace to output up
+  bindsym $mod+n move workspace to output right
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+    # Special key to take a screenshot with grim
+    bindsym Print exec grim
+
+#
+# Status Bar:
+#
+  bar {
+    position bottom
+    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    swaybar_command waybar
+
+    colors {
+      statusline #ffffff
+      background #323232
+      inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+  }
