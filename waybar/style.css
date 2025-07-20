@@ -135,6 +135,7 @@ tooltip {
 
 #cpu {
   color: #81c784;
+  padding-right: 4px;
 }
 
 #load {
@@ -155,6 +156,7 @@ tooltip {
 
 #network {
   color: #64b5f6;
+  padding-right: 7px;
 }
 
 #network.disconnected {
