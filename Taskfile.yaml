@@ -17,11 +17,25 @@ tasks:
     cmds:
       - tail -f $HOME/.local/state/k9s/k9s.log
 
+  setup-carbon:
+    desc: setup carbon
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:wayland
+      - task: install:sway
+      - task: install:hyprland
+      - task: install:devtools
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets
+
   setup-coal:
     desc: setup coal
     cmds:
       - task: install:base
       - task: install:system
+      - task: install:wayland
       - task: install:sway
       - task: install:devtools
       - task: symlinks:base
@@ -34,6 +48,7 @@ tasks:
       - task: install:base
       - task: install:system
       - task: install:nvidia
+      - task: install:wayland
       - task: install:sway
       - task: install:devtools
       - task: symlinks:base

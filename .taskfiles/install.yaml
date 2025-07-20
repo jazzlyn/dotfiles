@@ -93,8 +93,8 @@ tasks:
         xorg-xinit
         xorg-xrandr
 
-  sway:
-    desc: install sway packages
+  wayland:
+    desc: install wayland packages
     cmds:
       - yay -Syu --needed --noconfirm
         dunst
@@ -113,19 +113,30 @@ tasks:
         pipewire-pulse
         pipewire-jack
         python-pillow
+        qt6-wayland
         slurp
-        sway
-        swaybg
-        swaylock
         syncthing
         vesktop-bin
         visual-studio-code-bin
         waybar
-        qt6-wayland
         wmenu
         xdg-desktop-portal
         xdg-desktop-portal-gtk
         xdg-desktop-portal-wlr
+
+  sway:
+    desc: install sway packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        sway
+        swaybg
+        swaylock
+
+  hyprland:
+    desc: install hyprland packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        hyprland
 
   workstation:
     desc: install workstation packages
