@@ -18,8 +18,7 @@
     "network",
     "battery",
     "clock",
-    "tray",
-    "backlight"
+    "tray"
   ],
   // modules configuration
   "hyprland/workspaces": {
@@ -90,7 +89,7 @@
   "temperature": {
     "interval": 10,
     "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""],
+    "format-icons": ["", "", ""],
     "critical-threshold": 80, // celsius
     "tooltip": false
   },
@@ -104,7 +103,7 @@
     "interval": 5,
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
+    "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-icons": ["", "", "", "", ""],
     "states": {
@@ -114,16 +113,16 @@
   },
   "tray": {
     "icon-size": 21,
-    "spacing": 10
+    "spacing": 5
   },
   "clock": {
     "interval": 1,
     "timezone": "Europe/Vienna",
     "format": "{:%d.%m.%Y | %H:%M:%S (%Z)}",
     "tooltip": false
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   }
-  // "backlight": {
-  //   "format": "{percent}% {icon}",
-  //   "format-icons": ["", "", "", "", "", "", "", "", ""]
-  // }
 }

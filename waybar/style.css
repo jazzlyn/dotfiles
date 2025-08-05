@@ -168,14 +168,13 @@ tooltip {
  * ----------------------------------------------------- */
 
 #battery {
-  background-color: #fffde7;
-  color: #212121;
+  color: #fff;
+  padding-right: 5px;
 }
 
 #battery.charging,
 #battery.plugged {
-  background-color: #43a047;
-  color: #fff;
+  color: #43a047;
 }
 
 @keyframes blink {
@@ -209,6 +208,7 @@ tooltip {
 
 #tray {
   margin: 0;
+  padding-right: 5px;
 }
 
 #tray > .passive {
