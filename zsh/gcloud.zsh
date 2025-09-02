@@ -1,5 +1,4 @@
 export BOTO_PATH="$HOME/.config/gcloud/boto"
-export CLOUDSDK_PYTHON="python3"
 export USE_GKE_GCLOUD_AUTH_PLUGIN="True"
 
 if [[ $MISE_SHELL && -f $HOME/.local/share/mise/installs/gcloud/latest/path.zsh.inc ]]; then
