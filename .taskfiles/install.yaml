@@ -141,7 +141,7 @@ tasks:
   workstation:
     desc: install workstation packages
     cmds:
-      - sudo apt update && sudo apt upgrade -y && sudo apt install --no-install-recommends -y
+      - sudo apt update && sudo apt install --no-install-recommends -y
         atool
         dnsutils
         neovim

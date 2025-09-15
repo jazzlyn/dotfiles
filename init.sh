@@ -40,9 +40,9 @@ if ! check_command mise; then
 fi
 
 # activate mise
-mise activate --shims
+~/.local/bin/mise activate --shims
 
 if [ -n "${WEB_HOST}" ]; then
   echo "WEB_HOST is set. running workstation setup..."
-  task install:workstation
+  task -d ~/dotfiles install:workstation
 fi
