@@ -6,7 +6,7 @@ python.uv_venv_auto = true
 [tools]
 "aqua:FiloSottile/age" = "1.2.1"
 "aqua:direnv/direnv" = "2.37.1"
-"aqua:docker/compose" = "2.39.3"
+"aqua:docker/compose" = "2.39.4"
 "aqua:a8m/envsubst" = "1.4.3"
 "aqua:fluxcd/flux2" = "2.6.4"
 "aqua:helm/helm" = "3.19.0"
