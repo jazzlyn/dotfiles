@@ -34,6 +34,7 @@ tasks:
       - test -x "$(which nix 2>/dev/null)" && ln -rsf nix ~/.config/
       - test -x "$(which nvim 2>/dev/null)" && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
       - test -x "$(which pacman 2>/dev/null)" && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
+      - test -x "$(which podman 2>/dev/null)" && ln -rsf containers ~/.config/
       - test -x "$(which pulseaudio 2>/dev/null)" && mkdir -p ~/.config/pulse && ln -rsf pulse/default.pa ~/.config/pulse/default.pa
       - test -x "$(which ranger 2>/dev/null)" && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
       - test -x "$(which rofi 2>/dev/null)" && ln -rsf rofi ~/.config/
