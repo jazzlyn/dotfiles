@@ -58,6 +58,7 @@ repos:
         args:
           - --allow-multiple-documents
       - id: pretty-format-json
+        exclude: yay/config.json
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.38.0
