@@ -31,12 +31,10 @@ tasks:
     desc: install system packages
     cmds:
       - yay -Syu --needed --noconfirm
-        bluez-utils
-        btrfs-progs
         cups
         ghostscript
-        hpuld
-        htop
+        intel-ucode
+        libfido2
         linux
         linux-firmware
         networkmanager
@@ -61,9 +59,23 @@ tasks:
         github-cli
         docker
         docker-buildx
+        docker-compose
         google-cloud-cli
         google-cloud-cli-gke-gcloud-auth-plugin
-        nix
+
+  sysutils:
+    desc: install system utility packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        bind
+        bluez-utils
+        btrfs-progs
+        btop
+        net-tools
+        nvme-cli
+        smartmontools
+        strace
+        traceroute
 
   i3:
     desc: install desktop packages
@@ -100,6 +112,7 @@ tasks:
         dunst
         flameshot
         galculator
+        gammastep
         gnome-keyring
         google-chrome
         grim
@@ -123,6 +136,7 @@ tasks:
         xdg-desktop-portal
         xdg-desktop-portal-gtk
         xdg-desktop-portal-wlr
+        xorg-xwayland
 
   sway:
     desc: install sway packages
@@ -137,6 +151,23 @@ tasks:
     cmds:
       - yay -Syu --needed --noconfirm
         hyprland
+
+  ai:
+    desc: install AI/GPU compute packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        intel-compute-runtime-legacy-bin
+        intel-graphics-compiler-legacy-bin
+        level-zero-headers
+        level-zero-loader
+        nvidia-container-toolkit
+
+  gaming:
+    desc: install gaming packages
+    cmds:
+      - yay -Syu --needed --noconfirm
+        glfw
+        prismlauncher
 
   workstation:
     desc: install workstation packages
