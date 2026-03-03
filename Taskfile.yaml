@@ -9,9 +9,17 @@ vars:
 includes:
   install: .taskfiles/install.yaml
   maintenance: .taskfiles/maintenance.yaml
+  pre-commit: .taskfiles/pre-commit.yaml
   symlinks: .taskfiles/symlinks.yaml
 
 tasks:
+  lint:
+    desc: lint codebase
+    dir: "{{.PROJECT_DIR}}"
+    cmds:
+      - task: pre-commit:init
+      - task: pre-commit:run
+
   k9s-logs:
     desc: show k9s logs
     cmds:
