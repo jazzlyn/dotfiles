@@ -6,6 +6,11 @@ default_stages:
   - pre-push
 
 repos:
+  # checks pre-commit config for errors
+  - repo: meta
+    hooks:
+      - id: check-useless-excludes
+
   - repo: https://github.com/thlorenz/doctoc
     rev: v2.3.0
     hooks:
@@ -20,30 +25,39 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      - id: check-merge-conflict
+      # general
       - id: check-added-large-files
-        args:
-          - --maxkb=100
       - id: check-case-conflict
       - id: check-executables-have-shebangs
-      - id: check-json
+      - id: check-illegal-windows-names
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
       - id: check-symlinks
-      - id: check-xml
+      - id: check-vcs-permalinks
+      - id: destroyed-symlinks
       - id: detect-aws-credentials
         args:
           - --allow-missing-credentials
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
-      - id: mixed-line-ending
-        args:
-          - --fix=auto
-      - id: trailing-whitespace
-        args:
-          - --markdown-linebreak-ext=md
-        exclude: i3blocks/config
       # - id: no-commit-to-branch
-      #   args: ["--branch", "main"]
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+        exclude: i3blocks/config
+      # python
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: debug-statements
+      - id: name-tests-test
+      # format-specific
+      - id: check-json
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+        args:
+          - --allow-multiple-documents
+      - id: pretty-format-json
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.38.0
