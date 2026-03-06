@@ -37,6 +37,7 @@ include /etc/sway/config.d/*
   set $menu wmenu-run -f "InconsolataGo Nerd Font Mono:style=Regular 12"
 
   # Autostart
+  exec --no-startup-id gammastep
   exec --no-startup-id sleep 2 && flameshot
   exec --no-startup-id nm-applet
   exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
