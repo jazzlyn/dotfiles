@@ -6,7 +6,7 @@ tasks:
   base:
     desc: install base packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         age
         atool
         base
@@ -30,7 +30,7 @@ tasks:
   system:
     desc: install system packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         cups
         ghostscript
         intel-ucode
@@ -48,13 +48,13 @@ tasks:
   nvidia:
     desc: install nvidia packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         nvidia-open
 
   devtools:
     desc: install development tools
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         azure-cli
         github-cli
         docker
@@ -66,7 +66,7 @@ tasks:
   sysutils:
     desc: install system utility packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         bind
         bluez-utils
         btrfs-progs
@@ -80,7 +80,7 @@ tasks:
   i3:
     desc: install desktop packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         alacritty
         autorandr
         flameshot
@@ -108,7 +108,7 @@ tasks:
   wayland:
     desc: install wayland packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         dunst
         flameshot
         galculator
@@ -141,7 +141,7 @@ tasks:
   sway:
     desc: install sway packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         sway
         swaybg
         swaylock
@@ -149,13 +149,13 @@ tasks:
   hyprland:
     desc: install hyprland packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         hyprland
 
   ai:
     desc: install AI/GPU compute packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         intel-compute-runtime-legacy-bin
         intel-graphics-compiler-legacy-bin
         level-zero-headers
@@ -165,7 +165,7 @@ tasks:
   gaming:
     desc: install gaming packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         glfw
         prismlauncher
 
