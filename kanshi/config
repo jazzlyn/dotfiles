@@ -1,0 +1,14 @@
+profile home {
+  output eDP-1 disable
+  output DP-5 position 0,0
+  output DP-4 position 2560,0
+}
+
+profile mobile {
+  output eDP-1 position 0,0
+}
+
+profile work {
+  output eDP-1 position 0,0
+  output DP-5 position 2560,0
+}
