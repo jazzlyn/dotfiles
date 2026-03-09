@@ -37,10 +37,8 @@ if ! check_command mise; then
   else
     curl https://mise.run | sh
   fi
+  ~/.local/bin/mise activate --shims
 fi
-
-# activate mise
-~/.local/bin/mise activate --shims
 
 if [ -n "${WEB_HOST}" ]; then
   echo "WEB_HOST is set. running workstation setup..."
