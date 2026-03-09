@@ -33,7 +33,7 @@ fi
 # install mise if not present
 if ! check_command mise; then
   if is_arch; then
-    yay -Syu --needed --noconfirm mise
+    yay -Sy --needed --noconfirm mise
   else
     curl https://mise.run | sh
   fi
