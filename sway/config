@@ -20,14 +20,14 @@ include /etc/sway/config.d/*
   #   pointer_accel 1
   # }
 
-
 #
 # Outputs
 #
   # swaymsg -t get_outputs
   output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-  # output HDMI-A-1 resolution 1920x1080 position 1920,0
-
+  output eDP-1 mode 1920x1200@120.015Hz
+  output DP-4 mode 1920x1080@119.880Hz
+  output DP-5 mode 2560x1440@119.880Hz
 #
 # Apps configuration
 #
@@ -37,8 +37,9 @@ include /etc/sway/config.d/*
   set $menu wmenu-run -f "InconsolataGo Nerd Font Mono:style=Regular 12"
 
   # Autostart
-  exec --no-startup-id gammastep
   exec --no-startup-id sleep 2 && flameshot
+  exec --no-startup-id gammastep
+  exec --no-startup-id kanshi
   exec --no-startup-id nm-applet
   exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
   exec --no-startup-id vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland
