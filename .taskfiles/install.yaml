@@ -37,7 +37,7 @@ tasks:
         linux
         linux-firmware
         networkmanager
-        network-manager-openvpn
+        networkmanager-vpn-plugin-openvpn
         noto-fonts
         noto-fonts-emoji
         openvpn
