@@ -24,7 +24,6 @@ tasks:
         vim
         zsh
         zsh-completions
-        zsh-nix-shell
         zsh-syntax-highlighting
 
   system:
