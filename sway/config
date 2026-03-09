@@ -9,6 +9,10 @@ include /etc/sway/config.d/*
   input "type:keyboard" {
     xkb_layout "de"
   }
+  input "type:touchpad" {
+    tap enabled
+    natural_scroll disabled
+  }
 
   # https://github.com/swaywm/sway/wiki#libinput-config-options
   # input "1133:49278:Logitech_Gaming_Mouse_G402" {
