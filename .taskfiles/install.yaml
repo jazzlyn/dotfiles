@@ -77,34 +77,6 @@ tasks:
         strace
         traceroute
 
-  i3:
-    desc: install desktop packages
-    cmds:
-      - yay -Sy --needed --noconfirm
-        alacritty
-        autorandr
-        flameshot
-        galculator
-        google-chrome
-        i3blocks
-        i3blocks-contrib-git
-        i3lock
-        i3status
-        i3-wm
-        network-manager-applet
-        obsidian
-        pavucontrol-qt
-        playerctl
-        rofi
-        sysstat
-        syncthing
-        vesktop-bin
-        visual-studio-code-bin
-        w3m
-        xorg-server
-        xorg-xinit
-        xorg-xrandr
-
   wayland:
     desc: install wayland packages
     cmds:
