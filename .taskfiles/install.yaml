@@ -115,6 +115,7 @@ tasks:
       - yay -Sy --needed --noconfirm
         sway
         swaybg
+        swayidle
         swaylock
 
   hyprland:

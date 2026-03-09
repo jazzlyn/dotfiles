@@ -46,6 +46,7 @@ include /etc/sway/config.d/*
   exec --no-startup-id kanshi
   exec --no-startup-id nm-applet
   exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
+  exec --no-startup-id swayidle
   exec --no-startup-id vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland
 
   # App configurations
