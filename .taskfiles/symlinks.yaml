@@ -24,6 +24,7 @@ tasks:
       - test -x "$(which hyprland 2>/dev/null)" && ln -rsf hypr ~/.config/
       - test -x "$(which kanshi 2>/dev/null)" && ln -rsf kanshi ~/.config/
       - test -x "$(which kitty 2>/dev/null)" && ln -rsf kitty ~/.config/
+      - test -x "$(which swayidle 2>/dev/null)" && ln -rsf swayidle ~/.config/
       - test -x "$(which mise 2>/dev/null)" && ln -rsf mise ~/.config/
       - test -x "$(which nvim 2>/dev/null)" && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
       - test -x "$(which pacman 2>/dev/null)" && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
