@@ -43,7 +43,7 @@ include /etc/sway/config.d/*
   # Autostart
   exec --no-startup-id sleep 2 && flameshot
   exec --no-startup-id gammastep
-  exec --no-startup-id kanshi
+  exec_always --no-startup-id pkill kanshi; kanshi
   exec --no-startup-id nm-applet
   exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
   exec --no-startup-id swayidle
@@ -52,6 +52,7 @@ include /etc/sway/config.d/*
   # App configurations
   for_window [shell="xwayland"] title_format "[XWayland] %title"
   for_window [app_id="flameshot"] floating enable, fullscreen disable, border pixel 0, move absolute position 0 0
+  for_window [app_id="google-chrome" title="Meet.*"] floating enable, border normal
   for_window [app_id="galculator"] floating enable, border normal
   for_window [app_id="obsidian"] move to workspace 4
   for_window [app_id="pavucontrol-qt"] floating enable, border normal
