@@ -1,8 +1,8 @@
 {
   extends: [
     "github>techtales-io/renovate-config:base.json5",
-    "github>techtales-io/renovate-config//github-actions/silent-automerge.json5",
-    "github>techtales-io/renovate-config//mise/silent-automerge.json5",
-    "github>techtales-io/renovate-config//pre-commit/silent-automerge.json5",
+    "github>techtales-io/renovate-config//github-actions/disable-status-checks.json5",
+    "github>techtales-io/renovate-config//mise/disable-status-checks.json5",
+    "github>techtales-io/renovate-config//pre-commit/disable-status-checks.json5",
   ],
 }
