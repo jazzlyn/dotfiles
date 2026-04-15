@@ -28,10 +28,7 @@ include /etc/sway/config.d/*
 # Outputs
 #
   # swaymsg -t get_outputs
-  output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-  output eDP-1 mode 1920x1200@120.015Hz
-  output DP-4 mode 1920x1080@119.880Hz
-  output DP-5 mode 2560x1440@119.880Hz
+
 #
 # Apps configuration
 #
@@ -43,7 +40,7 @@ include /etc/sway/config.d/*
   # Autostart
   exec --no-startup-id sleep 2 && flameshot
   exec --no-startup-id gammastep
-  exec_always --no-startup-id pkill kanshi; kanshi
+  exec_always --no-startup-id pkill kanshi; sleep 3 && kanshi
   exec --no-startup-id nm-applet
   exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
   exec --no-startup-id swayidle
