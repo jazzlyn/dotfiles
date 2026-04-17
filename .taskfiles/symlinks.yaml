@@ -10,7 +10,7 @@ tasks:
       - chsh -s /usr/bin/zsh
       - ln -rsf zsh/.zshenv ~/
       - ln -rsf zsh/.zshrc ~/
-      - ln -rsf k9s ~/.config
+      - ln -rsf k9s ~/.config/
       - ln -rsf gitconfig/.git_templates ~/
       - ln -rsf gitconfig/.gitignore ~/.gitignore
       - ln -rsf wayland/chrome-flags.conf ~/.config/
@@ -20,25 +20,25 @@ tasks:
   apps:
     desc: create app symlinks
     cmds:
-      - test -x "$(which gammastep 2>/dev/null)" && ln -rsf gammastep ~/.config/
-      - test -x "$(which hyprland 2>/dev/null)" && ln -rsf hypr ~/.config/
-      - test -x "$(which kanshi 2>/dev/null)" && ln -rsf kanshi ~/.config/
-      - test -x "$(which kitty 2>/dev/null)" && ln -rsf kitty ~/.config/
-      - test -x "$(which swayidle 2>/dev/null)" && ln -rsf swayidle ~/.config/
-      - test -x "$(which mise 2>/dev/null)" && ln -rsf mise ~/.config/
-      - test -x "$(which nvim 2>/dev/null)" && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
-      - test -x "$(which pacman 2>/dev/null)" && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
-      - test -x "$(which pulseaudio 2>/dev/null)" && mkdir -p ~/.config/pulse && ln -rsf pulse/default.pa ~/.config/pulse/default.pa
-      - test -x "$(which ranger 2>/dev/null)" && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
-      - test -x "$(which rofi 2>/dev/null)" && ln -rsf rofi ~/.config/
-      - test -x "$(which sway 2>/dev/null)" && ln -rsf sway ~/.config/
-      - test -x "$(which waybar 2>/dev/null)" && ln -rsf waybar ~/.config/
-      - test -x "$(which yay 2>/dev/null)" && ln -rsf yay/config.json ~/.config/yay/config.json
+      - command -v gammastep > /dev/null 2>&1 && ln -rsf gammastep ~/.config/
+      - command -v hyprland > /dev/null 2>&1 && ln -rsf hypr ~/.config/
+      - command -v kanshi > /dev/null 2>&1 && ln -rsf kanshi ~/.config/
+      - command -v kitty > /dev/null 2>&1 && ln -rsf kitty ~/.config/
+      - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
+      - command -v mise > /dev/null 2>&1 && ln -rsf mise ~/.config/
+      - command -v nvim > /dev/null 2>&1 && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
+      - command -v pacman > /dev/null 2>&1 && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
+      - command -v pulseaudio > /dev/null 2>&1 && mkdir -p ~/.config/pulse && ln -rsf pulse/default.pa ~/.config/pulse/default.pa
+      - command -v ranger > /dev/null 2>&1 && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
+      - command -v rofi > /dev/null 2>&1 && ln -rsf rofi ~/.config/
+      - command -v sway > /dev/null 2>&1 && ln -rsf sway ~/.config/
+      - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
+      - command -v yay > /dev/null 2>&1 && ln -rsf yay/config.json ~/.config/yay/config.json
     ignore_error: true
 
   secrets:
     desc: create secrets symlinks
     cmds:
-      - test -f ~/.secrets/github/base.conf && ln -rsf ../.secrets/github/base.conf ~/.gitconfig
-      - test -f ~/.secrets/github/strg.conf && mkdir -p ~/projects/strg && ln -rsf ../.secrets/github/strg.conf ~/projects/strg/.gitconfig
+      - "[ -f ~/.secrets/github/base.conf ] && ln -rsf ../.secrets/github/base.conf ~/.gitconfig"
+      - "[ -f ~/.secrets/github/strg.conf ] && mkdir -p ~/projects/strg && ln -rsf ../.secrets/github/strg.conf ~/projects/strg/.gitconfig"
     ignore_error: true
