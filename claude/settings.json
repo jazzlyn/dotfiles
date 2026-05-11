@@ -1,0 +1,44 @@
+{
+  "autoMemoryEnabled": true,
+  "autoUpdaterStatus": "disabled",
+  "editorMode": "vim",
+  "effortLevel": "medium",
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Read",
+      "WebFetch",
+      "WebSearch",
+      "TodoWrite",
+      "Bash(ls*)",
+      "Bash(wc*)",
+      "Bash(pwd*)",
+      "Bash(which*)",
+      "Bash(git log*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git remote*)",
+      "Bash(gh pr list*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh search prs*)",
+      "Bash(npx skills*)"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.envrc)",
+      "Read(**/.env.*)",
+      "Read(**/notes/**)",
+      "Bash(sudo*)",
+      "Bash(curl*)",
+      "Bash(wget*)",
+      "Bash(ssh*)",
+      "Bash(git push*)"
+    ]
+  },
+  "prefersReducedMotion": true,
+  "theme": "auto",
+  "tui": "fullscreen"
+}

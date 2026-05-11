@@ -20,11 +20,11 @@ tasks:
   apps:
     desc: create app symlinks
     cmds:
+      - command -v claude > /dev/null 2>&1 && mkdir -p ~/.claude && ln -rsf claude/settings.json ~/.claude/settings.json
       - command -v gammastep > /dev/null 2>&1 && ln -rsf gammastep ~/.config/
       - command -v hyprland > /dev/null 2>&1 && ln -rsf hypr ~/.config/
       - command -v kanshi > /dev/null 2>&1 && ln -rsf kanshi ~/.config/
       - command -v kitty > /dev/null 2>&1 && ln -rsf kitty ~/.config/
-      - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
       - command -v mise > /dev/null 2>&1 && ln -rsf mise ~/.config/
       - command -v nvim > /dev/null 2>&1 && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
       - command -v pacman > /dev/null 2>&1 && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
@@ -32,6 +32,7 @@ tasks:
       - command -v ranger > /dev/null 2>&1 && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
       - command -v rofi > /dev/null 2>&1 && ln -rsf rofi ~/.config/
       - command -v sway > /dev/null 2>&1 && ln -rsf sway ~/.config/
+      - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
       - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
       - command -v yay > /dev/null 2>&1 && ln -rsf yay/config.json ~/.config/yay/config.json
     ignore_error: true
