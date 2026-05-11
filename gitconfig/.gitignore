@@ -1,5 +1,8 @@
 # Copilot
+.agents/
+.agents/**
 AGENTS.md
+skills-lock.json
 
 # Compiled source
 
