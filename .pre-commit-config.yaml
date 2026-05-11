@@ -44,7 +44,6 @@ repos:
       # - id: no-commit-to-branch
       - id: mixed-line-ending
       - id: trailing-whitespace
-        exclude: i3blocks/config
       # python
       - id: check-ast
       - id: check-builtin-literals
@@ -58,7 +57,8 @@ repos:
         args:
           - --allow-multiple-documents
       - id: pretty-format-json
-        exclude: yay/config.json
+        args:
+          - --autofix
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.38.0
