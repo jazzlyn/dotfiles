@@ -1,0 +1,80 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "lsp": true,
+  "agent": {
+    // "code-reviewer": {
+    //   "description": "Reviews code for best practices and potential issues",
+    //   "model": "anthropic/claude-sonnet-4-5",
+    //   "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+    //   "tools": {
+    //     "write": false,
+    //     "edit": false,
+    //   },
+    // },
+  },
+  "mcp": {
+    "home-assistant": {
+      "enabled": true,
+      "type": "remote",
+      "url": "{env:HOMEASSISTANT_URL}",
+      "headers": {
+        "Authorization": "Bearer {env:HOMEASSISTANT_TOKEN}"
+      }
+    }
+    // "jira": {
+    //   "enabled": true,
+    //   "type": "remote",
+    //   "url": "https://mcp.atlassian.com/v1/mcp/authv2"
+    // }
+  },
+  "permission": {
+    "*": "ask",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+      "notes/*": "deny"
+    },
+    "edit": "allow",
+    "bash": {
+      "*": "ask",
+      "gh pr list*": "allow",
+      "gh pr view*": "allow",
+      "gh pr diff*": "allow",
+      "gh search prs*": "allow",
+      "gh pr comment*": "ask",
+      "npx skills*": "allow"
+    },
+    "glob": "allow",
+    "grep": "allow",
+    "task": "allow",
+    "skill": "allow",
+    "todowrite": "allow",
+    "lsp": "allow",
+    "question": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "external_directory": "ask",
+    "doom_loop": "ask"
+  },
+  "plugin": [
+    // "@devtheops/opencode-plugin-otel",
+    // "opencode-mem"
+  ],
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ollama local",
+      "options": {
+        "baseURL": "https://olla.techtales.io/olla/ollama/v1"
+      },
+      "models": {
+        "Agen/gemma-4-26B-A4B-it-uncensored-heretic:latest": {
+          "name": "gemma4"
+        }
+      }
+    }
+  }
+}
