@@ -14,19 +14,19 @@
     // },
   },
   "mcp": {
-    "home-assistant": {
-      "enabled": true,
-      "type": "remote",
-      "url": "{env:HOMEASSISTANT_URL}",
-      "headers": {
-        "Authorization": "Bearer {env:HOMEASSISTANT_TOKEN}"
-      }
-    }
-    // "jira": {
+    // "home-assistant": {
     //   "enabled": true,
     //   "type": "remote",
-    //   "url": "https://mcp.atlassian.com/v1/mcp/authv2"
-    // }
+    //   "url": "{env:HOMEASSISTANT_URL}",
+    //   "headers": {
+    //     "Authorization": "Bearer {env:HOMEASSISTANT_TOKEN}"
+    //   }
+    // },
+    "jira": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    }
   },
   "permission": {
     "*": "ask",
@@ -73,7 +73,8 @@
     "webfetch": "allow",
     "websearch": "allow",
     "external_directory": "ask",
-    "doom_loop": "ask"
+    "doom_loop": "ask",
+    "mcp_jira": "allow"
   },
   "plugin": [
     // "@devtheops/opencode-plugin-otel",
