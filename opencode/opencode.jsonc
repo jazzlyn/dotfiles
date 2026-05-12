@@ -52,6 +52,7 @@
       "git branch*": "allow",
       "git remote*": "allow",
       "git push*": "deny",
+      "git -C*": "deny",
       "sudo*": "deny",
       "curl*": "deny",
       "wget*": "deny",
