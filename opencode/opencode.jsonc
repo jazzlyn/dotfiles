@@ -11,7 +11,7 @@
     //     "Authorization": "Bearer {env:HOMEASSISTANT_TOKEN}"
     //   }
     // },
-    "jira": {
+    "atlassian": {
       "enabled": true,
       "type": "remote",
       "url": "https://mcp.atlassian.com/v1/mcp"
@@ -75,7 +75,14 @@
     "todowrite": "allow",
     "webfetch": "allow",
     "websearch": "allow",
-    "mcp_jira": "allow"
+    "mcp_atlassian": {
+      "*": "ask",
+      "atlassianUserInfo": "allow",
+      "fetch": "allow",
+      "get*": "allow",
+      "lookup*": "allow",
+      "search*": "allow"
+    }
   },
   "plugin": [
     // "@devtheops/opencode-plugin-otel",
