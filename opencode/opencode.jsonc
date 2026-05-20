@@ -18,7 +18,6 @@
     }
   },
   "permission": {
-    "*": "ask",
     "read": {
       "*": "allow",
       "*.env": "deny",
@@ -45,14 +44,17 @@
       "git diff *": "allow",
       "git log *": "allow",
       "git ls-files *": "allow",
+      "git ls-tree *": "allow",
       "git push *": "ask",
+      "git reflog *": "allow",
       "git remote *": "allow",
       "git show *": "allow",
       "git stash *": "allow",
       "git status *": "allow",
       "git switch *": "allow",
       "grep *": "allow",
-      "head": "allow",
+      "head *": "allow",
+      "kustomize *": "allow",
       "ls *": "allow",
       "mkdir *": "allow",
       "npx skills *": "allow",
@@ -75,6 +77,11 @@
     "todowrite": "allow",
     "webfetch": "allow",
     "websearch": "allow",
+    "external_directory": {
+      "/home/*/.agents/**": "allow",
+      "/home/*/.cache/opencode/packages/**": "allow",
+      "/home/*/dotfiles/**": "allow"
+    },
     "mcp_atlassian": {
       "*": "ask",
       "atlassianUserInfo": "allow",
