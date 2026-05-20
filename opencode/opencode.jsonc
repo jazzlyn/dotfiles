@@ -92,13 +92,18 @@
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "ollama local",
+      "name": "local",
       "options": {
         "baseURL": "https://olla.techtales.io/olla/ollama/v1"
       },
       "models": {
-        "Agen/gemma-4-26B-A4B-it-uncensored-heretic:latest": {
-          "name": "gemma4"
+        "hermes3": {
+          "id": "hermes3:8b",
+          "name": "hermes3:8b",
+          "tool_call": true,
+          "options": {
+            "temperature": 0.7
+          }
         }
       }
     }
