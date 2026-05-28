@@ -2,15 +2,15 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
-      "Read(/home/*/projects/*)",
-      "Read(/home/*/.claude/*)",
-      "Edit(/home/*/projects/*)",
-      "Edit(/home/*/.claude/*)",
+      "Read(/home/*/projects/**)",
+      "Read(/home/*/.claude/**)",
+      "Edit(/home/*/projects/**)",
+      "Edit(/home/*/.claude/**)",
       "Bash(gh pr diff *)",
       "Bash(gh pr list *)",
       "Bash(gh pr view *)",
       "Bash(gh search prs *)",
-      "Bash(git -C /home/*/projects/* *)",
+      "Bash(git -C /home/*/projects/** *)",
       "Bash(git add *)",
       "Bash(git branch *)",
       "Bash(git checkout *)",
@@ -23,11 +23,12 @@
       "Bash(git stash *)",
       "Bash(git status *)",
       "Bash(git switch *)",
-      "Bash(find /home/*/projects/*)",
-      "Bash(find /home/*/.claude/*)",
-      "Bash(ls /home/*/projects/*)",
-      "Bash(ls /home/*/.claude/*)",
-      "Bash(pwd *)",
+      "Bash(find /home/*/projects/**)",
+      "Bash(find /home/*/.claude/**)",
+      "Bash(ls /home/*/projects/**)",
+      "Bash(ls /home/*/.claude/**)",
+      "Bash(pre-commit *)",
+      "Bash(task *)",
       "Bash(which *)",
       "Glob",
       "Grep",
@@ -72,12 +73,21 @@
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(**/.envrc)",
+      "Read(**/.secrets/**)",
       "Read(**/notes/**)"
     ]
   },
   "enabledPlugins": {
-    "skill-creator@claude-plugins-official": true,
+    "gitops-skills@fluxcd": true,
     "superpowers@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "fluxcd": {
+      "source": {
+        "source": "github",
+        "repo": "fluxcd/agent-skills"
+      }
+    }
   },
   "effortLevel": "medium",
   "tui": "fullscreen",
