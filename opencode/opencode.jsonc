@@ -3,14 +3,15 @@
   "autoupdate": false,
   "lsp": true,
   "mcp": {
-    // "home-assistant": {
-    //   "enabled": true,
-    //   "type": "remote",
-    //   "url": "{env:HOMEASSISTANT_URL}",
-    //   "headers": {
-    //     "Authorization": "Bearer {env:HOMEASSISTANT_TOKEN}"
-    //   }
-    // },
+    "home-assistant": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://hass.techtales.io/api/mcp",
+      "oauth": {
+        "clientId": "http://localhost:19876",
+        "redirectUri": "http://localhost:19876/mcp/oauth/callback"
+      }
+    },
     "atlassian": {
       "enabled": true,
       "type": "remote",
