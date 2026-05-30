@@ -16,6 +16,15 @@
       "enabled": true,
       "type": "remote",
       "url": "https://mcp.atlassian.com/v1/mcp"
+    },
+    "github": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp",
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_TOKEN}"
+      }
     }
   },
   "permission": {
@@ -28,15 +37,24 @@
     },
     "edit": "allow",
     "bash": {
+      "*/.secrets*": "ask",
       "*": "ask",
       "cat *": "allow",
       "curl *": "deny",
       "echo *": "allow",
       "find *": "allow",
+      "gh pr checks *": "allow",
       "gh pr diff *": "allow",
       "gh pr list *": "allow",
+      "gh pr status *": "allow",
       "gh pr view *": "allow",
+      "gh run list *": "allow",
+      "gh run rerun *": "allow",
+      "gh run view *": "allow",
+      "gh run watch *": "allow",
+      "gh search issues *": "allow",
       "gh search prs *": "allow",
+      "gh search repos *": "allow",
       "git -C *": "deny",
       "git add *": "allow",
       "git branch *": "allow",
@@ -58,7 +76,6 @@
       "kustomize *": "allow",
       "ls *": "allow",
       "mkdir *": "allow",
-      "npx skills *": "allow",
       "pwd *": "allow",
       "sort *": "allow",
       "ssh *": "deny",
@@ -89,6 +106,14 @@
       "fetch": "allow",
       "get*": "allow",
       "lookup*": "allow",
+      "search*": "allow"
+    },
+    "mcp_github": {
+      "*": "ask",
+      "get*": "allow",
+      "issue_read": "allow",
+      "list*": "allow",
+      "pull_request_read": "allow",
       "search*": "allow"
     }
   },
