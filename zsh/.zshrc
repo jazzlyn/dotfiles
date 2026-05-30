@@ -91,6 +91,6 @@ if command -v task > /dev/null 2>&1; then
   source $ZDOTDIR/task.zsh
 fi
 
-if [[ -f $HOME/.secrets/vault/config ]]; then
-  source $ZDOTDIR/vault.zsh
+if [[ -f $HOME/.secrets/secrets.zsh ]]; then
+  source $HOME/.secrets/secrets.zsh
 fi
