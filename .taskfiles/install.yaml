@@ -6,7 +6,7 @@ tasks:
   base:
     desc: install base packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         age
         atool
         base
@@ -29,7 +29,7 @@ tasks:
   system:
     desc: install system packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         cups
         ghostscript
         intel-ucode
@@ -47,13 +47,13 @@ tasks:
   nvidia:
     desc: install nvidia packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         nvidia-open
 
   devtools:
     desc: install development tools
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         azure-cli
         github-cli
         docker
@@ -65,7 +65,7 @@ tasks:
   sysutils:
     desc: install system utility packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         bind
         bluez-utils
         btrfs-progs
@@ -79,7 +79,7 @@ tasks:
   wayland:
     desc: install wayland packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         dunst
         flameshot
         galculator
@@ -112,7 +112,7 @@ tasks:
   sway:
     desc: install sway packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         sway
         swaybg
         swayidle
@@ -121,13 +121,13 @@ tasks:
   hyprland:
     desc: install hyprland packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         hyprland
 
   ai:
     desc: install AI/GPU compute packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         nvidia-container-toolkit
         # intel-compute-runtime-legacy-bin
         # intel-graphics-compiler-legacy-bin
@@ -137,7 +137,7 @@ tasks:
   gaming:
     desc: install gaming packages
     cmds:
-      - yay -Sy --needed --noconfirm --asexplicit
+      - yay -Sy --needed --noconfirm
         glfw
         prismlauncher
 
