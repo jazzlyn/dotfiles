@@ -2,90 +2,53 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
   "lsp": true,
-  "mcp": {
-    "home-assistant": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://hass.techtales.io/api/mcp",
-      "oauth": {
-        "clientId": "http://localhost:19876",
-        "redirectUri": "http://localhost:19876/mcp/oauth/callback"
-      }
-    },
-    "atlassian": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.atlassian.com/v1/mcp"
-    },
-    "github": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp",
-      "oauth": false,
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}"
-      }
-    }
-  },
+  // "mcp": {
+  //   "home-assistant": {
+  //     "enabled": true,
+  //     "type": "remote",
+  //     "url": "https://hass.techtales.io/api/mcp",
+  //     "oauth": {
+  //       "clientId": "http://localhost:19876",
+  //       "redirectUri": "http://localhost:19876/mcp/oauth/callback"
+  //     }
+  //   },
+  //   "atlassian": {
+  //     "enabled": true,
+  //     "type": "remote",
+  //     "url": "https://mcp.atlassian.com/v1/mcp"
+  //   },
+  //   "github": {
+  //     "enabled": true,
+  //     "type": "remote",
+  //     "url": "https://api.githubcopilot.com/mcp",
+  //     "oauth": false,
+  //     "headers": {
+  //       "Authorization": "Bearer {file:~/.secrets/github-token}"
+  //     }
+  //   }
+  // },
   "permission": {
     "read": {
       "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.envrc": "deny",
-      "notes/**": "deny"
+      "*secret*": "ask",
+      "~/.config/gh/**": "ask"
     },
-    "edit": "allow",
+    "edit": {
+      "*": "allow",
+      "*secret*": "ask"
+    },
     "bash": {
-      "*/.secrets*": "ask",
-      "*": "ask",
-      "cat *": "allow",
-      "curl *": "deny",
-      "echo *": "allow",
-      "find *": "allow",
-      "gh pr checks *": "allow",
-      "gh pr diff *": "allow",
-      "gh pr list *": "allow",
-      "gh pr status *": "allow",
-      "gh pr view *": "allow",
-      "gh run list *": "allow",
-      "gh run rerun *": "allow",
-      "gh run view *": "allow",
-      "gh run watch *": "allow",
-      "gh search issues *": "allow",
-      "gh search prs *": "allow",
-      "gh search repos *": "allow",
-      "git -C *": "deny",
-      "git add *": "allow",
-      "git branch *": "allow",
-      "git checkout *": "allow",
-      "git commit *": "allow",
-      "git diff *": "allow",
-      "git log *": "allow",
-      "git ls-files *": "allow",
-      "git ls-tree *": "allow",
+      "*": "allow",
+      "*secret*": "ask",
+      "curl *-T*": "ask",
       "git push *": "ask",
-      "git reflog *": "allow",
-      "git remote *": "allow",
-      "git show *": "allow",
-      "git stash *": "allow",
-      "git status *": "allow",
-      "git switch *": "allow",
-      "grep *": "allow",
-      "head *": "allow",
-      "kustomize *": "allow",
-      "ls *": "allow",
-      "mkdir *": "allow",
-      "pwd *": "allow",
-      "sort *": "allow",
-      "ssh *": "deny",
-      "sudo *": "deny",
-      "tail *": "allow",
-      "true *": "allow",
-      "wc *": "allow",
-      "wget *": "deny",
-      "which *": "allow"
+      "~/.config/gh/**": "ask"
     },
+    "external_directory": {
+      "/home/opencode/**": "allow",
+      "/srv/shared/**": "allow"
+    },
+    "doom_loop": "ask",
     "glob": "allow",
     "grep": "allow",
     "lsp": "allow",
@@ -95,11 +58,6 @@
     "todowrite": "allow",
     "webfetch": "allow",
     "websearch": "allow",
-    "external_directory": {
-      "/home/*/.agents/**": "allow",
-      "/home/*/.cache/opencode/packages/**": "allow",
-      "/home/*/dotfiles/**": "allow"
-    },
     "mcp_atlassian": {
       "*": "ask",
       "atlassianUserInfo": "allow",
@@ -119,26 +77,6 @@
   },
   "plugin": [
     // "@devtheops/opencode-plugin-otel",
-    "opencode-mem",
     "superpowers@git+https://github.com/obra/superpowers.git"
-  ],
-  "provider": {
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "local",
-      "options": {
-        "baseURL": "https://olla.techtales.io/olla/ollama/v1"
-      },
-      "models": {
-        "hermes3": {
-          "id": "hermes3:8b",
-          "name": "hermes3:8b",
-          "tool_call": true,
-          "options": {
-            "temperature": 0.7
-          }
-        }
-      }
-    }
-  }
+  ]
 }
