@@ -10,16 +10,18 @@ include /etc/sway/config.d/*
     xkb_layout "de"
   }
   input "type:touchpad" {
+    dwt enabled
+    dwtp enabled
     tap enabled
     natural_scroll disabled
   }
 
   # https://github.com/swaywm/sway/wiki#libinput-config-options
   # input "1133:49278:Logitech_Gaming_Mouse_G402" {
+  #   dwt enabled
   #   left_handed disabled
   #   tap enabled
   #   natural_scroll disabled
-  #   dwt enabled
   #   accel_profile adaptive
   #   pointer_accel 1
   # }
