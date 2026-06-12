@@ -30,7 +30,7 @@ tasks:
       - command -v opencode > /dev/null 2>&1 && mkdir -p ~/.config/opencode && ln -rsf opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc && ln -rsf opencode/tui.json ~/.config/opencode/tui.json
       - command -v pacman > /dev/null 2>&1 && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
       - command -v pulseaudio > /dev/null 2>&1 && mkdir -p ~/.config/pulse && ln -rsf pulse/default.pa ~/.config/pulse/default.pa
-      - command -v ranger > /dev/null 2>&1 && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
+      - command -v ranger > /dev/null 2>&1 && mkdir -p ~/.config/ranger && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
       - command -v rofi > /dev/null 2>&1 && ln -rsf rofi ~/.config/
       - command -v sway > /dev/null 2>&1 && ln -rsf sway ~/.config/
       - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
