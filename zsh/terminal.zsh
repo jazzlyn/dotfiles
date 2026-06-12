@@ -6,6 +6,8 @@ alias grep="grep --color=auto"
 # set compatible TERM before ssh
 alias ssh="TERM=xterm-256color ssh"
 
+alias ollama="docker exec -it ollama ollama"
+
 git() {
   if [[ $@ == "broom" ]]; then
     command "$(command -v git)" switch main
@@ -21,4 +23,18 @@ git() {
   fi
 }
 
-alias ollama="docker exec -it ollama ollama"
+oc() {
+  local path="${1:-.}"
+  # resolve relative paths to absolute using current directory
+  if [[ "$path" == . ]]; then
+    path="$(pwd)"
+  fi
+  # handle quoted tilde: oc '~/projects/foo'
+  if [[ "$path" == \~* ]]; then
+    path="/home/opencode${path:1}"
+  # handle unquoted tilde (already expanded by outer shell to $HOME)
+  elif [[ "$path" == "$HOME"* ]]; then
+    path="/home/opencode${path#$HOME}"
+  fi
+  /usr/bin/sudo -u opencode bash -i -c "cd '$path' && exec opencode"
+}
