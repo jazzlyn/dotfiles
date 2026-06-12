@@ -41,6 +41,6 @@ tasks:
   secrets:
     desc: create secrets symlinks
     cmds:
-      - "[ -f ~/.secrets/github/base.conf ] && ln -rsf ../.secrets/github/base.conf ~/.gitconfig"
-      - "[ -f ~/.secrets/github/strg.conf ] && mkdir -p ~/projects/strg && ln -rsf ../.secrets/github/strg.conf ~/projects/strg/.gitconfig"
+      - "[ -f ~/.secrets/github-base.conf ] && ln -rsf ../.secrets/github-base.conf ~/.gitconfig"
+      - "[ -f ~/.secrets/github-strg.conf ] && mkdir -p ~/projects/strg && ln -rsf ../.secrets/github-strg.conf ~/projects/strg/.gitconfig"
     ignore_error: true
