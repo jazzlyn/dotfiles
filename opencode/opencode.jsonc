@@ -2,31 +2,31 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
   "lsp": true,
-  // "mcp": {
-  //   "home-assistant": {
-  //     "enabled": true,
-  //     "type": "remote",
-  //     "url": "https://hass.techtales.io/api/mcp",
-  //     "oauth": {
-  //       "clientId": "http://localhost:19876",
-  //       "redirectUri": "http://localhost:19876/mcp/oauth/callback"
-  //     }
-  //   },
-  //   "atlassian": {
-  //     "enabled": true,
-  //     "type": "remote",
-  //     "url": "https://mcp.atlassian.com/v1/mcp"
-  //   },
-  //   "github": {
-  //     "enabled": true,
-  //     "type": "remote",
-  //     "url": "https://api.githubcopilot.com/mcp",
-  //     "oauth": false,
-  //     "headers": {
-  //       "Authorization": "Bearer {file:~/.secrets/github-token}"
-  //     }
-  //   }
-  // },
+  "mcp": {
+    "home-assistant": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://hass.techtales.io/api/mcp",
+      "oauth": {
+        "clientId": "http://localhost:19876",
+        "redirectUri": "http://localhost:19876/mcp/oauth/callback"
+      }
+    },
+    "atlassian": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    },
+    "github": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp",
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {file:~/.secrets/github-token}"
+      }
+    }
+  },
   "permission": {
     "read": {
       "*": "allow",
