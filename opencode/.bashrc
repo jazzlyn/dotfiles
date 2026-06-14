@@ -1,0 +1,29 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+
+# shared documents
+export OBSIDIAN_VAULT_PATH=/srv/shared/documents
+
+eval "$(command mise activate bash)"
+
+alias ls='ls --color=auto'
+alias ll="ls -lh --color=auto"
+alias la="ls -lah --color=auto"
+alias grep="grep --color=auto"
+PS1='[\u@\h \W]\$ '
+
+if command -v nvim > /dev/null 2>&1; then
+  export EDITOR="nvim"
+  alias vim="nvim"
+fi
+
+# ssh config
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+ssh-add ~/.ssh/id_ed25519_sk_notouch 2>/dev/null
