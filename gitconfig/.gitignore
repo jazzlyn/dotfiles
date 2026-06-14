@@ -82,7 +82,3 @@ $RECYCLE.BIN/
 *.tfplan
 .terraformrc
 terraform.rc
-
-# Personal
-
-notes/
