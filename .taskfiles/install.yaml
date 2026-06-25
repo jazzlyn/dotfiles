@@ -93,9 +93,8 @@ tasks:
         obsidian
         pavucontrol-qt
         pipewire
-        pipewire-alsa
+        pipewire-libcamera
         pipewire-pulse
-        pipewire-jack
         python-pillow
         qt6-wayland
         slurp
