@@ -38,3 +38,18 @@ tasks:
       - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
       - command -v yay > /dev/null 2>&1 && ln -rsf yay/config.json ~/.config/yay/config.json
     ignore_error: true
+
+  opencode:
+    desc: create opencode specific symlinks
+    cmds:
+      - ln -rsf opencode/bashrc ~/.bashrc
+      - ln -rsf mise ~/.config/
+      - mkdir -p ~/.config/git
+      - ln -rsf git/config ~/.config/git/config
+      - ln -rsf git/gitignore ~/.config/git/gitignore
+      - ln -rsf opencode/gitconfig ~/.config/git/config.opencode
+      - mkdir -p ~/.config/opencode
+      - ln -rsf opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
+      - ln -rsf opencode/tui.json ~/.config/opencode/tui.json
+      - mkdir -p ~/.claude
+      - ln -rsf claude/settings.json ~/.claude/settings.json

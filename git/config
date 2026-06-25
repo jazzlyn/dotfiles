@@ -27,3 +27,5 @@
   sort = -version:refname
 [includeIf "gitdir:**/strg/**"]
     path = ~/.config/git/config.strg
+[includeIf "gitdir:/home/opencode/"]
+    path = ~/.config/git/config.opencode
