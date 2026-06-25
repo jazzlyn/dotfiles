@@ -51,5 +51,3 @@ tasks:
       - mkdir -p ~/.config/opencode
       - ln -rsf opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
       - ln -rsf opencode/tui.json ~/.config/opencode/tui.json
-      - mkdir -p ~/.claude
-      - ln -rsf claude/settings.json ~/.claude/settings.json
