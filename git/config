@@ -1,0 +1,29 @@
+[user]
+  email = 9011011+jazzlyn@users.noreply.github.com
+  name = Jazzlyn
+  signingkey = ~/.ssh/id_ed25519_sk_notouch.pub
+[color]
+  ui = true
+[commit]
+  verbose = true
+  gpgsign = true
+[core]
+  excludesfile = ~/.config/git/gitignore
+  pager = less -iXFR
+[fetch]
+  prune = true
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  allowedSignersFile = ~/.config/git/allowed_signers
+[init]
+  defaultBranch = main
+[pull]
+  rebase = false
+[push]
+  default = current
+  autoSetupRemote = true
+[tag]
+  sort = -version:refname
+[includeIf "gitdir:**/strg/**"]
+    path = ~/.config/git/config.strg
