@@ -38,11 +38,11 @@ style = "purple"
 
 [git_branch]
 format = '[$symbol$branch]($style) '
-style = "blue"
+style = "bold blue"
 
 [git_status]
-format = '\[[$all_status$ahead_behind]($style)\] '
-style = "red"
+format = '[$all_status$ahead_behind]($style) '
+style = "bold red"
 
 [golang]
 format = '[$symbol($version)]($style) '
