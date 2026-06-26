@@ -74,17 +74,10 @@ if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
 
-if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh) ]]; then
-  source $(/bin/ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh)
-  source $ZDOTDIR/prompt.zsh
-elif [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
-  source /usr/lib/spaceship-prompt/spaceship.zsh
-  source $ZDOTDIR/prompt.zsh
-elif [[ -f $HOME/.zsh/spaceship-prompt/spaceship.zsh ]]; then
-  source $HOME/.zsh/spaceship-prompt/spaceship.zsh
-  source $ZDOTDIR/prompt.zsh
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
 else
-  echo "spaceship-prompt not found"
+  echo "starship not found"
 fi
 
 if command -v task > /dev/null 2>&1; then

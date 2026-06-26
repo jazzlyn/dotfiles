@@ -10,7 +10,12 @@ alias ls='ls --color=auto'
 alias ll="ls -lh --color=auto"
 alias la="ls -lah --color=auto"
 alias grep="grep --color=auto"
-PS1='[\u@\h \W]\$ '
+
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init bash)"
+else
+  PS1='[\u@\h \W]\$ '
+fi
 
 if command -v nvim > /dev/null 2>&1; then
   export EDITOR="nvim"
