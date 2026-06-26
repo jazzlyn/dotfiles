@@ -70,7 +70,7 @@ style = "color 39"
 
 [gcloud]
 disabled = false
-format = '[$symbol$account(@$domain)(\($region\))]($style) '
+format = '[$symbol$project(\($region\))]($style) '
 style = "color 26"
 
 [kubernetes]
