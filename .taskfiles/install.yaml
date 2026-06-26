@@ -145,14 +145,10 @@ tasks:
     cmds:
       - sudo apt update && sudo apt install --no-install-recommends -y
         atool
-        curl
         dnsutils
         neovim
         net-tools
         ranger
+        starship
         strace
         traceroute
-      - cmd: |
-          if ! command -v starship >/dev/null 2>&1; then
-            curl -sS https://starship.rs/install.sh | sh -s -- -y
-          fi
