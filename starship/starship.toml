@@ -1,0 +1,104 @@
+add_newline = false
+
+format = """
+$time\
+$username\
+$hostname\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$golang\
+$nodejs\
+$python\
+$docker_context\
+$aws\
+$azure\
+$gcloud\
+$kubernetes\
+$terraform\
+$nix_shell\
+$status\
+$line_break\
+$directory\
+$character"""
+
+[time]
+disabled = false
+format = '[$time]($style) '
+style = "yellow"
+
+[username]
+disabled = true
+
+[hostname]
+ssh_only = false
+format = '[$hostname]($style) '
+style = "purple"
+
+[git_branch]
+format = '[$symbol$branch]($style) '
+style = "blue"
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = "red"
+
+[golang]
+format = '[$symbol($version)]($style) '
+style = "cyan"
+
+[nodejs]
+format = '[$symbol($version)]($style) '
+style = "green"
+
+[python]
+format = '[$symbol$pyenv_prefix($version )(\($virtualenv\))]($style) '
+style = "yellow"
+
+[docker_context]
+format = '[$symbol$context]($style) '
+style = "cyan"
+
+[aws]
+format = '[$symbol($profile )(\($region\) )]($style) '
+style = "color 208"
+
+[azure]
+format = '[$symbol($subscription)]($style) '
+style = "color 39"
+
+[gcloud]
+disabled = false
+format = '[$symbol$account(@$domain)(\($region\))]($style) '
+style = "color 26"
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context]($style) '
+style = "#3371e3"
+
+[terraform]
+format = '[$symbol$workspace]($style) '
+style = "color 105"
+
+[nix_shell]
+format = '[$symbol$state( \($name\))]($style) '
+style = "yellow"
+
+[status]
+disabled = false
+format = '[$symbol]($style) '
+symbol = "✘ "
+style = "red"
+success_symbol = ""
+
+[directory]
+format = '[$path]($style) '
+style = "cyan"
+truncation_length = 3
+truncate_to_repo = true
+
+[character]
+success_symbol = "[➜](green) "
+error_symbol = "[➜](red) "

@@ -18,7 +18,7 @@ tasks:
         openssh
         ranger
         sops
-        spaceship-prompt
+        starship
         tig
         tree
         vim
@@ -151,7 +151,3 @@ tasks:
         ranger
         strace
         traceroute
-      - cmd: |
-          if [ ! -d "$HOME/.zsh/spaceship-prompt" ]; then
-            git clone --depth=1 git@github.com:spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship-prompt"
-          fi
