@@ -60,29 +60,29 @@ style = "bold yellow"
 
 [docker_context]
 format = '[$symbol$context]($style) '
-style = "bold color 39"
+style = "bold #00AFFF"
 
 [aws]
 format = '[$symbol($profile )(\($region\) )]($style) '
-style = "bold color 214"
+style = "bold #FFAF00"
 
 [azure]
 format = '[$symbol($subscription)]($style) '
-style = "bold color 32"
+style = "bold #0087D7"
 
 [gcloud]
 disabled = false
 format = '[$symbol$project(\($region\))]($style) '
-style = "bold color 33"
+style = "bold #0087FF"
 
 [kubernetes]
 disabled = false
 format = '[$symbol$context]($style) '
-style = "bold color 27"
+style = "bold #005FFF"
 
 [terraform]
 format = '[$symbol$workspace]($style) '
-style = "bold color 63"
+style = "bold #5F5FFF"
 
 [nix_shell]
 format = '[$symbol$state( \($name\))]($style) '
@@ -97,7 +97,7 @@ success_symbol = ""
 
 [directory]
 format = '[$path]($style) '
-style = "cyan"
+style = "bold cyan"
 truncation_length = 3
 truncate_to_repo = true
 
