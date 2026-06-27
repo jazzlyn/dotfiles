@@ -26,71 +26,73 @@ $character"""
 [time]
 disabled = false
 format = '[$time]($style) '
-style = "yellow"
+style = "bold yellow"
 
 [username]
-disabled = true
+show_always = true
+format = '[$user]($style) '
+style_user = "bold bright-blue"
 
 [hostname]
 ssh_only = false
 format = '[$hostname]($style) '
-style = "purple"
+style = "bold bright-purple"
 
 [git_branch]
 format = '[$symbol$branch]($style) '
-style = "blue"
+style = "bold bright-blue"
 
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
-style = "red"
+style = "bold red"
 
 [golang]
 format = '[$symbol($version)]($style) '
-style = "cyan"
+style = "bold cyan"
 
 [nodejs]
 format = '[$symbol($version)]($style) '
-style = "green"
+style = "bold green"
 
 [python]
 format = '[$symbol$pyenv_prefix($version )(\($virtualenv\))]($style) '
-style = "yellow"
+style = "bold yellow"
 
 [docker_context]
 format = '[$symbol$context]($style) '
-style = "cyan"
+style = "bold color 39"
 
 [aws]
 format = '[$symbol($profile )(\($region\) )]($style) '
-style = "color 208"
+style = "bold color 214"
 
 [azure]
 format = '[$symbol($subscription)]($style) '
-style = "color 39"
+style = "bold color 32"
 
 [gcloud]
 disabled = false
 format = '[$symbol$project(\($region\))]($style) '
-style = "color 26"
+style = "bold color 33"
 
 [kubernetes]
 disabled = false
 format = '[$symbol$context]($style) '
-style = "#3371e3"
+style = "bold color 27"
 
 [terraform]
 format = '[$symbol$workspace]($style) '
-style = "color 105"
+style = "bold color 63"
 
 [nix_shell]
 format = '[$symbol$state( \($name\))]($style) '
-style = "yellow"
+style = "bold yellow"
 
 [status]
 disabled = false
 format = '[$symbol]($style) '
 symbol = "✘ "
-style = "red"
+style = "bold red"
 success_symbol = ""
 
 [directory]
