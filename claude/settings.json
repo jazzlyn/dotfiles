@@ -9,6 +9,8 @@
       "Read(/home/*/.claude/**)",
       "Edit(/home/*/projects/**)",
       "Edit(/home/*/.claude/**)",
+      "Write(/home/*/projects/**)",
+      "Write(/home/*/.claude/**)",
       "Bash(gh pr diff *)",
       "Bash(gh pr list *)",
       "Bash(gh pr view *)",
