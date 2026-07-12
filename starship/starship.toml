@@ -2,7 +2,7 @@ add_newline = false
 
 format = """
 $time\
-$username\
+
 $hostname\
 $git_branch\
 $git_commit\
@@ -35,7 +35,7 @@ style_user = "bold bright-blue"
 
 [hostname]
 ssh_only = false
-format = '[$hostname]($style) '
+format = '[$ssh_symbol$hostname]($style) '
 style = "bold bright-purple"
 
 [git_branch]
@@ -96,10 +96,11 @@ style = "bold red"
 success_symbol = ""
 
 [directory]
-format = '[$path]($style) '
+format = '[$path]($style)[$read_only]($read_only_style) '
 style = "bold cyan"
 truncation_length = 3
 truncate_to_repo = true
+read_only = true
 
 [character]
 success_symbol = "[➜](green) "
