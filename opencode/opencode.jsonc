@@ -5,10 +5,10 @@
   "disabled_providers": ["github-models", "opencode"],
   "provider": {
     "github-copilot": {
-      "whitelist": ["claude-sonnet-5", "gemini-3.5-flash", "kimi-k2.7-code"]
+      "whitelist": ["claude-sonnet-5", "claude-haiku-4-5"]
     },
     "opencode-go": {
-      "whitelist": ["deepseek-v4-pro", "kimi-k2.7-code", "qwen3.7-plus"]
+      "whitelist": ["deepseek-v4-pro", "qwen3.7-plus"]
     }
   },
   "mcp": {
