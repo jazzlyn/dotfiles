@@ -2,6 +2,17 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
   "lsp": true,
+  "disabled_providers": ["github-models", "opencode"],
+  "provider": {
+    "github-copilot": {
+      "whitelist": [
+        "claude-sonnet-5",
+        "gemini-3.5-flash",
+        "kimi-k2.7-code",
+        "mai-code-1-flash-picker"
+      ]
+    }
+  },
   "mcp": {
     "home-assistant": {
       "enabled": true,
