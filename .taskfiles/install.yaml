@@ -58,7 +58,6 @@ tasks:
         github-cli
         podman
         podman-compose
-        podman-docker
         google-cloud-cli
         google-cloud-cli-gke-gcloud-auth-plugin
 
