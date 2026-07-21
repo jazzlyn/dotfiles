@@ -1,0 +1,91 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "lsp": true,
+  "disabled_providers": ["github-models", "opencode"],
+  "provider": {
+    "github-copilot": {
+      "whitelist": ["claude-sonnet-5", "claude-haiku-4.5"]
+    },
+    "opencode-go": {
+      "whitelist": ["deepseek-v4-pro", "qwen3.7-plus"]
+    }
+  },
+  "mcp": {
+    "home-assistant": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://hass.techtales.io/api/mcp",
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {file:~/.secrets/hass-token}"
+      }
+    },
+    "github": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp",
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_TOKEN}"
+      }
+    }
+  },
+  "permission": {
+    "read": {
+      "*": "allow",
+      "external-secret.yaml": "allow",
+      "secret.yaml": "allow",
+      "*secret*": "ask",
+      "~/.config/gh/**": "ask"
+    },
+    "edit": {
+      "*": "allow",
+      "external-secret.yaml": "allow",
+      "secret.yaml": "allow",
+      "*secret*": "ask"
+    },
+    "bash": {
+      "*": "allow",
+      "external-secret.yaml": "allow",
+      "secret.yaml": "allow",
+      "*secret*": "ask",
+      "curl *-T*": "ask",
+      "git push *": "ask",
+      "~/.config/gh/**": "ask"
+    },
+    "external_directory": {
+      "/home/opencode/**": "allow",
+      "/srv/shared/**": "allow"
+    },
+    "doom_loop": "ask",
+    "glob": "allow",
+    "grep": "allow",
+    "lsp": "allow",
+    "question": "allow",
+    "skill": "allow",
+    "task": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "mcp_atlassian": {
+      "*": "ask",
+      "atlassianUserInfo": "allow",
+      "fetch": "allow",
+      "get*": "allow",
+      "lookup*": "allow",
+      "search*": "allow"
+    },
+    "mcp_github": {
+      "*": "ask",
+      "get*": "allow",
+      "issue_read": "allow",
+      "list*": "allow",
+      "pull_request_read": "allow",
+      "search*": "allow"
+    }
+  },
+  "plugin": [
+    // "@devtheops/opencode-plugin-otel"
+  ]
+}

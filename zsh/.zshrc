@@ -1,5 +1,14 @@
-# startX
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && command -v sway >/dev/null 2>&1; then
+  export _JAVA_AWT_WM_NONREPARENTING=1
+  export SDL_VIDEODRIVER=wayland
+  export QT_QPA_PLATFORM=wayland
+  export XDG_CURRENT_DESKTOP=sway
+  export XDG_SESSION_DESKTOP=sway
+  exec sway --unsupported-gpu
+  # sway --unsupported-gpu |& tee sway.log
+fi
+
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && command -v i3 >/dev/null 2>&1; then
   exec startx
 fi
 
@@ -25,12 +34,15 @@ if command -v mise > /dev/null 2>&1; then
   source $ZDOTDIR/mise.zsh
 fi
 
+autoload -U add-zsh-hook
+
 source $ZDOTDIR/history.zsh
 source $ZDOTDIR/terminal.zsh
 source $ZDOTDIR/xdg.zsh
 source $ZDOTDIR/keybindings.zsh
 source $ZDOTDIR/completions.zsh
 source $ZDOTDIR/editor.zsh
+source $ZDOTDIR/python.zsh
 
 # if command -v az > /dev/null 2>&1; then
 #   source $ZDOTDIR/azure.zsh
@@ -62,27 +74,16 @@ if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
 
-if command -v uv > /dev/null 2>&1; then
-  source $ZDOTDIR/python.zsh
-fi
-
-if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh) ]]; then
-  source $(/bin/ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh)
-  source $ZDOTDIR/prompt.zsh
-elif [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
-  source /usr/lib/spaceship-prompt/spaceship.zsh
-  source $ZDOTDIR/prompt.zsh
-elif [[ -f $HOME/.zsh/spaceship-prompt/spaceship.zsh ]]; then
-  source $HOME/.zsh/spaceship-prompt/spaceship.zsh
-  source $ZDOTDIR/prompt.zsh
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
 else
-  echo "spaceship-prompt not found"
+  echo "starship not found"
 fi
 
 if command -v task > /dev/null 2>&1; then
   source $ZDOTDIR/task.zsh
 fi
 
-if [[ -f $HOME/.secrets/vault/config ]]; then
-  source $ZDOTDIR/vault.zsh
+if [[ -f $HOME/.secrets/environment.zsh ]]; then
+  source $HOME/.secrets/environment.zsh
 fi

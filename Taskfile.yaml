@@ -9,21 +9,64 @@ vars:
 includes:
   install: .taskfiles/install.yaml
   maintenance: .taskfiles/maintenance.yaml
+  pre-commit: .taskfiles/pre-commit.yaml
   symlinks: .taskfiles/symlinks.yaml
 
 tasks:
+  lint:
+    desc: lint codebase
+    dir: "{{.PROJECT_DIR}}"
+    cmds:
+      - task: pre-commit:init
+      - task: pre-commit:run
+
   k9s-logs:
     desc: show k9s logs
     cmds:
       - tail -f $HOME/.local/state/k9s/k9s.log
+
+  setup-carbon:
+    desc: setup carbon
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:sysutils
+      - task: install:wayland
+      - task: install:sway
+      - task: install:hyprland
+      - task: install:devtools
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets
+
+  setup-coal:
+    desc: setup coal
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:sysutils
+      - task: install:wayland
+      - task: install:sway
+      - task: install:devtools
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets
 
   setup-purple:
     desc: setup purple
     cmds:
       - task: install:base
       - task: install:system
-      - task: install:desktop
+      - task: install:nvidia
+      - task: install:sysutils
+      - task: install:wayland
+      - task: install:sway
       - task: install:devtools
+      - task: install:ai
+      - task: install:gaming
+      - task: symlinks:base
+      - task: symlinks:apps
+      - task: symlinks:secrets
 
   setup-workstation:
     desc: setup workstation
@@ -32,12 +75,19 @@ tasks:
       - task: symlinks:base
       - task: symlinks:apps
       - task: symlinks:secrets
+      - mkdir -p ~/scripts && ln -rsf init.sh ~/scripts
 
   setup-wsl:
     desc: setup wsl
     cmds:
       - task: install:base
+      - task: install:sysutils
       # - task: install:devtools
       - task: symlinks:base
       - task: symlinks:apps
       - task: symlinks:secrets
+
+  setup-opencode:
+    desc: setup the opencode agent environment
+    cmds:
+      - task: symlinks:opencode

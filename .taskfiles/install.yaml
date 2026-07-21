@@ -6,49 +6,54 @@ tasks:
   base:
     desc: install base packages
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         age
         atool
         base
         base-devel
         git
-        gnome-keyring
+        less
+        mise
         neovim
         openssh
         ranger
         sops
-        spaceship-prompt
+        starship
         tig
         tree
-        w3m
+        vim
         zsh
         zsh-completions
-        zsh-nix-shell
         zsh-syntax-highlighting
 
   system:
     desc: install system packages
     cmds:
-      - yay -Syu --needed --noconfirm
-        bluez-utils
-        btrfs-progs
+      - yay -Sy --needed --noconfirm
         cups
-        hpuld
-        htop
+        ghostscript
+        intel-ucode
+        libfido2
         linux
         linux-firmware
         networkmanager
-        network-manager-openvpn
+        networkmanager-vpn-plugin-openvpn
         noto-fonts
         noto-fonts-emoji
         openvpn
         ttf-dejavu-nerd
         ttf-inconsolata-go-nerd
 
+  nvidia:
+    desc: install nvidia packages
+    cmds:
+      - yay -Sy --needed --noconfirm
+        nvidia-open
+
   devtools:
     desc: install development tools
     cmds:
-      - yay -Syu --needed --noconfirm
+      - yay -Sy --needed --noconfirm
         azure-cli
         github-cli
         podman
@@ -56,45 +61,94 @@ tasks:
         podman-docker
         google-cloud-cli
         google-cloud-cli-gke-gcloud-auth-plugin
-        nix
 
-  desktop:
-    desc: install desktop packages
+  sysutils:
+    desc: install system utility packages
     cmds:
-      - yay -Syu --needed --noconfirm
-        alacritty
-        autorandr
+      - yay -Sy --needed --noconfirm
+        bind
+        bluez-utils
+        btrfs-progs
+        btop
+        net-tools
+        nvme-cli
+        smartmontools
+        strace
+        traceroute
+
+  wayland:
+    desc: install wayland packages
+    cmds:
+      - yay -Sy --needed --noconfirm
+        dunst
         flameshot
         galculator
+        gammastep
+        gnome-keyring
         google-chrome
-        i3blocks
-        i3blocks-contrib-git
-        i3lock
-        i3status
-        i3-wm
-        intel-ucode
+        grim
+        kanshi
+        kitty
         network-manager-applet
         obsidian
         pavucontrol-qt
-        playerctl
-        rofi
-        sysstat
+        pipewire
+        pipewire-libcamera
+        pipewire-pulse
+        python-pillow
+        qt6-wayland
+        slurp
         syncthing
         vesktop-bin
         visual-studio-code-bin
-        xorg-server
-        xorg-xinit
-        xorg-xrandr
+        waybar
+        wmenu
+        xdg-desktop-portal
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+        xorg-xwayland
+
+  sway:
+    desc: install sway packages
+    cmds:
+      - yay -Sy --needed --noconfirm
+        sway
+        swaybg
+        swayidle
+        swaylock
+
+  hyprland:
+    desc: install hyprland packages
+    cmds:
+      - yay -Sy --needed --noconfirm
+        hyprland
+
+  ai:
+    desc: install AI/GPU compute packages
+    cmds:
+      - yay -Sy --needed --noconfirm
+        nvidia-container-toolkit
+        # intel-compute-runtime-legacy-bin
+        # intel-graphics-compiler-legacy-bin
+        # level-zero-headers
+        # level-zero-loader
+
+  gaming:
+    desc: install gaming packages
+    cmds:
+      - yay -Sy --needed --noconfirm
+        glfw
+        prismlauncher
 
   workstation:
     desc: install workstation packages
     cmds:
-      - sudo apt update && sudo apt install --no-install-recommends
+      - sudo apt update && sudo apt install --no-install-recommends -y
         atool
+        dnsutils
         neovim
+        net-tools
         ranger
-      - cmd: |
-          if [ ! -d "$HOME/.zsh/spaceship-prompt" ]; then
-            git clone --depth=1 git@github.com:spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship-prompt"
-          fi
-      - curl https://mise.run | sh
+        starship
+        strace
+        traceroute
