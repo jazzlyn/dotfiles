@@ -96,7 +96,7 @@
   "network": {
     "interval": 10,
     "format": "{ifname} {ipaddr} ",
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "{essid} ({signalStrength}%) {ipaddr} ",
     "tooltip": false
   },
   "battery": {
