@@ -21,6 +21,6 @@ _.file = [
 "aqua:kubernetes/kubectl" = "1.33.4"
 "aqua:mikefarah/yq" = "4.53.3"
 "aqua:nodejs/node" = "26.5.0"
-"aqua:pnpm/pnpm" = "11.16.0"
+"aqua:pnpm/pnpm" = "11.17.0"
 "aqua:pre-commit/pre-commit" = "4.6.1"
 "github:openbao/openbao" = "2.6.1"
