@@ -59,6 +59,8 @@ tasks:
         docker
         docker-buildx
         docker-compose
+        podman
+        podman-compose
         google-cloud-cli
         google-cloud-cli-gke-gcloud-auth-plugin
 
