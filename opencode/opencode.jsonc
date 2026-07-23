@@ -21,9 +21,9 @@
       "enabled": true,
       "type": "remote",
       "url": "https://hass.techtales.io/api/mcp",
-      "oauth": false,
-      "headers": {
-        "Authorization": "Bearer {file:~/.secrets/hass-token}"
+      "oauth": {
+        "clientId": "http://localhost:19876",
+        "redirectUri": "http://localhost:19876/mcp/oauth/callback"
       }
     },
     "github": {
