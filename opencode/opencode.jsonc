@@ -51,7 +51,9 @@
       "secret.yaml": "allow",
       "*secret*": "ask",
       "curl *-T*": "ask",
-      "git push *": "ask",
+      "git push*": "ask",
+      "gh pr create*": "ask",
+      "gh pr merge*": "ask",
       "~/.config/gh/**": "ask"
     },
     "external_directory": {
@@ -68,22 +70,18 @@
     "todowrite": "allow",
     "webfetch": "allow",
     "websearch": "allow",
-    "mcp_atlassian": {
-      "*": "ask",
-      "atlassianUserInfo": "allow",
-      "fetch": "allow",
-      "get*": "allow",
-      "lookup*": "allow",
-      "search*": "allow"
-    },
-    "mcp_github": {
-      "*": "ask",
-      "get*": "allow",
-      "issue_read": "allow",
-      "list*": "allow",
-      "pull_request_read": "allow",
-      "search*": "allow"
-    }
+    "atlassian_*": "ask",
+    "atlassian_atlassianUserInfo": "allow",
+    "atlassian_fetch": "allow",
+    "atlassian_get*": "allow",
+    "atlassian_lookup*": "allow",
+    "atlassian_search*": "allow",
+    "github_*": "ask",
+    "github_get*": "allow",
+    "github_issue_read": "allow",
+    "github_list*": "allow",
+    "github_pull_request_read": "allow",
+    "github_search*": "allow"
   },
   "plugin": [
     // "@devtheops/opencode-plugin-otel"
