@@ -12,6 +12,11 @@
     }
   },
   "mcp": {
+    "atlassian": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/sse"
+    },
     "home-assistant": {
       "enabled": true,
       "type": "remote",
