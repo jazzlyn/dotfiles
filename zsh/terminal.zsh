@@ -9,17 +9,30 @@ alias ssh="TERM=xterm-256color ssh"
 alias ollama="docker exec -it ollama ollama"
 
 git() {
+  local g="$(command -v git)"
   if [[ $@ == "broom" ]]; then
-    command "$(command -v git)" switch main
-    command "$(command -v git)" pull
-    if command "$(command -v git)" rev-parse --verify develop >/dev/null 2>&1; then
-        command "$(command -v git)" switch develop
-        command "$(command -v git)" pull
+    command "$g" fetch --prune # fetch and prune stale remote refs
+    command "$g" switch main
+    command "$g" pull --ff-only # fast forward only
+    if command "$g" rev-parse --verify develop >/dev/null 2>&1; then
+      command "$g" switch develop
+      command "$g" pull --ff-only # fast forward only
     fi
-    # delete merged branches except main, master, and develop
-    command "$(command -v git)" branch --merged | grep -E -v "(^\*|master|main|develop)" | xargs -r "$(command -v git)" branch -d
+    # classify and delete safe branches
+    for branch in $(command "$g" branch --format='%(refname:short)' | grep -vE '^(main|master|develop)$'); do
+      if command "$g" branch --merged | grep -q "$branch"; then # must be merged into protected branch
+        if ! command "$g" ls-remote --heads origin "$branch" | grep -q "$branch"; then
+          echo "Deleting $branch (merged, remote gone)"
+          command "$g" branch -d "$branch"
+        else
+          echo "Skipping $branch (remote still exists)"
+        fi
+      else
+        echo "Skipping $branch (not merged)"
+      fi
+    done
   else
-    command "$(command -v git)" "$@"
+    command "$g" "$@"
   fi
 }
 
