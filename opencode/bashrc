@@ -1,6 +1,7 @@
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+export PATH="$HOME/.local/bin:$PATH"
 export OBSIDIAN_VAULT_PATH=/srv/shared/documents
 
 eval "$(command mise activate bash)"
@@ -19,6 +20,6 @@ alias ls="ls --color=auto"
 alias ll="ls -lh --color=auto"
 alias la="ls -lah --color=auto"
 alias grep="grep --color=auto"
-alias docker="podman"
+# docker is symlinked to podman at ~/.local/bin/docker
 
 PS1='\[\e[1;33m\]\t\[\e[0m\] \[\e[1;34m\]\u\[\e[0m\]\n\[\e[1;36m\]\w\[\e[0m\] \$ '
