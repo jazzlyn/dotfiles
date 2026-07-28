@@ -31,8 +31,6 @@ tasks:
       - command -v mise > /dev/null 2>&1 && ln -rsf mise ~/.config/
       - command -v nvim > /dev/null 2>&1 && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
       - command -v pacman > /dev/null 2>&1 && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
-      - command -v podman > /dev/null 2>&1 && ln -rsf containers ~/.config/
-      - command -v podman > /dev/null 2>&1 && mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker
       - command -v wireplumber > /dev/null 2>&1 && ln -rsf wireplumber ~/.config/
       - command -v ranger > /dev/null 2>&1 && mkdir -p ~/.config/ranger && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
       - command -v rofi > /dev/null 2>&1 && ln -rsf rofi ~/.config/
@@ -55,6 +53,8 @@ tasks:
       - ln -rsf opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
       - ln -rsf opencode/tui.json ~/.config/opencode/tui.json
       - ln -sf /srv/shared/assistant/AGENTS.md ~/.config/opencode/AGENTS.md
+      - ln -rsf containers ~/.config/
+      - mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker
 
   claude:
     desc: create claude specific symlinks
