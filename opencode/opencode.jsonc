@@ -39,22 +39,22 @@
   "permission": {
     "read": {
       "*": "allow",
-      "external-secret.yaml": "allow",
-      "secret.yaml": "allow",
       "*secret*": "ask",
-      "~/.config/gh/**": "ask"
+      "~/.config/gh/**": "ask",
+      "external-secret.yaml": "allow",
+      "secret.yaml": "allow"
     },
     "edit": {
       "*": "allow",
+      "*secret*": "ask",
       "external-secret.yaml": "allow",
-      "secret.yaml": "allow",
-      "*secret*": "ask"
+      "secret.yaml": "allow"
     },
     "bash": {
       "*": "allow",
+      "*secret*": "ask",
       "external-secret.yaml": "allow",
       "secret.yaml": "allow",
-      "*secret*": "ask",
       "curl *-T*": "ask",
       "git push*": "ask",
       "gh pr create*": "ask",
