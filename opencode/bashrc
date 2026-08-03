@@ -21,4 +21,32 @@ alias ll="ls -lh --color=auto"
 alias la="ls -lah --color=auto"
 alias grep="grep --color=auto"
 
+git() {
+  local g="$(command -v git)"
+  if [[ $@ == "broom" ]]; then
+    command "$g" fetch --prune # fetch and prune stale remote refs
+    command "$g" switch main
+    command "$g" pull --ff-only # fast forward only
+    if command "$g" rev-parse --verify develop >/dev/null 2>&1; then
+      command "$g" switch develop
+      command "$g" pull --ff-only # fast forward only
+    fi
+    # classify and delete safe branches
+    for branch in $(command "$g" branch --format='%(refname:short)' | grep -vE '^(main|master|develop)$'); do
+      if command "$g" branch --merged | grep -q "$branch"; then # must be merged into protected branch
+        if ! command "$g" ls-remote --heads origin "$branch" | grep -q "$branch"; then
+          echo "Deleting $branch (merged, remote gone)"
+          command "$g" branch -d "$branch"
+        else
+          echo "Skipping $branch (remote still exists)"
+        fi
+      else
+        echo "Skipping $branch (not merged)"
+      fi
+    done
+  else
+    command "$g" "$@"
+  fi
+}
+
 PS1='\[\e[1;33m\]\t\[\e[0m\] \[\e[1;34m\]\u\[\e[0m\]\n\[\e[1;36m\]\w\[\e[0m\] \$ '
