@@ -50,6 +50,13 @@ tasks:
       - yay -Sy --needed --noconfirm
         nvidia-open
 
+  coal:
+    desc: install coal specific firmware
+    cmds:
+      - yay -Sy --needed --noconfirm
+        sof-firmware
+        intel-vision-drivers-dkms-git
+
   devtools:
     desc: install development tools
     cmds:
