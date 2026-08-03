@@ -89,6 +89,13 @@
     "github_search*": "allow"
   },
   "plugin": [
-    // "@devtheops/opencode-plugin-otel"
+    [
+      "@devtheops/opencode-plugin-otel",
+      {
+        "enabled": true,
+        "endpoint": "http://localhost:4317",
+        "protocol": "grpc"
+      }
+    ]
   ]
 }
