@@ -6,7 +6,7 @@ Local container stacks, managed by [doco-cd](https://github.com/kimdre/doco-cd).
 
 ### 1. Bootstrap doco-cd (once, manually)
 
-`docker/doco-cd/<host>.env` holds every per-host value, shell-expanded at bootstrap time — e.g. for `coal`:
+Following env variables can be set in `docker/doco-cd/<host>.env`:
 
 - `TARGET` (required)
 - `DOCKER_SOCKET` (optional, defaults to `/var/run/docker.sock`)
@@ -52,4 +52,4 @@ docker compose --env-file docker/doco-cd/host.env -f docker/doco-cd/compose.yaml
    working_dir: docker/<name>
    ```
 
-3. Push to `main` — doco-cd picks it up on its next poll (~180s).
+3. Push to `main` — doco-cd picks it up on its next poll.
