@@ -5,11 +5,11 @@
   "disabled_providers": ["github-models", "opencode"],
   "provider": {
     "github-copilot": {
-      "whitelist": ["claude-sonnet-5", "claude-haiku-4.5"]
-    },
-    "opencode-go": {
-      "whitelist": ["deepseek-v4-pro", "qwen3.7-plus"]
+      "whitelist": ["claude-sonnet-5"]
     }
+    //"opencode-go": {
+    //  "whitelist": ["deepseek-v4-pro", "qwen3.7-plus"]
+    //}
   },
   "mcp": {
     "atlassian": {
