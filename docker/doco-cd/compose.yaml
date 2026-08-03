@@ -24,7 +24,6 @@ services:
       LOG_LEVEL: info
       POLL_CONFIG_FILE: /poll-config.yml
       DEPLOY_CONFIG_BASE_DIR: ./docker
-      PROMETHEUS_DATA_DIR: ${PROMETHEUS_DATA_DIR}
       PROMETHEUS_RETENTION_TIME: ${PROMETHEUS_RETENTION_TIME}
     healthcheck:
       test: ["CMD", "/doco-cd", "healthcheck"]

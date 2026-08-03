@@ -10,7 +10,6 @@ Following env variables can be set in `docker/doco-cd/<host>.env`:
 
 - `TARGET` (required)
 - `DOCKER_SOCKET` (optional, defaults to `/var/run/docker.sock`)
-- `PROMETHEUS_DATA_DIR` (optional, defaults to a named volume)
 - `PROMETHEUS_RETENTION_TIME` (optional, defaults to `15d`)
 
 ```sh
