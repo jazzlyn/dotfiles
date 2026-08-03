@@ -93,8 +93,8 @@
       "@devtheops/opencode-plugin-otel",
       {
         "enabled": true,
-        "endpoint": "http://localhost:4317",
-        "protocol": "grpc"
+        "endpoint": "http://127.0.0.1:4317",
+        "resource_attributes": "service.name=oc-jazzlyn"
       }
     ]
   ]
