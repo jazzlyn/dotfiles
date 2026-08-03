@@ -1,3 +1,7 @@
 ---
 name: observability
 working_dir: docker/observability
+---
+name: ollama
+repository_url: https://github.com/tyriis/home-ops.git
+working_dir: docker/deploy/ollama
