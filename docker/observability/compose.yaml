@@ -42,7 +42,7 @@ services:
     #       memory: 256M
 
   grafana:
-    image: grafana/grafana:11.4.0@sha256:d8ea37798ccc41061a62ab080f2676dda6bf7815558499f901bdb0f533a456fb
+    image: grafana/grafana:13.1.1@sha256:7cb8c64c4d57a57e734073f3cc94620adb24a0acb929bd80ba9f14017e3a975b
     container_name: grafana
     environment:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
