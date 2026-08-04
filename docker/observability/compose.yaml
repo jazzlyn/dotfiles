@@ -1,73 +1,37 @@
 ---
 services:
-  otel-collector:
-    image: otel/opentelemetry-collector-contrib:0.116.1@sha256:d0ebf65280da2e1b1491d1b93648281afd353d4b9ea19160090303cec9a233bd
-    container_name: otel-collector
-    command: ["--config=/etc/otel-collector-config.yaml"]
+  lgtm:
+    image: grafana/otel-lgtm:0.30.0@sha256:46ca028e294bd728e8e930a28e887f640a8f2a9533cc283f79bcc6ab73d2ffd8
+    container_name: lgtm
+    environment:
+      PROMETHEUS_EXTRA_ARGS: --storage.tsdb.retention.time=${PROMETHEUS_RETENTION_TIME:-15d}
+      LOKI_EXTRA_ARGS: --compactor.retention-enabled=true --compactor.delete-request-store=filesystem --store.retention=${LOKI_RETENTION_TIME:-15d}
+      TEMPO_EXTRA_ARGS: --backend-worker.compaction.block-retention=${TEMPO_RETENTION_TIME:-24h}
+      ENABLE_LOGS_GRAFANA: "true"
+      ENABLE_LOGS_OTELCOL: "true"
+      ENABLE_LOGS_LOKI: "true"
+      ENABLE_LOGS_TEMPO: "true"
+      ENABLE_LOGS_PROMETHEUS: "true"
     volumes:
-      - ./otel-collector/configuration.yaml:/etc/otel-collector-config.yaml:ro
+      - lgtm-data:/data
     ports:
+      - "127.0.0.1:3000:3000" # Grafana
+      - "127.0.0.1:3200:3200" # Tempo
       - "127.0.0.1:4317:4317" # OTLP gRPC
       - "127.0.0.1:4318:4318" # OTLP HTTP
+      - "127.0.0.1:9090:9090" # Prometheus
     networks:
       - observability
     restart: unless-stopped
     # deploy:
     #   resources:
     #     limits:
-    #       memory: 256M
+    #       memory: 2G
     #     reservations:
-    #       memory: 128M
-
-  prometheus:
-    image: prom/prometheus:v3.1.0@sha256:6559acbd5d770b15bb3c954629ce190ac3cbbdb2b7f1c30f0385c4e05104e218
-    container_name: prometheus
-    command:
-      - --config.file=/etc/prometheus/prometheus.yml
-      - --storage.tsdb.path=/prometheus
-      - --storage.tsdb.retention.time=${PROMETHEUS_RETENTION_TIME:-15d}
-    volumes:
-      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml:ro
-      - prometheus-data:/prometheus
-    ports:
-      - "127.0.0.1:9090:9090"
-    networks:
-      - observability
-    restart: unless-stopped
-    # deploy:
-    #   resources:
-    #     limits:
-    #       memory: 1G
-    #     reservations:
-    #       memory: 256M
-
-  grafana:
-    image: grafana/grafana:11.4.0@sha256:d8ea37798ccc41061a62ab080f2676dda6bf7815558499f901bdb0f533a456fb
-    container_name: grafana
-    environment:
-      GF_AUTH_ANONYMOUS_ENABLED: "true"
-      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
-      GF_AUTH_DISABLE_LOGIN_FORM: "true"
-    volumes:
-      - ./grafana:/etc/grafana/provisioning:ro
-      - grafana-data:/var/lib/grafana
-    ports:
-      - "127.0.0.1:3000:3000"
-    networks:
-      - observability
-    depends_on:
-      - prometheus
-    restart: unless-stopped
-    # deploy:
-    #   resources:
-    #     limits:
-    #       memory: 256M
-    #     reservations:
-    #       memory: 128M
+    #       memory: 512M
 
 volumes:
-  grafana-data:
-  prometheus-data:
+  lgtm-data:
 
 networks:
   observability:
