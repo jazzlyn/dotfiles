@@ -22,7 +22,7 @@ services:
       - "127.0.0.1:9090:9090" # Prometheus
     networks:
       - observability
-    restart: unless-stopped
+    restart: always
     # deploy:
     #   resources:
     #     limits:
