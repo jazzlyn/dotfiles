@@ -49,31 +49,30 @@
   "permission": {
     "read": {
       "*": "allow",
-      "*secret*": "ask",
-      "~/.config/gh/**": "ask",
-      "external-secret.yaml": "allow",
-      "secret.yaml": "allow"
+      "~/.secrets/**": "ask",
+      "*external-secret.yaml": "allow",
+      "*secret.yaml": "allow"
     },
     "edit": {
       "*": "allow",
-      "*secret*": "ask",
-      "external-secret.yaml": "allow",
-      "secret.yaml": "allow"
+      "~/.secrets/**": "ask",
+      "*external-secret.yaml": "allow",
+      "*secret.yaml": "allow"
     },
     "bash": {
       "*": "allow",
-      "*secret*": "ask",
-      "external-secret.yaml": "allow",
-      "secret.yaml": "allow",
+      "*.secrets*": "ask",
+      "*external-secret.yaml*": "allow",
+      "*secret.yaml*": "allow",
       "curl *-T*": "ask",
       "git push*": "ask",
       "gh pr create*": "ask",
-      "gh pr merge*": "ask",
-      "~/.config/gh/**": "ask"
+      "gh pr merge*": "ask"
     },
     "external_directory": {
       "/home/opencode/**": "allow",
-      "/srv/shared/**": "allow"
+      "/srv/shared/**": "allow",
+      "/tmp/**": "allow"
     },
     "doom_loop": "ask",
     "glob": "allow",
