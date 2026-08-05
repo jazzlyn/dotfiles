@@ -22,6 +22,8 @@ _.file = [
 "aqua:kubernetes/kubectl" = "1.33.4"
 "aqua:mikefarah/yq" = "4.53.3"
 "aqua:nodejs/node" = "26.6.0"
+"aqua:openbao/openbao/bao" = "2.6.1"
 "aqua:pnpm/pnpm" = "11.20.0"
 "aqua:pre-commit/pre-commit" = "4.6.1"
-"github:openbao/openbao" = "2.6.1"
+"aqua:tmux/tmux-builds" = "3.7b"
+"npm:opencode-sidebar" = { version = "0.3.6", allow_low_downloads = true }
