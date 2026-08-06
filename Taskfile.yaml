@@ -91,3 +91,4 @@ tasks:
     desc: setup the opencode agent environment
     cmds:
       - task: symlinks:opencode
+      - rtk init -g --opencode --auto-patch
