@@ -46,6 +46,7 @@ tasks:
     cmds:
       - ln -rsf opencode/bashrc ~/.bashrc
       - ln -rsf mise ~/.config/
+      - ln -rsf tmux ~/.config/
       - mkdir -p ~/.config/git
       - ln -rsf git/config ~/.config/git/config
       - ln -rsf git/gitignore ~/.config/git/gitignore
