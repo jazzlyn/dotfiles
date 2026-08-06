@@ -36,6 +36,7 @@ tasks:
       - command -v rofi > /dev/null 2>&1 && ln -rsf rofi ~/.config/
       - command -v sway > /dev/null 2>&1 && ln -rsf sway ~/.config/
       - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
+      - command -v tmux > /dev/null 2>&1 && ln -rsf tmux ~/.config/
       - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
       - command -v yay > /dev/null 2>&1 && ln -rsf yay/config.json ~/.config/yay/config.json
     ignore_error: true

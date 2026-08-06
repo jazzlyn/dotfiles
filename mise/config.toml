@@ -25,5 +25,5 @@ _.file = [
 "aqua:openbao/openbao/bao" = "2.6.1"
 "aqua:pnpm/pnpm" = "11.20.0"
 "aqua:pre-commit/pre-commit" = "4.6.1"
-"aqua:tmux/tmux-builds" = "3.7b"
+"aqua:tmux/tmux-builds" = "3.6b"
 "npm:opencode-sidebar" = { version = "0.3.6", allow_low_downloads = true }
