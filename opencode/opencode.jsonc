@@ -65,9 +65,13 @@
       "*external-secret.yaml*": "allow",
       "*secret.yaml*": "allow",
       "curl *-T*": "ask",
+      "rtk curl *-T*": "ask",
       "git push*": "ask",
+      "rtk git push*": "ask",
       "gh pr create*": "ask",
-      "gh pr merge*": "ask"
+      "rtk gh pr create*": "ask",
+      "gh pr merge*": "ask",
+      "rtk gh pr merge*": "ask"
     },
     "external_directory": {
       "/home/opencode/**": "allow",
