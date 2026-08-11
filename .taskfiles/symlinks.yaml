@@ -45,6 +45,7 @@ tasks:
     desc: create opencode specific symlinks
     cmds:
       - ln -rsf opencode/bashrc ~/.bashrc
+      - ln -rsf kitty ~/.config/
       - ln -rsf mise ~/.config/
       - ln -rsf tmux ~/.config/
       - mkdir -p ~/.config/git
