@@ -68,6 +68,8 @@
       "rtk curl *-T*": "ask",
       "git push*": "ask",
       "rtk git push*": "ask",
+      "git * push*": "ask",
+      "rtk git * push*": "ask",
       "gh pr create*": "ask",
       "rtk gh pr create*": "ask",
       "gh pr merge*": "ask",
