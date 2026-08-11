@@ -14,13 +14,6 @@ if command -v nvim > /dev/null 2>&1; then
   alias vim="nvim"
 fi
 
-[[ $- != *i* ]] && return
-
-alias ls="ls --color=auto"
-alias ll="ls -lh --color=auto"
-alias la="ls -lah --color=auto"
-alias grep="grep --color=auto"
-
 git() {
   local g="$(command -v git)"
   if [[ $@ == "broom" ]]; then
@@ -48,5 +41,12 @@ git() {
     command "$g" "$@"
   fi
 }
+
+[[ $- != *i* ]] && return
+
+alias ls="ls --color=auto"
+alias ll="ls -lh --color=auto"
+alias la="ls -lah --color=auto"
+alias grep="grep --color=auto"
 
 PS1='\[\e[1;33m\]\t\[\e[0m\] \[\e[1;34m\]\u\[\e[0m\]\n\[\e[1;36m\]\w\[\e[0m\] \$ '
