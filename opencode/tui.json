@@ -4,5 +4,6 @@
   "keybinds": {
     "messages_first": "ctrl+g",
     "messages_last": "ctrl+alt+g"
-  }
+  },
+  "plugin": ["@williamcr01/opencode-tps"]
 }
