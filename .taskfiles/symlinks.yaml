@@ -53,14 +53,16 @@ tasks:
       - ln -rsf git/gitignore ~/.config/git/gitignore
       - mkdir -p ~/.config/opencode
       - ln -rsf opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
+      - ln -rsf opencode/oh-my-opencode-slim.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
       - ln -rsf opencode/tui.json ~/.config/opencode/tui.json
       - ln -sf /srv/shared/assistant/AGENTS.md ~/.config/opencode/AGENTS.md
       - ln -rsf containers ~/.config/
       - mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker
 
-  claude:
-    desc: create claude specific symlinks
+  strg:
+    desc: create strg specific symlinks
     cmds:
       - mkdir -p ~/.claude
       - ln -rsf claude/settings.json ~/.claude/settings.json
       - ln -sf /srv/shared/assistant/CLAUDE.md ~/.claude/CLAUDE.md
+      - ln -rsf opencode/oh-my-opencode-slim.strg.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc

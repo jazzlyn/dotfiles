@@ -3,6 +3,8 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 export PATH="$HOME/.local/bin:$PATH"
 export OBSIDIAN_VAULT_PATH=/srv/shared/documents
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+export OPENCODE_ENABLE_EXA=1
 
 eval "$(command mise activate bash)"
 

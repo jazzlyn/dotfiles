@@ -3,13 +3,26 @@
   "autoupdate": false,
   "lsp": true,
   "disabled_providers": ["github-models", "opencode"],
-  "provider": {
-    "github-copilot": {
-      "whitelist": ["claude-sonnet-5"]
+  "small_model": "github-copilot/gpt-5.6-luna",
+  // "provider": {
+  //   "github-copilot": {
+  //     "whitelist": [
+  //       "gpt-5.6-luna",
+  //       "claude-sonnet-5",
+  //       "claude-opus-5"
+  //     ]
+  //   },
+  //   "opencode-go": {
+  //     "whitelist": ["deepseek-v4-pro", "qwen3.7-plus"]
+  //   }
+  // },
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
     }
-    //"opencode-go": {
-    //  "whitelist": ["deepseek-v4-pro", "qwen3.7-plus"]
-    //}
   },
   "mcp": {
     "atlassian": {
@@ -44,7 +57,8 @@
         "endpoint": "http://127.0.0.1:4317",
         "resource_attributes": "service.name=oc-jazzlyn"
       }
-    ]
+    ],
+    "oh-my-opencode-slim"
   ],
   "permission": {
     "read": {
