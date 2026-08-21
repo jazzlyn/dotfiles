@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
   "preset": "default",
+  "disabled_agents": [],
   "presets": {
     "default": {
       // https://github.com/alvinunreal/oh-my-opencode-slim#%EF%B8%8F-meet-the-pantheon
@@ -11,7 +12,7 @@
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "opencode-go/glm-5.3",
+        "model": "opencode-go/glm-5.2",
         "variant": "high",
         "skills": ["simplify"],
         "mcps": []
@@ -37,6 +38,12 @@
       "fixer": {
         "model": "opencode-go/deepseek-v4-flash",
         "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "opencode-go/deepseek-v4-flash-vision-exp",
+        "variant": "low",
         "skills": [],
         "mcps": []
       }
