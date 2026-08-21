@@ -8,6 +8,10 @@ export OPENCODE_ENABLE_EXA=1
 
 eval "$(command mise activate bash)"
 
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+fi
+
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 ssh-add ~/.ssh/id_ed25519_sk_notouch 2>/dev/null
 
