@@ -4,5 +4,6 @@
     "github>techtales-io/renovate-config//github-actions/disable-status-checks.json5",
     "github>techtales-io/renovate-config//mise/disable-status-checks.json5",
     "github>techtales-io/renovate-config//pre-commit/disable-status-checks.json5",
+    "github>techtales-io/renovate-config//docker-compose/disable-status-checks.json5",
   ],
 }
