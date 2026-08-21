@@ -5,38 +5,38 @@
     "default": {
       // https://github.com/alvinunreal/oh-my-opencode-slim#%EF%B8%8F-meet-the-pantheon
       "orchestrator": {
-        "model": "github-copilot/claude-sonnet-5",
+        "model": "opencode-go/deepseek-v4-pro",
         "variant": "medium",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "github-copilot/claude-opus-5",
+        "model": "opencode-go/glm-5.3",
         "variant": "high",
         "skills": ["simplify"],
         "mcps": []
       },
       "librarian": {
-        "model": "github-copilot/gpt-5.6-luna",
+        "model": "opencode-go/deepseek-v4-flash",
         "variant": "low",
         "skills": [],
         "mcps": ["context7", "gh_grep"]
       },
       "explorer": {
-        "model": "github-copilot/gpt-5.6-luna",
+        "model": "opencode-go/deepseek-v4-flash",
         "variant": "low",
         "skills": [],
         "mcps": []
       },
       "designer": {
-        "model": "github-copilot/gpt-5.6-luna",
-        "variant": "medium",
+        "model": "opencode-go/deepseek-v4-flash",
+        "variant": "high",
         "skills": [],
         "mcps": []
       },
       "fixer": {
-        "model": "github-copilot/gpt-5.6-luna",
-        "variant": "medium",
+        "model": "opencode-go/deepseek-v4-flash",
+        "variant": "high",
         "skills": [],
         "mcps": []
       }
