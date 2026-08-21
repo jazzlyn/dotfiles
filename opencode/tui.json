@@ -6,5 +6,5 @@
     "messages_first": "ctrl+g",
     "messages_last": "ctrl+alt+g"
   },
-  "plugin": ["oh-my-opencode-slim", "@williamcr01/opencode-tps"]
+  "plugin": ["@williamcr01/opencode-tps"]
 }
