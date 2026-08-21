@@ -82,5 +82,3 @@ $RECYCLE.BIN/
 *.tfplan
 .terraformrc
 terraform.rc
-
-*superpowers*
