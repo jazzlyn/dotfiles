@@ -4,24 +4,18 @@
   "lsp": true,
   "disabled_providers": ["github-models", "opencode"],
   "small_model": "github-copilot/gpt-5.6-luna",
-  // "provider": {
-  //   "github-copilot": {
-  //     "whitelist": [
-  //       "gpt-5.6-luna",
-  //       "claude-sonnet-5",
-  //       "claude-opus-5"
-  //     ]
-  //   },
-  //   "opencode-go": {
-  //     "whitelist": ["deepseek-v4-pro", "qwen3.7-plus"]
-  //   }
-  // },
   "agent": {
-    "explore": {
+    "build": {
       "disable": true
     },
     "general": {
       "disable": true
+    },
+    "explore": {
+      "disable": true
+    },
+    "plan": {
+      "color": "#FFFF00"
     }
   },
   "mcp": {
@@ -117,4 +111,12 @@
     "github_pull_request_read": "allow",
     "github_search*": "allow"
   }
+  // "provider": {
+  //   "github-copilot": {
+  //     "whitelist": []
+  //   },
+  //   "opencode-go": {
+  //     "whitelist": []
+  //   }
+  // },
 }
