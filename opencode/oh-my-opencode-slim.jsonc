@@ -14,7 +14,7 @@
       "oracle": {
         "model": "opencode-go/glm-5.2",
         "variant": "high",
-        "skills": ["simplify"],
+        "skills": ["simplify", "gitops-knowledge", "gitops-repo-audit"],
         "mcps": []
       },
       "librarian": {
@@ -26,7 +26,7 @@
       "explorer": {
         "model": "opencode-go/deepseek-v4-flash",
         "variant": "low",
-        "skills": [],
+        "skills": ["gitops-repo-audit"],
         "mcps": []
       },
       "designer": {
@@ -38,7 +38,7 @@
       "fixer": {
         "model": "opencode-go/deepseek-v4-flash",
         "variant": "high",
-        "skills": [],
+        "skills": ["gitops-knowledge"],
         "mcps": []
       },
       "observer": {

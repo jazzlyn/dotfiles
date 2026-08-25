@@ -13,7 +13,7 @@
       "oracle": {
         "model": "github-copilot/claude-opus-5",
         "variant": "high",
-        "skills": ["simplify"],
+        "skills": ["simplify", "gitops-knowledge", "gitops-repo-audit"],
         "mcps": []
       },
       "librarian": {
@@ -25,7 +25,7 @@
       "explorer": {
         "model": "github-copilot/gpt-5.6-luna",
         "variant": "low",
-        "skills": [],
+        "skills": ["gitops-repo-audit"],
         "mcps": []
       },
       "designer": {
@@ -37,7 +37,7 @@
       "fixer": {
         "model": "github-copilot/gpt-5.6-luna",
         "variant": "medium",
-        "skills": [],
+        "skills": ["gitops-knowledge"],
         "mcps": []
       }
     }
