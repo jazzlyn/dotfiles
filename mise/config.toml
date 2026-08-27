@@ -29,5 +29,5 @@ _.file = [
 "aqua:rtk-ai/rtk" = "0.46.0"
 "aqua:tmux/tmux-builds" = "3.6b"
 "core:go" = "1.27.0"
-"go:github.com/home-operations/flate/cmd/flate" = "v0.6.0"
+"go:github.com/home-operations/flate/cmd/flate" = "v0.6.1"
 # "npm:opencode-sidebar" = { version = "0.3.6", allow_low_downloads = true }
