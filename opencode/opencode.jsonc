@@ -16,6 +16,74 @@
     },
     "plan": {
       "color": "#FFFF00"
+    },
+    // Workaround: oh-my-opencode-slim's applyDefaultPermissions() sets
+    // agent.config.permission on the orchestrator agent (to grant task_*/
+    // question/skill tools) but never merges in the top-level `permission`
+    // block below. Since opencode agent-level permission fully REPLACES
+    // top-level permission (not merges), the orchestrator ends up with only
+    // those few keys and silently loses every other rule (github_*, bash
+    // git-push guard, atlassian_*, secret file ask, etc.). Mirror the
+    // top-level permission block here so the orchestrator keeps the same
+    // enforcement. Keep this in sync with the top-level "permission" object.
+    "orchestrator": {
+      "permission": {
+        "read": {
+          "*": "allow",
+          "~/.secrets/**": "ask",
+          "*external-secret.yaml": "allow",
+          "*secret.yaml": "allow"
+        },
+        "edit": {
+          "*": "allow",
+          "~/.secrets/**": "ask",
+          "*external-secret.yaml": "allow",
+          "*secret.yaml": "allow"
+        },
+        "bash": {
+          "*": "allow",
+          "*.secrets*": "ask",
+          "*external-secret.yaml*": "allow",
+          "*secret.yaml*": "allow",
+          "curl *-T*": "ask",
+          "rtk curl *-T*": "ask",
+          "git push*": "ask",
+          "rtk git push*": "ask",
+          "git * push*": "ask",
+          "rtk git * push*": "ask",
+          "gh pr create*": "ask",
+          "rtk gh pr create*": "ask",
+          "gh pr merge*": "ask",
+          "rtk gh pr merge*": "ask"
+        },
+        "external_directory": {
+          "/home/opencode/**": "allow",
+          "/srv/shared/**": "allow",
+          "/tmp/**": "allow"
+        },
+        "doom_loop": "ask",
+        "glob": "allow",
+        "grep": "allow",
+        "lsp": "allow",
+        "question": "allow",
+        "skill": "allow",
+        "task": "allow",
+        "todowrite": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "atlassian_*": "ask",
+        "atlassian_atlassianUserInfo": "allow",
+        "atlassian_fetch": "allow",
+        "atlassian_get*": "allow",
+        "atlassian_lookup*": "allow",
+        "atlassian_search*": "allow",
+        "github_*": "ask",
+        "github_get*": "allow",
+        "github_issue_read": "allow",
+        "github_list*": "allow",
+        "github_pull_request_read": "allow",
+        "github_search*": "allow"
+      }
     }
   },
   "mcp": {
