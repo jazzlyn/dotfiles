@@ -44,6 +44,7 @@ tasks:
     cmds:
       - task: install:base
       - task: install:system
+      - task: install:coal
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
