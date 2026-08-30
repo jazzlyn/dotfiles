@@ -5,8 +5,9 @@ python.uv_venv_auto = true
 
 [env]
 _.file = [
-    { path = "~/.secrets/github-token-jazzlyn", redact = true },
+    { path = "$HOME/.secrets/github-token-jazzlyn", redact = true },
 ]
+OPENCODE_CONFIG = "$HOME/.secrets/opencode.json"
 
 [tools]
 "aqua:anomalyco/opencode" = "1.18.25"
