@@ -6,7 +6,7 @@
   "small_model": "github-copilot/gpt-5.6-luna",
   "agent": {
     "build": {
-      "disable": true
+      "disable": false
     },
     "general": {
       "disable": true
