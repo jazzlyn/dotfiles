@@ -1,3 +1,5 @@
 ---
 name: observability
 working_dir: docker/observability
+env_files:
+  - ../doco-cd/coal.env

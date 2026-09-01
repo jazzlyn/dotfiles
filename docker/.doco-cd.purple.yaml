@@ -1,6 +1,9 @@
 ---
 name: observability
 working_dir: docker/observability
+env_files:
+  - ../doco-cd/purple.env
+
 ---
 name: ollama
 repository_url: https://github.com/tyriis/home-ops.git

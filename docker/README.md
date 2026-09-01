@@ -11,6 +11,8 @@ Following env variables can be set in `docker/doco-cd/<host>.env`:
 - `TARGET` (required)
 - `DOCKER_SOCKET` (optional, defaults to `/var/run/docker.sock`)
 - `PROMETHEUS_RETENTION_TIME` (optional, defaults to `15d`)
+- `LOKI_RETENTION_TIME` (optional, defaults to `15d`)
+- `TEMPO_RETENTION_TIME` (optional, defaults to `24h`)
 
 ```sh
 docker compose --env-file docker/doco-cd/host.env -f docker/doco-cd/compose.yaml up -d
@@ -28,7 +30,7 @@ Editing files under `docker/` and pushing to `main` triggers a redeploy within ~
 
 ### Manual fallback
 
-If you want to deploy/update a stack without doco-cd (e.g. while iterating locally before pushing), reuse the same per-host env file:
+If you want to deploy/update a stack without doco-cd (e.g. while iterating locally before pushing):
 
 ```sh
 docker compose --env-file docker/doco-cd/host.env -f docker/observability/compose.yaml up -d
@@ -44,12 +46,4 @@ docker compose --env-file docker/doco-cd/host.env -f docker/doco-cd/compose.yaml
 ## Adding a new stack
 
 1. Create `docker/<name>/compose.yaml`
-2. Add an entry to `docker/.doco-cd.<host>.yaml`:
-
-   ```yaml
-   ---
-   name: <name>
-   working_dir: docker/<name>
-   ```
-
-3. Push to `main` — doco-cd picks it up on its next poll.
+2. Add an entry to `docker/.doco-cd.<host>.yaml`
