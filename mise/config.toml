@@ -30,5 +30,5 @@ OPENCODE_CONFIG = "$HOME/.secrets/opencode.json"
 "aqua:rtk-ai/rtk" = "0.47.0"
 "aqua:tmux/tmux-builds" = "3.6b"
 "core:go" = "1.27.1"
-"go:github.com/home-operations/flate/cmd/flate" = "v0.6.2"
+"go:github.com/home-operations/flate/cmd/flate" = "v0.6.5"
 # "npm:opencode-sidebar" = { version = "0.3.6", allow_low_downloads = true }
