@@ -5,9 +5,12 @@ python.uv_venv_auto = true
 
 [env]
 _.file = [
+    { path = "$HOME/.secrets/bao-config", redact = true },
+    { path = "$HOME/.secrets/vertex-config", redact = true },
     { path = "$HOME/.secrets/github-token-jazzlyn", redact = true },
 ]
 OPENCODE_CONFIG = "$HOME/.secrets/opencode.json"
+SOPS_AGE_KEY_FILE = "$HOME/.secrets/age-keys"
 
 [tools]
 "aqua:anomalyco/opencode" = "1.18.29"

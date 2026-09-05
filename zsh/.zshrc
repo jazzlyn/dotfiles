@@ -83,7 +83,3 @@ fi
 if command -v task > /dev/null 2>&1; then
   source $ZDOTDIR/task.zsh
 fi
-
-if [[ -f $HOME/.secrets/environment.zsh ]]; then
-  source $HOME/.secrets/environment.zsh
-fi
