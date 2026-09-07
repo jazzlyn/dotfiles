@@ -1,5 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "$schema": "https://www.schemastore.org/claude-code-settings.json",
+  "env": {
+    "DISABLE_UPDATES": "1"
+  },
   "permissions": {
     "allow": [
       "Read",
@@ -25,6 +28,7 @@
       "mcp__atlassian__atlassianUserInfo",
       "mcp__atlassian__fetch",
       "mcp__atlassian__getAccessibleAtlassianResources",
+      "mcp__atlassian__getContentFormatGuide",
       "mcp__atlassian__getConfluenceCommentChildren",
       "mcp__atlassian__getConfluencePage",
       "mcp__atlassian__getConfluencePageDescendants",
@@ -74,6 +78,7 @@
     "deny": [
       "mcp__github__create_repository",
       "mcp__github__delete_file",
+      "mcp__github__delete_repository",
       "mcp__github__fork_repository",
       "mcp__github__run_secret_scanning",
       "Read(**/.env)",
@@ -91,6 +96,8 @@
       "Bash(git push*)",
       "Bash(gh pr create*)",
       "Bash(gh pr merge*)",
+      "Bash(gh pr review*--comment*)",
+      "Bash(gh pr review*-c*)",
       "mcp__atlassian__addCommentToJiraIssue",
       "mcp__atlassian__addWorklogToJiraIssue",
       "mcp__atlassian__createConfluenceFooterComment",
@@ -127,7 +134,6 @@
   "tui": "fullscreen",
   "prefersReducedMotion": true,
   "autoMemoryEnabled": true,
-  "theme": "auto",
-  "editorMode": "vim",
-  "autoUpdaterStatus": "disabled"
+  "theme": "dark-ansi",
+  "editorMode": "vim"
 }
