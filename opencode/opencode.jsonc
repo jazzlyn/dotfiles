@@ -54,7 +54,11 @@
           "gh pr create*": "ask",
           "rtk gh pr create*": "ask",
           "gh pr merge*": "ask",
-          "rtk gh pr merge*": "ask"
+          "rtk gh pr merge*": "ask",
+          "gh pr review*--comment*": "ask",
+          "rtk gh pr review*--comment*": "ask",
+          "gh pr review*-c*": "ask",
+          "rtk gh pr review*-c*": "ask"
         },
         "external_directory": {
           "/home/opencode/**": "allow",
@@ -82,7 +86,12 @@
         "github_issue_read": "allow",
         "github_list*": "allow",
         "github_pull_request_read": "allow",
-        "github_search*": "allow"
+        "github_search*": "allow",
+        "github_create_repository": "deny",
+        "github_delete_file": "deny",
+        "github_delete_repository": "deny",
+        "github_fork_repository": "deny",
+        "github_run_secret_scanning": "deny"
       }
     }
   },
@@ -149,7 +158,11 @@
       "gh pr create*": "ask",
       "rtk gh pr create*": "ask",
       "gh pr merge*": "ask",
-      "rtk gh pr merge*": "ask"
+      "rtk gh pr merge*": "ask",
+      "gh pr review*--comment*": "ask",
+      "rtk gh pr review*--comment*": "ask",
+      "gh pr review*-c*": "ask",
+      "rtk gh pr review*-c*": "ask"
     },
     "external_directory": {
       "/home/opencode/**": "allow",
@@ -177,7 +190,12 @@
     "github_issue_read": "allow",
     "github_list*": "allow",
     "github_pull_request_read": "allow",
-    "github_search*": "allow"
+    "github_search*": "allow",
+    "github_create_repository": "deny",
+    "github_delete_file": "deny",
+    "github_delete_repository": "deny",
+    "github_fork_repository": "deny",
+    "github_run_secret_scanning": "deny"
   }
   // "provider": {
   //   "github-copilot": {
