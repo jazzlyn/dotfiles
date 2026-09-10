@@ -6,43 +6,43 @@
     "default": {
       // https://github.com/alvinunreal/oh-my-opencode-slim#%EF%B8%8F-meet-the-pantheon
       "orchestrator": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "variant": "medium",
+        "model": "opencode-go/qwen3.8-flash",
+        "variant": "xhigh",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "opencode-go/glm-5.2",
+        "model": "opencode-go/deepseek-v4-pro",
         "variant": "high",
         "skills": ["simplify", "gitops-knowledge", "gitops-repo-audit"],
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/qwen3.8-flash",
         "variant": "low",
         "skills": [],
         "mcps": ["context7", "gh_grep"]
       },
       "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/qwen3.8-flash",
         "variant": "low",
         "skills": ["gitops-repo-audit"],
         "mcps": []
       },
       "designer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "variant": "high",
         "skills": [],
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/deepseek-v4-flash",
-        "variant": "high",
+        "model": "opencode-go/qwen3.8-flash",
+        "variant": "xhigh",
         "skills": ["gitops-knowledge"],
         "mcps": []
       },
       "observer": {
-        "model": "opencode-go/deepseek-v4-flash-vision-exp",
+        "model": "opencode-go/glm-5.3-flash",
         "variant": "low",
         "skills": [],
         "mcps": []
