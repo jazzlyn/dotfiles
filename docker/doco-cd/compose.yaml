@@ -16,7 +16,7 @@ configs:
 
 secrets:
   sops_age_key:
-    file: ${SOPS_AGE_KEY_FILE:-/etc/doco-cd/age-keys.txt}
+    file: /etc/doco-cd/age-keys.txt
   webhook_secret:
     file: ${WEBHOOK_SECRET_FILE:-/etc/doco-cd/webhook_secret}
 services:
