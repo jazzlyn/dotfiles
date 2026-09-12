@@ -9,7 +9,16 @@ configs:
         reference: main
         target: ${TARGET}
         interval: 180
+      - url: https://github.com/tyriis/home-ops
+        reference: main
+        target: ${TARGET}
+        interval: 180
 
+secrets:
+  sops_age_key:
+    file: ${SOPS_AGE_KEY_FILE:-/etc/doco-cd/age-keys.txt}
+  webhook_secret:
+    file: ${WEBHOOK_SECRET_FILE:-/etc/doco-cd/webhook_secret}
 services:
   doco-cd:
     container_name: doco-cd
@@ -22,6 +31,8 @@ services:
       TZ: Europe/Vienna
       LOG_LEVEL: info
       POLL_CONFIG_FILE: /poll-config.yml
+      WEBHOOK_SECRET_FILE: /run/secrets/webhook_secret
+      SOPS_AGE_KEY_FILE: /run/secrets/sops_age_key
       DEPLOY_CONFIG_BASE_DIR: ./docker
     healthcheck:
       test: ["CMD", "/doco-cd", "healthcheck"]
@@ -29,6 +40,9 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+    secrets:
+      - webhook_secret
+      - sops_age_key
     cap_drop:
       - ALL
     volumes:
