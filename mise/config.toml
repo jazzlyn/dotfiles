@@ -8,6 +8,7 @@ _.file = [
     { path = "$HOME/.secrets/bao-config", redact = true },
     { path = "$HOME/.secrets/vertex-config", redact = true },
     { path = "$HOME/.secrets/github-token-jazzlyn", redact = true },
+    { path = "$HOME/.secrets/otel-bearer-token", redact = true },
 ]
 OPENCODE_CONFIG = "$HOME/.secrets/opencode.json"
 SOPS_AGE_KEY_FILE = "$HOME/.secrets/age-keys"

@@ -125,8 +125,10 @@
       "@devtheops/opencode-plugin-otel",
       {
         "enabled": true,
-        "endpoint": "http://127.0.0.1:4317",
-        "resource_attributes": "service.name=oc-jazzlyn"
+        "endpoint": "https://otel.techtales.io",
+        "protocol": "http/protobuf",
+        "otlpHeaders": "Authorization=Bearer {env:OTEL_BEARER_TOKEN}",
+        "resourceAttributes": "service.name=opencode-jazzlyn"
       }
     ],
     "oh-my-opencode-slim"
