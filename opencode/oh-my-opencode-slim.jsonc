@@ -6,25 +6,25 @@
     "default": {
       // https://github.com/alvinunreal/oh-my-opencode-slim#%EF%B8%8F-meet-the-pantheon
       "orchestrator": {
-        "model": "opencode-go/qwen3.8-flash",
-        "variant": "xhigh",
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "thinking",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "variant": "high",
+        "model": "opencode-go/qwen3.7-max",
+        "variant": "max",
         "skills": ["simplify", "gitops-knowledge", "gitops-repo-audit"],
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/qwen3.8-flash",
+        "model": "opencode-go/deepseek-v4.1-flash",
         "variant": "low",
         "skills": [],
         "mcps": ["context7", "gh_grep"]
       },
       "explorer": {
-        "model": "opencode-go/qwen3.8-flash",
+        "model": "opencode-go/deepseek-v4.1-flash",
         "variant": "low",
         "skills": ["gitops-repo-audit"],
         "mcps": []
@@ -36,8 +36,8 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/qwen3.8-flash",
-        "variant": "xhigh",
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "high",
         "skills": ["gitops-knowledge"],
         "mcps": []
       },
