@@ -64,5 +64,6 @@ tasks:
     cmds:
       - mkdir -p ~/.claude
       - ln -rsf claude/settings.json ~/.claude/settings.json
+      - ln -rsf claude/statusline.py ~/.claude/statusline.py
       - ln -sf /srv/shared/assistant/AGENTS.md ~/.claude/CLAUDE.md
       - ln -rsf opencode/oh-my-opencode-slim.strg.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
