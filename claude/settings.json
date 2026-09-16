@@ -130,10 +130,17 @@
     "disableAutoMode": "disable",
     "additionalDirectories": ["/home/opencode", "/srv/shared"]
   },
-  "effortLevel": "medium",
-  "tui": "fullscreen",
-  "prefersReducedMotion": true,
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
   "autoMemoryEnabled": true,
+  "editorMode": "vim",
+  "effortLevel": "medium",
+  "prefersReducedMotion": true,
+  "showThinkingSummaries": true,
   "theme": "dark-ansi",
-  "editorMode": "vim"
+  "tui": "fullscreen",
+  "model": "opus"
 }
