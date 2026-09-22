@@ -130,6 +130,10 @@
     "disableAutoMode": "disable",
     "additionalDirectories": ["/home/opencode", "/srv/shared"]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "\"$HOME/.claude/statusline.py\""
+  },
   "attribution": {
     "commit": "",
     "pr": "",
