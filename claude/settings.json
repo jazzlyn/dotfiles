@@ -91,7 +91,7 @@
       "Read(**/*secret*)",
       "Read(~/.config/gh/**)",
       "Edit(**/*secret*)",
-      "Bash(*secret*)",
+      "Bash(*.secrets*)",
       "Bash(curl *-T*)",
       "Bash(git *push*)",
       "Bash(gh *pr create*)",
