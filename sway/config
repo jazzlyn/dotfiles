@@ -17,14 +17,12 @@ include /etc/sway/config.d/*
   }
 
   # https://github.com/swaywm/sway/wiki#libinput-config-options
-  # input "1133:49278:Logitech_Gaming_Mouse_G402" {
-  #   dwt enabled
-  #   left_handed disabled
-  #   tap enabled
-  #   natural_scroll disabled
-  #   accel_profile adaptive
-  #   pointer_accel 1
-  # }
+  input "1133:49278:Logitech_Gaming_Mouse_G402" {
+    left_handed disabled
+    natural_scroll disabled
+    accel_profile flat
+    pointer_accel 0
+  }
 
 #
 # Outputs
