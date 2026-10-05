@@ -5,10 +5,10 @@ volumes:
 configs:
   poll-config.yml:
     content: |
-      - url: https://github.com/jazzlyn/dotfiles
-        reference: main
-        target: ${TARGET}
-        interval: 180
+      # - url: https://github.com/jazzlyn/dotfiles
+      #   reference: main
+      #   target: ${TARGET}
+      #   interval: 180
       - url: https://github.com/tyriis/home-ops
         reference: main
         target: ${TARGET}
