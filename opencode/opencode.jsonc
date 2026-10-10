@@ -2,7 +2,6 @@
   "$schema": "https://opencode.ai/config.json",
   "update": "disable",
   "permissions": [
-    { "action": "read", "resource": "*", "effect": "allow" },
     { "action": "read", "resource": "~/.secrets/**", "effect": "ask" },
     {
       "action": "read",
@@ -10,7 +9,6 @@
       "effect": "allow"
     },
     { "action": "read", "resource": "*secret.yaml", "effect": "allow" },
-    { "action": "edit", "resource": "*", "effect": "allow" },
     { "action": "edit", "resource": "~/.secrets/**", "effect": "ask" },
     {
       "action": "edit",
@@ -18,7 +16,6 @@
       "effect": "allow"
     },
     { "action": "edit", "resource": "*secret.yaml", "effect": "allow" },
-    { "action": "shell", "resource": "*", "effect": "allow" },
     { "action": "shell", "resource": "*.secrets*", "effect": "ask" },
     {
       "action": "shell",
@@ -26,28 +23,17 @@
       "effect": "allow"
     },
     { "action": "shell", "resource": "*secret.yaml*", "effect": "allow" },
-    { "action": "shell", "resource": "curl *-T*", "effect": "ask" },
-    { "action": "shell", "resource": "rtk curl *-T*", "effect": "ask" },
-    { "action": "shell", "resource": "git push*", "effect": "ask" },
-    { "action": "shell", "resource": "rtk git push*", "effect": "ask" },
-    { "action": "shell", "resource": "git * push*", "effect": "ask" },
-    { "action": "shell", "resource": "rtk git * push*", "effect": "ask" },
-    { "action": "shell", "resource": "gh pr create*", "effect": "ask" },
-    { "action": "shell", "resource": "rtk gh pr create*", "effect": "ask" },
-    { "action": "shell", "resource": "gh pr merge*", "effect": "ask" },
-    { "action": "shell", "resource": "rtk gh pr merge*", "effect": "ask" },
+    { "action": "shell", "resource": "*curl *-T*", "effect": "ask" },
+    { "action": "shell", "resource": "*git push*", "effect": "ask" },
+    { "action": "shell", "resource": "*git * push*", "effect": "ask" },
+    { "action": "shell", "resource": "*gh pr create*", "effect": "ask" },
+    { "action": "shell", "resource": "*gh pr merge*", "effect": "ask" },
     {
       "action": "shell",
-      "resource": "gh pr review*--comment*",
+      "resource": "*gh pr review*--comment*",
       "effect": "ask"
     },
-    {
-      "action": "shell",
-      "resource": "rtk gh pr review*--comment*",
-      "effect": "ask"
-    },
-    { "action": "shell", "resource": "gh pr review*-c*", "effect": "ask" },
-    { "action": "shell", "resource": "rtk gh pr review*-c*", "effect": "ask" },
+    { "action": "shell", "resource": "*gh pr review*-c*", "effect": "ask" },
     {
       "action": "external_directory",
       "resource": "/home/opencode/**",
@@ -63,14 +49,6 @@
       "resource": "/tmp/**",
       "effect": "allow"
     },
-    { "action": "glob", "resource": "*", "effect": "allow" },
-    { "action": "grep", "resource": "*", "effect": "allow" },
-    { "action": "question", "resource": "*", "effect": "allow" },
-    { "action": "skill", "resource": "*", "effect": "allow" },
-    { "action": "subagent", "resource": "*", "effect": "allow" },
-    { "action": "todowrite", "resource": "*", "effect": "allow" },
-    { "action": "webfetch", "resource": "*", "effect": "allow" },
-    { "action": "websearch", "resource": "*", "effect": "allow" },
     { "action": "atlassian_*", "resource": "*", "effect": "ask" },
     {
       "action": "atlassian_atlassianUserInfo",
@@ -134,7 +112,7 @@
       }
     }
   },
-  "plugins": ["oh-my-opencode-slim@3.0.2"],
+  "plugins": ["oh-my-opencode-slim"],
   "experimental": {
     "policies": [
       {
