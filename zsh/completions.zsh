@@ -2,11 +2,6 @@ zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
 zstyle ':completion:*:man:*'      menu yes select
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
-
 # Command completion options
 setopt auto_list
 setopt complete_aliases

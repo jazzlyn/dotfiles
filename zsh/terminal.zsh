@@ -10,7 +10,7 @@ alias ollama="docker exec -it ollama ollama"
 
 git() {
   local g="$(command -v git)"
-  if [[ $@ == "broom" ]]; then
+  if [[ $1 == broom ]]; then
     command "$g" fetch --prune # fetch and prune stale remote refs
     command "$g" switch main
     command "$g" pull --ff-only # fast forward only

@@ -13,19 +13,10 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && command -
 fi
 
 setopt pushd_to_home
-setopt HIST_IGNORE_SPACE
-
-DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -g -A key
-
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
 
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
