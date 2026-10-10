@@ -60,6 +60,7 @@ tasks:
     cmds:
       - yay -Sy --needed --noconfirm
         azure-cli
+        bun
         github-cli
         docker
         docker-buildx
