@@ -35,4 +35,5 @@ SOPS_AGE_KEY_FILE = "$HOME/.secrets/age-keys"
 "aqua:rhysd/actionlint" = "1.7.12"
 "aqua:rtk-ai/rtk" = "0.51.0"
 "github:home-operations/flate" = "0.6.5"
+"github:openchamber/openchamber" = { version = "2.2.0", bin = "openchamber" }
 "pipx:pyflakes" = "4.0.3"
