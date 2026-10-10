@@ -5,10 +5,10 @@ volumes:
 configs:
   poll-config.yml:
     content: |
-      - url: https://github.com/jazzlyn/dotfiles
-        reference: main
-        target: ${TARGET}
-        interval: 180
+      # - url: https://github.com/jazzlyn/dotfiles
+      #   reference: main
+      #   target: ${TARGET}
+      #   interval: 180
       - url: https://github.com/tyriis/home-ops
         reference: main
         target: ${TARGET}
@@ -16,13 +16,11 @@ configs:
 
 secrets:
   sops_age_key:
-    file: /etc/doco-cd/age-keys.txt
-  webhook_secret:
-    file: ${WEBHOOK_SECRET_FILE:-/etc/doco-cd/webhook_secret}
+    file: ${DOCO_SOPS_AGE_KEY_FILE:-/dev/null}
 services:
   doco-cd:
     container_name: doco-cd
-    image: ghcr.io/kimdre/doco-cd:0.123.0@sha256:11b474122ed530614cbe4cb8390f94b646d3fc8ba40d74c0f0b7f55a8ca719f8
+    image: ghcr.io/kimdre/doco-cd:0.125.1@sha256:38198abbda1b55da7a7f37a7924b2ccdcc0583bd24466b7c2103ef6cd2ffc828
     restart: always
     configs:
       - source: poll-config.yml
@@ -31,7 +29,6 @@ services:
       TZ: Europe/Vienna
       LOG_LEVEL: info
       POLL_CONFIG_FILE: /poll-config.yml
-      WEBHOOK_SECRET_FILE: /run/secrets/webhook_secret
       SOPS_AGE_KEY_FILE: /run/secrets/sops_age_key
       DEPLOY_CONFIG_BASE_DIR: ./docker
     healthcheck:
@@ -41,7 +38,6 @@ services:
       timeout: 5s
       retries: 3
     secrets:
-      - webhook_secret
       - sops_age_key
     cap_drop:
       - ALL

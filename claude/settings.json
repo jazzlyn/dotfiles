@@ -3,6 +3,11 @@
   "env": {
     "DISABLE_UPDATES": "1"
   },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
   "permissions": {
     "allow": [
       "Read",
@@ -130,21 +135,15 @@
     "disableAutoMode": "disable",
     "additionalDirectories": ["/home/opencode", "/srv/shared"]
   },
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "\"$HOME/.claude/statusline.py\""
   },
-  "attribution": {
-    "commit": "",
-    "pr": "",
-    "sessionUrl": false
-  },
-  "autoMemoryEnabled": true,
-  "editorMode": "vim",
   "effortLevel": "medium",
+  "tui": "fullscreen",
   "prefersReducedMotion": true,
   "showThinkingSummaries": true,
   "theme": "dark-ansi",
-  "tui": "fullscreen",
-  "model": "opus"
+  "editorMode": "vim"
 }

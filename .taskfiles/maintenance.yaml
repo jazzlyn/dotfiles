@@ -3,15 +3,13 @@
 version: "3"
 
 tasks:
-  docker-reset:
-    desc: reset docker configs
+  cleanup:
+    desc: cleanup unneeded files
     cmds:
-      - docker stop $(docker ps -q)
-      - docker rm $(docker ps -a -q)
-      - docker rmi $(docker images -q)
-      - docker volume rm $(docker volume ls -q)
-      - docker network rm $(docker network ls -q)
-      - docker system prune --all --volumes -f
+      - docker system prune --all --volumes
+      - mise prune
+      - pre-commit gc
+      - rm -rf ~/.local/share/Trash/*
 
   journalctl:
     desc: check for failed journalctl services

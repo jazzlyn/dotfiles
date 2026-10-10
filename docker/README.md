@@ -8,6 +8,7 @@ Following env variables can be set in `docker/doco-cd/<host>.env`:
 
 - `TARGET` (required)
 - `DOCKER_SOCKET` (optional, defaults to `/var/run/docker.sock`)
+- `DOCO_SOPS_AGE_KEY_FILE` (optional, defaults to `/dev/null`): set it when a stack on the host uses SOPS-encrypted files
 
 ```sh
 docker compose --env-file docker/doco-cd/host.env -f docker/doco-cd/compose.yaml up -d
