@@ -54,7 +54,7 @@ tasks:
       - mkdir -p ~/.config/opencode
       - ln -rsf opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
       - ln -rsf opencode/oh-my-opencode-slim.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
-      - ln -rsf opencode/tui.json ~/.config/opencode/tui.json
+      - ln -rsf opencode/cli.json ~/.config/opencode/cli.json
       - ln -sf /srv/shared/assistant/AGENTS.md ~/.config/opencode/AGENTS.md
       - ln -rsf containers ~/.config/
       - mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker

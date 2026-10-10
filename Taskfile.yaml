@@ -91,4 +91,6 @@ tasks:
     desc: setup the opencode agent environment
     cmds:
       - task: symlinks:opencode
-      - rtk init -g --opencode --auto-patch
+      - bun add -g @openchamber/web
+      - bun add -g --trust @opencode/cli
+      # - rtk init -g --opencode --auto-patch doesnt work with 2.0

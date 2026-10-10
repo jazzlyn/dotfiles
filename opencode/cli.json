@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": { "name": "github", "mode": "system" },
+  "keybinds": {
+    "app.exit": "none",
+    "session.first": "ctrl+g",
+    "session.last": "ctrl+alt+g"
+  },
+  "diffs": { "wrap": "word" },
+  "session": { "sidebar": "auto", "scrollbar": false, "thinking": "show" },
+  "animations": true
+}
