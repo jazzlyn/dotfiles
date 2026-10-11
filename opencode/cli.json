@@ -7,6 +7,6 @@
     "session.last": "ctrl+alt+g"
   },
   "diffs": { "wrap": "word" },
-  "session": { "sidebar": "auto", "scrollbar": false, "thinking": "show" },
+  "session": { "sidebar": "auto", "scrollbar": false, "thinking": "hide" },
   "animations": true
 }
