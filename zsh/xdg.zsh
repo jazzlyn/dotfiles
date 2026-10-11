@@ -32,5 +32,3 @@ export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
 # XDG_RUNTIME_DIR is set by pam_systemd
-
-export PATH=/usr/local/bin:$HOME/.local/bin:$PATH
