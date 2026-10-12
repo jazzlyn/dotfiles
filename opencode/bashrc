@@ -6,6 +6,8 @@ export OBSIDIAN_VAULT_PATH=/srv/shared/documents
 
 eval "$(command mise activate bash)"
 
+HISTCONTROL=ignorespace
+
 if [ -f /usr/share/bash-completion/bash_completion ]; then
   . /usr/share/bash-completion/bash_completion
 fi
