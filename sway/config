@@ -21,7 +21,7 @@ include /etc/sway/config.d/*
     left_handed disabled
     natural_scroll disabled
     accel_profile flat
-    pointer_accel 0
+    pointer_accel 0.3
   }
 
 #
