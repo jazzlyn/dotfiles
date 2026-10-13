@@ -3,7 +3,6 @@
   "preset": "strg",
   "presets": {
     "strg": {
-      // https://github.com/alvinunreal/oh-my-opencode-slim#%EF%B8%8F-meet-the-pantheon
       "orchestrator": {
         "model": "github-copilot/claude-sonnet-5",
         "variant": "medium",

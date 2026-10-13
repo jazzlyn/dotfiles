@@ -122,5 +122,6 @@
       },
       { "action": "provider.use", "resource": "opencode", "effect": "deny" }
     ]
-  }
+  },
+  "disabled_providers": ["github-copilot"]
 }
