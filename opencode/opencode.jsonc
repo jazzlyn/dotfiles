@@ -85,7 +85,7 @@
     "explore": { "disabled": true },
     "plan": { "color": "#FFFF00" },
     "title": {
-      "model": { "providerID": "github-copilot", "model": "gpt-5.6-luna" }
+      "model": { "providerID": "claude-code", "model": "claude-haiku-5-5" }
     }
   },
   "mcp": {
@@ -112,7 +112,7 @@
       }
     }
   },
-  "plugins": ["oh-my-opencode-slim"],
+  "plugins": ["oh-my-opencode-slim", "@openchamber/opencode-claude"],
   "experimental": {
     "policies": [
       {
