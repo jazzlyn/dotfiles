@@ -3,58 +3,26 @@
   "update": "disable",
   "permissions": [
     { "action": "read", "resource": "~/.secrets/**", "effect": "ask" },
-    {
-      "action": "read",
-      "resource": "*external-secret.yaml",
-      "effect": "allow"
-    },
+    { "action": "read", "resource": "*external-secret.yaml", "effect": "allow" },
     { "action": "read", "resource": "*secret.yaml", "effect": "allow" },
     { "action": "edit", "resource": "~/.secrets/**", "effect": "ask" },
-    {
-      "action": "edit",
-      "resource": "*external-secret.yaml",
-      "effect": "allow"
-    },
+    { "action": "edit", "resource": "*external-secret.yaml", "effect": "allow" },
     { "action": "edit", "resource": "*secret.yaml", "effect": "allow" },
     { "action": "shell", "resource": "*.secrets*", "effect": "ask" },
-    {
-      "action": "shell",
-      "resource": "*external-secret.yaml*",
-      "effect": "allow"
-    },
+    { "action": "shell", "resource": "*external-secret.yaml*", "effect": "allow" },
     { "action": "shell", "resource": "*secret.yaml*", "effect": "allow" },
     { "action": "shell", "resource": "*curl *-T*", "effect": "ask" },
     { "action": "shell", "resource": "*git push*", "effect": "ask" },
     { "action": "shell", "resource": "*git * push*", "effect": "ask" },
     { "action": "shell", "resource": "*gh pr create*", "effect": "ask" },
     { "action": "shell", "resource": "*gh pr merge*", "effect": "ask" },
-    {
-      "action": "shell",
-      "resource": "*gh pr review*--comment*",
-      "effect": "ask"
-    },
+    { "action": "shell", "resource": "*gh pr review*--comment*", "effect": "ask" },
     { "action": "shell", "resource": "*gh pr review*-c*", "effect": "ask" },
-    {
-      "action": "external_directory",
-      "resource": "/home/opencode/**",
-      "effect": "allow"
-    },
-    {
-      "action": "external_directory",
-      "resource": "/srv/shared/**",
-      "effect": "allow"
-    },
-    {
-      "action": "external_directory",
-      "resource": "/tmp/**",
-      "effect": "allow"
-    },
+    { "action": "external_directory", "resource": "/home/opencode/**", "effect": "allow" },
+    { "action": "external_directory", "resource": "/srv/shared/**", "effect": "allow" },
+    { "action": "external_directory", "resource": "/tmp/**", "effect": "allow" },
     { "action": "atlassian_*", "resource": "*", "effect": "ask" },
-    {
-      "action": "atlassian_atlassianUserInfo",
-      "resource": "*",
-      "effect": "allow"
-    },
+    { "action": "atlassian_atlassianUserInfo", "resource": "*", "effect": "allow" },
     { "action": "atlassian_fetch", "resource": "*", "effect": "allow" },
     { "action": "atlassian_get*", "resource": "*", "effect": "allow" },
     { "action": "atlassian_lookup*", "resource": "*", "effect": "allow" },
@@ -63,29 +31,34 @@
     { "action": "github_get*", "resource": "*", "effect": "allow" },
     { "action": "github_issue_read", "resource": "*", "effect": "allow" },
     { "action": "github_list*", "resource": "*", "effect": "allow" },
-    {
-      "action": "github_pull_request_read",
-      "resource": "*",
-      "effect": "allow"
-    },
+    { "action": "github_pull_request_read", "resource": "*", "effect": "allow" },
     { "action": "github_search*", "resource": "*", "effect": "allow" },
     { "action": "github_create_repository", "resource": "*", "effect": "deny" },
     { "action": "github_delete_file", "resource": "*", "effect": "deny" },
     { "action": "github_delete_repository", "resource": "*", "effect": "deny" },
     { "action": "github_fork_repository", "resource": "*", "effect": "deny" },
-    {
-      "action": "github_run_secret_scanning",
-      "resource": "*",
-      "effect": "deny"
-    }
+    { "action": "github_run_secret_scanning", "resource": "*", "effect": "deny" }
   ],
   "agents": {
-    "build": { "disabled": false },
-    "general": { "disabled": true },
-    "explore": { "disabled": true },
-    "plan": { "color": "#FFFF00" },
+    "build": {
+      "disabled": false,
+      "color": "#8E4EC6"
+    },
+    "general": {
+      "disabled": true
+    },
+    "explore": {
+      "disabled": true
+    },
+    "plan": {
+      "disabled": false,
+      "color": "#FFFF00"
+    },
     "title": {
-      "model": { "providerID": "claude-code", "model": "claude-haiku-5-5" }
+      "model": {
+        "providerID": "claude-code",
+        "model": "claude-haiku-5-5"
+      }
     }
   },
   "mcp": {
@@ -113,15 +86,5 @@
     }
   },
   "plugins": ["oh-my-opencode-slim", "@openchamber/opencode-claude"],
-  "experimental": {
-    "policies": [
-      {
-        "action": "provider.use",
-        "resource": "github-models",
-        "effect": "deny"
-      },
-      { "action": "provider.use", "resource": "opencode", "effect": "deny" }
-    ]
-  },
   "disabled_providers": ["github-copilot"]
 }
