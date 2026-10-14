@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim/oh-my-opencode-slim.schema.json",
   "preset": "strg",
+  "disabled_tools": ["task_reply"],
   "presets": {
     "strg": {
       "orchestrator": {
