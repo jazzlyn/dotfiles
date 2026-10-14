@@ -4,7 +4,7 @@
   "presets": {
     "strg": {
       "orchestrator": {
-        "model": "claude-code/claude-sonnet-5-5",
+        "model": "claude-code/claude-opus-5-5[1m]",
         "variant": "medium",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
@@ -12,7 +12,17 @@
       "oracle": {
         "model": "claude-code/claude-opus-5-5[1m]",
         "variant": "high",
-        "skills": ["simplify", "gitops-knowledge", "gitops-repo-audit"],
+        "skills": [
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-cluster-debug",
+          "gitops-knowledge",
+          "gitops-repo-audit",
+          "renovate-review",
+          "simplify",
+          "systematic-debugging",
+          "terraform-style-guide"
+        ],
         "mcps": []
       },
       "librarian": {
@@ -36,7 +46,18 @@
       "fixer": {
         "model": "claude-code/claude-haiku-5-5",
         "variant": "medium",
-        "skills": ["gitops-knowledge"],
+        "skills": [
+          "git-commit",
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-knowledge",
+          "pull-requests",
+          "receiving-code-review",
+          "systematic-debugging",
+          "terraform-style-guide",
+          "test-driven-development",
+          "verification-before-completion"
+        ],
         "mcps": []
       }
     }

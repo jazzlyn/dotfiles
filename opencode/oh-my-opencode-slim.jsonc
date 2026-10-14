@@ -14,7 +14,17 @@
       "oracle": {
         "model": "opencode-go/qwen3.8-max",
         "variant": "max",
-        "skills": ["simplify", "gitops-knowledge", "gitops-repo-audit"],
+        "skills": [
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-cluster-debug",
+          "gitops-knowledge",
+          "gitops-repo-audit",
+          "renovate-review",
+          "simplify",
+          "systematic-debugging",
+          "terraform-style-guide"
+        ],
         "mcps": []
       },
       "librarian": {
@@ -38,7 +48,18 @@
       "fixer": {
         "model": "opencode-go/deepseek-v4.1-flash",
         "variant": "high",
-        "skills": ["gitops-knowledge"],
+        "skills": [
+          "git-commit",
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-knowledge",
+          "pull-requests",
+          "receiving-code-review",
+          "systematic-debugging",
+          "terraform-style-guide",
+          "test-driven-development",
+          "verification-before-completion"
+        ],
         "mcps": []
       },
       "observer": {
