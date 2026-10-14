@@ -86,5 +86,5 @@
     }
   },
   "plugins": ["oh-my-opencode-slim", "@openchamber/opencode-claude"],
-  "disabled_providers": ["github-copilot"]
+  "disabled_providers": ["github-copilot", "opencode"]
 }
