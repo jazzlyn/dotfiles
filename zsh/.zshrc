@@ -21,10 +21,6 @@ typeset -g -A key
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
 
-if command -v mise > /dev/null 2>&1; then
-  source $ZDOTDIR/mise.zsh
-fi
-
 autoload -U add-zsh-hook
 
 source $ZDOTDIR/history.zsh
@@ -41,10 +37,6 @@ source $ZDOTDIR/python.zsh
 
 if command -v bun > /dev/null 2>&1; then
   source $ZDOTDIR/bun.zsh
-fi
-
-if command -v direnv > /dev/null 2>&1; then
-  source $ZDOTDIR/direnv.zsh
 fi
 
 if command -v gcloud > /dev/null 2>&1; then

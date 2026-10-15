@@ -1,43 +1,64 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim/oh-my-opencode-slim.schema.json",
   "preset": "strg",
+  "disabled_tools": ["task_reply"],
   "presets": {
     "strg": {
-      // https://github.com/alvinunreal/oh-my-opencode-slim#%EF%B8%8F-meet-the-pantheon
       "orchestrator": {
-        "model": "github-copilot/claude-sonnet-5",
+        "model": "claude-code/claude-opus-5-5[1m]",
         "variant": "medium",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "github-copilot/claude-opus-5",
+        "model": "claude-code/claude-opus-5-5[1m]",
         "variant": "high",
-        "skills": ["simplify", "gitops-knowledge", "gitops-repo-audit"],
+        "skills": [
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-cluster-debug",
+          "gitops-knowledge",
+          "gitops-repo-audit",
+          "renovate-review",
+          "simplify",
+          "systematic-debugging",
+          "terraform-style-guide"
+        ],
         "mcps": []
       },
       "librarian": {
-        "model": "github-copilot/gpt-5.6-luna",
+        "model": "claude-code/claude-haiku-5-5",
         "variant": "low",
         "skills": [],
         "mcps": ["context7", "gh_grep"]
       },
       "explorer": {
-        "model": "github-copilot/gpt-5.6-luna",
+        "model": "claude-code/claude-haiku-5-5",
         "variant": "low",
         "skills": ["gitops-repo-audit"],
         "mcps": []
       },
       "designer": {
-        "model": "github-copilot/gpt-5.6-luna",
+        "model": "claude-code/claude-sonnet-5-5",
         "variant": "medium",
         "skills": [],
         "mcps": []
       },
       "fixer": {
-        "model": "github-copilot/gpt-5.6-luna",
+        "model": "claude-code/claude-haiku-5-5",
         "variant": "medium",
-        "skills": ["gitops-knowledge"],
+        "skills": [
+          "git-commit",
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-knowledge",
+          "pull-requests",
+          "receiving-code-review",
+          "systematic-debugging",
+          "terraform-style-guide",
+          "test-driven-development",
+          "verification-before-completion"
+        ],
         "mcps": []
       }
     }

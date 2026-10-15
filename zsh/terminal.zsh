@@ -35,19 +35,3 @@ git() {
     command "$g" "$@"
   fi
 }
-
-oc() {
-  local path="${1:-.}"
-  # resolve relative paths to absolute using current directory
-  if [[ "$path" == . ]]; then
-    path="$(pwd)"
-  fi
-  # handle quoted tilde: oc '~/projects/foo'
-  if [[ "$path" == \~* ]]; then
-    path="/home/opencode${path:1}"
-  # handle unquoted tilde (already expanded by outer shell to $HOME)
-  elif [[ "$path" == "$HOME"* ]]; then
-    path="/home/opencode${path#$HOME}"
-  fi
-  /usr/bin/sudo -u opencode bash -i -c "cd '$path' && exec opencode"
-}
