@@ -1,7 +1,7 @@
 [user]
   email = 9011011+jazzlyn@users.noreply.github.com
   name = Jazzlyn
-  signingkey = ~/.ssh/id_ed25519_sk_notouch.pub
+  signingkey = ~/.ssh/id_tpm_sign.pub
 [color]
   ui = true
 [commit]
