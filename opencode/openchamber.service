@@ -6,7 +6,7 @@ After=network-online.target
 Type=simple
 
 Environment="PATH=%h/.bun/bin:/usr/local/bin:/usr/bin:/bin"
-Environment=BASH_ENV=%h/dotfiles/opencode/bashenv
+Environment=BASH_ENV=%h/dotfiles/bash/bashenv
 EnvironmentFile=-%h/.config/openchamber/startup.env
 ExecStart=/usr/bin/bun %h/.bun/bin/openchamber serve --foreground --port 3000 --host 0.0.0.0 --api-only
 

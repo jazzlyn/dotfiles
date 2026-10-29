@@ -2,10 +2,9 @@ export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
-export OBSIDIAN_VAULT_PATH=/srv/shared/documents
 
 if [[ -z $SSH_CONNECTION && -z $SSH_TTY && -z $SSH_CLIENT ]]; then
-  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-tpm-agent.sock
 fi
 
 eval "$(command mise hook-env -s bash)"

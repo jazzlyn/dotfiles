@@ -70,6 +70,18 @@ tasks:
       - task: symlinks:apps
       - task: symlinks:secrets
 
+  setup-agentix:
+    desc: setup agentix
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:devtools
+      - task: install:sysutils
+      - task: symlinks:agentix
+      - bun add -g @openchamber/web
+      - bun add -g --trust @opencode/cli
+      # - rtk init -g --opencode --auto-patch doesnt work with 2.0
+
   setup-workstation:
     desc: setup workstation
     cmds:
@@ -88,11 +100,3 @@ tasks:
       - task: symlinks:base
       - task: symlinks:apps
       - task: symlinks:secrets
-
-  setup-opencode:
-    desc: setup the opencode agent environment
-    cmds:
-      - task: symlinks:opencode
-      - bun add -g @openchamber/web
-      - bun add -g --trust @opencode/cli
-      # - rtk init -g --opencode --auto-patch doesnt work with 2.0
