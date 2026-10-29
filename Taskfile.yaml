@@ -47,10 +47,12 @@ tasks:
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
+      - task: install:strg
       - task: install:devtools
       - task: symlinks:base
       - task: symlinks:apps
       - task: symlinks:secrets
+      - task: symlinks:strg
 
   setup-purple:
     desc: setup purple

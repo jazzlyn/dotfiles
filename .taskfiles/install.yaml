@@ -40,10 +40,8 @@ tasks:
         linux
         linux-firmware
         networkmanager
-        networkmanager-vpn-plugin-openvpn
         noto-fonts
         noto-fonts-emoji
-        openvpn
         ssh-tpm-agent
         tpm2-tools
         tpm2-tss
@@ -62,7 +60,6 @@ tasks:
     internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        azure-cli
         bun
         github-cli
         docker
@@ -71,7 +68,6 @@ tasks:
         podman
         podman-compose
         google-cloud-cli
-        google-cloud-cli-gke-gcloud-auth-plugin
 
   sysutils:
     desc: install system utility packages
@@ -170,3 +166,13 @@ tasks:
         starship
         strace
         traceroute
+
+  strg:
+    desc: install strg packages
+    internal: true
+    cmds:
+      - yay -Syu --needed --noconfirm
+        azure-cli
+        google-cloud-cli-gke-gcloud-auth-plugin
+        networkmanager-vpn-plugin-openvpn
+        openvpn
