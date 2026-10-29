@@ -12,7 +12,7 @@ tasks:
         atool
         base
         base-devel
-        bash-completions
+        bash-completion
         git
         less
         mise
