@@ -2,15 +2,15 @@
   "$schema": "https://opencode.ai/config.json",
   "update": "disable",
   "permissions": [
-    { "action": "read", "resource": "*external-secret.yaml", "effect": "allow" },
-    { "action": "read", "resource": "*secret.yaml", "effect": "allow" },
+    { "action": "read", "resource": "/*", "effect": "allow" },
     { "action": "read", "resource": "~/.secrets/**", "effect": "ask" },
-    { "action": "edit", "resource": "*external-secret.yaml", "effect": "allow" },
-    { "action": "edit", "resource": "*secret.yaml", "effect": "allow" },
+    { "action": "read", "resource": "/etc/doco-cd/age-keys.txt", "effect": "ask" },
+    { "action": "edit", "resource": "/*", "effect": "ask" },
+    { "action": "edit", "resource": "~/*", "effect": "allow" },
     { "action": "edit", "resource": "~/.secrets/**", "effect": "ask" },
-    { "action": "shell", "resource": "*external-secret.yaml*", "effect": "allow" },
-    { "action": "shell", "resource": "*secret.yaml*", "effect": "allow" },
+    { "action": "edit", "resource": "/tmp/*", "effect": "allow" },
     { "action": "shell", "resource": "*.secrets*", "effect": "ask" },
+    { "action": "shell", "resource": "*keys.txt", "effect": "ask" },
     { "action": "shell", "resource": "*curl *-T*", "effect": "ask" },
     { "action": "shell", "resource": "*git push*", "effect": "ask" },
     { "action": "shell", "resource": "*git * push*", "effect": "ask" },
@@ -18,10 +18,7 @@
     { "action": "shell", "resource": "*gh pr merge*", "effect": "ask" },
     { "action": "shell", "resource": "*gh pr review*--comment*", "effect": "ask" },
     { "action": "shell", "resource": "*gh pr review*-c*", "effect": "ask" },
-    { "action": "external_directory", "resource": "*", "effect": "ask" },
-    { "action": "external_directory", "resource": "/home/opencode/**", "effect": "allow" },
-    { "action": "external_directory", "resource": "/srv/shared/**", "effect": "allow" },
-    { "action": "external_directory", "resource": "/tmp/**", "effect": "allow" },
+    { "action": "external_directory", "resource": "/*", "effect": "allow" },
     { "action": "atlassian_*", "resource": "*", "effect": "ask" },
     { "action": "atlassian_atlassianUserInfo", "resource": "*", "effect": "allow" },
     { "action": "atlassian_fetch", "resource": "*", "effect": "allow" },
@@ -71,9 +68,9 @@
       "home-assistant": {
         "type": "remote",
         "url": "https://hass.techtales.io/api/mcp",
-        "oauth": {
-          "client_id": "http://localhost:19876",
-          "redirect_uri": "http://localhost:19876/mcp/oauth/callback"
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {file:~/.secrets/hass-token}"
         }
       },
       "github": {
