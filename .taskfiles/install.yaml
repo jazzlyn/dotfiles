@@ -12,7 +12,7 @@ tasks:
         atool
         base
         base-devel
-        bash-completions
+        bash-completion
         git
         less
         mise
@@ -40,13 +40,10 @@ tasks:
         linux
         linux-firmware
         networkmanager
-        noto-fonts
-        noto-fonts-emoji
         ssh-tpm-agent
+        syncthing
         tpm2-tools
         tpm2-tss
-        ttf-dejavu-nerd
-        ttf-inconsolata-go-nerd
 
   nvidia:
     desc: install nvidia packages
@@ -99,6 +96,8 @@ tasks:
         kanshi
         kitty
         network-manager-applet
+        noto-fonts
+        noto-fonts-emoji
         obsidian
         pavucontrol-qt
         pipewire
@@ -107,7 +106,7 @@ tasks:
         python-pillow
         qt6-wayland
         slurp
-        syncthing
+        ttf-inconsolata-go-nerd
         vesktop-bin
         visual-studio-code-bin
         waybar

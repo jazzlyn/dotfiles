@@ -1,4 +1,4 @@
-source "$HOME/dotfiles/opencode/bashenv"
+source "$HOME/dotfiles/bash/bashenv"
 
 eval "$(command mise activate bash)"
 
