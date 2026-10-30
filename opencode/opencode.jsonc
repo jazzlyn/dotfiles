@@ -68,9 +68,9 @@
       "home-assistant": {
         "type": "remote",
         "url": "https://hass.techtales.io/api/mcp",
-        "oauth": {
-          "client_id": "http://localhost:19876",
-          "redirect_uri": "http://localhost:19876/mcp/oauth/callback"
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {file:~/.secrets/hass-token}"
         }
       },
       "github": {
