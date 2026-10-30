@@ -10,7 +10,7 @@
     { "action": "edit", "resource": "~/.secrets/**", "effect": "ask" },
     { "action": "edit", "resource": "/tmp/*", "effect": "allow" },
     { "action": "shell", "resource": "*.secrets*", "effect": "ask" },
-    { "action": "shell", "resource": "*keys.txt*", "effect": "ask" },
+    { "action": "shell", "resource": "*keys.txt", "effect": "ask" },
     { "action": "shell", "resource": "*curl *-T*", "effect": "ask" },
     { "action": "shell", "resource": "*git push*", "effect": "ask" },
     { "action": "shell", "resource": "*git * push*", "effect": "ask" },
