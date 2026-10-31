@@ -50,9 +50,7 @@ include /etc/sway/config.d/*
   for_window [shell="xwayland"] title_format "[XWayland] %title"
   for_window [app_id="flameshot"] floating enable, fullscreen disable, border pixel 0, move absolute position 0 0
   for_window [app_id="google-chrome" title="Meet.*"] floating enable, border normal
-  for_window [app_id="galculator"] floating enable, border normal
   for_window [app_id="obsidian"] move to workspace 4
-  for_window [app_id="pavucontrol-qt"] floating enable, border normal
   for_window [app_id="vesktop"] move to workspace 4
 
 #

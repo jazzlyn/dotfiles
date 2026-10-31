@@ -33,11 +33,10 @@ tasks:
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
-      - task: install:hyprland
+      - task: install:productivity
       - task: install:devtools
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
 
   setup-coal:
     desc: setup coal
@@ -47,11 +46,11 @@ tasks:
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
+      - task: install:productivity
       - task: install:strg
       - task: install:devtools
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
       - task: symlinks:strg
 
   setup-purple:
@@ -63,12 +62,24 @@ tasks:
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
+      - task: install:productivity
       - task: install:devtools
-      - task: install:ai
       - task: install:gaming
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
+
+  setup-hades:
+    desc: setup hades
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:sysutils
+      - task: install:plasma
+      - task: install:productivity
+      - task: install:devtools
+      - task: install:gaming
+      - task: symlinks:base
+      - task: symlinks:apps
 
   setup-agentix:
     desc: setup agentix
@@ -88,15 +99,4 @@ tasks:
       - task: install:workstation
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
       - mkdir -p ~/scripts && ln -rsf init.sh ~/scripts
-
-  setup-wsl:
-    desc: setup wsl
-    cmds:
-      - task: install:base
-      - task: install:sysutils
-      # - task: install:devtools
-      - task: symlinks:base
-      - task: symlinks:apps
-      - task: symlinks:secrets

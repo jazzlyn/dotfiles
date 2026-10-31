@@ -26,7 +26,6 @@ tasks:
       - command -v starship > /dev/null 2>&1 && ln -rsf starship/starship.toml ~/.config/starship.toml
       - command -v dunst > /dev/null 2>&1 && ln -rsf dunst ~/.config/
       - command -v gammastep > /dev/null 2>&1 && ln -rsf gammastep ~/.config/
-      - command -v hyprland > /dev/null 2>&1 && ln -rsf hypr ~/.config/
       - command -v kanshi > /dev/null 2>&1 && ln -rsf kanshi ~/.config/
       - command -v kitty > /dev/null 2>&1 && ln -rsf kitty ~/.config/
       - command -v mise > /dev/null 2>&1 && ln -rsf mise ~/.config/
@@ -37,8 +36,8 @@ tasks:
       - command -v rofi > /dev/null 2>&1 && ln -rsf rofi ~/.config/
       - command -v sway > /dev/null 2>&1 && ln -rsf sway ~/.config/
       - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
-      - command -v tmux > /dev/null 2>&1 && ln -rsf tmux ~/.config/
       - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
+      - pacman -Qq xdg-desktop-portal-wlr > /dev/null 2>&1 && ln -rsf xdg-desktop-portal-wlr ~/.config/
       - command -v yay > /dev/null 2>&1 && ln -rsf yay/config.json ~/.config/yay/config.json
     ignore_error: true
 

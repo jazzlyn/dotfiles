@@ -50,6 +50,7 @@ tasks:
     internal: true
     cmds:
       - yay -Sy --needed --noconfirm
+        nvidia-container-toolkit
         nvidia-open
 
   devtools:
@@ -87,18 +88,14 @@ tasks:
     cmds:
       - yay -Sy --needed --noconfirm
         dunst
-        flameshot
-        galculator
         gammastep
         gnome-keyring
-        google-chrome
         grim
         kanshi
         kitty
         network-manager-applet
         noto-fonts
         noto-fonts-emoji
-        obsidian
         pavucontrol-qt
         pipewire
         pipewire-libcamera
@@ -107,8 +104,6 @@ tasks:
         qt6-wayland
         slurp
         ttf-inconsolata-go-nerd
-        vesktop-bin
-        visual-studio-code-bin
         waybar
         wmenu
         xdg-desktop-portal
@@ -126,23 +121,27 @@ tasks:
         swayidle
         swaylock
 
-  hyprland:
-    desc: install hyprland packages
+  plasma:
+    desc: install plasma desktop packages
     internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        hyprland
+        konsole
+        kscreen
+        plasma-desktop
+        plasma-login-manager
+        plasma-nm
+        plasma-pa
 
-  ai:
-    desc: install AI/GPU compute packages
+  productivity:
+    desc: install productivity packages
     internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        nvidia-container-toolkit
-        # intel-compute-runtime-legacy-bin
-        # intel-graphics-compiler-legacy-bin
-        # level-zero-headers
-        # level-zero-loader
+        flameshot
+        google-chrome
+        obsidian
+        vesktop-bin
 
   gaming:
     desc: install gaming packages
