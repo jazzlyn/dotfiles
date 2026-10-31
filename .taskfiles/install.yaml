@@ -129,6 +129,7 @@ tasks:
         konsole
         kscreen
         plasma-desktop
+        plasma-login-manager
         plasma-nm
         plasma-pa
 
