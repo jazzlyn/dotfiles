@@ -148,7 +148,6 @@ tasks:
     internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        glfw
         prismlauncher
 
   workstation:
