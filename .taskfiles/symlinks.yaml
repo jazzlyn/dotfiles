@@ -38,6 +38,7 @@ tasks:
       - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
       - command -v tmux > /dev/null 2>&1 && ln -rsf tmux ~/.config/
       - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
+      - command -v xdg-desktop-portal-wlr > /dev/null 2>&1 && mkdir -p ~/.config/xdg-desktop-portal-wlr && ln -rsf xdg-desktop-portal-wlr/config ~/.config/xdg-desktop-portal-wlr/config
       - command -v yay > /dev/null 2>&1 && ln -rsf yay/config.json ~/.config/yay/config.json
     ignore_error: true
 
