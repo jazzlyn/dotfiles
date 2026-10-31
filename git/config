@@ -10,6 +10,8 @@
 [core]
   excludesfile = ~/.config/git/gitignore
   pager = less -iXFR
+[credential "https://git.techtales.io"]
+  helper = libsecret
 [credential "https://github.com"]
   helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
@@ -19,7 +21,7 @@
 [gpg]
   format = ssh
 [gpg "ssh"]
-  allowedSignersFile = ~/.config/git/allowed_signers
+  allowedSignersFile = ~/.ssh/allowed_signers
 [init]
   defaultBranch = main
 [pull]
@@ -28,6 +30,7 @@
   default = current
   autoSetupRemote = true
 [tag]
+  gpgsign = true
   sort = -version:refname
 [includeIf "gitdir:**/strg/**"]
     path = ~/.config/git/config.strg
