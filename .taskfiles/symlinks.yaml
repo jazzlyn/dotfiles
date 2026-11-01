@@ -57,7 +57,7 @@ tasks:
       - systemctl --user link opencode/openchamber.service
       - ln -rsf ~/notes/AGENTS.md ~/.config/opencode/AGENTS.md
       - ln -rsf containers ~/.config/
-      - mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker
+      - systemctl --user is-enabled podman.socket > /dev/null 2>&1 && mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker || rm -f ~/.local/bin/docker
 
   strg:
     desc: create strg specific symlinks
