@@ -1,6 +1,6 @@
 [user]
   email = 9011011+jazzlyn@users.noreply.github.com
-  name = Jazzlyn
+  name = jazzlyn
   signingkey = ~/.ssh/id_tpm.pub
 [color]
   ui = true
