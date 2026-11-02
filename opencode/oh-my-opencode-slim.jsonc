@@ -5,16 +5,15 @@
   "disabled_tools": ["task_reply"],
   "presets": {
     "default": {
-      // https://github.com/alvinunreal/oh-my-opencode-slim#%EF%B8%8F-meet-the-pantheon
       "orchestrator": {
-        "model": "opencode-go/deepseek-v4.1-flash",
-        "variant": "thinking",
+        "model": "opencode-go/claude-haiku-5-5",
+        "variant": "high",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "opencode-go/qwen3.8-max",
-        "variant": "max",
+        "model": "opencode-go/deepseek-v4-pro",
+        "variant": "high",
         "skills": [
           "github-actions-efficiency",
           "github-actions-hardening",
@@ -30,7 +29,7 @@
       },
       "librarian": {
         "model": "opencode-go/deepseek-v4.1-flash",
-        "variant": "low",
+        "variant": "medium",
         "skills": [],
         "mcps": ["context7", "gh_grep"]
       },
@@ -41,7 +40,7 @@
         "mcps": []
       },
       "designer": {
-        "model": "opencode-go/glm-5.3-flash",
+        "model": "opencode-go/deepseek-v4.1-flash",
         "variant": "high",
         "skills": [],
         "mcps": []
@@ -64,7 +63,7 @@
         "mcps": []
       },
       "observer": {
-        "model": "opencode-go/glm-5.3-flash",
+        "model": "opencode-go/deepseek-v4.1-flash",
         "variant": "low",
         "skills": [],
         "mcps": []
