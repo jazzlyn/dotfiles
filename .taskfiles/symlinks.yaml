@@ -33,7 +33,6 @@ tasks:
       - command -v pacman > /dev/null 2>&1 && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
       - command -v wireplumber > /dev/null 2>&1 && ln -rsf wireplumber ~/.config/
       - command -v ranger > /dev/null 2>&1 && mkdir -p ~/.config/ranger && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
-      - command -v rofi > /dev/null 2>&1 && ln -rsf rofi ~/.config/
       - command -v sway > /dev/null 2>&1 && ln -rsf sway ~/.config/
       - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
       - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
