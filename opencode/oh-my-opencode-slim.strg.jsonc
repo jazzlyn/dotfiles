@@ -5,13 +5,13 @@
   "presets": {
     "strg": {
       "orchestrator": {
-        "model": "claude-code/claude-opus-5-5[1m]",
+        "model": "claude-code/claude-sonnet-5-5",
         "variant": "medium",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "claude-code/claude-opus-5-5[1m]",
+        "model": "claude-code/claude-opus-5-5",
         "variant": "high",
         "skills": [
           "github-actions-efficiency",
@@ -28,7 +28,7 @@
       },
       "librarian": {
         "model": "claude-code/claude-haiku-5-5",
-        "variant": "low",
+        "variant": "medium",
         "skills": [],
         "mcps": ["context7", "gh_grep"]
       },
@@ -46,7 +46,7 @@
       },
       "fixer": {
         "model": "claude-code/claude-haiku-5-5",
-        "variant": "medium",
+        "variant": "high",
         "skills": [
           "git-commit",
           "github-actions-efficiency",
