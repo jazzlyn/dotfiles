@@ -20,6 +20,12 @@ secrets:
 services:
   doco-cd:
     container_name: doco-cd
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+        labels: "com.docker.compose.service,com.docker.compose.image,cd.doco.deployment.config.target,org.opencontainers.image.title,org.opencontainers.image.version"
     image: ghcr.io/kimdre/doco-cd:0.132.0@sha256:ed22583456c60c88c5cabdb47803aa0ab51284f00d70d5bb63fa56b223fa250a
     restart: always
     configs:
