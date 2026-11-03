@@ -24,6 +24,7 @@ tasks:
     desc: create app symlinks
     cmds:
       - command -v starship > /dev/null 2>&1 && ln -rsf starship/starship.toml ~/.config/starship.toml
+      - mkdir -p ~/.local/bin && ln -rsf hermes/hermes-desktop ~/.local/bin/hermes-desktop
       - command -v dunst > /dev/null 2>&1 && ln -rsf dunst ~/.config/
       - command -v gammastep > /dev/null 2>&1 && ln -rsf gammastep ~/.config/
       - command -v kanshi > /dev/null 2>&1 && ln -rsf kanshi ~/.config/
@@ -53,6 +54,7 @@ tasks:
       - ln -rsf opencode/oh-my-opencode-slim.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
       - ln -rsf opencode/cli.json ~/.config/opencode/cli.json
       - systemctl --user link opencode/openchamber.service
+      - systemctl --user link hermes/hermes-dashboard.service
       - ln -rsf ~/notes/AGENTS.md ~/.config/opencode/AGENTS.md
       - ln -rsf containers ~/.config/
       - systemctl --user is-enabled podman.socket > /dev/null 2>&1 && mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker || rm -f ~/.local/bin/docker
