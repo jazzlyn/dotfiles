@@ -5,13 +5,13 @@
   "presets": {
     "strg": {
       "orchestrator": {
-        "model": "claude-code/claude-sonnet-5-5",
+        "model": "claude-agent/sonnet",
         "variant": "medium",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "claude-code/claude-opus-5-5",
+        "model": "claude-agent/opus",
         "variant": "high",
         "skills": [
           "github-actions-efficiency",
@@ -27,25 +27,25 @@
         "mcps": []
       },
       "librarian": {
-        "model": "claude-code/claude-haiku-5-5",
+        "model": "claude-agent/haiku",
         "variant": "medium",
         "skills": [],
         "mcps": ["context7", "gh_grep"]
       },
       "explorer": {
-        "model": "claude-code/claude-haiku-5-5",
+        "model": "claude-agent/haiku",
         "variant": "low",
         "skills": ["gitops-repo-audit"],
         "mcps": []
       },
       "designer": {
-        "model": "claude-code/claude-sonnet-5-5",
+        "model": "claude-agent/sonnet",
         "variant": "medium",
         "skills": [],
         "mcps": []
       },
       "fixer": {
-        "model": "claude-code/claude-haiku-5-5",
+        "model": "claude-agent/haiku",
         "variant": "high",
         "skills": [
           "git-commit",
