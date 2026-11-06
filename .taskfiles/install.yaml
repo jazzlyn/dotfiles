@@ -35,6 +35,7 @@ tasks:
       - yay -Sy --needed --noconfirm
         cups
         ghostscript
+        intel-media-driver
         intel-ucode
         libfido2
         linux
@@ -44,6 +45,7 @@ tasks:
         syncthing
         tpm2-tools
         tpm2-tss
+        vulkan-intel
 
   nvidia:
     desc: install nvidia packages
