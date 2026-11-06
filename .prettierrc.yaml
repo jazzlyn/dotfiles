@@ -8,3 +8,4 @@ overrides:
   - files: ["*.jsonc"]
     options:
       trailingComma: "none"
+      printWidth: 100

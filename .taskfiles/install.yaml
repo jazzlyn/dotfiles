@@ -1,16 +1,18 @@
 ---
-# yaml-language-server: $schema=https://json.schemastore.org/taskfile.json
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
 version: "3"
 
 tasks:
   base:
     desc: install base packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
         age
         atool
         base
         base-devel
+        bash-completion
         git
         less
         mise
@@ -18,7 +20,7 @@ tasks:
         openssh
         ranger
         sops
-        spaceship-prompt
+        starship
         tig
         tree
         vim
@@ -28,6 +30,7 @@ tasks:
 
   system:
     desc: install system packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
         cups
@@ -37,17 +40,17 @@ tasks:
         linux
         linux-firmware
         networkmanager
-        networkmanager-vpn-plugin-openvpn
-        noto-fonts
-        noto-fonts-emoji
-        openvpn
-        ttf-dejavu-nerd
-        ttf-inconsolata-go-nerd
+        ssh-tpm-agent
+        syncthing
+        tpm2-tools
+        tpm2-tss
 
   nvidia:
     desc: install nvidia packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
+        nvidia-container-toolkit
         nvidia-open
 
   coal:
@@ -59,18 +62,21 @@ tasks:
 
   devtools:
     desc: install development tools
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        azure-cli
+        bun
         github-cli
         docker
         docker-buildx
         docker-compose
+        podman
+        podman-compose
         google-cloud-cli
-        google-cloud-cli-gke-gcloud-auth-plugin
 
   sysutils:
     desc: install system utility packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
         bind
@@ -85,30 +91,26 @@ tasks:
 
   wayland:
     desc: install wayland packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
         dunst
-        flameshot
-        galculator
         gammastep
         gnome-keyring
-        google-chrome
         grim
         kanshi
         kitty
         network-manager-applet
-        obsidian
+        noto-fonts
+        noto-fonts-emoji
         pavucontrol-qt
         pipewire
-        pipewire-alsa
+        pipewire-libcamera
         pipewire-pulse
-        pipewire-jack
         python-pillow
         qt6-wayland
         slurp
-        syncthing
-        vesktop-bin
-        visual-studio-code-bin
+        ttf-inconsolata-go-nerd
         waybar
         wmenu
         xdg-desktop-portal
@@ -118,6 +120,7 @@ tasks:
 
   sway:
     desc: install sway packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
         sway
@@ -125,31 +128,38 @@ tasks:
         swayidle
         swaylock
 
-  hyprland:
-    desc: install hyprland packages
+  plasma:
+    desc: install plasma desktop packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        hyprland
+        konsole
+        kscreen
+        plasma-desktop
+        plasma-login-manager
+        plasma-nm
+        plasma-pa
 
-  ai:
-    desc: install AI/GPU compute packages
+  productivity:
+    desc: install productivity packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        nvidia-container-toolkit
-        # intel-compute-runtime-legacy-bin
-        # intel-graphics-compiler-legacy-bin
-        # level-zero-headers
-        # level-zero-loader
+        flameshot
+        google-chrome
+        obsidian
+        vesktop-bin
 
   gaming:
     desc: install gaming packages
+    internal: true
     cmds:
       - yay -Sy --needed --noconfirm
-        glfw
         prismlauncher
 
   workstation:
     desc: install workstation packages
+    internal: true
     cmds:
       - sudo apt update && sudo apt install --no-install-recommends -y
         atool
@@ -157,9 +167,16 @@ tasks:
         neovim
         net-tools
         ranger
+        starship
         strace
         traceroute
-      - cmd: |
-          if [ ! -d "$HOME/.zsh/spaceship-prompt" ]; then
-            git clone --depth=1 git@github.com:spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship-prompt"
-          fi
+
+  strg:
+    desc: install strg packages
+    internal: true
+    cmds:
+      - yay -Syu --needed --noconfirm
+        azure-cli
+        google-cloud-cli-gke-gcloud-auth-plugin
+        networkmanager-vpn-plugin-openvpn
+        openvpn

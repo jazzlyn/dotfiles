@@ -21,9 +21,6 @@
     "tray"
   ],
   // modules configuration
-  "hyprland/workspaces": {
-    "format": "{id}"
-  },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon} {format_source}",
@@ -96,7 +93,7 @@
   "network": {
     "interval": 10,
     "format": "{ifname} {ipaddr} ",
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "{essid} ({signalStrength}%) {ipaddr} ",
     "tooltip": false
   },
   "battery": {

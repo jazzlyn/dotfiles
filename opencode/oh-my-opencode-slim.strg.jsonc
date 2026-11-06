@@ -1,0 +1,66 @@
+{
+  "$schema": "https://unpkg.com/oh-my-opencode-slim/oh-my-opencode-slim.schema.json",
+  "preset": "strg",
+  "disabled_tools": ["task_reply"],
+  "presets": {
+    "strg": {
+      "orchestrator": {
+        "model": "claude-agent/sonnet",
+        "variant": "medium",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"]
+      },
+      "oracle": {
+        "model": "claude-agent/opus",
+        "variant": "high",
+        "skills": [
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-cluster-debug",
+          "gitops-knowledge",
+          "gitops-repo-audit",
+          "renovate-review",
+          "simplify",
+          "systematic-debugging",
+          "terraform-style-guide"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "claude-agent/haiku",
+        "variant": "medium",
+        "skills": [],
+        "mcps": ["context7", "gh_grep"]
+      },
+      "explorer": {
+        "model": "claude-agent/haiku",
+        "variant": "low",
+        "skills": ["gitops-repo-audit"],
+        "mcps": []
+      },
+      "designer": {
+        "model": "claude-agent/sonnet",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "claude-agent/haiku",
+        "variant": "high",
+        "skills": [
+          "git-commit",
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-knowledge",
+          "pull-requests",
+          "receiving-code-review",
+          "systematic-debugging",
+          "terraform-style-guide",
+          "test-driven-development",
+          "verification-before-completion"
+        ],
+        "mcps": []
+      }
+    }
+  }
+}

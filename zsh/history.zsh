@@ -1,15 +1,12 @@
 # History options
-setopt append_history
 setopt hist_verify
 setopt share_history
+setopt hist_ignore_space
 setopt histignorealldups
 
-
-SHARE_HISTORY=1
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=10000
 HISTSIZE=99999
-HIST_IGNORE_DUPS=1
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.

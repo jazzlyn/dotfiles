@@ -8,31 +8,14 @@ if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && c
   # sway --unsupported-gpu |& tee sway.log
 fi
 
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && command -v i3 >/dev/null 2>&1; then
-  exec startx
-fi
-
 setopt pushd_to_home
-setopt HIST_IGNORE_SPACE
-
-DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -g -A key
 
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
 # load machine-specific configuration if present
 [[ -f $HOME/.zsh_profile ]] && source $HOME/.zsh_profile
-
-if command -v mise > /dev/null 2>&1; then
-  source $ZDOTDIR/mise.zsh
-fi
 
 autoload -U add-zsh-hook
 
@@ -48,8 +31,8 @@ source $ZDOTDIR/python.zsh
 #   source $ZDOTDIR/azure.zsh
 # fi
 
-if command -v direnv > /dev/null 2>&1; then
-  source $ZDOTDIR/direnv.zsh
+if command -v bun > /dev/null 2>&1; then
+  source $ZDOTDIR/bun.zsh
 fi
 
 if command -v gcloud > /dev/null 2>&1; then
@@ -62,10 +45,6 @@ fi
 
 source $ZDOTDIR/kubernetes.zsh
 
-if command -v nix > /dev/null 2>&1; then
-  source $ZDOTDIR/nix.zsh
-fi
-
 if command -v npm > /dev/null 2>&1; then
   source $ZDOTDIR/npm.zsh
 fi
@@ -74,23 +53,12 @@ if command -v pacman > /dev/null 2>&1; then
   source $ZDOTDIR/pacman.zsh
 fi
 
-if [[ -v $IN_NIX_SHELL && -f $(ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh) ]]; then
-  source $(/bin/ls $NIX_STORE/*spaceship-prompt*/lib/spaceship-prompt/spaceship.zsh)
-  source $ZDOTDIR/prompt.zsh
-elif [[ -f /usr/lib/spaceship-prompt/spaceship.zsh ]]; then
-  source /usr/lib/spaceship-prompt/spaceship.zsh
-  source $ZDOTDIR/prompt.zsh
-elif [[ -f $HOME/.zsh/spaceship-prompt/spaceship.zsh ]]; then
-  source $HOME/.zsh/spaceship-prompt/spaceship.zsh
-  source $ZDOTDIR/prompt.zsh
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
 else
-  echo "spaceship-prompt not found"
+  echo "starship not found"
 fi
 
 if command -v task > /dev/null 2>&1; then
   source $ZDOTDIR/task.zsh
-fi
-
-if [[ -f $HOME/.secrets/environment.zsh ]]; then
-  source $HOME/.secrets/environment.zsh
 fi

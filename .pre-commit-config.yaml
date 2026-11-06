@@ -4,6 +4,8 @@ fail_fast: false
 default_stages:
   - pre-commit
   - pre-push
+default_language_version:
+  node: system
 
 repos:
   # checks pre-commit config for errors
@@ -72,14 +74,14 @@ repos:
       - id: remove-tabs
 
   - repo: https://github.com/sirosen/texthooks
-    rev: 0.7.1
+    rev: 1.0.0
     hooks:
       - id: fix-smartquotes
       - id: fix-ligatures
       - id: forbid-bidi-controls
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.49.0
+    rev: v0.50.0
     hooks:
       - id: markdownlint-fix
         args:
@@ -87,7 +89,7 @@ repos:
           - .markdownlint.yaml
 
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.8.4
+    rev: v3.9.10
     hooks:
       - id: prettier
         args:

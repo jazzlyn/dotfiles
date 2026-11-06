@@ -1,0 +1,73 @@
+{
+  "$schema": "https://unpkg.com/oh-my-opencode-slim/oh-my-opencode-slim.schema.json",
+  "preset": "default",
+  "disabled_agents": [],
+  "disabled_tools": ["task_reply"],
+  "presets": {
+    "default": {
+      "orchestrator": {
+        "model": "opencode-go/claude-haiku-5-5",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"]
+      },
+      "oracle": {
+        "model": "opencode-go/deepseek-v4-pro",
+        "variant": "high",
+        "skills": [
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-cluster-debug",
+          "gitops-knowledge",
+          "gitops-repo-audit",
+          "renovate-review",
+          "simplify",
+          "systematic-debugging",
+          "terraform-style-guide"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "medium",
+        "skills": [],
+        "mcps": ["context7", "gh_grep"]
+      },
+      "explorer": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "low",
+        "skills": ["gitops-repo-audit"],
+        "mcps": []
+      },
+      "designer": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "high",
+        "skills": [
+          "git-commit",
+          "github-actions-efficiency",
+          "github-actions-hardening",
+          "gitops-knowledge",
+          "pull-requests",
+          "receiving-code-review",
+          "systematic-debugging",
+          "terraform-style-guide",
+          "test-driven-development",
+          "verification-before-completion"
+        ],
+        "mcps": []
+      },
+      "observer": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  }
+}

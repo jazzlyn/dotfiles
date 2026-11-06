@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -u
+
+command -v hermes >/dev/null 2>&1 || {
+    echo "hermes-desktop: 'hermes' not on PATH" >&2
+    exit 1
+}
+
+[ -n "${WAYLAND_DISPLAY:-}" ] || {
+    echo "hermes-desktop: no Wayland session (launch from inside your compositor)" >&2
+    exit 1
+}
+
+args=("$@")
+release="$HOME/.hermes/hermes-agent/apps/desktop/release"
+if [ -d "$release/linux-unpacked" ]; then
+    args=(--skip-build "${args[@]}")
+fi
+
+exec setsid hermes desktop "${args[@]}" </dev/null >/dev/null 2>&1

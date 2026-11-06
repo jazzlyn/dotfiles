@@ -1,83 +1,91 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": false,
-  "lsp": true,
+  "update": "disable",
+  "permissions": [
+    { "action": "read", "resource": "/*", "effect": "allow" },
+    { "action": "read", "resource": "~/.secrets/**", "effect": "ask" },
+    { "action": "read", "resource": "~/.hermes/.env", "effect": "ask" },
+    { "action": "read", "resource": "/etc/doco-cd/age-keys.txt", "effect": "ask" },
+    { "action": "edit", "resource": "/*", "effect": "ask" },
+    { "action": "edit", "resource": "~/*", "effect": "allow" },
+    { "action": "edit", "resource": "~/.secrets/**", "effect": "ask" },
+    { "action": "edit", "resource": "~/.hermes/.env", "effect": "ask" },
+    { "action": "edit", "resource": "/tmp/opencode/*", "effect": "allow" },
+    { "action": "shell", "resource": "*.secrets*", "effect": "ask" },
+    { "action": "shell", "resource": "*.env*", "effect": "ask" },
+    { "action": "shell", "resource": "*keys.txt", "effect": "ask" },
+    { "action": "shell", "resource": "*curl *-T*", "effect": "ask" },
+    { "action": "shell", "resource": "*git push*", "effect": "ask" },
+    { "action": "shell", "resource": "*git * push*", "effect": "ask" },
+    { "action": "shell", "resource": "*gh pr create*", "effect": "ask" },
+    { "action": "shell", "resource": "*gh pr merge*", "effect": "ask" },
+    { "action": "shell", "resource": "*gh pr review*--comment*", "effect": "ask" },
+    { "action": "shell", "resource": "*gh pr review*-c*", "effect": "ask" },
+    { "action": "external_directory", "resource": "/*", "effect": "allow" },
+    { "action": "atlassian_*", "resource": "*", "effect": "ask" },
+    { "action": "atlassian_atlassianUserInfo", "resource": "*", "effect": "allow" },
+    { "action": "atlassian_fetch", "resource": "*", "effect": "allow" },
+    { "action": "atlassian_get*", "resource": "*", "effect": "allow" },
+    { "action": "atlassian_lookup*", "resource": "*", "effect": "allow" },
+    { "action": "atlassian_search*", "resource": "*", "effect": "allow" },
+    { "action": "github_*", "resource": "*", "effect": "ask" },
+    { "action": "github_get*", "resource": "*", "effect": "allow" },
+    { "action": "github_issue_read", "resource": "*", "effect": "allow" },
+    { "action": "github_list*", "resource": "*", "effect": "allow" },
+    { "action": "github_pull_request_read", "resource": "*", "effect": "allow" },
+    { "action": "github_search*", "resource": "*", "effect": "allow" },
+    { "action": "github_create_repository", "resource": "*", "effect": "deny" },
+    { "action": "github_delete_file", "resource": "*", "effect": "deny" },
+    { "action": "github_delete_repository", "resource": "*", "effect": "deny" },
+    { "action": "github_fork_repository", "resource": "*", "effect": "deny" },
+    { "action": "github_run_secret_scanning", "resource": "*", "effect": "deny" }
+  ],
+  "agents": {
+    "build": {
+      "disabled": false,
+      "color": "#8E4EC6"
+    },
+    "general": {
+      "disabled": true
+    },
+    "explore": {
+      "disabled": true
+    },
+    "plan": {
+      "disabled": false,
+      "color": "#FFFF00"
+    },
+    "title": {
+      "model": {
+        "providerID": "claude-code",
+        "model": "claude-haiku-5-5"
+      }
+    }
+  },
   "mcp": {
-    "home-assistant": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://hass.techtales.io/api/mcp",
-      "oauth": false,
-      "headers": {
-        "Authorization": "Bearer {file:~/.secrets/hass-token}"
-      }
-    },
-    "github": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp",
-      "oauth": false,
-      "headers": {
-        "Authorization": "Bearer {file:~/.secrets/github-token}"
+    "servers": {
+      "atlassian": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v1/mcp"
+      },
+      "home-assistant": {
+        "type": "remote",
+        "url": "https://hass.techtales.io/api/mcp",
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {file:~/.secrets/hass-token}"
+        }
+      },
+      "github": {
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp",
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {env:GITHUB_TOKEN}"
+        }
       }
     }
   },
-  "permission": {
-    "read": {
-      "*": "allow",
-      "external-secret.yaml": "allow",
-      "secret.yaml": "allow",
-      "*secret*": "ask",
-      "~/.config/gh/**": "ask"
-    },
-    "edit": {
-      "*": "allow",
-      "external-secret.yaml": "allow",
-      "secret.yaml": "allow",
-      "*secret*": "ask"
-    },
-    "bash": {
-      "*": "allow",
-      "external-secret.yaml": "allow",
-      "secret.yaml": "allow",
-      "*secret*": "ask",
-      "curl *-T*": "ask",
-      "git push *": "ask",
-      "~/.config/gh/**": "ask"
-    },
-    "external_directory": {
-      "/home/opencode/**": "allow",
-      "/srv/shared/**": "allow"
-    },
-    "doom_loop": "ask",
-    "glob": "allow",
-    "grep": "allow",
-    "lsp": "allow",
-    "question": "allow",
-    "skill": "allow",
-    "task": "allow",
-    "todowrite": "allow",
-    "webfetch": "allow",
-    "websearch": "allow",
-    "mcp_atlassian": {
-      "*": "ask",
-      "atlassianUserInfo": "allow",
-      "fetch": "allow",
-      "get*": "allow",
-      "lookup*": "allow",
-      "search*": "allow"
-    },
-    "mcp_github": {
-      "*": "ask",
-      "get*": "allow",
-      "issue_read": "allow",
-      "list*": "allow",
-      "pull_request_read": "allow",
-      "search*": "allow"
-    }
-  },
-  "plugin": [
-    // "@devtheops/opencode-plugin-otel",
-    "superpowers@git+https://github.com/obra/superpowers.git"
-  ]
+  "plugins": ["oh-my-opencode-slim"],
+  "disabled_providers": ["github-copilot", "opencode"]
 }

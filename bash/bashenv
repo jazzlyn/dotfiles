@@ -1,0 +1,13 @@
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
+
+if [[ -S $XDG_RUNTIME_DIR/podman/podman.sock ]]; then
+  export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+fi
+
+if [[ -z $SSH_AUTH_SOCK && -S $XDG_RUNTIME_DIR/ssh-tpm-agent.sock ]]; then
+  export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-tpm-agent.sock
+fi
+
+eval "$(command mise hook-env -s bash)"

@@ -1,0 +1,36 @@
+[user]
+  email = 9011011+jazzlyn@users.noreply.github.com
+  name = jazzlyn
+  signingkey = ~/.ssh/id_tpm.pub
+[color]
+  ui = true
+[commit]
+  verbose = true
+  gpgsign = true
+[core]
+  excludesfile = ~/.config/git/gitignore
+  pager = less -iXFR
+[credential "https://git.techtales.io"]
+  helper = libsecret
+[credential "https://github.com"]
+  helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = !/usr/bin/gh auth git-credential
+[fetch]
+  prune = true
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  allowedSignersFile = ~/.ssh/allowed_signers
+[init]
+  defaultBranch = main
+[pull]
+  rebase = false
+[push]
+  default = current
+  autoSetupRemote = true
+[tag]
+  gpgsign = true
+  sort = -version:refname
+[includeIf "gitdir:**/strg/**"]
+    path = ~/.config/git/config.strg

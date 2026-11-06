@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://json.schemastore.org/taskfile.json
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
 version: "3"
 
 vars:
@@ -33,11 +33,10 @@ tasks:
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
-      - task: install:hyprland
+      - task: install:productivity
       - task: install:devtools
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
 
   setup-coal:
     desc: setup coal
@@ -48,10 +47,12 @@ tasks:
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
+      - task: install:productivity
+      - task: install:strg
       - task: install:devtools
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
+      - task: symlinks:strg
 
   setup-purple:
     desc: setup purple
@@ -62,12 +63,36 @@ tasks:
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
+      - task: install:productivity
       - task: install:devtools
-      - task: install:ai
       - task: install:gaming
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
+
+  setup-hades:
+    desc: setup hades
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:sysutils
+      - task: install:plasma
+      - task: install:productivity
+      - task: install:devtools
+      - task: install:gaming
+      - task: symlinks:base
+      - task: symlinks:apps
+
+  setup-agentix:
+    desc: setup agentix
+    cmds:
+      - task: install:base
+      - task: install:system
+      - task: install:devtools
+      - task: install:sysutils
+      - task: symlinks:agentix
+      - bun add -g @openchamber/web
+      - bun add -g --trust @opencode/cli
+      # - rtk init -g --opencode --auto-patch doesnt work with 2.0
 
   setup-workstation:
     desc: setup workstation
@@ -75,15 +100,4 @@ tasks:
       - task: install:workstation
       - task: symlinks:base
       - task: symlinks:apps
-      - task: symlinks:secrets
       - mkdir -p ~/scripts && ln -rsf init.sh ~/scripts
-
-  setup-wsl:
-    desc: setup wsl
-    cmds:
-      - task: install:base
-      - task: install:sysutils
-      # - task: install:devtools
-      - task: symlinks:base
-      - task: symlinks:apps
-      - task: symlinks:secrets

@@ -1,0 +1,52 @@
+---
+volumes:
+  data:
+
+configs:
+  poll-config.yml:
+    content: |
+      # - url: https://github.com/jazzlyn/dotfiles
+      #   reference: main
+      #   target: ${TARGET}
+      #   interval: 180
+      - url: https://github.com/tyriis/home-ops
+        reference: main
+        target: ${TARGET}
+        interval: 180
+
+secrets:
+  sops_age_key:
+    file: ${DOCO_SOPS_AGE_KEY_FILE:-/dev/null}
+services:
+  doco-cd:
+    container_name: doco-cd
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+        labels: "com.docker.compose.service,com.docker.compose.image,cd.doco.deployment.config.target,org.opencontainers.image.title,org.opencontainers.image.version"
+    image: ghcr.io/kimdre/doco-cd:0.132.0@sha256:ed22583456c60c88c5cabdb47803aa0ab51284f00d70d5bb63fa56b223fa250a
+    restart: always
+    configs:
+      - source: poll-config.yml
+        target: /poll-config.yml
+    environment:
+      TZ: Europe/Vienna
+      LOG_LEVEL: info
+      POLL_CONFIG_FILE: /poll-config.yml
+      SOPS_AGE_KEY_FILE: /run/secrets/sops_age_key
+      DEPLOY_CONFIG_BASE_DIR: ./docker
+    healthcheck:
+      test: ["CMD", "/doco-cd", "healthcheck"]
+      start_period: 15s
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    secrets:
+      - sops_age_key
+    cap_drop:
+      - ALL
+    volumes:
+      - ${DOCKER_SOCKET:-/var/run/docker.sock}:/var/run/docker.sock
+      - data:/data

@@ -37,8 +37,6 @@ if ! check_command mise; then
   else
     curl https://mise.run | sh
   fi
-  # TODO: fix activate for bash/zsh
-  ~/.local/bin/mise activate --shims
 fi
 
 if [ -n "${WEB_HOST}" ]; then
