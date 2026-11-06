@@ -15,7 +15,6 @@ tasks:
       - ln -rsf git/config ~/.config/git/
       - "[ -f ~/.secrets/github-strg.conf ] && ln -rsf ~/.secrets/github-strg.conf ~/.config/git/config.strg"
       - ln -rsf git/gitignore ~/.config/git/
-      - ln -rsf wayland/chrome-flags.conf ~/.config/
       - ln -rsf wayland/code-flags.conf ~/.config/
       - ln -rsf wayland/electron-flags.conf ~/.config/
     ignore_error: true
