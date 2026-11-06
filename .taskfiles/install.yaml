@@ -56,11 +56,13 @@ tasks:
         nvidia-open
 
   coal:
-    desc: install coal specific firmware
+    desc: install coal specific firmware and camera stack
     cmds:
       - yay -Sy --needed --noconfirm
         sof-firmware
-        intel-vision-drivers-dkms-git
+        libcamera
+        libcamera-ipa
+        libcamera-tools
 
   devtools:
     desc: install development tools
