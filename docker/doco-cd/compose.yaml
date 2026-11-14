@@ -26,7 +26,7 @@ services:
         max-size: 10m
         max-file: "3"
         labels: "com.docker.compose.service,com.docker.compose.image,cd.doco.deployment.config.target,org.opencontainers.image.title,org.opencontainers.image.version"
-    image: ghcr.io/kimdre/doco-cd:0.132.0@sha256:ed22583456c60c88c5cabdb47803aa0ab51284f00d70d5bb63fa56b223fa250a
+    image: ghcr.io/kimdre/doco-cd:0.134.0@sha256:1d40f570403689c762c63009ade3d5d0dc24595bf40f9629a8ab3865e4ddb768
     restart: always
     configs:
       - source: poll-config.yml
