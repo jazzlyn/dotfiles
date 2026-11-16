@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim/oh-my-opencode-slim.schema.json",
   "preset": "strg",
+  "disabled_agents": [],
   "disabled_tools": ["task_reply"],
   "presets": {
     "strg": {
@@ -26,17 +27,11 @@
         ],
         "mcps": []
       },
-      "librarian": {
-        "model": "claude-agent/haiku",
-        "variant": "medium",
-        "skills": [],
-        "mcps": ["context7", "gh_grep"]
-      },
       "explorer": {
         "model": "claude-agent/haiku",
         "variant": "low",
         "skills": ["gitops-repo-audit"],
-        "mcps": []
+        "mcps": ["context7", "gh_grep"]
       },
       "designer": {
         "model": "claude-agent/sonnet",
@@ -59,6 +54,12 @@
           "test-driven-development",
           "verification-before-completion"
         ],
+        "mcps": []
+      },
+      "observer": {
+        "model": "claude-agent/haiku",
+        "variant": "low",
+        "skills": [],
         "mcps": []
       }
     }

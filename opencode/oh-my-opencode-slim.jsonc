@@ -27,17 +27,11 @@
         ],
         "mcps": []
       },
-      "librarian": {
-        "model": "opencode-go/deepseek-v4.1-flash",
-        "variant": "medium",
-        "skills": [],
-        "mcps": ["context7", "gh_grep"]
-      },
       "explorer": {
         "model": "opencode-go/deepseek-v4.1-flash",
         "variant": "low",
         "skills": ["gitops-repo-audit"],
-        "mcps": []
+        "mcps": ["context7", "gh_grep"]
       },
       "designer": {
         "model": "opencode-go/deepseek-v4.1-flash",
