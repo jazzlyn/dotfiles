@@ -3,62 +3,99 @@
 version: "3"
 
 tasks:
-  base:
-    desc: create base symlinks
+  zsh:
+    desc: create zsh symlinks
     cmds:
-      - rm -rf ~/.zshenv ~/.zshrc ~/.config/k9s
       - chsh -s /usr/bin/zsh
-      - ln -rsf zsh/.zshenv ~/
-      - ln -rsf zsh/.zshrc ~/
-      - ln -rsf k9s ~/.config/
-      - mkdir -p ~/.config/git
-      - ln -rsf git/config ~/.config/git/
-      - "[ -f ~/.secrets/github-strg.conf ] && ln -rsf ~/.secrets/github-strg.conf ~/.config/git/config.strg"
-      - ln -rsf git/gitignore ~/.config/git/
-      - ln -rsf wayland/code-flags.conf ~/.config/
-      - ln -rsf wayland/electron-flags.conf ~/.config/
-    ignore_error: true
+      - ln -rsfT zsh/.zshenv ~/.zshenv
+      - ln -rsfT zsh/.zshrc ~/.zshrc
 
-  apps:
-    desc: create app symlinks
+  bash:
+    desc: create bash symlinks
     cmds:
-      - command -v starship > /dev/null 2>&1 && ln -rsf starship/starship.toml ~/.config/starship.toml
-      - mkdir -p ~/.local/bin && ln -rsf hermes/hermes-desktop ~/.local/bin/hermes-desktop
-      - command -v dunst > /dev/null 2>&1 && ln -rsf dunst ~/.config/
-      - command -v gammastep > /dev/null 2>&1 && ln -rsf gammastep ~/.config/
-      - command -v kanshi > /dev/null 2>&1 && ln -rsf kanshi ~/.config/
-      - command -v kitty > /dev/null 2>&1 && ln -rsf kitty ~/.config/
-      - command -v mise > /dev/null 2>&1 && ln -rsf mise ~/.config/
-      - command -v nvim > /dev/null 2>&1 && mkdir -p ~/.config/nvim && ln -rsf nvim/init.vim ~/.config/nvim && ln -rsf nvim/init.vim ~/.vimrc
-      - command -v pacman > /dev/null 2>&1 && mkdir -p ~/.config/pacman && ln -rsf makepkg.conf ~/.config/pacman/makepkg.conf
-      - command -v wireplumber > /dev/null 2>&1 && ln -rsf wireplumber ~/.config/
-      - command -v ranger > /dev/null 2>&1 && mkdir -p ~/.config/ranger && ln -rsf ranger/commands.py ~/.config/ranger/commands.py && ln -rsf ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsf ranger/scope.sh ~/.config/ranger/scope.sh
-      - command -v sway > /dev/null 2>&1 && ln -rsf sway ~/.config/
-      - command -v swayidle > /dev/null 2>&1 && ln -rsf swayidle ~/.config/
-      - command -v waybar > /dev/null 2>&1 && ln -rsf waybar ~/.config/
-      - pacman -Qq xdg-desktop-portal-wlr > /dev/null 2>&1 && ln -rsf xdg-desktop-portal-wlr ~/.config/
-      - command -v yay > /dev/null 2>&1 && ln -rsf yay/config.json ~/.config/yay/config.json
-    ignore_error: true
+      - ln -rsfT bash/bashrc ~/.bashrc
 
-  agentix:
-    desc: create agentix specific symlinks
+  git:
+    desc: create git symlinks
     cmds:
-      - ln -rsf bash/bashrc ~/.bashrc
-      - ln -rsf mise ~/.config/
       - mkdir -p ~/.config/git
-      - ln -rsf git/config ~/.config/git/config
-      - ln -rsf git/gitignore ~/.config/git/gitignore
+      - ln -rsfT git/config ~/.config/git/config
+      - ln -rsfT git/gitignore ~/.config/git/gitignore
+
+  mise:
+    desc: create mise symlinks
+    cmds:
+      - ln -rsfT mise ~/.config/mise
+
+  podman:
+    desc: create podman symlinks
+    cmds:
+      - ln -rsfT containers ~/.config/containers
+      - systemctl --user is-enabled podman.socket > /dev/null 2>&1 && mkdir -p ~/.local/bin && ln -sfT /usr/bin/podman ~/.local/bin/docker || rm -f ~/.local/bin/docker
+
+  opencode:
+    desc: create opencode symlinks
+    cmds:
       - mkdir -p ~/.config/opencode
-      - ln -rsf opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
-      - ln -rsf opencode/oh-my-opencode-slim.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
-      - ln -rsf opencode/cli.json ~/.config/opencode/cli.json
+      - ln -rsfT opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
+      - ln -rsfT opencode/oh-my-opencode-slim.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
+      - ln -rsfT opencode/cli.json ~/.config/opencode/cli.json
+      - ln -rsfT opencode/oh-my-opencode-slim ~/.config/opencode/oh-my-opencode-slim
+      - ln -rsfT ~/notes/AGENTS.md ~/.config/opencode/AGENTS.md
+
+  openchamber:
+    desc: create openchamber symlinks (includes opencode)
+    cmds:
+      - task: opencode
       - systemctl --user link opencode/openchamber.service
+
+  hermes:
+    desc: create hermes symlinks
+    cmds:
+      - mkdir -p ~/.local/bin
+      - ln -rsfT hermes/hermes-desktop ~/.local/bin/hermes-desktop
       - systemctl --user link hermes/hermes-dashboard.service
-      - ln -rsf ~/notes/AGENTS.md ~/.config/opencode/AGENTS.md
-      - ln -rsf containers ~/.config/
-      - systemctl --user is-enabled podman.socket > /dev/null 2>&1 && mkdir -p ~/.local/bin && ln -sf /usr/bin/podman ~/.local/bin/docker || rm -f ~/.local/bin/docker
 
   strg:
-    desc: create strg specific symlinks
+    desc: create strg symlinks (requires the secret)
+    preconditions:
+      - sh: test -f ~/.secrets/github-strg.conf
+        msg: "strg: ~/.secrets/github-strg.conf is missing"
     cmds:
-      - ln -rsf opencode/oh-my-opencode-slim.strg.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
+      - mkdir -p ~/.config/git
+      - ln -rsfT ~/.secrets/github-strg.conf ~/.config/git/github-strg.conf
+      - ln -rsfT opencode/oh-my-opencode-slim.strg.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
+
+  k9s:
+    desc: create k9s symlinks
+    cmds:
+      - rm -rf ~/.config/k9s
+      - ln -rsfT k9s ~/.config/k9s
+
+  wayland:
+    desc: create wayland symlinks
+    cmds:
+      - ln -rsfT wayland/code-flags.conf ~/.config/code-flags.conf
+      - ln -rsfT wayland/electron-flags.conf ~/.config/electron-flags.conf
+
+  desktop:
+    desc: create desktop app symlinks
+    cmds:
+      - command -v dunst > /dev/null 2>&1 && ln -rsfT dunst ~/.config/dunst
+      - command -v gammastep > /dev/null 2>&1 && ln -rsfT gammastep ~/.config/gammastep
+      - command -v kanshi > /dev/null 2>&1 && ln -rsfT kanshi ~/.config/kanshi
+      - command -v kitty > /dev/null 2>&1 && ln -rsfT kitty ~/.config/kitty
+      - command -v sway > /dev/null 2>&1 && ln -rsfT sway ~/.config/sway
+      - command -v swayidle > /dev/null 2>&1 && ln -rsfT swayidle ~/.config/swayidle
+      - command -v waybar > /dev/null 2>&1 && ln -rsfT waybar ~/.config/waybar
+      - command -v wireplumber > /dev/null 2>&1 && ln -rsfT wireplumber ~/.config/wireplumber
+      - pacman -Qq xdg-desktop-portal-wlr > /dev/null 2>&1 && ln -rsfT xdg-desktop-portal-wlr ~/.config/xdg-desktop-portal-wlr
+
+  tools:
+    desc: create terminal tool symlinks
+    cmds:
+      - command -v nvim > /dev/null 2>&1 && mkdir -p ~/.config/nvim && ln -rsfT nvim/init.vim ~/.config/nvim/init.vim && ln -rsfT nvim/init.vim ~/.vimrc
+      - command -v pacman > /dev/null 2>&1 && mkdir -p ~/.config/pacman && ln -rsfT makepkg.conf ~/.config/pacman/makepkg.conf
+      - command -v ranger > /dev/null 2>&1 && mkdir -p ~/.config/ranger && ln -rsfT ranger/commands.py ~/.config/ranger/commands.py && ln -rsfT ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsfT ranger/scope.sh ~/.config/ranger/scope.sh
+      - command -v starship > /dev/null 2>&1 && ln -rsfT starship/starship.toml ~/.config/starship.toml
+      - command -v yay > /dev/null 2>&1 && mkdir -p ~/.config/yay && ln -rsfT yay/config.json ~/.config/yay/config.json
