@@ -87,6 +87,6 @@
       }
     }
   },
-  "plugins": ["oh-my-opencode-slim", "superpowers@git+https://github.com/obra/superpowers.git"],
+  "plugins": ["oh-my-opencode-slim"],
   "disabled_providers": ["github-copilot", "opencode"]
 }
