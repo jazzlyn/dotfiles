@@ -22,7 +22,6 @@
           "gitops-repo-audit",
           "renovate-review",
           "simplify",
-          "systematic-debugging",
           "terraform-style-guide"
         ],
         "mcps": []
@@ -48,11 +47,7 @@
           "github-actions-hardening",
           "gitops-knowledge",
           "pull-requests",
-          "receiving-code-review",
-          "systematic-debugging",
-          "terraform-style-guide",
-          "test-driven-development",
-          "verification-before-completion"
+          "terraform-style-guide"
         ],
         "mcps": []
       },
