@@ -35,8 +35,13 @@ tasks:
       - task: install:sway
       - task: install:productivity
       - task: install:devtools
-      - task: symlinks:base
-      - task: symlinks:apps
+      - task: symlinks:zsh
+      - task: symlinks:git
+      - task: symlinks:mise
+      - task: symlinks:k9s
+      - task: symlinks:wayland
+      - task: symlinks:desktop
+      - task: symlinks:tools
 
   setup-coal:
     desc: setup coal
@@ -50,8 +55,13 @@ tasks:
       - task: install:productivity
       - task: install:strg
       - task: install:devtools
-      - task: symlinks:base
-      - task: symlinks:apps
+      - task: symlinks:zsh
+      - task: symlinks:git
+      - task: symlinks:mise
+      - task: symlinks:k9s
+      - task: symlinks:wayland
+      - task: symlinks:desktop
+      - task: symlinks:tools
       - task: symlinks:strg
 
   setup-purple:
@@ -66,8 +76,13 @@ tasks:
       - task: install:productivity
       - task: install:devtools
       - task: install:gaming
-      - task: symlinks:base
-      - task: symlinks:apps
+      - task: symlinks:zsh
+      - task: symlinks:git
+      - task: symlinks:mise
+      - task: symlinks:k9s
+      - task: symlinks:wayland
+      - task: symlinks:desktop
+      - task: symlinks:tools
 
   setup-hades:
     desc: setup hades
@@ -79,8 +94,13 @@ tasks:
       - task: install:productivity
       - task: install:devtools
       - task: install:gaming
-      - task: symlinks:base
-      - task: symlinks:apps
+      - task: symlinks:zsh
+      - task: symlinks:git
+      - task: symlinks:mise
+      - task: symlinks:k9s
+      - task: symlinks:wayland
+      - task: symlinks:desktop
+      - task: symlinks:tools
 
   setup-agentix:
     desc: setup agentix
@@ -89,15 +109,34 @@ tasks:
       - task: install:system
       - task: install:devtools
       - task: install:sysutils
-      - task: symlinks:agentix
+      - task: symlinks:bash
+      - task: symlinks:git
+      - task: symlinks:mise
+      - task: symlinks:openchamber
+      - task: symlinks:hermes
       - bun add -g @openchamber/web
       - bun add -g --trust @opencode/cli
-      # - rtk init -g --opencode --auto-patch doesnt work with 2.0
+
+  setup-assistant:
+    desc: setup assistant (run as separate non-root user)
+    cmds:
+      - task: symlinks:bash
+      - task: symlinks:git
+      - task: symlinks:mise
+      - task: symlinks:podman
+      - task: symlinks:openchamber
+      - task: symlinks:strg
+      # - bun add -g @openchamber/web
+      # - bun add -g --trust @opencode/cli
 
   setup-workstation:
     desc: setup workstation
     cmds:
       - task: install:workstation
-      - task: symlinks:base
-      - task: symlinks:apps
+      - task: symlinks:zsh
+      - task: symlinks:git
+      - task: symlinks:mise
+      - task: symlinks:k9s
+      - task: symlinks:tools
+      - task: symlinks:strg
       - mkdir -p ~/scripts && ln -rsf init.sh ~/scripts
