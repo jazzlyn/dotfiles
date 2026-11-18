@@ -41,10 +41,10 @@
     { "action": "github_fork_repository", "resource": "*", "effect": "deny" },
     { "action": "github_run_secret_scanning", "resource": "*", "effect": "deny" }
   ],
+  "default_agent": "orchestrator",
   "agents": {
     "build": {
-      "disabled": false,
-      "color": "#8E4EC6"
+      "disabled": true
     },
     "general": {
       "disabled": true
@@ -53,8 +53,7 @@
       "disabled": true
     },
     "plan": {
-      "disabled": false,
-      "color": "#FFFF00"
+      "disabled": true
     },
     "title": {
       "model": {
