@@ -126,8 +126,8 @@ tasks:
       - task: symlinks:podman
       - task: symlinks:openchamber
       - task: symlinks:strg
-      - bun add -g @openchamber/web
-      - bun add -g --trust @opencode/cli
+      # - bun add -g @openchamber/web
+      # - bun add -g --trust @opencode/cli
 
   setup-workstation:
     desc: setup workstation

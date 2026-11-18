@@ -56,16 +56,6 @@ tasks:
       - ln -rsfT hermes/hermes-desktop ~/.local/bin/hermes-desktop
       - systemctl --user link hermes/hermes-dashboard.service
 
-  strg:
-    desc: create strg symlinks (requires the secret)
-    preconditions:
-      - sh: test -f ~/.secrets/github-strg.conf
-        msg: "strg: ~/.secrets/github-strg.conf is missing"
-    cmds:
-      - mkdir -p ~/.config/git
-      - ln -rsfT ~/.secrets/github-strg.conf ~/.config/git/github-strg.conf
-      - ln -rsfT opencode/oh-my-opencode-slim.strg.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
-
   k9s:
     desc: create k9s symlinks
     cmds:
@@ -99,3 +89,13 @@ tasks:
       - command -v ranger > /dev/null 2>&1 && mkdir -p ~/.config/ranger && ln -rsfT ranger/commands.py ~/.config/ranger/commands.py && ln -rsfT ranger/rc.conf ~/.config/ranger/rc.conf && ln -rsfT ranger/scope.sh ~/.config/ranger/scope.sh
       - command -v starship > /dev/null 2>&1 && ln -rsfT starship/starship.toml ~/.config/starship.toml
       - command -v yay > /dev/null 2>&1 && mkdir -p ~/.config/yay && ln -rsfT yay/config.json ~/.config/yay/config.json
+
+  strg:
+    desc: create strg symlinks (requires the secret)
+    preconditions:
+      - sh: test -f ~/.secrets/github-strg.conf
+        msg: "strg: ~/.secrets/github-strg.conf is missing"
+    cmds:
+      - mkdir -p ~/.config/git
+      - ln -rsfT ~/.secrets/github-strg.conf ~/.config/git/config.strg
+      - ln -rsfT opencode/oh-my-opencode-slim.strg.jsonc ~/.config/opencode/oh-my-opencode-slim.jsonc
