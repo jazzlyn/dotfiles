@@ -44,7 +44,8 @@
   "default_agent": "orchestrator",
   "agents": {
     "build": {
-      "disabled": true
+      "disabled": true,
+      "color": "#8E4EC6"
     },
     "general": {
       "disabled": true
@@ -53,7 +54,8 @@
       "disabled": true
     },
     "plan": {
-      "disabled": true
+      "disabled": true,
+      "color": "#FFFF00"
     },
     "title": {
       "model": {
