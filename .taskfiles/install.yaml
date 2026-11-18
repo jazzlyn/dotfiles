@@ -24,6 +24,7 @@ tasks:
         tig
         tree
         vim
+        yay
         zsh
         zsh-completions
         zsh-syntax-highlighting
@@ -44,7 +45,6 @@ tasks:
         ssh-tpm-agent
         syncthing
         tpm2-tools
-        tpm2-tss
         vulkan-intel
 
   nvidia:
