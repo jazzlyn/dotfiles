@@ -24,6 +24,7 @@ tasks:
         tig
         tree
         vim
+        yay
         zsh
         zsh-completions
         zsh-syntax-highlighting
@@ -35,7 +36,6 @@ tasks:
       - yay -Sy --needed --noconfirm
         cups
         ghostscript
-        intel-media-driver
         intel-ucode
         libfido2
         linux
@@ -44,8 +44,22 @@ tasks:
         ssh-tpm-agent
         syncthing
         tpm2-tools
-        tpm2-tss
+
+  intel:
+    desc: install intel packages
+    internal: true
+    cmds:
+      - yay -Sy --needed --noconfirm
+        intel-media-driver
         vulkan-intel
+
+  amd:
+    desc: install amd packages
+    internal: true
+    cmds:
+      - yay -Sy --needed --noconfirm
+        libva-mesa-driver
+        vulkan-radeon
 
   nvidia:
     desc: install nvidia packages

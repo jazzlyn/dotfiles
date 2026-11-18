@@ -30,6 +30,7 @@ tasks:
     cmds:
       - task: install:base
       - task: install:system
+      - task: install:intel
       - task: install:sysutils
       - task: install:wayland
       - task: install:sway
@@ -48,6 +49,7 @@ tasks:
     cmds:
       - task: install:base
       - task: install:system
+      - task: install:intel
       - task: install:coal
       - task: install:sysutils
       - task: install:wayland
@@ -69,6 +71,7 @@ tasks:
     cmds:
       - task: install:base
       - task: install:system
+      - task: install:intel
       - task: install:nvidia
       - task: install:sysutils
       - task: install:wayland
@@ -89,6 +92,8 @@ tasks:
     cmds:
       - task: install:base
       - task: install:system
+      - task: install:intel
+      - task: install:amd
       - task: install:sysutils
       - task: install:plasma
       - task: install:productivity
