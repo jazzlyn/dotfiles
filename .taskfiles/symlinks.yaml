@@ -49,12 +49,16 @@ tasks:
       - task: opencode
       - systemctl --user link opencode/openchamber.service
 
-  hermes:
-    desc: create hermes symlinks
+  hermes-backend:
+    desc: create hermes backend symlinks (headless backend service)
+    cmds:
+      - systemctl --user link hermes/hermes.service
+
+  hermes-desktop:
+    desc: create hermes desktop symlinks (client launcher)
     cmds:
       - mkdir -p ~/.local/bin
       - ln -rsfT hermes/hermes-desktop ~/.local/bin/hermes-desktop
-      - systemctl --user link hermes/hermes-dashboard.service
 
   k9s:
     desc: create k9s symlinks
