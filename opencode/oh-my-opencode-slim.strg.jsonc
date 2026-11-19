@@ -7,7 +7,7 @@
     "strg": {
       "orchestrator": {
         "model": "claude-agent/sonnet",
-        "variant": "medium",
+        "variant": "high",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
