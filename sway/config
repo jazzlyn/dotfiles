@@ -43,7 +43,7 @@ include /etc/sway/config.d/*
   # Autostart
   exec --no-startup-id sleep 2 && flameshot
   exec --no-startup-id gammastep
-  exec_always --no-startup-id pkill kanshi; sleep 3 && kanshi
+  exec --no-startup-id kanshi
   exec --no-startup-id nm-applet
   exec --no-startup-id obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
   exec --no-startup-id swayidle

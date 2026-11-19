@@ -109,6 +109,16 @@ handle_extension() {
             python -m json.tool -- "${FILE_PATH}" && exit 5
             ;;
 
+        ## JSON with comments
+        jsonc|json5)
+            env COLORTERM=8bit bat --color=always --style="plain" \
+                --language=json -- "${FILE_PATH}" && exit 5
+            env COLORTERM=8bit batcat --color=always --style="plain" \
+                --language=json -- "${FILE_PATH}" && exit 5
+            source-highlight --src-lang=json --out-format=esc \
+                -i "${FILE_PATH}" && exit 5
+            ;;
+
         ## Direct Stream Digital/Transfer (DSDIFF) and wavpack aren't detected
         ## by file(1).
         dff|dsf|wv|wvc)
