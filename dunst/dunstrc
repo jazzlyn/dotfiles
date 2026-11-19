@@ -1,5 +1,5 @@
 [global]
-  monitor = HDMI-A-3
+  monitor = 1
   follow = none
 
   width = 300
