@@ -113,6 +113,8 @@ handle_extension() {
         jsonc|json5)
             env COLORTERM=8bit bat --color=always --style="plain" \
                 --language=json -- "${FILE_PATH}" && exit 5
+            env COLORTERM=8bit batcat --color=always --style="plain" \
+                --language=json -- "${FILE_PATH}" && exit 5
             source-highlight --src-lang=json --out-format=esc \
                 -i "${FILE_PATH}" && exit 5
             ;;
