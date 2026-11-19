@@ -41,6 +41,10 @@
     { "action": "github_fork_repository", "resource": "*", "effect": "deny" },
     { "action": "github_run_secret_scanning", "resource": "*", "effect": "deny" }
   ],
+  "compaction": {
+    "buffer": "10%",
+    "auto": true
+  },
   "default_agent": "orchestrator",
   "agents": {
     "build": {
