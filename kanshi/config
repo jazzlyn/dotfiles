@@ -1,13 +1,7 @@
 profile home {
   output eDP-1 disable
-  output DP-5 enable position 0,0
-  output DP-4 enable position 2560,0
-}
-
-profile home2 {
-  output eDP-1 disable
-  output DP-7 enable position 0,0
-  output DP-6 enable position 2560,0
+  output "Iiyama North America PL3280Q 1220032600286" enable position 0,0
+  output "Iiyama North America PL2466H 1177010801932" enable position 2560,0
 }
 
 profile mobile {
