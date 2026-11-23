@@ -1,5 +1,5 @@
 [Unit]
-Description=Hermes Agent Dashboard - Web Admin Panel + Chat
+Description=Hermes Agent backend
 After=network-online.target hermes-gateway.service
 Wants=network-online.target
 

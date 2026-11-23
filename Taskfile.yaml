@@ -63,6 +63,7 @@ tasks:
       - task: symlinks:k9s
       - task: symlinks:wayland
       - task: symlinks:desktop
+      - task: symlinks:hermes-desktop
       - task: symlinks:tools
       - task: symlinks:strg
 
@@ -85,6 +86,7 @@ tasks:
       - task: symlinks:k9s
       - task: symlinks:wayland
       - task: symlinks:desktop
+      - task: symlinks:hermes-desktop
       - task: symlinks:tools
 
   setup-hades:
@@ -118,7 +120,7 @@ tasks:
       - task: symlinks:git
       - task: symlinks:mise
       - task: symlinks:openchamber
-      - task: symlinks:hermes
+      - task: symlinks:hermes-backend
       - bun add -g @openchamber/web
       - bun add -g --trust @opencode/cli
 
