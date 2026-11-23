@@ -30,7 +30,6 @@
   default = current
   autoSetupRemote = true
 [tag]
-  gpgsign = true
   sort = -version:refname
 [includeIf "gitdir:**/strg/**"]
     path = ~/.config/git/config.strg
