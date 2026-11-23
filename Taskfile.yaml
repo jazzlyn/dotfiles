@@ -63,6 +63,7 @@ tasks:
       - task: symlinks:k9s
       - task: symlinks:wayland
       - task: symlinks:desktop
+      - task: symlinks:hermes-desktop
       - task: symlinks:tools
       - task: symlinks:strg
 
@@ -85,6 +86,7 @@ tasks:
       - task: symlinks:k9s
       - task: symlinks:wayland
       - task: symlinks:desktop
+      - task: symlinks:hermes-desktop
       - task: symlinks:tools
 
   setup-hades:
