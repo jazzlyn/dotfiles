@@ -75,8 +75,7 @@ tasks:
     cmds:
       - yay -Sy --needed --noconfirm
         sof-firmware
-        libcamera
-        libcamera-ipa
+        pipewire-libcamera
         libcamera-tools
 
   devtools:
@@ -124,7 +123,6 @@ tasks:
         noto-fonts-emoji
         pavucontrol-qt
         pipewire
-        pipewire-libcamera
         pipewire-pulse
         python-pillow
         qt6-wayland
@@ -197,6 +195,6 @@ tasks:
     cmds:
       - yay -Syu --needed --noconfirm
         azure-cli
-        google-cloud-cli-gke-gcloud-auth-plugin
+        gke-gcloud-auth-plugin
         networkmanager-vpn-plugin-openvpn
         openvpn
