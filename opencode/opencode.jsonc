@@ -63,8 +63,8 @@
     },
     "title": {
       "model": {
-        "providerID": "claude-code",
-        "model": "claude-haiku-5-5"
+        "providerID": "claude-agent",
+        "model": "haiku"
       }
     }
   },
